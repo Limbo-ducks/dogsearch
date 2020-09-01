@@ -3,6 +3,7 @@ const faker = require('faker')
 
 const data = {
     profiles: Array.from({ length: 10 }, () => ({
+        id: faker.random.uuid(),
         name: faker.name.findName(),
         image: faker.image.imageUrl(),
         height: faker.random.number({min: 100, max: 300}),

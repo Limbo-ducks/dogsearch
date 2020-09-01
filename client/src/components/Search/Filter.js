@@ -1,10 +1,15 @@
 import React, {useState} from 'react'
 import InputRange from 'react-input-range'
+import Select from './Select';
 import 'react-input-range/lib/css/index.css'
 
 const Filter = ({search}) => {
     const [state, setState] = useState({});
     const [height, setHeight] = useState({ min: 100, max: 300 })
+
+    const handleChange = e => {
+        setState({...state, [e.target.name] : e.target.value})
+    }
 
     const handleSubmit = () => {
         const query = Object.entries(state)
@@ -13,11 +18,7 @@ const Filter = ({search}) => {
             .join('&')
             .concat(`&height_gte=${height.min}&height_lte=${height.max}`)
 
-        search(query); 
-    }
-
-    const handleChange = e => {
-        setState({...state, [e.target.name] : e.target.value})
+        search(query);
     }
 
     return (
@@ -31,28 +32,32 @@ const Filter = ({search}) => {
                     value={height}
                 />
             </label>
-            <label>
-                <span>Eye color:</span>
-                <select name='eyeColor' onChange={handleChange} defaultValue=''>
-                    <option value=''>Select an Option</option>
-                    <option value='blue'>Blue</option>
-                    <option value='brown'>Brown</option>
-                    <option value='green'>Green</option>
-                    <option value='black'>Black</option>
-                    <option value='grey'>Grey</option>
-                    <option value='hazel'>Hazel</option>
-                </select>
-            </label>
-            <label>
-                <span>Gender</span>
-                <select name='gender' onChange={handleChange} defaultValue=''>
-                    <option value=''>Select an Option</option>
-                    <option value='female'>Female</option>
-                    <option value='male'>Male</option>
-                    <option value='transgender'>Transgender/Non-Binary</option>
-                    <option value='twins'>Twins/Multiples</option>
-                </select>
-            </label>
+
+            <Select 
+                label='Eye color' 
+                name='eyeColor' 
+                handleChange={handleChange}
+                options = {[
+                    {value:'blue',text:'Blue'},
+                    {value:'brown',text:'Brown'},
+                    {value:'green',text:'Green'},
+                    {value:'black',text:'Black'},
+                    {value:'grey',text:'Grey'},
+                    {value:'hazel',text:'Hazel'},
+                ]}
+                />
+
+            <Select 
+                label='Gender' 
+                name='gender' 
+                handleChange={handleChange}
+                options = {[
+                    {value:'female',text:'Female'},
+                    {value:'male',text:'Male'},
+                    {value:'transgender',text:'Transgender/Non-Binary'},
+                    {value:'twins',text:'Twins/Multiples'},
+                ]}
+                />
             <button onClick={handleSubmit}>Search</button>
         </div>
     )
