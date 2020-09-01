@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "PORT=3000 nodemon index.js & cd client && npm start",
+    "dev": "PORT=6000 nodemon index.js",
     "heroku-postbuild": "cd client && npm i && npm run build"
   },
   "keywords": [],
