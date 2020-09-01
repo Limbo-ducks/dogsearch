@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js && npx json-server --watch db.json",
     "dev": "PORT=6000 nodemon index.js",
     "heroku-postbuild": "cd client && npm i && npm run build"
   },
@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "json-server": "^0.16.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
