@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import SearchBar from './SearchBar';
 
 function Nav({ authenticated }) {
   return (
@@ -12,11 +11,13 @@ function Nav({ authenticated }) {
 			<Link to='/about'>
 				<li>About</li>
 			</Link>
+			<Link to='/search'>
+				<li>Search</li>
+			</Link>
 			{authenticated && <Link to='/profile'>
-				<li>profile</li>
+				<li>Profile</li>
 			</Link>}
 		</ul>
-		<SearchBar />
 	</nav>
   );
 }
