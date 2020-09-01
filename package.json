@@ -4,18 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js && npx json-server --watch db.json",
-    "dev": "PORT=6000 nodemon index.js",
-    "heroku-postbuild": "cd client && npm i && npm run build"
+    "start": "node index.js",
+    "dev": "nodemon index.js --ignore 'client/'",
+    "heroku-postbuild": "cd client && npm i && npm run build",
+    "seed": "cd scripts && node seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "json-server": "^0.16.1"
+    "json-server": "^0.16.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "faker": "^5.1.0",
     "nodemon": "^2.0.4"
   }
 }

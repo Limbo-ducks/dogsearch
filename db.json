@@ -1,9 +1,44 @@
 {
-    "posts": [
-        { "id": 1, "title": "json-server", "author": "typicode" }
-      ],
-      "comments": [
-        { "id": 1, "body": "some comment", "postId": 1 }
-      ],
-      "profile": { "name": "typicode" }
+    "profiles": [
+        {
+            "name": "Mrs. Deanna Hermann",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Dr. Eloise Dietrich",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Sheri Will",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Clarence Gerhold",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Spencer Becker III",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Phyllis Bednar",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Mrs. Krista Schneider",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Jane Stroman",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Caroline Weber",
+            "image": "http://placeimg.com/640/480"
+        },
+        {
+            "name": "Tanya Carter",
+            "image": "http://placeimg.com/640/480"
+        }
+    ]
 }
