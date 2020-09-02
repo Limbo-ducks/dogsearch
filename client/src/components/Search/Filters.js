@@ -20,14 +20,14 @@ const filters = [
       { value: 'hazel', text: 'Hazel' }
     ]
   }, {
-    label:'Hair color',
-    name:'hairColor',
+    label: 'Hair color',
+    name: 'hairColor',
     options: [
       { value: 'black', text: 'Black' },
       { value: 'blonde', text: 'Blonde' },
       { value: 'brown', text: 'Brown' },
       { value: 'grey', text: 'Grey' },
-      { value: 'red', text: 'Red' },
+      { value: 'red', text: 'Red' }
     ]
   }, {
     label: 'Hair Length',
@@ -52,14 +52,14 @@ const filters = [
     label: 'Cast',
     name: 'cast',
     options: [
-      {value: 'actor'},
-      {value: 'stunt actor'},
-      {value: 'dj'},
-      {value: 'singer'},
-      {value: 'painter'},
-      {value: 'model'},
+      { value: 'actor' },
+      { value: 'stunt actor' },
+      { value: 'dj' },
+      { value: 'singer' },
+      { value: 'painter' },
+      { value: 'model' }
     ]
   }
 ]
- 
-export default filters;
+
+export default filters
