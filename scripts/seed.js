@@ -41,9 +41,9 @@ const data = {
         accent: faker.random.arrayElement(['eastern european', 'russian', 'finnish', 'swedish']),
         languages: [faker.random.arrayElement(['english', 'swedish', 'german', 'spanish'])],
         additionalSkills: faker.random.words(4),
-        disabilities: [faker.random.arrayElement(['autism', 'amputee'])],
+        disabilities: [faker.random.arrayElement(['none', 'autism', 'amputee'])],
         socialMedia: [{
-            name: faker.random.arrayElement('facebook', 'instagram', 'twitter'),
+            name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
             followers: faker.random.number({min: 0, max: 900}),
         }],
         hashtags: faker.random.arrayElement(['photography', 'sport', 'tv', 'feature', 'actor', 'model', 'producer', 'music']),
