@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: "talentwyre"
+    volumes:
+      - ./data/mongodb:/data/db
+    ports:
+      - 27017:27017
+    command: mongod --logpath=/dev/null
