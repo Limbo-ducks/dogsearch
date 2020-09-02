@@ -1,12 +1,12 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
 import Nav from '../Nav/Nav.js'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import About from '../About/About.js';
-import Profile from '../Profile/Profile';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import About from '../About/About.js'
+import Profile from '../Profile/Profile'
 import Search from '../Search/Search'
 
-function App() {
+function App () {
   return (
     <Router>
       <Nav authenticated={true} />
@@ -16,7 +16,7 @@ function App() {
         <Route path='/search' component={Search} />
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
