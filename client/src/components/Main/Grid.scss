@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100%);
+    margin: 10px auto;
+
+    &__item {
+      position: relative;
+      margin: 0px 5px 10px 5px;
+      width: calc(50% - 10px);
+  
+      img {
+        height: 150px;
+        width: 100%;
+        object-fit: cover;
+
+        @media (min-width: $breakpoint-md) {
+          height: 400px;
+        }
+      }
+
+      h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $sans-serif;
+        font-size: 24px;
+        font-weight: 600px;
+        color: $white;
+
+        @media (min-width: $breakpoint-md) {
+          font-size: 42px;
+        }
+      }
+    }
+  }
+}
