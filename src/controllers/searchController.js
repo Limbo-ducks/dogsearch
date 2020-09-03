@@ -1,14 +1,26 @@
+const { map, pipe } = require('../lib/helpers')
+
+const formatListField = ([ key, val ]) => Array.isArray(val)
+  ? [ key, { $all: val } ]
+  : val
+
+const parseLists = pipe(
+  Object.entries,
+  map(formatListField),
+  Object.fromEntries
+)
+
 const parseRanges = fields => ({
     $and: Object.entries(fields)
-      .flatMap(([ key, val ]) => [
-        { [key]: { $gte: val.min } },
-        { [key]: { $lte: val.max } }
+      .flatMap(([ key, [ min, max ] ]) => [
+        { [key]: { $gte: min } },
+        { [key]: { $lte: max } }
       ])
 })
 
 const makeQuery = ({ options, ranges }) => ({
-    ...options,
-    ...parseRanges(ranges),
+    ...parseLists(options),
+    ...parseRanges(ranges)
 })
 
 const searchController = client => (req, res, next) => {

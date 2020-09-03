@@ -32,7 +32,7 @@ const Search = () => {
   }, [status, searchQuery])
 
   return (
-    <div>
+    <div className='mt-20 mb-8'>
       <Filter search={search} />
       <ResultList data={hits} />
     </div>
