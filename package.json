@@ -8,7 +8,7 @@
     "dev": "nodemon index.js --ignore 'client/'",
     "heroku-postbuild": "cd client && npm i && npm run build",
     "seed": "cd scripts && node seed.js",
-    "lint": "eslint ."
+    "empty": "cd scripts && node empty.js"
   },
   "keywords": [],
   "author": "",
