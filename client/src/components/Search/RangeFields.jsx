@@ -5,6 +5,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
     <>
       <Slider
         label='Height'
+        name='height'
         value={ranges['measurements.height']}
         onChange={handleRangeChange('measurements.height')}
         min={40}
@@ -12,6 +13,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
       />
       <Slider
         label='Weight'
+        name='weight'
         value={ranges['measurements.weight']}
         onChange={handleRangeChange('measurements.weight')}
         min={50}
@@ -19,6 +21,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
       />
       <Slider
         label='Sleeve Length'
+        name='sleeveLength'
         value={ranges['measurements.sleeveLength']}
         onChange={handleRangeChange('measurements.sleeveLength')}
         min={29}
@@ -26,6 +29,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
       />
       <Slider
         label='Neck'
+        name='neck'
         value={ranges['measurements.neck']}
         onChange={handleRangeChange('measurements.neck')}
         min={12}
@@ -34,6 +38,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
       />
       <Slider
         label='Jacket Chest'
+        name='jacketChest'
         value={ranges['measurements.jacketChest']}
         onChange={handleRangeChange('measurements.jacketChest')}
         min={32}
@@ -41,6 +46,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
       />
       <Slider
         label='Waist'
+        name='waist'
         value={ranges['measurements.waist']}
         onChange={handleRangeChange('measurements.waist')}
         min={18}
@@ -48,6 +54,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
       />
       <Slider
         label='Inseam'
+        name='inseam'
         value={ranges['measurements.inseam']}
         onChange={handleRangeChange('measurements.inseam')}
         min={25}
@@ -55,6 +62,7 @@ const RangeFields = ({ ranges, handleRangeChange }) => (
       />
       <Slider
         label='Shoe Length'
+        name='shoeLength'
         value={ranges['measurements.shoeLength']}
         onChange={handleRangeChange('measurements.shoeLength')}
         min={1}
