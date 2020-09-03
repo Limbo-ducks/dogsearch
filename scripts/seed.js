@@ -17,7 +17,7 @@ const data = Array.from({ length: 200 }, () => ({
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
-    image: faker.image.imageUrl(),
+    image: `http://picsum.photos/id/${faker.random.number({ min: 0, max: 40 })}/480/300`,
     profession: faker.name.jobDescriptor(),
     representation: {
         agent: {
@@ -60,7 +60,7 @@ const data = Array.from({ length: 200 }, () => ({
         sleeveLength: faker.random.number({min: 29, max: 40}),
         neck: faker.random.number({min: 12, max: 25}),
         jacketChest: faker.random.number({min: 32, max: 58}),
-        jacketLength: faker.random.arrayElement(['s', 'm', 'l']),
+        jacketLength: faker.random.arrayElement(['s', 'r', 'l']),
         waist: faker.random.number({min: 18, max: 58}),
         inseam: faker.random.number({min: 25, max: 40}),
         shoeWidth: faker.random.arrayElement(['a', 'aa', 'aaa', 'b', 'd', 'e', 'ee', 'eee']),

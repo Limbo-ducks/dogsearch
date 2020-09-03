@@ -104,6 +104,22 @@ const filters = [
     multiple: true,
     input: true
   }, {
+    label: 'Active years in profession',
+    name: 'professionYears',
+    options: [
+      { value: '0', text: '< 1' },
+      { value: '1', text: '1 year' },
+      { value: '2', text: '2 years' },
+      { value: '3', text: '3 years' },
+      { value: '4', text: '4 years' },
+      { value: '5', text: '5 years' },
+      { value: '6', text: '6 years' },
+      { value: '7', text: '7 years' },
+      { value: '8', text: '8 years' },
+      { value: '9', text: '9 years' },
+      { value: '10', text: '10 <' }
+    ]
+  }, {
     label: 'Accent',
     name: 'accent',
     options: [
@@ -147,6 +163,64 @@ const filters = [
     options: [
       { value: 'partial', text: 'Partial Nudity' },
       { value: 'full', text: 'Full Nudity' }
+    ]
+  },
+  // Measurements
+  {
+    label: 'Body type',
+    name: 'measurements.bodyType',
+    options: [
+      { value: 'slender', text: 'Slender' },
+      { value: 'very thin', text: 'Very thin' },
+      { value: 'average', text: 'Average' },
+      { value: 'athletic', text: 'Athletic' },
+      { value: 'husky', text: 'Husky' },
+      { value: 'body builder', text: 'Body builder' },
+      { value: 'large', text: 'Large' },
+      { value: 'n/a', text: 'n/a' }
+    ]
+  }, {
+    label: 'Shirt size',
+    name: 'measurements.shirtSize',
+    options: [
+      { value: 's', text: 'S' },
+      { value: 'm', text: 'M' },
+      { value: 'l', text: 'L' },
+      { value: 'xl', text: 'XL' },
+      { value: 'xxl', text: 'XXL' },
+      { value: 'xxxl', text: 'XXXL' },
+      { value: 'n/a', text: 'n/a' }
+    ]
+  }, {
+    label: 'Jacket length',
+    name: 'measurements.jacketLength',
+    options: [
+      { value: 's', text: 'S' },
+      { value: 'm', text: 'M' },
+      { value: 'l', text: 'L' }
+    ]
+  }, {
+    label: 'Shoe width',
+    name: 'measurements.shoeWidth',
+    options: [
+      { value: 'a', text: 'A' },
+      { value: 'aa', text: 'AA' },
+      { value: 'aaa', text: 'AAA' },
+      { value: 'b', text: 'B' },
+      { value: 'd', text: 'D' },
+      { value: 'e', text: 'E' },
+      { value: 'ee', text: 'EE' },
+      { value: 'eee', text: 'EEE' }
+    ]
+  }, {
+    label: 'Gloves',
+    name: 'measurements.gloves',
+    options: [
+      { value: 'xsm', text: 'XSM' },
+      { value: 'sm', text: 'SM' },
+      { value: 'm', text: 'M' },
+      { value: 'lg', text: 'LG' },
+      { value: 'xlg', text: 'XLG' }
     ]
   }
 ]
