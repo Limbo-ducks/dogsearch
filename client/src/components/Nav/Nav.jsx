@@ -10,12 +10,12 @@ function Nav ({ authenticated }) {
         <Link to='/'>
           <li>Home</li>
         </Link>
-        <Link to='/about'>
-          <li>About</li>
+        <Link to='/search'>
+          <li>Find Talent</li>
         </Link>
           <img src={Icon} alt=""/>
         <Link to='/search'>
-          <li>Search</li>
+          <li>Latest News</li>
         </Link>
         {authenticated && <Link to='/profile'>
           <li>Profile</li>

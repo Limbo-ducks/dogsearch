@@ -17,19 +17,17 @@ function App () {
   }
 
   return (
-    <>
-      <Router>
-        <Header openMenu={openMenu} burgerMenu={burgerMenu}/>
-        <Switch>
-          <Route path='/' exact component={Main}/>
-          <Route path='/about' exact component={About}/>
-          <Route path='/profile' component={Profile} />
-          <Route path='/search' component={Search} />
-          <Route path='/talents/:id' exact component={Talent} />
-        </Switch>
-      </Router>
+    <Router>
+      <Header openMenu={openMenu} burgerMenu={burgerMenu}/>
+      <Switch>
+        <Route path='/' exact component={Main}/>
+        <Route path='/about' exact component={About}/>
+        <Route path='/profile' component={Profile} />
+        <Route path='/search' component={Search} />
+        <Route path='/talents/:id' exact component={Talent} />
+      </Switch>
       <Footer />
-    </>
+    </Router>
   )
 }
 
