@@ -1,13 +1,43 @@
+@import "../../variables.scss";
+
 .searchengine {
-    background-color: orange;
     display: flex;
     flex-wrap: wrap;
     padding: 25px;
+    margin: 0 auto;
+    width: 70%;
+    background-color: $beige;
+    box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
+    font-family: $sans-serif;
+
+    &__button {
+        text-align: center;
+        margin: 10px;
+        padding: 2px 20px;
+        border-radius: 3px;
+        color: white;
+        font-family: "Mulish", sans-serif;
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: ease-in-out 0.5s;
+        box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
+        background-color: $purple;
+    }
+
+    .wrapper__picklists {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        justify-content: center;
+
+        .picklist {
+            width: 30%
+        }
+    }
 }
 
-.wrapper__picklists {
-    text-align: center
-}
+
 
 .wrapper__ranges {
     background-color: green;
@@ -17,8 +47,17 @@
     }
 }
 
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    margin: 0 auto;
+    width: 70%;
+    font-family: $serif;
+    font-size: 32px;
+}
+
 .option__picklist {
-    background-color: red;
     border: 0;
     margin: 0;
     display: inline-flex;
@@ -27,6 +66,6 @@
     min-width: 0;
     flex-direction: column;
     vertical-align: top;
-    width: calc(33% - 10px);
+    width: calc(25% - 10px);
     margin: 5px;
 }
