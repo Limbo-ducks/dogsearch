@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MenuItem } from '@material-ui/core'
 import MultipleSelect from './MultipleSelect'
 import RangeFields from './RangeFields'
+import Slider from './Slider'
 import filters from './Filters'
 import './Filter.scss';
 
@@ -41,32 +42,45 @@ const Filter = ({ search }) => {
     search(query)
   }
 
+  const makeSelect = filter => (
+    <MultipleSelect
+      key={filter.name}
+      id={filter.name}
+      label={filter.label}
+      onChange={handleOptionsChange(filter.name)}
+      multiple={filter.multiple}
+      input={filter.input}
+    >
+      {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
+      {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
+    </MultipleSelect>
+  )
+
+  const makeRange = filter => (
+    <Slider
+      label={filter.label}
+      name={filter.name}
+      value={ranges[filter.name]}
+      onChange={handleRangeChange(filter.name)}
+      min={filter.min}
+      max={filter.max}
+      step={filter.step}
+    />
+  )
+
   const selectRoot = filters => (
     <section className="wrapper__picklists">
-      {filters.map(filter => {
-        return (
-            <MultipleSelect
-              key={filter.name}
-              id={filter.name}
-              label={filter.label}
-              onChange={handleOptionsChange(filter.name)}
-              multiple={filter.multiple}
-              input={filter.input}
-            >
-              {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
-              {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
-            </MultipleSelect>
-        )
-      })}
+      {filters.map(filter => filter.type === 'select'
+        ? makeSelect(filter)
+        : makeRange(filter))}
     </section>
   )
 
   return (
     <article className="searchengine">
-      <section className="wrapper__ranges">
-        <RangeFields ranges={ranges} handleRangeChange={handleRangeChange} />
-      </section>
+
       {selectRoot(filters)}
+
       <button onClick={handleSubmit}>Search</button>
     </article>
   )

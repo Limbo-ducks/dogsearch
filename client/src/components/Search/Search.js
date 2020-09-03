@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ResultList from './ResultList'
-import Filter from './Filter'
+import Filter from './Filter.jsx'
 
 const makeOpts = (body, method = 'GET') => ({
   method,
