@@ -1,13 +1,14 @@
 import React from 'react'
 import ResultCard from './ResultCard'
+import './ResultList.scss';
 
 function ResultList (props) {
   return (
-    <div>
+    <article className="talentwrapper">
       {props.data.map(profile => {
         return <ResultCard {...profile} key={JSON.stringify(profile)} />
       })}
-    </div>
+    </article>
   )
 }
 export default ResultList
