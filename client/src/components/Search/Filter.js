@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import { MenuItem } from '@material-ui/core'
 import MultipleSelect from './MultipleSelect'
-import Slider from './Slider'
+import RangeFields from './RangeFields'
 import filters from './Filters'
 
 const initRanges = {
   'measurements.height': [40, 120],
-  'measurements.weight': [50, 280]
+  'measurements.weight': [50, 280],
+  'measurements.sleeveLength': [29, 40],
+  'measurements.neck': [12.0, 25.0],
+  'measurements.jacketChest': [32, 58],
+  'measurements.waist': [18, 58],
+  'measurements.inseam': [25, 40],
+  'measurements.shoeLength': [1.0, 17.0]
 }
 
 const Filter = ({ search }) => {
@@ -46,7 +52,7 @@ const Filter = ({ search }) => {
             multiple={filter.multiple}
             input={filter.input}
           >
-            {filter.multiple || <MenuItem value=''><em>None</em></MenuItem>}
+            {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
             {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
           </MultipleSelect>
         )
@@ -56,23 +62,8 @@ const Filter = ({ search }) => {
 
   return (
     <div>
-      <Slider
-        label='Height:'
-        value={ranges['measurements.height']}
-        onChange={handleRangeChange('measurements.height')}
-        min={40}
-        max={120}
-      />
-      <Slider
-        label='Weight:'
-        value={ranges['measurements.weight']}
-        onChange={handleRangeChange('measurements.weight')}
-        min={50}
-        max={280}
-      />
-
       {selectRoot(filters)}
-
+      <RangeFields ranges={ranges} handleRangeChange={handleRangeChange} />
       <button onClick={handleSubmit}>Search</button>
     </div>
   )

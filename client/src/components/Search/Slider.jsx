@@ -1,7 +1,7 @@
 import React from 'react'
 import { Slider, Typography } from '@material-ui/core'
 
-const SliderField = ({ min = 0, max = 100, value, label, onChange }) => (
+const SliderField = ({ min = 0, max = 100, step = 1, value, label, onChange }) => (
     <div className="mx-8">
         <Typography gutterBottom>
             {label}
@@ -11,6 +11,7 @@ const SliderField = ({ min = 0, max = 100, value, label, onChange }) => (
             onChange={onChange}
             min={min}
             max={max}
+            step={step}
             valueLabelDisplay="auto"
             aria-labelledby="range-slider"
             getAriaValueText={x => `${x} in`}

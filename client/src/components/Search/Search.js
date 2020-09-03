@@ -31,6 +31,8 @@ const Search = () => {
     }
   }, [status, searchQuery])
 
+  console.log('Results ', hits.length)
+
   return (
     <div className='mt-20 mb-8'>
       <Filter search={search} />
