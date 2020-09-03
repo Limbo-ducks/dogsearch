@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Grid.scss';
-import Img1 from '../../assets/images/1.jpg'
-import Img2 from '../../assets/images/2.jpg'
-import Img3 from '../../assets/images/3.jpg'
-import Img4 from '../../assets/images/4.jpg'
+import Film from '../../assets/images/film.png'
+import Theatre from '../../assets/images/theatre.png'
+import Modeling from '../../assets/images/model.png'
+import Tv from '../../assets/images/tv.png'
+
 
 
 const Grid = () => {
@@ -11,20 +13,28 @@ const Grid = () => {
     <section className="grid">
       <section className="grid__wrapper">
         <article className="grid__wrapper__item">
-          <img src={Img1} alt=""/>
-          <h2>text</h2>
+        <Link to="/search">
+          <img src={Film} alt=""/>
+          <h2>Film</h2>
+        </Link>
         </article>
         <article className="grid__wrapper__item">
-          <img src={Img2} alt=""/>
-          <h2>text</h2>
+        <Link to="/search">
+          <img src={Theatre} alt=""/>
+          <h2>Theatre</h2>
+        </Link>
         </article>
         <article className="grid__wrapper__item">
-          <img src={Img3} alt=""/>
-          <h2>text</h2>
+        <Link to="/search">
+          <img src={Tv} alt=""/>
+          <h2>TV</h2>
+        </Link>
         </article>
         <article className="grid__wrapper__item">
-          <img src={Img4} alt=""/>
-          <h2>text</h2>
+        <Link to="/search">          
+          <img src={Modeling} alt=""/>
+          <h2>Modeling</h2>
+        </Link>
         </article>
       </section>
     </section>

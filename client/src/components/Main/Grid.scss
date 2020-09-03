@@ -19,6 +19,16 @@
         height: 150px;
         width: 100%;
         object-fit: cover;
+        filter: brightness(50%);
+        transition: all ease-in-out 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(80%);
+          transform: scale(1.01);
+          box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
+
+        }
 
         @media (min-width: $breakpoint-md) {
           height: 400px;
@@ -34,6 +44,7 @@
         font-size: 24px;
         font-weight: 600px;
         color: $white;
+        text-transform: capitalize;
 
         @media (min-width: $breakpoint-md) {
           font-size: 42px;

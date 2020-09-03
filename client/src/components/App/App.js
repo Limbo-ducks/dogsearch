@@ -16,7 +16,6 @@ function App () {
   }
 
   return (
-    <>
     <Router>
       <Header openMenu={openMenu} burgerMenu={burgerMenu}/>
       <Switch>
@@ -25,9 +24,8 @@ function App () {
         <Route path='/profile' component={Profile} />
         <Route path='/search' component={Search} />
       </Switch>
+      <Footer />
     </Router>
-    <Footer />
-    </>
   )
 }
 
