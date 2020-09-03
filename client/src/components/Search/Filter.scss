@@ -2,8 +2,31 @@
     background-color: orange;
     display: flex;
     flex-wrap: wrap;
+    padding: 25px;
 }
 
-.option {
+.wrapper__picklists {
+    text-align: center
+}
+
+.wrapper__ranges {
+    background-color: green;
+
+    div {
+        width: 50%;
+    }
+}
+
+.option__picklist {
     background-color: red;
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+    width: calc(33% - 10px);
+    margin: 5px;
 }

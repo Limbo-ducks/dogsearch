@@ -29,11 +29,20 @@ function ResultCard (props) {
           <img src={Image} alt="" className="modal__header"/>
           <article className="modal__profile">
             <img src={props.image} alt='profile-pic' className="modal__profile__image"/>
+            <article className="modal__buttons">
+              <button className="modal__buttons__button">Save</button>
+              <button className="modal__buttons__button">Contact</button>
+            </article>
             <article className="modal__profile__info">
-              <h3>{props.name}</h3>
-              <h4>{props.height}</h4>
-              <h4>{props.eyeColor}</h4>
-              <h4>{props.gender}</h4>
+              <article>
+                <h3>{props.name}</h3>
+                <h4>{props.height}</h4>
+                <h4>{props.eyeColor}</h4>
+                <h4>{props.gender}</h4>
+              </article>
+              <article>
+                <h4>Representation</h4>
+              </article>
             </article>
             <article className="modal__profile__button">
               <Link to={`/talents/${props.id}`}>
@@ -43,6 +52,9 @@ function ResultCard (props) {
               </Link>
             </article>
             <article className="modal__profile__gallery">
+              <img src={ExampleImageOne} alt=""/>
+              <img src={ExampleImageTwo} alt=""/>
+              <img src={ExampleImageThree} alt=""/>
               <img src={ExampleImageOne} alt=""/>
               <img src={ExampleImageTwo} alt=""/>
               <img src={ExampleImageThree} alt=""/>

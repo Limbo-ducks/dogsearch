@@ -42,7 +42,7 @@ const Filter = ({ search }) => {
   }
 
   const selectRoot = filters => (
-    <section>
+    <section className="wrapper__picklists">
       {filters.map(filter => {
         return (
             <MultipleSelect
@@ -52,7 +52,6 @@ const Filter = ({ search }) => {
               onChange={handleOptionsChange(filter.name)}
               multiple={filter.multiple}
               input={filter.input}
-              className="option"
             >
               {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
               {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
@@ -64,8 +63,10 @@ const Filter = ({ search }) => {
 
   return (
     <article className="searchengine">
+      <section className="wrapper__ranges">
+        <RangeFields ranges={ranges} handleRangeChange={handleRangeChange} />
+      </section>
       {selectRoot(filters)}
-      <RangeFields ranges={ranges} handleRangeChange={handleRangeChange} />
       <button onClick={handleSubmit}>Search</button>
     </article>
   )
