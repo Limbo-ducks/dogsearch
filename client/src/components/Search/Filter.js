@@ -5,8 +5,8 @@ import Slider from './Slider'
 import filters from './Filters'
 
 const initRanges = {
-  'measurements.height': [ 40, 120 ],
-  'measurements.weight': [ 50, 280 ]
+  'measurements.height': [40, 120],
+  'measurements.weight': [50, 280]
 }
 
 const Filter = ({ search }) => {
@@ -16,7 +16,7 @@ const Filter = ({ search }) => {
   const handleOptionsChange = prop => e => {
     setOptions({
       ...options,
-      [prop]: e.target.value || undefined
+      [prop]: e.target.value.length !== 0 ? e.target.value : undefined
     })
   }
 
@@ -47,7 +47,7 @@ const Filter = ({ search }) => {
             input={filter.input}
           >
             {filter.multiple || <MenuItem value=''><em>None</em></MenuItem>}
-            {filter.options.map(({ value, text }) => <MenuItem value={value}>{text}</MenuItem>)}
+            {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
           </MultipleSelect>
         )
       })}

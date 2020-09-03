@@ -24,6 +24,7 @@ const makeQuery = ({ options, ranges }) => ({
 })
 
 const searchController = client => (req, res, next) => {
+  console.log(makeQuery(req.body))
     client.db('talentwyre')
         .collection('profiles')
         .find(makeQuery(req.body)).toArray()

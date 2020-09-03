@@ -62,12 +62,12 @@ const filters = [
     label: 'Cast',
     name: 'cast',
     options: [
-      { value: 'actor', text:'Actor' },
-      { value: 'stunt actor', text:'Stunt Actor' },
-      { value: 'dj', text:'DJ' },
-      { value: 'singer', text:'Singer' },
-      { value: 'painter', text:'Painter' },
-      { value: 'model', text:'Model' }
+      { value: 'actor', text: 'Actor' },
+      { value: 'stunt actor', text: 'Stunt Actor' },
+      { value: 'dj', text: 'DJ' },
+      { value: 'singer', text: 'Singer' },
+      { value: 'painter', text: 'Painter' },
+      { value: 'model', text: 'Model' }
     ],
     multiple: false,
     input: true
@@ -75,12 +75,12 @@ const filters = [
     label: 'Filmmakers',
     name: 'filmmakers',
     options: [
-      { value: 'director', text:'Director' },
-      { value: 'producer', text:'Producer' },
-      { value: 'cinematographer', text:'Cinematographer' },
-      { value: 'film editor', text:'Film editor' },
-      { value: 'graphic artist', text:'Graphic artist' },
-      { value: 'composer', text:'Composer' }
+      { value: 'director', text: 'Director' },
+      { value: 'producer', text: 'Producer' },
+      { value: 'cinematographer', text: 'Cinematographer' },
+      { value: 'film editor', text: 'Film editor' },
+      { value: 'graphic artist', text: 'Graphic artist' },
+      { value: 'composer', text: 'Composer' }
     ],
     multiple: true,
     input: true
@@ -88,9 +88,9 @@ const filters = [
     label: 'Athletic Endeavors',
     name: 'athleticEndeavors',
     options: [
-      { value: 'diving', text:'Diving' },
-      { value: 'tennis', text:'Tennis' },
-      { value: 'football', text:'Football' }
+      { value: 'diving', text: 'Diving' },
+      { value: 'tennis', text: 'Tennis' },
+      { value: 'football', text: 'Football' }
     ],
     multiple: true,
     input: true
@@ -98,8 +98,8 @@ const filters = [
     label: 'Performance',
     name: 'performance',
     options: [
-      { value: 'comedian', text:'Comedian' },
-      { value: 'modeling', text:'Modeling' }
+      { value: 'comedian', text: 'Comedian' },
+      { value: 'modeling', text: 'Modeling' }
     ],
     multiple: true,
     input: true
@@ -107,10 +107,10 @@ const filters = [
     label: 'Accent',
     name: 'accent',
     options: [
-      { value: 'eastern eurpoean', text:'Eastern European' },
-      { value: 'russian', text:'Russian' },
-      { value: 'Finnish', text:'Finnish' },
-      { value: 'Swedish', text:'Swedish' }
+      { value: 'eastern eurpoean', text: 'Eastern European' },
+      { value: 'russian', text: 'Russian' },
+      { value: 'Finnish', text: 'Finnish' },
+      { value: 'Swedish', text: 'Swedish' }
     ],
     multiple: true,
     input: true
@@ -118,10 +118,10 @@ const filters = [
     label: 'Languages',
     name: 'languages',
     options: [
-      { value: 'english', text:'English' },
-      { value: 'swedish', text:'Swedish' },
-      { value: 'german', text:'German' },
-      { value: 'spanish', text:'Spanish' }
+      { value: 'english', text: 'English' },
+      { value: 'swedish', text: 'Swedish' },
+      { value: 'german', text: 'German' },
+      { value: 'spanish', text: 'Spanish' }
     ],
     multiple: true,
     input: true
@@ -129,8 +129,8 @@ const filters = [
     label: 'Disabilities',
     name: 'disabilities',
     options: [
-      { value: 'autism', text:'Autism' },
-      { value: 'amputee', text:'Amputee' }
+      { value: 'autism', text: 'Autism' },
+      { value: 'amputee', text: 'Amputee' }
     ],
     multiple: true,
     input: true
@@ -138,15 +138,15 @@ const filters = [
     label: 'Body Modifications',
     name: 'bodyModifications',
     options: [
-      { value: 'piercings', text:'Piercings' },
-      { value: 'tatoos', text:'Tatoos' },
+      { value: 'piercings', text: 'Piercings' },
+      { value: 'tatoos', text: 'Tatoos' }
     ]
   }, {
     label: 'Nudity',
     name: 'nudity',
     options: [
-      { value: 'partial', text:'Partial Nudity' },
-      { value: 'full', text:'Full Nudity' },
+      { value: 'partial', text: 'Partial Nudity' },
+      { value: 'full', text: 'Full Nudity' }
     ]
   }
 ]
@@ -167,4 +167,3 @@ export default filters
     ]
   }
 */
-  

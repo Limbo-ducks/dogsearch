@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Talent = (props) => {
   const baseURL = '/api/profiles/'
-  const id = props.match.params.id;
+  const id = props.match.params.id
   const [hits, setHits] = useState([])
 
   useEffect(() => {
