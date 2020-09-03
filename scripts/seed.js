@@ -17,7 +17,7 @@ const data = Array.from({ length: 200 }, () => ({
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
-    image: faker.image.imageUrl(),
+    image: `http://picsum.photos/id/${faker.random.number({ min: 0, max: 40 })}/480/300`,
     profession: faker.name.jobDescriptor(),
     representation: {
         agent: {
