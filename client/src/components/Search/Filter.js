@@ -2,23 +2,46 @@ import React, { useState } from 'react'
 import InputRange from 'react-input-range'
 import Select from './Select'
 import 'react-input-range/lib/css/index.css'
+import filters from './Filters';
+
+const initRanges = {
+  'measurements.height': { min: 40, max: 120 }
+}
 
 const Filter = ({ search }) => {
-  const [state, setState] = useState({})
-  const [height, setHeight] = useState({ min: 100, max: 300 })
+  const [options, setOptions] = useState({})
+  const [ranges, setRanges] = useState(initRanges)
 
   const handleChange = e => {
-    setState({ ...state, [e.target.name]: e.target.value })
+    setOptions({ ...options, [e.target.name]: e.target.value || undefined })
   }
 
+  const handleRangeChange = prop => newRange => setRanges({
+    ...ranges,
+    [prop]: newRange
+  })
+
   const handleSubmit = () => {
-    const query = Object.entries(state)
-      .filter(([_, val]) => val)
-      .map(([key, val]) => `${key}=${val}`)
-      .join('&')
-      .concat(`&height_gte=${height.min}&height_lte=${height.max}`)
+    const query = {
+      options,
+      ranges
+    }
 
     search(query)
+  }
+
+  const selectRoot = filters => {
+    return filters.map(filter => {
+      return(
+        <Select
+          key={filter.name}
+          label={filter.label}
+          name={filter.name}
+          handleChange={handleChange}
+          options={filter.options}
+        />
+      )
+    })
   }
 
   return (
@@ -26,38 +49,15 @@ const Filter = ({ search }) => {
       <label>
         <span>Height:</span>
         <InputRange
-          minValue={100}
-          maxValue={300}
-          onChange={setHeight}
-          value={height}
+          minValue={40}
+          maxValue={120}
+          onChange={handleRangeChange('measurements.height')}
+          value={ranges['measurements.height']}
         />
       </label>
 
-      <Select
-        label='Eye color'
-        name='eyeColor'
-        handleChange={handleChange}
-        options = {[
-          { value: 'blue', text: 'Blue' },
-          { value: 'brown', text: 'Brown' },
-          { value: 'green', text: 'Green' },
-          { value: 'black', text: 'Black' },
-          { value: 'grey', text: 'Grey' },
-          { value: 'hazel', text: 'Hazel' }
-        ]}
-      />
+      {selectRoot(filters)}
 
-      <Select
-        label='Gender'
-        name='gender'
-        handleChange={handleChange}
-        options = {[
-          { value: 'female', text: 'Female' },
-          { value: 'male', text: 'Male' },
-          { value: 'transgender', text: 'Transgender/Non-Binary' },
-          { value: 'twins', text: 'Twins/Multiples' }
-        ]}
-      />
       <button onClick={handleSubmit}>Search</button>
     </div>
   )
