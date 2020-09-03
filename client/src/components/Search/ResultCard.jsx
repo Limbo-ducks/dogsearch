@@ -30,17 +30,17 @@ function ResultCard (props) {
           <article className="modal__profile">
             <img src={props.image} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
-              <button className="modal__buttons__button">Save</button>
-              <button className="modal__buttons__button">Contact</button>
+              <button className="modal__buttons__button modal__buttons__button--save">Save</button>
+              <button className="modal__buttons__button modal__buttons__button--contact">Contact</button>
             </article>
             <article className="modal__profile__info">
-              <article>
+              <article className="modal__profile__info__attributes">
                 <h3>{props.name}</h3>
                 <h4>{props.height}</h4>
                 <h4>{props.eyeColor}</h4>
                 <h4>{props.gender}</h4>
               </article>
-              <article>
+              <article className="modal__profile__info__representation">
                 <h4>Representation</h4>
               </article>
             </article>
@@ -51,13 +51,19 @@ function ResultCard (props) {
                 </button>
               </Link>
             </article>
-            <article className="modal__profile__gallery">
-              <img src={ExampleImageOne} alt=""/>
-              <img src={ExampleImageTwo} alt=""/>
-              <img src={ExampleImageThree} alt=""/>
-              <img src={ExampleImageOne} alt=""/>
-              <img src={ExampleImageTwo} alt=""/>
-              <img src={ExampleImageThree} alt=""/>
+            <article className="gallery">
+              <article className="gallery__column">
+                <img src={ExampleImageOne} alt=""/>
+                <img src={ExampleImageTwo} alt=""/>
+              </article>
+              <article className="gallery__column">
+                <img src={ExampleImageThree} alt=""/>
+                <img src={ExampleImageOne} alt=""/>
+              </article>
+              <article className="gallery__column">
+                <img src={ExampleImageTwo} alt=""/>
+                <img src={ExampleImageThree} alt=""/>
+              </article>
             </article>
           </article>
         </section>
