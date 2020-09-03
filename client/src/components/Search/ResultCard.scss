@@ -1,0 +1,105 @@
+@import "../../variables.scss";
+
+.talentcard {
+    width: calc(25% - 10px);
+    margin: 15px;
+
+    &__info {
+        
+        &__text {
+            
+            &--list {
+                list-style-type: circle;
+                list-style-position: inside;
+            }
+        }
+    }
+}
+
+
+
+// MODAL
+
+.modal {
+	position: relative;
+	width: 80%;
+	height: 90vh;
+	margin: 0 auto;
+	background-color: $white;
+	box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);;
+
+	&__buttons {
+		width: 90%;
+		display: flex;
+		justify-content: flex-end;
+		margin: 0 auto;
+		
+	}
+
+	&__header {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+  }
+	
+	&__profile {
+		
+		&__image {
+			position: absolute;
+			top: 50px;
+			left: 80px;
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 50%;
+			border: 5px solid $white;
+			box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);;
+		}
+		
+		&__info {
+			display: flex;
+			justify-content: space-between;
+			margin: 50px 10px 10px 50px;
+			
+			h3 {
+				font-family: $serif;
+				font-size: 24px;
+			}
+		}
+
+		&__button {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 50%;
+			background-color: $purple;
+			text-align: center;
+			margin: 10px;
+			padding: 2px 20px;
+			border-radius: 3px;
+			color: white;
+			font-family: "Mulish", sans-serif;
+			font-size: 16px;
+			text-transform: uppercase;
+			transition: ease-in-out 0.5s;
+			box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);	
+		}
+
+		&__gallery {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			height: 600px;
+			justify-content: flex-start;
+			align-items: center;
+			overflow: hidden;
+
+			img {
+				width: calc(33% - 20px);
+				object-fit: cover;
+				margin: 5px 5px;
+			}
+		}
+	}
+}

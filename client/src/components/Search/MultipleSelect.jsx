@@ -2,6 +2,7 @@ import React from 'react'
 import { FormControl, InputLabel, Select } from '@material-ui/core'
 
 const MultipleSelect = ({ id, label, onChange, multiple,input, children }) => (
+    <article className="option__picklist">
     <FormControl>
         <InputLabel id={`${id}-label`}>{label}</InputLabel>
         <Select
@@ -15,6 +16,7 @@ const MultipleSelect = ({ id, label, onChange, multiple,input, children }) => (
         </Select>
         {input ? <input type='text' placeholder='Other' onChange={onChange}></input> : null}
     </FormControl>
+    </article>
 )
 
 export default MultipleSelect

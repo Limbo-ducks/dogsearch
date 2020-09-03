@@ -3,7 +3,7 @@ import Slider from './Slider'
 
 const RangeFields = ({ ranges, handleRangeChange }) => (
     <>
-        <Slider
+      <Slider
         label='Height'
         value={ranges['measurements.height']}
         onChange={handleRangeChange('measurements.height')}

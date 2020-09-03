@@ -3,6 +3,7 @@ import { MenuItem } from '@material-ui/core'
 import MultipleSelect from './MultipleSelect'
 import RangeFields from './RangeFields'
 import filters from './Filters'
+import './Filter.scss';
 
 const initRanges = {
   'measurements.height': [40, 120],
@@ -41,31 +42,33 @@ const Filter = ({ search }) => {
   }
 
   const selectRoot = filters => (
-    <section>
+    <section className="wrapper__picklists">
       {filters.map(filter => {
         return (
-          <MultipleSelect
-            key={filter.name}
-            id={filter.name}
-            label={filter.label}
-            onChange={handleOptionsChange(filter.name)}
-            multiple={filter.multiple}
-            input={filter.input}
-          >
-            {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
-            {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
-          </MultipleSelect>
+            <MultipleSelect
+              key={filter.name}
+              id={filter.name}
+              label={filter.label}
+              onChange={handleOptionsChange(filter.name)}
+              multiple={filter.multiple}
+              input={filter.input}
+            >
+              {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
+              {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
+            </MultipleSelect>
         )
       })}
     </section>
   )
 
   return (
-    <div>
+    <article className="searchengine">
+      <section className="wrapper__ranges">
+        <RangeFields ranges={ranges} handleRangeChange={handleRangeChange} />
+      </section>
       {selectRoot(filters)}
-      <RangeFields ranges={ranges} handleRangeChange={handleRangeChange} />
       <button onClick={handleSubmit}>Search</button>
-    </div>
+    </article>
   )
 }
 
