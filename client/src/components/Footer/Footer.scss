@@ -1,0 +1,69 @@
+@import "../../variables.scss";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
+  background-color: #673AB7;
+  font-size: 12px;
+
+  @media (min-width: $breakpoint-md) {
+    height: 300px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    width: 80%;
+    height: 300px;
+
+    @media (min-width: $breakpoint-md) {
+      width: 50%;
+      margin: 0 auto;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__list {
+      text-align: left;
+    }
+
+    h4 {
+      margin-bottom: 5px;
+      font-family: $sans-serif;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      color: $white;
+    }
+
+    li {
+      font-family: $sans-serif;
+      font-weight: 300;
+      text-transform: capitalize;
+      color: $white;
+    }
+  }
+
+  &__divider {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+  }
+
+  &__info {
+    &__text {
+      text-align: left;
+  
+      @media (min-width: $breakpoint-md) {
+        text-align: center;
+      }
+    }
+  }
+}

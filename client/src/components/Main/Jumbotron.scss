@@ -1,0 +1,63 @@
+@import "../../variables.scss";
+
+.jumbotron {
+  position: relative;
+  margin-top: 50px;
+
+  &__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+    @media (min-width: $breakpoint-md) {
+      height: 450px;
+		}
+  }
+
+  &__title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-family: $serif;
+    font-size: 22px;
+    color: $white;
+
+    @media (min-width: $breakpoint-md) {
+      width: 70%;
+      font-size: 42px;
+		}
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+      margin: 10px;
+      padding: 5px 20px;
+      width: 100%;
+      border-radius: 3px;
+      color: white;
+      font-family: "Mulish", sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: ease-in-out 0.5s;
+
+      &--talent {
+        background-color: $purple;
+        box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
+
+        &:hover {
+          background-color: $lightpurple;
+        }
+      }
+    }
+  }
+}
