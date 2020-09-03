@@ -34,10 +34,10 @@ const Search = () => {
   console.log('Results ', hits.length)
 
   return (
-    <div className='mt-20 mb-8'>
+    <section className='mt-20 mb-8'>
       <Filter search={search} />
       <ResultList data={hits} />
-    </div>
+    </section>
   )
 }
 

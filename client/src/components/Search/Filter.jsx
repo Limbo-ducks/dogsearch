@@ -5,6 +5,9 @@ import RangeFields from './RangeFields'
 import Slider from './Slider'
 import filters from './Filters'
 import './Filter.scss';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+
 
 const initRanges = {
   'measurements.height': [40, 120],
@@ -43,17 +46,27 @@ const Filter = ({ search }) => {
   }
 
   const makeSelect = filter => (
-    <MultipleSelect
+    <Autocomplete
+      className="picklist"
       key={filter.name}
       id={filter.name}
-      label={filter.label}
-      onChange={handleOptionsChange(filter.name)}
+      options={filter.options}
+      // onChange={handleOptionsChange(filter.name)}
+      getOptionLabel={(option) => option.text}
       multiple={filter.multiple}
-      input={filter.input}
-    >
-      {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
-      {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
-    </MultipleSelect>
+      renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined" />}
+    />
+    // <MultipleSelect
+    //   key={filter.name}
+    //   id={filter.name}
+    //   label={filter.label}
+    //   onChange={handleOptionsChange(filter.name)}
+    //   multiple={filter.multiple}
+    //   input={filter.input}
+    // >
+    //   {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
+    //   {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
+    // </MultipleSelect>
   )
 
   const makeRange = filter => (
@@ -77,12 +90,15 @@ const Filter = ({ search }) => {
   )
 
   return (
+    <>
+    <h1>Browse Talent Profiles</h1>
     <article className="searchengine">
 
       {selectRoot(filters)}
 
-      <button onClick={handleSubmit}>Search</button>
+      <button onClick={handleSubmit} className="searchengine__button">Search</button>
     </article>
+    </>
   )
 }
 

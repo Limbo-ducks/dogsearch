@@ -1,8 +1,20 @@
 @import "../../variables.scss";
 
 .talentcard {
-    width: calc(25% - 10px);
-    margin: 15px;
+    width: calc(100% - 30px);
+		margin: 15px;
+
+		@media (min-width: $breakpoint-sm) {
+			width: calc(50% - 30px);
+		}
+
+		@media (min-width: $breakpoint-md) {
+			width: calc(33% - 30px);
+		}
+
+		@media (min-width: $breakpoint-xl) {
+			width: calc(25% - 30px);
+		}
 
     &__info {
         
@@ -61,6 +73,10 @@
 			
 			&--contact {
 				background-color: $purple;
+
+				&:hover {
+					background-color: $lightpurple;
+				}
 			}
 
 			&--save {
@@ -143,11 +159,17 @@
 			text-transform: uppercase;
 			transition: ease-in-out 0.5s;
 			box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);	
+			z-index: 5000;
+
+			&:hover {
+				background-color: $lightpurple;
+			}
 		}
 	}
 }
 
 .gallery {
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	overflow: hidden;
@@ -156,6 +178,15 @@
 
 	@media (min-width: $breakpoint-md) {
 		padding: 10px;
+	}
+
+	&__gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 40vh;
+		background-image: linear-gradient(rgba(255,0,0,0), rgba(255,255,255,1));
 	}
 
 	&__column {

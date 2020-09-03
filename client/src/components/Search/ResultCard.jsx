@@ -52,6 +52,7 @@ function ResultCard (props) {
               </Link>
             </article>
             <article className="gallery">
+              <article className="gallery__gradient"></article>
               <article className="gallery__column">
                 <img src={ExampleImageOne} alt=""/>
                 <img src={ExampleImageTwo} alt=""/>
@@ -71,7 +72,6 @@ function ResultCard (props) {
       <article className="talentcard max-w-sm rounded overflow-hidden shadow-lg" onClick={handleToggle(true)}>
         <img className="talentcard__image w-full" src={props.image} alt="Sunset in the mountains" />
         <div className="talentcard__info px-6 py-4">
-          {/* <div className="font-bold text-xl mb-2">The Coldest Sunset</div> */}
           <p className="talentcard__info__text text-gray-700 text-base">
             <ul className="talentcard__info__text--list">
               <li>Boston, MA</li>
