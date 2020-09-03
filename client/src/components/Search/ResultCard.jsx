@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 import { Modal } from '@material-ui/core'
 import './ResultCard.scss'
 import Image from '../../assets/images/banner.png'
+import ExampleImageOne from '../../assets/images/1.jpg'
+import ExampleImageTwo from '../../assets/images/2.jpg'
+import ExampleImageThree from '../../assets/images/3.jpg'
+
+
 
 function ResultCard (props) {
   const [open, setOpen] = useState(false)
@@ -30,7 +35,18 @@ function ResultCard (props) {
               <h4>{props.eyeColor}</h4>
               <h4>{props.gender}</h4>
             </article>
-            <Link to={`/talents/${props.id}`}>View Profile</Link>
+            <article className="modal__profile__button">
+              <Link to={`/talents/${props.id}`}>
+                <button>
+                  View Profile
+                </button>
+              </Link>
+            </article>
+            <article className="modal__profile__gallery">
+              <img src={ExampleImageOne} alt=""/>
+              <img src={ExampleImageTwo} alt=""/>
+              <img src={ExampleImageThree} alt=""/>
+            </article>
           </article>
         </section>
       </Modal>
