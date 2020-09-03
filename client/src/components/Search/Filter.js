@@ -1,22 +1,26 @@
 import React, { useState } from 'react'
-import InputRange from 'react-input-range'
-import Select from './Select'
-import 'react-input-range/lib/css/index.css'
+import { MenuItem } from '@material-ui/core'
+import MultipleSelect from './MultipleSelect'
+import Slider from './Slider'
 import filters from './Filters'
 
 const initRanges = {
-  'measurements.height': { min: 40, max: 120 }
+  'measurements.height': [40, 120],
+  'measurements.weight': [50, 280]
 }
 
 const Filter = ({ search }) => {
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
 
-  const handleChange = e => {
-    setOptions({ ...options, [e.target.name]: e.target.value || undefined })
+  const handleOptionsChange = prop => e => {
+    setOptions({
+      ...options,
+      [prop]: e.target.value.length !== 0 ? e.target.value : undefined
+    })
   }
 
-  const handleRangeChange = prop => newRange => setRanges({
+  const handleRangeChange = prop => (_, newRange) => setRanges({
     ...ranges,
     [prop]: newRange
   })
@@ -30,31 +34,42 @@ const Filter = ({ search }) => {
     search(query)
   }
 
-  const selectRoot = filters => {
-    return filters.map(filter => {
-      return (
-        <Select
-          key={filter.name}
-          label={filter.label}
-          name={filter.name}
-          handleChange={handleChange}
-          options={filter.options}
-        />
-      )
-    })
-  }
+  const selectRoot = filters => (
+    <section>
+      {filters.map(filter => {
+        return (
+          <MultipleSelect
+            key={filter.name}
+            id={filter.name}
+            label={filter.label}
+            onChange={handleOptionsChange(filter.name)}
+            multiple={filter.multiple}
+            input={filter.input}
+          >
+            {filter.multiple || <MenuItem value=''><em>None</em></MenuItem>}
+            {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
+          </MultipleSelect>
+        )
+      })}
+    </section>
+  )
 
   return (
     <div>
-      <label>
-        <span>Height:</span>
-        <InputRange
-          minValue={40}
-          maxValue={120}
-          onChange={handleRangeChange('measurements.height')}
-          value={ranges['measurements.height']}
-        />
-      </label>
+      <Slider
+        label='Height:'
+        value={ranges['measurements.height']}
+        onChange={handleRangeChange('measurements.height')}
+        min={40}
+        max={120}
+      />
+      <Slider
+        label='Weight:'
+        value={ranges['measurements.weight']}
+        onChange={handleRangeChange('measurements.weight')}
+        min={50}
+        max={280}
+      />
 
       {selectRoot(filters)}
 
