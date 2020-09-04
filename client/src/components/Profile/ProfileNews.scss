@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.content {
+  &__news {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+
+    &__title {
+      font-size: 18px;
+    }
+  }
+}
