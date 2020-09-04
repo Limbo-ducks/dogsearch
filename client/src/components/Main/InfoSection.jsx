@@ -1,15 +1,15 @@
 import React from 'react';
 import './InfoSection.scss';
 import { Link } from 'react-router-dom'
-import Banner from '../../../src/assets/images/filmroll.png';
+import {ReactComponent as Filmroll} from '../../../src/assets/images/filmroll.svg';
 import { Arrows } from '../../Icons'
 
 const InfoSection = () => {
   return (
     <section className="section">
       <article className="section__filmrolls">
-        <img src={Banner} alt="banner1" className="section__filmrolls--one"/>
-        <img src={Banner} alt="banner2" className="section__filmrolls--two"/> 
+        {/* <Filmroll className="section__filmrolls--one"/>
+        <Filmroll className="section__filmrolls--two"/>  */}
       </article>
      
       <article className="section__wrapper">

@@ -1,7 +1,13 @@
+@import "../../variables.scss";
+
 .talentwrapper {
     display: flex;
     flex-wrap: wrap;
-    width: 85%;
     margin: 0 auto;
     justify-content: center;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+    width: 72%;
+      }
 }

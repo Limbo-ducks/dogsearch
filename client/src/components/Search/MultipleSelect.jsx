@@ -1,8 +1,8 @@
 import React from 'react'
 import { FormControl, InputLabel, Select } from '@material-ui/core'
 
-const MultipleSelect = ({ id, label, onChange, multiple,input, children }) => (
-    <article className="option__picklist">
+const MultipleSelect = ({ id, label, onChange, multiple,input, className, children }) => (
+    <article className={`option__picklist ${id}`}>
     <FormControl>
         <InputLabel id={`${id}-label`}>{label}</InputLabel>
         <Select
@@ -18,5 +18,7 @@ const MultipleSelect = ({ id, label, onChange, multiple,input, children }) => (
     </FormControl>
     </article>
 )
+
+
 
 export default MultipleSelect

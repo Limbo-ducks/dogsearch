@@ -13,12 +13,15 @@ function Nav ({ authenticated }) {
         <Link to='/search'>
           <li>Find Talent</li>
         </Link>
+
           <img src={Icon} alt=""/>
-        <Link to='/search'>
+
+        <a href="http://talentwyre.com/" target="_blank">
           <li>Latest News</li>
-        </Link>
+        </a>
+
         {authenticated && <Link to='/profile'>
-          <li>Profile</li>
+          <li>About</li>
         </Link>}
       </ul>
     </nav>

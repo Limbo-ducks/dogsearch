@@ -30,17 +30,17 @@ function ResultCard (props) {
           <article className="modal__profile">
             <img src={props.image} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
-              <button className="modal__buttons__button">Save</button>
-              <button className="modal__buttons__button">Contact</button>
+              <button className="modal__buttons__button modal__buttons__button--save">Save</button>
+              <button className="modal__buttons__button modal__buttons__button--contact">Contact</button>
             </article>
             <article className="modal__profile__info">
-              <article>
+              <article className="modal__profile__info__attributes">
                 <h3>{props.name}</h3>
                 <h4>{props.height}</h4>
                 <h4>{props.eyeColor}</h4>
                 <h4>{props.gender}</h4>
               </article>
-              <article>
+              <article className="modal__profile__info__representation">
                 <h4>Representation</h4>
               </article>
             </article>
@@ -51,13 +51,20 @@ function ResultCard (props) {
                 </button>
               </Link>
             </article>
-            <article className="modal__profile__gallery">
-              <img src={ExampleImageOne} alt=""/>
-              <img src={ExampleImageTwo} alt=""/>
-              <img src={ExampleImageThree} alt=""/>
-              <img src={ExampleImageOne} alt=""/>
-              <img src={ExampleImageTwo} alt=""/>
-              <img src={ExampleImageThree} alt=""/>
+            <article className="gallery">
+              <article className="gallery__gradient"></article>
+              <article className="gallery__column">
+                <img src={ExampleImageOne} alt=""/>
+                <img src={ExampleImageTwo} alt=""/>
+              </article>
+              <article className="gallery__column">
+                <img src={ExampleImageThree} alt=""/>
+                <img src={ExampleImageOne} alt=""/>
+              </article>
+              <article className="gallery__column">
+                <img src={ExampleImageTwo} alt=""/>
+                <img src={ExampleImageThree} alt=""/>
+              </article>
             </article>
           </article>
         </section>
@@ -65,11 +72,10 @@ function ResultCard (props) {
       <article className="talentcard max-w-sm rounded overflow-hidden shadow-lg" onClick={handleToggle(true)}>
         <img className="talentcard__image w-full" src={props.image} alt="Sunset in the mountains" />
         <div className="talentcard__info px-6 py-4">
-          {/* <div className="font-bold text-xl mb-2">The Coldest Sunset</div> */}
           <p className="talentcard__info__text text-gray-700 text-base">
             <ul className="talentcard__info__text--list">
-              <li>Boston, MA</li>
-              <li>Female</li>
+              <li>{props.contact.city}</li>
+              <li>{props.gender}</li>
               <li>18-25 (Acting Age)</li>
               <li>5'8" (~173 cm)</li>
             </ul>

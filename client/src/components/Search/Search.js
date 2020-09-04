@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ResultList from './ResultList'
-import Filter from './Filter'
+import Filter from './Filter.jsx'
 
 const makeOpts = (body, method = 'GET') => ({
   method,
@@ -34,10 +34,17 @@ const Search = () => {
   console.log('Results ', hits.length)
 
   return (
+<<<<<<< HEAD
     <article className='mt-20 mb-8'>
       <Filter search={search} />
       <ResultList data={hits} />
     </article>
+=======
+    <section className='mt-20 mb-8'>
+      <Filter search={search} />
+      <ResultList data={hits} />
+    </section>
+>>>>>>> 828bfee032a738738c2d1fdd9f03dff065bf8412
   )
 }
 
