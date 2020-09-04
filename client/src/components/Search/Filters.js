@@ -2,6 +2,7 @@ const filters = [
   {
     label: 'Gender',
     name: 'gender',
+    class: 'personal',
     options: [
       { value: 'female', text: 'Female' },
       { value: 'male', text: 'Male' },
@@ -14,6 +15,7 @@ const filters = [
   }, {
     label: 'Eye color',
     name: 'eyeColor',
+    class: 'personal',
     options: [
       { value: 'blue', text: 'Blue' },
       { value: 'brown', text: 'Brown' },
@@ -28,6 +30,7 @@ const filters = [
   }, {
     label: 'Hair color',
     name: 'hairColor',
+    class: 'personal',
     options: [
       { value: 'black', text: 'Black' },
       { value: 'blonde', text: 'Blonde' },
@@ -41,6 +44,7 @@ const filters = [
   }, {
     label: 'Hair Length',
     name: 'hairLength',
+    class: 'personal',
     options: [
       { value: 'afro', text: 'Afro' },
       { value: 'bald', text: 'Bald' },
@@ -54,6 +58,7 @@ const filters = [
   }, {
     label: 'Ethnic Appearance',
     name: 'ethnicity',
+    class: 'personal',
     options: [
       { value: 'african', text: 'African' },
       { value: 'caucassian', text: 'Caucassian' },
@@ -66,6 +71,7 @@ const filters = [
   }, {
     label: 'Cast',
     name: 'cast',
+    class: 'personal',
     options: [
       { value: 'actor', text: 'Actor' },
       { value: 'stunt actor', text: 'Stunt Actor' },
@@ -80,6 +86,7 @@ const filters = [
   }, {
     label: 'Filmmakers',
     name: 'filmmakers',
+    class: 'personal',
     options: [
       { value: 'director', text: 'Director' },
       { value: 'producer', text: 'Producer' },
@@ -94,6 +101,7 @@ const filters = [
   }, {
     label: 'Athletic Endeavors',
     name: 'athleticEndeavors',
+    class: 'personal',
     options: [
       { value: 'diving', text: 'Diving' },
       { value: 'tennis', text: 'Tennis' },
@@ -105,6 +113,7 @@ const filters = [
   }, {
     label: 'Performance',
     name: 'performance',
+    class: 'personal',
     options: [
       { value: 'comedian', text: 'Comedian' },
       { value: 'modeling', text: 'Modeling' }
@@ -115,6 +124,7 @@ const filters = [
   }, {
     label: 'Active years in profession',
     name: 'professionYears',
+    class: 'personal',
     options: [
       { value: '0', text: '< 1' },
       { value: '1', text: '1 year' },
@@ -134,6 +144,7 @@ const filters = [
   }, {
     label: 'Accents',
     name: 'accent',
+    class: 'personal',
     options: [
       { value: 'eastern eurpoean', text: 'Eastern European' },
       { value: 'russian', text: 'Russian' },
@@ -146,6 +157,7 @@ const filters = [
   }, {
     label: 'Languages',
     name: 'languages',
+    class: 'personal',
     options: [
       { value: 'english', text: 'English' },
       { value: 'swedish', text: 'Swedish' },
@@ -158,6 +170,7 @@ const filters = [
   }, {
     label: 'Disabilities',
     name: 'disabilities',
+    class: 'personal',
     options: [
       { value: 'autism', text: 'Autism' },
       { value: 'amputee', text: 'Amputee' }
@@ -168,6 +181,7 @@ const filters = [
   }, {
     label: 'Body Modifications',
     name: 'bodyModifications',
+    class: 'personal',
     options: [
       { value: 'piercings', text: 'Piercings' },
       { value: 'tatoos', text: 'Tatoos' }
@@ -178,6 +192,7 @@ const filters = [
   }, {
     label: 'Nudity',
     name: 'nudity',
+    class: 'personal',
     options: [
       { value: 'none', text: 'No Nudity'},
       { value: 'partial', text: 'Partial Nudity' },
@@ -191,6 +206,7 @@ const filters = [
   {
     label: 'Body type',
     name: 'measurements.bodyType',
+    class: 'measurements',
     options: [
       { value: 'slender', text: 'Slender' },
       { value: 'very thin', text: 'Very thin' },
@@ -207,6 +223,7 @@ const filters = [
   }, {
     label: 'Shirt size',
     name: 'measurements.shirtSize',
+    class: 'measurements',
     options: [
       { value: 's', text: 'S' },
       { value: 'm', text: 'M' },
@@ -222,6 +239,7 @@ const filters = [
   }, {
     label: 'Jacket length',
     name: 'measurements.jacketLength',
+    class: 'measurements',
     options: [
       { value: 's', text: 'S' },
       { value: 'm', text: 'M' },
@@ -231,6 +249,7 @@ const filters = [
   }, {
     label: 'Shoe width',
     name: 'measurements.shoeWidth',
+    class: 'measurements',
     options: [
       { value: 'a', text: 'A' },
       { value: 'aa', text: 'AA' },
@@ -246,7 +265,9 @@ const filters = [
     type:'select'
   }, {
     label: 'Shoe Length',
+    unit: "'",
     name: 'measurements.shoeLength',
+    class: 'measurements',
     min: 1,
     max: 17,
     step:0.5,
@@ -254,6 +275,7 @@ const filters = [
   }, {
     label: 'Gloves',
     name: 'measurements.gloves',
+    class: 'measurements',
     options: [
       { value: 'xsm', text: 'XSM' },
       { value: 'sm', text: 'SM' },
@@ -266,44 +288,58 @@ const filters = [
     type:'select'
   }, {
     label: 'Height',
+    unit: "'",
     name: 'measurements.height',
+    class: 'measurements',
     min: 40,
     max: 120,
     type: 'range'    
   }, {
     label: 'Weight',
+    unit: 'lbs',
     name: 'measurements.weight',
+    class: 'measurements',
     min: 50,
     max: 280,
     type: 'range'    
   }, {
     label: 'Sleeve Length',
+    unit: "'",
     name: 'measurements.sleeveLength',
+    class: 'measurements',
     min: 29,
     max: 40,
     type: 'range'    
   }, {
     label: 'Neck',
+    unit: "'",
     name: 'measurements.neck',
+    class: 'measurements',
     min: 12,
     max: 25,
     step:0.5,
     type: 'range'    
   }, {
     label: 'Jacket Chest',
+    unit: "'",
     name: 'measurements.jacketChest',
+    class: 'measurements',
     min: 32,
     max: 58,
     type: 'range'    
   }, {
     label: 'Waist',
+    unit: "'",
     name: 'measurements.waist',
+    class: 'measurements',
     min: 18,
     max: 58,
     type: 'range'    
   }, {
     label: 'Inseam',
+    unit: "'",
     name: 'measurements.inseam',
+    class: 'measurements',
     min: 25,
     max: 40,
     type: 'range'    

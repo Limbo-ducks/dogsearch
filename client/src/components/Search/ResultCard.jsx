@@ -16,6 +16,26 @@ function ResultCard (props) {
     setOpen(bool)
   }
 
+  const calculateActingAge = age => {
+    if(age < 18) {
+      return `${age}-${age+2} (Acting age)`
+    } else if(age > 75) {
+      return '75+ (Acting age)'
+    } else {
+      return `${age}-${age+5} (Acting age)`
+    }
+  }  
+
+  const calculateHeight = height => {
+    const feet = Math.floor(height / 12)
+    return `${feet}'${Math.floor((((height/12)-feet)*10))}"` 
+  }
+
+  const calculateHeightCM = height => {
+    const cm = height/0.39370
+    return Math.ceil(cm)
+  }
+
   return (
     <>
       <Modal
@@ -44,7 +64,7 @@ function ResultCard (props) {
               </article>
             </article>
             <article className="modal__profile__button">
-              <Link to={`/talents/${props.id}`}>
+              <Link to={`/profile`}>
                 <button>
                   View Profile
                 </button>
@@ -75,8 +95,8 @@ function ResultCard (props) {
             <ul className="talentcard__info__text--list">
               <li>{props.contact.city}</li>
               <li>{props.gender}</li>
-              <li>18-25 (Acting Age)</li>
-              <li>5'8" (~173 cm)</li>
+              <li>{calculateActingAge(props.age)}</li>
+              <li>{`${calculateHeight(props.measurements.height)}(~${calculateHeightCM(props.measurements.height)}cm)`}</li>
             </ul>
           </p>
         </div>
