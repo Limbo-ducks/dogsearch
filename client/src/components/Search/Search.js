@@ -31,8 +31,6 @@ const Search = () => {
     }
   }, [status, searchQuery])
 
-  console.log('Results ', hits.length)
-
   return (
     <section className='mt-20 mb-8'>
       <Filter search={search} />

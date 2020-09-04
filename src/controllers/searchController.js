@@ -1,8 +1,8 @@
 const { map, pipe } = require('../lib/helpers')
 
 const formatListField = ([ key, val ]) => Array.isArray(val)
-  ? [ key, { $all: val.toLowerCase() } ]
-  : [ key, val.toLowerCase() ]
+  ? [ key, { $all: val } ]
+  : [ key, val ]
 
 const parseLists = pipe(
   Object.entries,

@@ -52,8 +52,6 @@ const Filter = ({ search }) => {
     search(query)
   }
 
-  console.log(options)
-
   const makeSelect = filter => (
     <Autocomplete
       className="picklist"
@@ -70,6 +68,7 @@ const Filter = ({ search }) => {
   const makeRange = filter => (
     <Slider
       label={filter.label}
+      key={filter.name}
       name={filter.name}
       value={ranges[filter.name]}
       onChange={handleRangeChange(filter.name)}
