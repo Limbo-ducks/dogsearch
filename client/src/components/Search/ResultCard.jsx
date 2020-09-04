@@ -16,6 +16,20 @@ function ResultCard (props) {
     setOpen(bool)
   }
 
+  const calculateActingAge = age => {
+    if(age < 18) {
+      return `${age}-${age+2} (Acting age)`
+    } else if(age < 75) {
+      return '75+ (Acting age)'
+    } else {
+      return `${age}-${age+5} (Acting age)`
+    }
+  }  
+
+  const calculateHeight = height => {
+
+  }
+
   return (
     <>
       <Modal
@@ -76,7 +90,7 @@ function ResultCard (props) {
             <ul className="talentcard__info__text--list">
               <li>{props.contact.city}</li>
               <li>{props.gender}</li>
-              <li>18-25 (Acting Age)</li>
+              <li>{calculateActingAge(props.age)}</li>
               <li>5'8" (~173 cm)</li>
             </ul>
           </p>

@@ -17,6 +17,7 @@ const data = Array.from({ length: 200 }, () => ({
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
+    age: faker.random.number({min: 0, max: 100}),
     image: `https://source.unsplash.com/collection/159213/480x300?sig=${faker.random.number({min: 0, max: 200})}`,
     profession: faker.name.jobDescriptor(),
     representation: {
