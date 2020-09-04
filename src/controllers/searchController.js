@@ -1,17 +1,18 @@
-const { map, pipe } = require('../lib/helpers')
+const R = require('ramda')
+const { shuffle } = require('../lib/helpers')
 
 const formatListField = ([ key, val ]) => Array.isArray(val)
   ? [ key, { $all: val } ]
   : [ key, val ]
 
-const parseLists = pipe(
+const parseLists = R.pipe(
   Object.entries,
-  map(formatListField),
+  R.map(formatListField),
   Object.fromEntries
 )
 
-const parseCredit = pipe(
-  map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
+const parseCredit = R.pipe(
+  R.map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
   Object.fromEntries
 )
 
@@ -29,11 +30,18 @@ const makeQuery = ({ credit = [], options, ranges }) => ({
   ...parseRanges(ranges)
 })
 
+const sortData = R.pipe(
+  R.partition(R.propEq('premium', true)),
+  R.map(shuffle),
+  R.flatten
+)
+
 const searchController = client => (req, res, next) => {
   console.log(makeQuery(req.body))
   client.db('talentwyre')
     .collection('profiles')
     .find(makeQuery(req.body)).toArray()
+    .then(sortData)
     .then(data => res.json(data))
     .catch(next)
 }

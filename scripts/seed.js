@@ -9,6 +9,7 @@ const mongoOpts = {
 
 const data = Array.from({ length: 200 }, () => ({
     id: faker.random.uuid(),
+    premium: faker.random.arrayElement([ true, false, false, false, false ]),
     name: faker.name.findName(),
     contact: {
         address: faker.address.streetAddress(),
