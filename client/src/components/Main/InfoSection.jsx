@@ -8,8 +8,8 @@ const InfoSection = () => {
   return (
     <section className="section">
       <article className="section__filmrolls">
-        {/* <Filmroll className="section__filmrolls--one"/>
-        <Filmroll className="section__filmrolls--two"/>  */}
+        <Filmroll className="section__filmrolls--one"/>
+        <Filmroll className="section__filmrolls--two"/> 
       </article>
      
       <article className="section__wrapper">

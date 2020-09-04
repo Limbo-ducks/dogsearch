@@ -4,8 +4,13 @@ import filters from './Filters'
 import './Filter.scss';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { map, maybe, pipe, prop } from '../../lib/helpers'
 
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const initRanges = {
   'measurements.height': [40, 120],
@@ -56,44 +61,83 @@ const Filter = ({ search }) => {
 
   const makeSelect = filter => (
     <Autocomplete
-      className="picklist"
+      className={`picklist ${filter.class === 'measurements' ? 'measurements' : ''}`}
       key={filter.name}
       id={filter.name}
       options={filter.options}
       onChange={handleOptionsChange(filter.name)}
       getOptionLabel={(option) => option.text}
       multiple={filter.multiple}
-      renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined" />}
+      disableCloseOnSelect={filter.multiple ? true : false}
+      renderOption={(option, { selected }) => (
+        <React.Fragment>
+          <Checkbox
+            icon={icon}
+            checkedIcon={checkedIcon}
+            style={{ marginRight: 8 }}
+            checked={selected}
+          />
+          {option.text}
+        </React.Fragment>
+      )}
+      size="small"
+      renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined"/>}
     />
   )
 
   const makeRange = filter => (
     <Slider
-      label={filter.label}
+      label={filter.label + 
+      ` (${filter.unit ? filter.min +''+ filter.unit : filter.min} - 
+        ${filter.unit ? filter.max +''+ filter.unit : filter.max})`}
       name={filter.name}
+      className={`${filter.class === 'measurements' ? 'measurements' : ''}`}
       value={ranges[filter.name]}
       onChange={handleRangeChange(filter.name)}
       min={filter.min}
       max={filter.max}
+      valueLabelDisplay="auto"
+      aria-labelledby="range-slider"
       step={filter.step}
     />
   )
 
   const selectRoot = filters => (
     <section className="wrapper__picklists">
+      <div className='personal'>
       {filters.map(filter => filter.type === 'select'
-        ? makeSelect(filter)
-        : makeRange(filter))}
+        ? filter.class === 'personal' ? makeSelect(filter) : null
+        :  filter.class === 'personal' ? makeRange(filter) : null)}
+      </div>
+      <div className='measurements'>
+      {filters.map(filter => filter.type === 'select'
+        ? filter.class === 'measurements' ? makeSelect(filter) : null
+        :  filter.class === 'measurements' ? makeRange(filter) : null)}
+      </div>
     </section>
+
+
+  //   <section className="wrapper__picklists">
+  //   <div className='personal'>
+  //   {filters.map(filter => filter.type === 'select' && filter.class === 'personal'
+  //     ?makeSelect(filter)
+  //     :makeRange(filter))}
+  //   </div>
+  //   <div className='measurements'>
+  //   {filters.map(filter => filter.type === 'select' && filter.class === 'measurements'
+  //     ? makeSelect(filter)
+  //     : makeRange(filter))}
+  //   </div>
+  // </section>
+
   )
 
   return (
     <>
     <h1>Browse Talent Profiles</h1>
     <article className="searchengine">
-
+    <h3>Filter Results</h3>
       {selectRoot(filters)}
-
       <button onClick={handleSubmit} className="searchengine__button">Search</button>
     </article>
     </>
