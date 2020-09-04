@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { MenuItem } from '@material-ui/core'
-import MultipleSelect from './MultipleSelect'
-import RangeFields from './RangeFields'
 import Slider from './Slider'
 import filters from './Filters'
 import './Filter.scss';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import { map, maybe, pipe, prop } from '../../lib/helpers'
 
 
 const initRanges = {
@@ -20,14 +18,23 @@ const initRanges = {
   'measurements.shoeLength': [1.0, 17.0]
 }
 
+const getValue = pipe(
+  map(prop('value')),
+  maybe(x => x.length > 0)
+)
+
 const Filter = ({ search }) => {
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
 
-  const handleOptionsChange = prop => e => {
+  const handleOptionsChange = prop => (_, value) => {
+    const newValue = value
+      ? getValue(value)
+      : undefined
+
     setOptions({
       ...options,
-      [prop]: e.target.value.length !== 0 ? e.target.value : undefined
+      [prop]: newValue
     })
   }
 
@@ -45,28 +52,19 @@ const Filter = ({ search }) => {
     search(query)
   }
 
+  console.log(options)
+
   const makeSelect = filter => (
     <Autocomplete
       className="picklist"
       key={filter.name}
       id={filter.name}
       options={filter.options}
-      // onChange={handleOptionsChange(filter.name)}
+      onChange={handleOptionsChange(filter.name)}
       getOptionLabel={(option) => option.text}
       multiple={filter.multiple}
       renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined" />}
     />
-    // <MultipleSelect
-    //   key={filter.name}
-    //   id={filter.name}
-    //   label={filter.label}
-    //   onChange={handleOptionsChange(filter.name)}
-    //   multiple={filter.multiple}
-    //   input={filter.input}
-    // >
-    //   {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
-    //   {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
-    // </MultipleSelect>
   )
 
   const makeRange = filter => (
