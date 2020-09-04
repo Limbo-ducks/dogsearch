@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ExperienceBox from './ExperienceBox'
 import Slider from './Slider'
 import filters from './Filters'
 import './Filter.scss';
@@ -18,14 +19,22 @@ const initRanges = {
   'measurements.shoeLength': [1.0, 17.0]
 }
 
+const parseValue = map(prop('value'))
+
 const getValue = pipe(
-  map(prop('value')),
+  parseValue,
   maybe(x => x.length > 0)
 )
 
-const Filter = ({ search }) => {
+const Filter = ({ search, searchCredit }) => {
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
+  const [credit, setCredit] = useState(searchCredit ? [ searchCredit ] : [])
+
+  const handleCreditChange = (_, value) => pipe(
+    parseValue,
+    setCredit
+  )(value)
 
   const handleOptionsChange = prop => (_, value) => {
     const newValue = value
@@ -45,6 +54,7 @@ const Filter = ({ search }) => {
 
   const handleSubmit = () => {
     const query = {
+      credit,
       options,
       ranges
     }
@@ -78,20 +88,35 @@ const Filter = ({ search }) => {
     />
   )
 
-  const selectRoot = filters => (
-    <section className="wrapper__picklists">
-      {filters.map(filter => filter.type === 'select'
-        ? makeSelect(filter)
-        : makeRange(filter))}
-    </section>
-  )
+  const selectRoot = filters =>
+    filters.map(filter => filter.type === 'select'
+      ? makeSelect(filter)
+      : makeRange(filter))
 
   return (
     <>
     <h1>Browse Talent Profiles</h1>
     <article className="searchengine">
 
-      {selectRoot(filters)}
+      <section className="wrapper__picklists">
+        {selectRoot(filters)}
+        <ExperienceBox def={searchCredit} onChange={handleCreditChange} />
+        {/* <Autocomplete
+          className="picklist"
+          id='credit'
+          defaultValue={}
+          options={[
+            { value: 'films', text: 'Film' },
+            { value: 'theatre', text: 'Theatre' },
+            { value: 'tv', text: 'TV' },
+            { value: 'modelin', text: 'Modeling' }
+          ]}
+          onChange={handleCreditChange}
+          getOptionLabel={(option) => option.text}
+          multiple={true}
+          renderInput={(params) => <TextField {...params} label={'Experience in'} variant="outlined" />}
+        /> */}
+      </section>
 
       <button onClick={handleSubmit} className="searchengine__button">Search</button>
     </article>

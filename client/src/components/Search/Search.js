@@ -10,7 +10,7 @@ const makeOpts = (body, method = 'GET') => ({
   body
 })
 
-const Search = () => {
+const Search = ({ match: { params: { credit }}}) => {
   const baseURL = '/api/search'
   const [status, setStatus] = useState('idle')
   const [hits, setHits] = useState([])
@@ -33,7 +33,7 @@ const Search = () => {
 
   return (
     <section className='mt-20 mb-8'>
-      <Filter search={search} />
+      <Filter search={search} searchCredit={credit} />
       <ResultList data={hits} />
     </section>
   )
