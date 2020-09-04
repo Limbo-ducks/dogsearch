@@ -74,8 +74,8 @@ function ResultCard (props) {
         <div className="talentcard__info px-6 py-4">
           <p className="talentcard__info__text text-gray-700 text-base">
             <ul className="talentcard__info__text--list">
-              <li>Boston, MA</li>
-              <li>Female</li>
+              <li>{props.contact.city}</li>
+              <li>{props.gender}</li>
               <li>18-25 (Acting Age)</li>
               <li>5'8" (~173 cm)</li>
             </ul>
