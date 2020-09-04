@@ -7,6 +7,7 @@ import filters from './Filters'
 import './Filter.scss';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import { map, maybe, pipe, prop } from '../../lib/helpers'
 
 
 const initRanges = {
@@ -20,14 +21,23 @@ const initRanges = {
   'measurements.shoeLength': [1.0, 17.0]
 }
 
+const getValue = pipe(
+  map(prop('value')),
+  maybe(x => x.length > 0)
+)
+
 const Filter = ({ search }) => {
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
 
-  const handleOptionsChange = prop => e => {
+  const handleOptionsChange = prop => (_, value) => {
+    const newValue = value
+      ? getValue(value)
+      : undefined
+
     setOptions({
       ...options,
-      [prop]: e.target.value.length !== 0 ? e.target.value : undefined
+      [prop]: newValue
     })
   }
 
@@ -45,13 +55,15 @@ const Filter = ({ search }) => {
     search(query)
   }
 
+  console.log(options)
+
   const makeSelect = filter => (
     <Autocomplete
       className="picklist"
       key={filter.name}
       id={filter.name}
       options={filter.options}
-      // onChange={handleOptionsChange(filter.name)}
+      onChange={handleOptionsChange(filter.name)}
       getOptionLabel={(option) => option.text}
       multiple={filter.multiple}
       renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined" />}
