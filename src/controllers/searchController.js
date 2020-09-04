@@ -10,6 +10,11 @@ const parseLists = pipe(
   Object.fromEntries
 )
 
+const parseCredit = pipe(
+  map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
+  Object.fromEntries
+)
+
 const parseRanges = fields => ({
     $and: Object.entries(fields)
       .flatMap(([ key, [ min, max ] ]) => [
@@ -18,7 +23,8 @@ const parseRanges = fields => ({
       ])
 })
 
-const makeQuery = ({ options, ranges }) => ({
+const makeQuery = ({ credit = [], options, ranges }) => ({
+  ...parseCredit(credit),
   ...parseLists(options),
   ...parseRanges(ranges)
 })

@@ -41,14 +41,15 @@ const data = Array.from({ length: 200 }, () => ({
     cast: faker.random.arrayElement(['actor', 'stunt actor', 'dj', 'singer', 'painter', 'model']),
     filmmakers: faker.random.arrayElement(['director', 'producer', 'cinematographer', 'film editor', 'graphic artist', 'drone pilot', 'composer']),
     biography: faker.lorem.words(30),
-    athleticEndeavors: faker.random.arrayElement(['diving', 'tennis', 'football']),
-    performance: faker.random.arrayElement(['comedian', 'modeling']),
-    accent: faker.random.arrayElement(['eastern european', 'russian', 'finnish', 'swedish']),
+    athleticEndeavors: [faker.random.arrayElement(['diving', 'tennis', 'football'])],
+    performance: [faker.random.arrayElement(['comedian', 'modeling'])],
+    accent: [faker.random.arrayElement(['eastern european', 'russian', 'finnish', 'swedish'])],
     languages: [faker.random.arrayElement(['english', 'swedish', 'german', 'spanish'])],
     additionalSkills: faker.random.words(4),
     disabilities: [faker.random.arrayElement(['none','none','none','none', 'autism', 'amputee'])],
     socialMedia: [{
         name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
+        link: faker.internet.url(),
         followers: faker.random.number({min: 0, max: 900}),
     }],
     hashtags: faker.random.arrayElement(['photography', 'sport', 'tv', 'feature', 'actor', 'model', 'producer', 'music']),
@@ -69,23 +70,29 @@ const data = Array.from({ length: 200 }, () => ({
         hat: faker.random.number({min: 6, max: 10}),
         notes: faker.lorem.words(10),
     },
-    bodyModifications: faker.random.arrayElement(['none', 'piercings', 'tattoos']),
+    bodyModifications: [faker.random.arrayElement(['none', 'piercings', 'tattoos'])],
     nudity: faker.random.arrayElement(['none', 'partial', 'full']),
     resume: faker.lorem.words(50),
     professionYears: faker.random.number({min: 0, max: 10}),
     actingCredits: {
-        films:[{
+        films: faker.random.arrayElement([[], [{
             title: faker.lorem.words(1), 
             character: faker.lorem.words(1),
             castType: faker.random.arrayElement(['Actor', 'stunt', 'extra', 'model']),
             year: faker.random.number({min: 1895, max: 2020})
-        }],
-        theatre: [{
+        }]]),
+        theatre: faker.random.arrayElement([[], [{
             title: faker.lorem.words(1), 
             character: faker.lorem.words(1),
             castType: faker.random.arrayElement(['Actor', 'stunt', 'extra', 'model']),
             year: faker.random.number({min: 1895, max: 2020})
-        }],
+        }]]),
+        tv: faker.random.arrayElement([[],[{
+            title: faker.lorem.words(1), 
+            character: faker.lorem.words(1),
+            castType: faker.random.arrayElement(['Actor', 'stunt', 'extra', 'model']),
+            year: faker.random.number({min: 1895, max: 2020})
+        }]]),
         nomination: [{
             title: faker.lorem.words(1), 
             character: faker.lorem.words(1),
