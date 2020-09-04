@@ -1,12 +1,17 @@
 const { map, pipe } = require('../lib/helpers')
 
 const formatListField = ([ key, val ]) => Array.isArray(val)
-  ? [ key, { $all: val.toLowerCase() } ]
-  : [ key, val.toLowerCase() ]
+  ? [ key, { $all: val } ]
+  : [ key, val ]
 
 const parseLists = pipe(
   Object.entries,
   map(formatListField),
+  Object.fromEntries
+)
+
+const parseCredit = pipe(
+  map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
   Object.fromEntries
 )
 
@@ -18,7 +23,8 @@ const parseRanges = fields => ({
       ])
 })
 
-const makeQuery = ({ options, ranges }) => ({
+const makeQuery = ({ credit = [], options, ranges }) => ({
+  ...parseCredit(credit),
   ...parseLists(options),
   ...parseRanges(ranges)
 })

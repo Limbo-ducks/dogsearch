@@ -45,7 +45,6 @@ function ResultCard (props) {
         aria-describedby="simple-modal-description"
       >
         <section className="modal">
-        {/* <article style={{ backgroundColor: 'white' }} className > */}
           <img src={Image} alt="" className="modal__header"/>
           <article className="modal__profile">
             <img src={props.image} alt='profile-pic' className="modal__profile__image"/>

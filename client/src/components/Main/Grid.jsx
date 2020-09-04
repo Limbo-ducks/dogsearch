@@ -13,25 +13,25 @@ const Grid = () => {
     <section className="grid">
       <section className="grid__wrapper">
         <article className="grid__wrapper__item">
-        <Link to="/search">
+        <Link to="/search/films">
           <img src={Film} alt=""/>
           <h2>Film</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search">
+        <Link to="/search/theatre">
           <img src={Theatre} alt=""/>
           <h2>Theatre</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search">
+        <Link to="/search/tv">
           <img src={Tv} alt=""/>
           <h2>TV</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search">          
+        <Link to="/search/modeling">          
           <img src={Modeling} alt=""/>
           <h2>Modeling</h2>
         </Link>

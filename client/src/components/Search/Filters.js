@@ -142,7 +142,7 @@ const filters = [
     input: false,
     type:'select'
   }, {
-    label: 'Accent',
+    label: 'Accents',
     name: 'accent',
     class: 'personal',
     options: [
@@ -194,6 +194,7 @@ const filters = [
     name: 'nudity',
     class: 'personal',
     options: [
+      { value: 'none', text: 'No Nudity'},
       { value: 'partial', text: 'Partial Nudity' },
       { value: 'full', text: 'Full Nudity' }
     ],
@@ -342,22 +343,18 @@ const filters = [
     min: 25,
     max: 40,
     type: 'range'    
+  }, {
+    label: 'Social Media',
+    name: 'socialMedia.name',
+    options: [
+      { value: 'facebook', text: 'Facebook' },
+      { value: 'instagram', text: 'Instagram' },
+      { value: 'twitter', text: 'Twitter' }
+    ],
+    multiple: true,
+    input: false,
+    type:'select'
   }
 ]
 
 export default filters
-
-/*
-{
-    label: '',
-    name: '',
-    options: [
-      { value: '', text:'' },
-      { value: '', text:'' },
-      { value: '', text:'' },
-      { value: '', text:'' },
-      { value: '', text:'' },
-      { value: '', text:'' }
-    ]
-  }
-*/
