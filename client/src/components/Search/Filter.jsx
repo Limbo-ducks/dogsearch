@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import { MenuItem } from '@material-ui/core'
-import MultipleSelect from './MultipleSelect'
-import RangeFields from './RangeFields'
 import Slider from './Slider'
 import filters from './Filters'
 import './Filter.scss';
@@ -68,17 +65,6 @@ const Filter = ({ search }) => {
       multiple={filter.multiple}
       renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined" />}
     />
-    // <MultipleSelect
-    //   key={filter.name}
-    //   id={filter.name}
-    //   label={filter.label}
-    //   onChange={handleOptionsChange(filter.name)}
-    //   multiple={filter.multiple}
-    //   input={filter.input}
-    // >
-    //   {!filter.multiple ? <MenuItem value=''><em>None</em></MenuItem> : null}
-    //   {filter.options.map(({ value, text }) => <MenuItem key={value} value={value}>{text}</MenuItem>)}
-    // </MultipleSelect>
   )
 
   const makeRange = filter => (
