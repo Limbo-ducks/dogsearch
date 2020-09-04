@@ -75,24 +75,24 @@ const data = Array.from({ length: 200 }, () => ({
     resume: faker.lorem.words(50),
     professionYears: faker.random.number({min: 0, max: 10}),
     actingCredits: {
-        films: faker.random.arrayElement([], [{
+        films: faker.random.arrayElement([[], [{
             title: faker.lorem.words(1), 
             character: faker.lorem.words(1),
             castType: faker.random.arrayElement(['Actor', 'stunt', 'extra', 'model']),
             year: faker.random.number({min: 1895, max: 2020})
-        }]),
-        theatre: faker.random.arrayElement([], [{
+        }]]),
+        theatre: faker.random.arrayElement([[], [{
             title: faker.lorem.words(1), 
             character: faker.lorem.words(1),
             castType: faker.random.arrayElement(['Actor', 'stunt', 'extra', 'model']),
             year: faker.random.number({min: 1895, max: 2020})
-        }]),
-        tv: faker.random.arrayElement([],[{
+        }]]),
+        tv: faker.random.arrayElement([[],[{
             title: faker.lorem.words(1), 
             character: faker.lorem.words(1),
             castType: faker.random.arrayElement(['Actor', 'stunt', 'extra', 'model']),
             year: faker.random.number({min: 1895, max: 2020})
-        }]),
+        }]]),
         nomination: [{
             title: faker.lorem.words(1), 
             character: faker.lorem.words(1),

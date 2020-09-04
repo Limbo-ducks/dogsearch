@@ -11,7 +11,7 @@ const parseLists = pipe(
 )
 
 const parseCredit = pipe(
-  map(x => [ x, { $exists: true, $ne: [] }]),
+  map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
   Object.fromEntries
 )
 
@@ -23,7 +23,7 @@ const parseRanges = fields => ({
       ])
 })
 
-const makeQuery = ({ credit, options, ranges }) => ({
+const makeQuery = ({ credit = [], options, ranges }) => ({
   ...parseCredit(credit),
   ...parseLists(options),
   ...parseRanges(ranges)
