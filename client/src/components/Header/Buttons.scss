@@ -15,7 +15,7 @@
       padding: 2px 20px;
       border-radius: 3px;
       color: white;
-      font-family: $sans-serif;
+      font-family: $header;
       font-size: 16px;
       text-transform: uppercase;
       transition: ease-in-out 0.5s;
@@ -25,18 +25,18 @@
         border: 1px solid white;
 
         &:hover {
-          border: 1px solid $purple;
-          color: $purple;
+          border: 1px solid $gold;
+          color: $gold;
         }
       }
 
       &--login {
-        background-color: $purple;
-        border: 1px solid $purple;
+        background-color: $grey;
+        border: 1px solid $grey;
 
         &:hover {
-          background-color: #865cd2;
-          border: 1px solid #865cd2;
+          background-color: $gold;
+          border: 1px solid $gold;
         }
       }
     }

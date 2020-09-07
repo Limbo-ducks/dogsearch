@@ -15,7 +15,7 @@
 
   &__header {
     h2 {
-      font-family: $serif;
+      font-family: $header;
       font-size: 24px;
       font-weight: 800;
     }
@@ -23,7 +23,7 @@
 
   &__content {
     p {
-      font-family: $sans-serif;
+      font-family: $paragraph;
     }
   }
 }
