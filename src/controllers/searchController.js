@@ -47,7 +47,9 @@ const makeQuery = ({ credit = [], dates, options, ranges }) => ({
   ...parseCredit(credit),
   ...parseDates(dates),
   ...parseLists(options),
-  ...parseRanges(ranges)
+  ...parseRanges(ranges),
+  finishedProfile: true,
+  type: 'talent',
 })
 
 const sortData = R.pipe(
@@ -58,9 +60,6 @@ const sortData = R.pipe(
 
 const searchController = db => (req, res, next) => {
   console.log(makeQuery(req.body))
-  // client.db('talentwyre')
-  //   .collection('profiles')
-  //   .find(makeQuery(req.body)).toArray()
   db.search(makeQuery(req.body))
     .then(sortData)
     .then(data => res.json(data))

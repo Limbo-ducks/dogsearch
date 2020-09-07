@@ -20,7 +20,7 @@ module.exports = db => {
     
     passport.deserializeUser((id, done)=>{
         db.createUser(id)
-            .then(({ value }) => done(null, value))
+            .then(data => done(null, data))
             .catch(console.error)
     })
     

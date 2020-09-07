@@ -23,10 +23,12 @@ let data = Array.from({ length: 200 }, () => ({
     contact: {
         address: faker.address.streetAddress(),
         city: faker.address.city(),
-        citizenship: faker.address.country(),
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
+    citizenship: faker.address.country(),
+    finishedProfile: true,
+    type: 'talent',
     age: faker.random.number({min: 0, max: 100}),
     image: `https://source.unsplash.com/collection/159213/480x300?sig=${faker.random.number({min: 0, max: 200})}`,
     profession: faker.name.jobDescriptor(),
