@@ -1,12 +1,19 @@
 import React from 'react'
 
 import './ProfileNews.scss'
+import ProfilePost from './ProfilePost'
 
 const ProfileNews = () => {
   return (
     <section className="content__news">
-      <h3 className="content__news__title">News</h3>
+      <article className="content__news__header">
+      </article>
+      <article className="content__news__content">
+        <ProfilePost />
+      </article>
+      <article className="content__news__footer">
 
+      </article>
     </section>
   )
 }

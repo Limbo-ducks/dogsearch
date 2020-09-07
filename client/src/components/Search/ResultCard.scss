@@ -73,10 +73,10 @@
 			box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
 			
 			&--contact {
-				background-color: $purple;
+				background-color: $grey;
 
 				&:hover {
-					background-color: $lightpurple;
+					background-color: $gold;
 				}
 			}
 
@@ -134,7 +134,7 @@
 			}
 			
 			h3 {
-				font-family: $serif;
+				font-family: $header;
 				font-size: 24px;
 			}
 
@@ -149,7 +149,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 50%;
-			background-color: $purple;
+			background-color: $grey;
 			text-align: center;
 			margin: 10px;
 			padding: 2px 20px;
@@ -163,7 +163,7 @@
 			z-index: 5000;
 
 			&:hover {
-				background-color: $lightpurple;
+				background-color: $gold;
 			}
 		}
 	}
