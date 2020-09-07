@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import Availability from './Availability'
-import ExperienceBox from './ExperienceBox'
 import Slider from './Slider'
 import filters from './Filters'
 import './Filter.scss';
@@ -10,6 +8,17 @@ import Checkbox from '@material-ui/core/Checkbox';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { map, maybe, pipe, prop } from '../../lib/helpers'
+import FilterComponent from './FilterComponent';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  root: {
+    padding: 0,
+    width: '48%',
+    margin: '1.6% 0',
+    backgroundColor: 'white'
+  }
+});
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -34,9 +43,15 @@ const getValue = pipe(
 )
 
 const Filter = ({ search, searchCredit }) => {
+  const classes = useStyles();
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
   const [credit, setCredit] = useState(searchCredit ? [ searchCredit ] : [])
+  const primary = [];
+  const appearance = [];
+  const skills = [];
+  const experience = [];
+  const measurements = [];
   const [dates, setDates] = useState({})
 
   const handleCreditChange = (_, value) => pipe(
@@ -74,13 +89,13 @@ const Filter = ({ search, searchCredit }) => {
       options,
       ranges
     }
-
+    window.scrollTo(0,0)
     search(query)
   }
 
   const makeSelect = filter => (
     <Autocomplete
-      className={`picklist ${filter.class === 'measurements' ? 'measurements' : ''}`}
+      className={`picklist ${filter.class} ${filter.name} `}
       key={filter.name}
       id={filter.name}
       options={filter.options}
@@ -99,7 +114,11 @@ const Filter = ({ search, searchCredit }) => {
       //     {option.text}
       //   </React.Fragment>
       // )}
-      size="small"
+      // size="small"
+      classes={{
+        root: classes.root
+      }}
+      
       renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined"/>}
     />
   )
@@ -111,7 +130,7 @@ const Filter = ({ search, searchCredit }) => {
         ${filter.unit ? filter.max +''+ filter.unit : filter.max})`}
       key={filter.name}
       name={filter.name}
-      className={`${filter.class === 'measurements' ? 'measurements' : ''}`}
+      className={`${filter.class} w-1/2 ${filter.name} bg-white`}
       value={ranges[filter.name]}
       onChange={handleRangeChange(filter.name)}
       min={filter.min}
@@ -121,37 +140,83 @@ const Filter = ({ search, searchCredit }) => {
       step={filter.step}
     />
   )
+  
+  const sortClasses = () => {
+    filters.forEach(filter => {
+      if(filter.class === 'primary') {
+        primary.push(selectRoot(filter));
+      } else if(filter.class === 'appearance') {
+          appearance.push(selectRoot(filter));
+      } else if(filter.class === 'skills') {
+          skills.push(selectRoot(filter));
+      } else if(filter.class === 'experience') {
+          experience.push(selectRoot(filter));
+      } else {
+        measurements.push(selectRoot(filter));
+      }
+    })
+  }
 
-  const selectRoot = filters => (
-    <>
-      <div className='personal'>
-      {filters.map(filter => filter.type === 'select'
-        ? filter.class === 'personal' ? makeSelect(filter) : null
-        : filter.class === 'personal' ? makeRange(filter) : null)}
-      </div>
-      <div className='measurements'>
-      {filters.map(filter => filter.type === 'select'
-        ? filter.class === 'measurements' ? makeSelect(filter) : null
-        : filter.class === 'measurements' ? makeRange(filter) : null)}
-      </div>
-    </>
-  )
+  const selectRoot = filter => {
+    return filter.type === 'select'
+    ? makeSelect(filter) : null
+    ? makeRange(filter) : null
+  }
+      
+
+
+
+  //   <section className="wrapper__picklists">
+  //   <div className='personal'>
+  //   {filters.map(filter => filter.type === 'select' && filter.class === 'personal'
+  //     ?makeSelect(filter)
+  //     :makeRange(filter))}
+  //   </div>
+  //   <div className='measurements'>
+  //   {filters.map(filter => filter.type === 'select' && filter.class === 'measurements'
+  //     ? makeSelect(filter)
+  //     : makeRange(filter))}
+  //   </div>
+  // </section>
 
   return (
-    <>
-    <h1>Browse Talent Profiles</h1>
-    <article className="searchengine">
+    <div className='flex flex-col'>
+    {sortClasses()}
+    <FilterComponent 
+      primary={primary} 
+      appearance={appearance} 
+      skills={skills} 
+      experience={experience}
+      measurements={measurements}
+      handleSubmit={handleSubmit}
+      searchCredit={searchCredit} 
+      handleCreditChange={handleCreditChange}
+      />
+    {/* <article className="searchengine">
     <h3>Filter Results</h3>
-
-      <section className="wrapper__picklists">
-        <Availability onChange={handleDatesChange} />
-        <ExperienceBox def={searchCredit} onChange={handleCreditChange} />
-        {selectRoot(filters)}
-      </section>
-
-      <button onClick={handleSubmit} className="searchengine__button">Search</button>
-    </article>
-    </>
+    
+      <section className="wrapper__picklists"> */}
+        
+        
+        {/* <ExperienceBox def={searchCredit} onChange={handleCreditChange} /> */}
+        {/* <Autocomplete
+          className="picklist"
+          id='credit'
+          defaultValue={}
+          options={[
+            { value: 'films', text: 'Film' },
+            { value: 'theatre', text: 'Theatre' },
+            { value: 'tv', text: 'TV' },
+            { value: 'modelin', text: 'Modeling' }
+          ]}
+          onChange={handleCreditChange}
+          getOptionLabel={(option) => option.text}
+          multiple={true}
+          renderInput={(params) => <TextField {...params} label={'Experience in'} variant="outlined" />}
+        /> */}
+      {/* </section> */}
+    {/* </article> */}
+    </div>
   )
 }
 

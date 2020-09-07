@@ -33,8 +33,11 @@ const Search = ({ match: { params: { credit }}}) => {
 
   return (
     <section className='mt-20 mb-8'>
-      <Filter search={search} searchCredit={credit} />
-      <ResultList data={hits} />
+      <h1>Browse Talent Profiles</h1>
+      <div className='flex flex-row'>
+        <Filter search={search} searchCredit={credit} />
+        <ResultList data={hits} />
+      </div>
     </section>
   )
 }

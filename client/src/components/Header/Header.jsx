@@ -11,7 +11,7 @@ const Header = ({ burgerMenu, openMenu }) => {
       <Link to='/'>
         <img src={Logo} alt="Talentwyre logo" className="header__logo"/>
       </Link>
-      {!openMenu ? <Nav authenticated={true}/> : null}
+      {openMenu ? <Nav authenticated={true}/> : null}
       <Buttons />
       <section className="header__burger">
       <a onClick={(e) => {
