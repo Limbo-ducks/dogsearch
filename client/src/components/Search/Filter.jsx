@@ -24,6 +24,7 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const initRanges = {
+  'age': [5, 100],
   'measurements.height': [40, 120],
   'measurements.weight': [50, 280],
   'measurements.sleeveLength': [29, 40],
@@ -51,11 +52,19 @@ const Filter = ({ search, searchCredit }) => {
   const skills = [];
   const experience = [];
   const measurements = [];
+  const [dates, setDates] = useState({})
 
   const handleCreditChange = (_, value) => pipe(
     parseValue,
     setCredit
   )(value)
+
+  const handleDatesChange = prop => event => {
+    setDates({
+      ...dates,
+      [prop]: event.target.value || undefined
+    })
+  }
 
   const handleOptionsChange = prop => (_, value) => {
     const newValue = value
@@ -76,6 +85,7 @@ const Filter = ({ search, searchCredit }) => {
   const handleSubmit = () => {
     const query = {
       credit,
+      dates,
       options,
       ranges
     }

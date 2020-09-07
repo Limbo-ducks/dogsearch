@@ -12,6 +12,14 @@ const filters = [
     multiple: false,
     input: false,
     type:'select'
+  },{
+    label: 'Acting Age',
+    unit: "",
+    name: 'age',
+    class: 'personal',
+    min: 5,
+    max: 100,
+    type: 'range'    
   }, {
     label: 'Body type',
     name: 'measurements.bodyType',
@@ -145,7 +153,12 @@ const filters = [
     options: [
       { value: 'diving', text: 'Diving' },
       { value: 'tennis', text: 'Tennis' },
-      { value: 'football', text: 'Football' }
+      { value: 'football', text: 'Football' },
+      { value: 'combat - stage', text: 'Combat - stage' },
+      { value: 'martial arts', text: 'Martial Arts' },
+      { value: 'horseback riding', text: 'Horseback riding' },
+      { value: 'weapons handling', text: 'Weapons handling' },
+      { value: 'knife fighting', text: 'Knife fighting' },
     ],
     multiple: true,
     input: true,
@@ -156,7 +169,9 @@ const filters = [
     class: 'experience',
     options: [
       { value: 'comedian', text: 'Comedian' },
-      { value: 'modeling', text: 'Modeling' }
+      { value: 'modeling', text: 'Modeling' },
+      { value: 'licensed driver', text: 'Licensed Driver' },
+      { value: 'dancing', text: 'Dancing' }
     ],
     multiple: true,
     input: true,
@@ -202,7 +217,10 @@ const filters = [
       { value: 'english', text: 'English' },
       { value: 'swedish', text: 'Swedish' },
       { value: 'german', text: 'German' },
-      { value: 'spanish', text: 'Spanish' }
+      { value: 'spanish', text: 'Spanish' },
+      { value: 'danish', text: 'Danish' },
+      { value: 'norwegian', text: 'Norwegian' },
+      { value: 'albanian', text: 'Albanian' },
     ],
     multiple: true,
     input: true,
