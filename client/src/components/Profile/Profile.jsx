@@ -7,7 +7,6 @@ import LoggedInNav from '../LoggedInNav/LoggedInNav';
 import './Profile.scss'
 
 const Profile = (props) => {
-  console.log(props)
   return (
     <>
       <LoggedInNav />

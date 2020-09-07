@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Availability from './Availability'
 import ExperienceBox from './ExperienceBox'
 import Slider from './Slider'
 import filters from './Filters'
@@ -14,6 +15,7 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const initRanges = {
+  'age': [5, 100],
   'measurements.height': [40, 120],
   'measurements.weight': [50, 280],
   'measurements.sleeveLength': [29, 40],
@@ -35,11 +37,19 @@ const Filter = ({ search, searchCredit }) => {
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
   const [credit, setCredit] = useState(searchCredit ? [ searchCredit ] : [])
+  const [dates, setDates] = useState({})
 
   const handleCreditChange = (_, value) => pipe(
     parseValue,
     setCredit
   )(value)
+
+  const handleDatesChange = prop => event => {
+    setDates({
+      ...dates,
+      [prop]: event.target.value || undefined
+    })
+  }
 
   const handleOptionsChange = prop => (_, value) => {
     const newValue = value
@@ -60,6 +70,7 @@ const Filter = ({ search, searchCredit }) => {
   const handleSubmit = () => {
     const query = {
       credit,
+      dates,
       options,
       ranges
     }
@@ -116,30 +127,14 @@ const Filter = ({ search, searchCredit }) => {
       <div className='personal'>
       {filters.map(filter => filter.type === 'select'
         ? filter.class === 'personal' ? makeSelect(filter) : null
-        :  filter.class === 'personal' ? makeRange(filter) : null)}
+        : filter.class === 'personal' ? makeRange(filter) : null)}
       </div>
       <div className='measurements'>
       {filters.map(filter => filter.type === 'select'
         ? filter.class === 'measurements' ? makeSelect(filter) : null
-        :  filter.class === 'measurements' ? makeRange(filter) : null)}
+        : filter.class === 'measurements' ? makeRange(filter) : null)}
       </div>
     </>
-
-
-
-  //   <section className="wrapper__picklists">
-  //   <div className='personal'>
-  //   {filters.map(filter => filter.type === 'select' && filter.class === 'personal'
-  //     ?makeSelect(filter)
-  //     :makeRange(filter))}
-  //   </div>
-  //   <div className='measurements'>
-  //   {filters.map(filter => filter.type === 'select' && filter.class === 'measurements'
-  //     ? makeSelect(filter)
-  //     : makeRange(filter))}
-  //   </div>
-  // </section>
-
   )
 
   return (
@@ -149,23 +144,9 @@ const Filter = ({ search, searchCredit }) => {
     <h3>Filter Results</h3>
 
       <section className="wrapper__picklists">
-        {selectRoot(filters)}
+        <Availability onChange={handleDatesChange} />
         <ExperienceBox def={searchCredit} onChange={handleCreditChange} />
-        {/* <Autocomplete
-          className="picklist"
-          id='credit'
-          defaultValue={}
-          options={[
-            { value: 'films', text: 'Film' },
-            { value: 'theatre', text: 'Theatre' },
-            { value: 'tv', text: 'TV' },
-            { value: 'modelin', text: 'Modeling' }
-          ]}
-          onChange={handleCreditChange}
-          getOptionLabel={(option) => option.text}
-          multiple={true}
-          renderInput={(params) => <TextField {...params} label={'Experience in'} variant="outlined" />}
-        /> */}
+        {selectRoot(filters)}
       </section>
 
       <button onClick={handleSubmit} className="searchengine__button">Search</button>
