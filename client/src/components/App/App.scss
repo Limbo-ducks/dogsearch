@@ -1,13 +1,14 @@
 @import "../../variables.scss";
 
 p {
-  font-family: $sans-serif;
+  font-family: $paragraph;
 }
 
 h2 {
-  font-family: $sans-serif;
+  font-family: $header;
 }
 
 h3 {
-  font-family: $sans-serif;
+  font-family: $header;
+  font-size: 18px;
 }

@@ -19,4 +19,21 @@
       flex-direction: row;
     }
   }
+
+  &__scroll {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 27%; 
+    cursor: pointer;
+
+    svg {
+      font-size: 3rem;
+
+      &:hover {
+        color: orange;
+      }
+    }
+  }
 }
+

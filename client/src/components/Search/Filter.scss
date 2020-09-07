@@ -8,7 +8,7 @@
     width: 70%;
     background-color: $beige;
     box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
-    font-family: $sans-serif;
+    font-family: $paragraph;
     flex-direction: column;
 
     &__button {
@@ -22,7 +22,7 @@
         text-transform: uppercase;
         transition: ease-in-out 0.5s;
         box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
-        background-color: $purple;
+        background-color: $grey;
     }
 
     .wrapper__picklists {
@@ -54,7 +54,7 @@
             }
 
             .MuiSlider-track {
-                color: $lightpurple;
+                color: $gold;
             }
 
         }
@@ -89,7 +89,7 @@ h1 {
     padding: 25px;
     margin: 0 auto;
     width: 70%;
-    font-family: $serif;
+    font-family: $header;
     font-size: 32px;
 }
 

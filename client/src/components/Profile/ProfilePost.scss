@@ -1,0 +1,12 @@
+@import "../../variables.scss";
+
+.post {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  padding: 10px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
