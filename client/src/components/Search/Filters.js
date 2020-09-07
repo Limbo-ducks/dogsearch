@@ -15,7 +15,7 @@ const filters = [
   },{
     label: 'Acting Age',
     unit: "",
-    name: 'actingAge',
+    name: 'age',
     class: 'personal',
     min: 5,
     max: 100,
@@ -130,7 +130,8 @@ const filters = [
     options: [
       { value: 'comedian', text: 'Comedian' },
       { value: 'modeling', text: 'Modeling' },
-      { value: 'licensed driver', text: 'Licensed Driver' }
+      { value: 'licensed driver', text: 'Licensed Driver' },
+      { value: 'dancing', text: 'Dancing' }
     ],
     multiple: true,
     input: true,

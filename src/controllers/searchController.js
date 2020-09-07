@@ -56,11 +56,12 @@ const sortData = R.pipe(
   R.flatten
 )
 
-const searchController = client => (req, res, next) => {
+const searchController = db => (req, res, next) => {
   console.log(makeQuery(req.body))
-  client.db('talentwyre')
-    .collection('profiles')
-    .find(makeQuery(req.body)).toArray()
+  // client.db('talentwyre')
+  //   .collection('profiles')
+  //   .find(makeQuery(req.body)).toArray()
+  db.search(makeQuery(req.body))
     .then(sortData)
     .then(data => res.json(data))
     .catch(next)

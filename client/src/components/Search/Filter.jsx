@@ -15,7 +15,7 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const initRanges = {
-  'actingAge': [5, 100],
+  'age': [5, 100],
   'measurements.height': [40, 120],
   'measurements.weight': [50, 280],
   'measurements.sleeveLength': [29, 40],

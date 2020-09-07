@@ -6,8 +6,10 @@ const makeDates = () =>
         to: `2020-${10 + i}-${faker.random.number({ min: 11, max: 30 })}`,
     }))
 
-const talents = [{
-    id: 'else_rovinsky',
+const talents = [
+    // Else Rovinsky
+    {
+    id: '0',
     premium: true,
     available: makeDates(),
     name: 'Else Rovinsky',
@@ -18,7 +20,7 @@ const talents = [{
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
-    actingAge: faker.random.number({min: 30, max: 40}),
+    age: faker.random.number({min: 30, max: 40}),
     image: `https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-7.jpeg`,
     profession: 'Actor',
     representation: {
@@ -127,8 +129,9 @@ const talents = [{
         audio: 'https://player.vimeo.com/video/402939962',
     },
 },
+// David S Lindgren
 {
-    id: 'david_s_lindgren',
+    id: '1',
     premium: true,
     available: makeDates(),
     name: 'David S. Lindgren',
@@ -139,7 +142,7 @@ const talents = [{
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
-    actingAge: faker.random.number({min: 25, max: 35}),
+    age: faker.random.number({min: 25, max: 35}),
     image: `https://www.imacontent.com/wp-content/uploads/2020/06/David-S-.-Lindgren-Actor-IMA-Content2-web-1-1024x682.jpg`,
     profession: 'Actor',
     representation: {
@@ -250,8 +253,10 @@ const talents = [{
         mediaReel: 'https://player.vimeo.com/video/407508647',
         audio: 'https://player.vimeo.com/video/403962999',
     },
-}, {
-    id: 'moa_malan',
+}, 
+    // Moa Malan
+{
+    id: '2',
     premium: true,
     available: makeDates(),
     name: 'Moa Malan',
@@ -262,7 +267,7 @@ const talents = [{
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
-    actingAge: faker.random.number({min: 30, max: 40}),
+    age: faker.random.number({min: 30, max: 40}),
     image: `https://www.imacontent.com/wp-content/uploads/2019/04/Moa-3-web.jpg`,
     profession: 'Actor',
     representation: {
@@ -393,6 +398,476 @@ const talents = [{
         mediaReel: 'https://youtu.be/yd7XUBTS9uk',
         audio: 'https://player.vimeo.com/video/402939962',
     },
-},]
+},
+    //Marten Eckerstrom
+{
+    id: '3',
+    premium: true,
+    available: makeDates(),
+    name: 'Marten Eckerstrom',
+    contact: {
+        address: faker.address.streetAddress(),
+        city: faker.address.city(),
+        citizenship: faker.address.country(),
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber(),
+    },
+    age: faker.random.number({min: 25, max: 35}),
+    image: `https://www.imacontent.com/wp-content/uploads/2020/04/image003.jpg`,
+    profession: 'Actor',
+    representation: {
+        agent: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        },
+        manager: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        }
+    },
+    gender: 'male',
+    eyeColor:'green',
+    hairColor:'blonde',
+    hairLength:'short',
+    ethnicity: 'caucassian',
+    cast: 'actor',
+    biography: `Eckerstrom is a member at the alumni of the American Academy of Dramatic Arts in Los Angeles, and a graduate of the New York Film Academy in New York City.
+    Born in Sweden but with nearly a decade in the United States gives Eckerstrom unique knowledge and experience in the entertainment industry in Europe and North America.
+    
+    Eckerstrom is active in the entertainment industry, training and working in both theatre and film, perfecting his experience and skills as an actor.
+     
+    Last year he appeared in the Swedish television series Dröm produced by SVT.
+    `,
+    athleticEndeavors: ['martial arts', 'combat - stage'],
+    performance: 'dancing',
+    accent: 'swedish',
+    languages: ['english', 'swedish'],
+    additionalSkills:'Dialects',
+    disabilities:'none',
+    socialMedia: [{
+        name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
+        link: faker.internet.url(),
+        followers: faker.random.number({min: 3000, max: 9000}),
+    }],
+    hashtags:'actor',
+    measurements: {
+        height: 70,
+        weight: faker.random.number({min: 100, max: 200}),
+        bodyType:'average',
+        shirtSize: faker.random.arrayElement(['s', 'm', 'l', 'xl', 'xxl', 'xxxl', 'n/a']),
+        sleeveLength: faker.random.number({min: 29, max: 40}),
+        neck: faker.random.number({min: 12, max: 25}),
+        jacketChest: faker.random.number({min: 32, max: 58}),
+        jacketLength: faker.random.arrayElement(['s', 'r', 'l']),
+        waist: faker.random.number({min: 18, max: 58}),
+        inseam: faker.random.number({min: 25, max: 40}),
+        shoeWidth: faker.random.arrayElement(['a', 'aa', 'aaa', 'b', 'd', 'e', 'ee', 'eee']),
+        shoeLength: faker.random.number({min: 1, max: 17}),
+        gloves: faker.random.arrayElement(['xsm', 'sm', 'm', 'lg', 'xlg']),
+        hat: faker.random.number({min: 6, max: 10}),
+        notes: faker.lorem.words(10),
+    },
+    bodyModifications:'tattoo',
+    nudity:'none',
+    resume: `As a child, I was lucky enough to know exactly what I wanted to do – Losing myself in the worlds of American heroes such as Butch Cassidy, John Wayne and others – playfully searching for characters’ simplicities and complexities, differences and similarities. 
+ 
+    Years later, I found my place, amongst the madness and the beautiful chaos of New York City, home of the Beatniks and lost boys, all looking for similar dreams. After I completed an acting programme in NYC my journey headed towards Los Angeles to continue education, alongside this, I landed roles in various short films and commercials… the highlight, the lead in an ARRI campaign which took me out to the deserts of California which was shown at the Academy Awards the following year, and playing the ‘Hartley’ in the feature film ‘Chemical Cut’ shot in Hollywood and in Silverlake, CA. 
+     
+    I was awarded an acting scholarship at the American Academy of Dramatic Arts where I harnessed and perfected my craft, focusing mainly on in-depth acting techniques.
+     
+    Today I’m based in Stockholm, most recently working on the series ‘Dröm’ on the SVT network.`,
+    professionYears:8,
+    actingCredits: {
+        films: [{
+            title:'Dröm', 
+            character:'Kommisarie Andreasson',
+            castType:'Cast',
+            year:2019
+        },
+        {
+            title:'Lust of life', 
+            character:'Billy',
+            castType:'Cast',
+            year:2019
+        },
+        {
+            title:'The experiment', 
+            character:'Alex',
+            castType:'Cast',
+            year:2018
+        }],
+        theatre: [,
+            {
+                title:'The hardy boy', 
+                character:'Frank hardy',
+                castType:'Cast',
+                year:2018
+            }],
+        tv: [,
+            {
+                title:'The Duel', 
+                character:'Rodney',
+                castType:'Cast',
+                year:2017
+            }],
+        nomination: []
+    },
+    nonActingCredits: {
+        films:[],
+        theatre: [],
+        nomination: []
+    },
+    media: {
+        headShot:'https://www.imacontent.com/wp-content/uploads/2020/04/image003.jpg',
+        slateShot:'https://www.imacontent.com/wp-content/uploads/2020/06/Actor-Marten-Eckerstrom-IMA-Content-5-682x1024.jpg',
+        mediaReel: 'https://vimeo.com/430974916',
+        audio: '',
+    },
+},
+//
+{
+    id: '4',
+    premium: true,
+    available: makeDates(),
+    name: 'Josefine Backman Juliff',
+    contact: {
+        address: faker.address.streetAddress(),
+        city: faker.address.city(),
+        citizenship: faker.address.country(),
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber(),
+    },
+    age: faker.random.number({min: 5, max: 15}),
+    image: `https://www.imacontent.com/wp-content/uploads/2020/06/1-Josefin-Backman-Juliff-IMA-Content-Child-Actress.jpeg`,
+    profession: 'Actor',
+    representation: {
+        agent: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        },
+        manager: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        }
+    },
+    gender: 'female',
+    eyeColor:'hazel',
+    hairColor:'blonde',
+    hairLength:'long',
+    ethnicity: 'caucassian',
+    cast: 'actor',
+    biography: `Josefine has been in different drama groups since the age of 4 and just after she turned 5, she stood on the main stage in her hometown and loved it. She felt at home and knew that she wanted to do it over and over again.
+
+    When a drama school that also does Film & Television opened where she lives in UK, she joined them as she had always loved being in front of the camera and it was a perfect match. She has learned the teamwork behind making a film and all the hard work that it involves and that is now her passion, to be in front of the camera and make the team proud.
+    
+    She also love dancing and singing and started early with ballet and tap but she does not do it anymore. At age 6 she started competing in Scottish Highland dance and which she still does. When she was 8 years old, she was invited to the Queens 90th Birthday Celebration at the British Embassy in Stockholm as a solo dancer for the grand finale with 2000 guests attending.
+    
+    She loves learning new things so now she is exploring British sign language and boxing and taking singing lessons.
+    
+    She looks forward to the future and what it will bring.`,
+    athleticEndeavors: [],
+    performance: [],
+    accent: 'swedish',
+    languages: ['english', 'swedish'],
+    additionalSkills:'',
+    disabilities:'none',
+    socialMedia: [{
+        name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
+        link: faker.internet.url(),
+        followers: faker.random.number({min: 3000, max: 9000}),
+    }],
+    hashtags:'actor',
+    measurements: {
+        height: 60,
+        weight: faker.random.number({min: 100, max: 200}),
+        bodyType:'average',
+        shirtSize: faker.random.arrayElement(['s', 'm', 'l', 'xl', 'xxl', 'xxxl', 'n/a']),
+        sleeveLength: faker.random.number({min: 29, max: 40}),
+        neck: faker.random.number({min: 12, max: 25}),
+        jacketChest: faker.random.number({min: 32, max: 58}),
+        jacketLength: faker.random.arrayElement(['s', 'r', 'l']),
+        waist: faker.random.number({min: 18, max: 58}),
+        inseam: faker.random.number({min: 25, max: 40}),
+        shoeWidth: faker.random.arrayElement(['a', 'aa', 'aaa', 'b', 'd', 'e', 'ee', 'eee']),
+        shoeLength: faker.random.number({min: 1, max: 17}),
+        gloves: faker.random.arrayElement(['xsm', 'sm', 'm', 'lg', 'xlg']),
+        hat: faker.random.number({min: 6, max: 10}),
+        notes: faker.lorem.words(10),
+    },
+    bodyModifications:'none',
+    nudity:'none',
+    resume: ``,
+    professionYears:1,
+    actingCredits: {
+        films: [],
+        theatre: [],
+        tv: [],
+        nomination: []
+    },
+    nonActingCredits: {
+        films:[],
+        theatre: [],
+        nomination: []
+    },
+    media: {
+        headShot:'https://www.imacontent.com/wp-content/uploads/2020/06/1-Josefin-Backman-Juliff-IMA-Content-Child-Actress.jpeg',
+        slateShot:'https://www.imacontent.com/wp-content/uploads/2020/06/12-12-Child-Actress-Josefine-Backman-Juliff-IMA-Content-683x1024.jpg',
+        mediaReel: 'https://vimeo.com/431070759',
+        audio: '',
+    },
+},
+//
+{
+    id: '5',
+    premium: true,
+    available: makeDates(),
+    name: 'Mikael Spreitz',
+    contact: {
+        address: faker.address.streetAddress(),
+        city: faker.address.city(),
+        citizenship: faker.address.country(),
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber(),
+    },
+    age: faker.random.number({min: 40, max: 60}),
+    image: `https://www.imacontent.com/wp-content/uploads/2017/06/Actor-Micke-Spreiz-IMA-Content-1-e1534075900356-711x1024.jpg`,
+    profession: 'Actor',
+    representation: {
+        agent: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        },
+        manager: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        }
+    },
+    gender: 'male',
+    eyeColor:'blue',
+    hairColor:'brown',
+    hairLength:'short',
+    ethnicity: 'caucassian',
+    cast: 'actor',
+    biography: `Spreitz is a California based Swedish actor who has a has a multifaceted career. On his resume he can write actor, fight coordinator, television personality, bodyguard and special lecturer.
+
+    Spreitz is well known for The Girl Who Kicked the Hornet’s Nest and The Girl Who Played with Fire where he portrayed Ronald Niederman. Brother of the lead character played by Noomi Rapace. Spreitz has a background as a martial artist. Competing in the Swedish national team. He is a multiple Swedish champion and silver medalist at the European championship in 1985. In 2013 Spreitz founded Fighterhjälpen, a non-profit charity foundation that supports families who have children with cancer.`,
+    athleticEndeavors: 'combat - stage',
+    performance: 'licensed driver',
+    accent: 'swedish',
+    languages: ['english', 'swedish'],
+    additionalSkills:'Dialects',
+    disabilities:'none',
+    socialMedia: [{
+        name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
+        link: faker.internet.url(),
+        followers: faker.random.number({min: 3000, max: 9000}),
+    }],
+    hashtags:'actor',
+    measurements: {
+        height: 70,
+        weight: faker.random.number({min: 100, max: 200}),
+        bodyType:'average',
+        shirtSize: faker.random.arrayElement(['s', 'm', 'l', 'xl', 'xxl', 'xxxl', 'n/a']),
+        sleeveLength: faker.random.number({min: 29, max: 40}),
+        neck: faker.random.number({min: 12, max: 25}),
+        jacketChest: faker.random.number({min: 32, max: 58}),
+        jacketLength: faker.random.arrayElement(['s', 'r', 'l']),
+        waist: faker.random.number({min: 18, max: 58}),
+        inseam: faker.random.number({min: 25, max: 40}),
+        shoeWidth: faker.random.arrayElement(['a', 'aa', 'aaa', 'b', 'd', 'e', 'ee', 'eee']),
+        shoeLength: faker.random.number({min: 1, max: 17}),
+        gloves: faker.random.arrayElement(['xsm', 'sm', 'm', 'lg', 'xlg']),
+        hat: faker.random.number({min: 6, max: 10}),
+        notes: faker.lorem.words(10),
+    },
+    bodyModifications:'none',
+    nudity:'tattoo',
+    resume: `I am a California based Swedish actor. My most recent work includes a film with Eric Roberts (Unchained) and the very popular Swedish Johan Falk series, which has had a great deal of success in the US as well as The Swedish Gladiators TV show. I’ve done numerous film, tv, commercials and print work, all over Europe over the years. 
+
+    My biggest and most favorite project to date was the Millennium Trilogy.`,
+    professionYears:15,
+    actingCredits: {
+        films: [{
+            title:'Unchained', 
+            character:'Brock Jones',
+            castType:'Cast',
+            year:2019
+        },
+        {
+            title:'Barking Mad', 
+            character:'Torsten Lindblum',
+            castType:'Co-star',
+            year:2019
+        },
+        {
+            title:'The girl who Kicked the hornets nest', 
+            character:'Ronald Niederman',
+            castType:'Co-star',
+            year:2018
+        }],
+        theatre: [],
+        tv: [,
+            {
+                title:'Johan Falk', 
+                character:'Danne',
+                castType:'Cast',
+                year:2020
+            }],
+        nomination: [{
+            title: 'The End of Something', 
+            character: 'Yael',
+            castType: 'Co-Star',
+            year:2014
+        }]
+    },
+    nonActingCredits: {
+        films:[],
+        theatre: [],
+        nomination: []
+    },
+    media: {
+        headShot:'https://www.imacontent.com/wp-content/uploads/2017/06/Actor-Micke-Spreiz-IMA-Content-2.jpg',
+        slateShot:'https://www.imacontent.com/wp-content/uploads/2018/05/Mikael-Spreitz-Actor-IMA-Content-2-683x1024.jpg',
+        mediaReel: 'https://vimeo.com/412032088',
+        audio: 'https://vimeo.com/412032088',
+    },
+},
+]
 
 module.exports = talents
+
+/* 
+{
+    id: '',
+    premium: true,
+    available: makeDates(),
+    name: 'Else Rovinsky',
+    contact: {
+        address: faker.address.streetAddress(),
+        city: faker.address.city(),
+        citizenship: faker.address.country(),
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber(),
+    },
+    age: faker.random.number({min: 30, max: 40}),
+    image: ``,
+    profession: 'Actor',
+    representation: {
+        agent: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        },
+        manager: {
+            name: 'Maria Vascsak',
+            address: faker.address.streetAddress(),
+            email: faker.internet.email(),
+            phone: '+46 739 10 59 02'
+        }
+    },
+    gender: 'female',
+    eyeColor:'brown',
+    hairColor:'brown',
+    hairLength:'short',
+    ethnicity: 'caucassian',
+    cast: 'actor',
+    biography: ``,
+    athleticEndeavors: 'combat - stage',
+    performance: 'licensed driver',
+    accent: 'swedish',
+    languages: ['english', 'swedish', 'german', 'danish'],
+    additionalSkills:'Dialects, Movement, Teleprompter',
+    disabilities:'none',
+    socialMedia: [{
+        name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
+        link: faker.internet.url(),
+        followers: faker.random.number({min: 3000, max: 9000}),
+    }],
+    hashtags:'actor',
+    measurements: {
+        height: 64,
+        weight: faker.random.number({min: 100, max: 200}),
+        bodyType:'average',
+        shirtSize: faker.random.arrayElement(['s', 'm', 'l', 'xl', 'xxl', 'xxxl', 'n/a']),
+        sleeveLength: faker.random.number({min: 29, max: 40}),
+        neck: faker.random.number({min: 12, max: 25}),
+        jacketChest: faker.random.number({min: 32, max: 58}),
+        jacketLength: faker.random.arrayElement(['s', 'r', 'l']),
+        waist: faker.random.number({min: 18, max: 58}),
+        inseam: faker.random.number({min: 25, max: 40}),
+        shoeWidth: faker.random.arrayElement(['a', 'aa', 'aaa', 'b', 'd', 'e', 'ee', 'eee']),
+        shoeLength: faker.random.number({min: 1, max: 17}),
+        gloves: faker.random.arrayElement(['xsm', 'sm', 'm', 'lg', 'xlg']),
+        hat: faker.random.number({min: 6, max: 10}),
+        notes: faker.lorem.words(10),
+    },
+    bodyModifications:'none',
+    nudity:'none',
+    resume: ``,
+    professionYears:20,
+    actingCredits: {
+        films: [{
+            title:'Midsommar', 
+            character:'Voice Actor',
+            castType:'Voice Actor',
+            year:2019
+        },
+        {
+            title:'New Amsterdam', 
+            character:'Skeptical Patient',
+            castType:'Co-star',
+            year:2019
+        },
+        {
+            title:'Lat & Order SVU', 
+            character:'Ann Miller',
+            castType:'Co-star',
+            year:2018
+        }],
+        theatre: [,
+            {
+                title:'Women and War', 
+                character:'Barbara Berry',
+                castType:'Co-star',
+                year:2018
+            }],
+        tv: [,
+            {
+                title:'FBI', 
+                character:'Kate Atherton',
+                castType:'Co-Star',
+                year:2020
+            }],
+        nomination: [{
+            title: 'The End of Something', 
+            character: 'Yael',
+            castType: 'Co-Star',
+            year:2014
+        }]
+    },
+    nonActingCredits: {
+        films:[],
+        theatre: [],
+        nomination: []
+    },
+    media: {
+        headShot:'',
+        slateShot:'',
+        mediaReel: '',
+        audio: '',
+    },
+},
+*/
