@@ -7,6 +7,7 @@ const { MongoClient } = require('mongodb')
 const searchController = require('./src/controllers/searchController')
 const profileController = require('./src/controllers/profileController')
 const auth = require('./src/routes/auth')
+const user = require('./src/routes/user')
 const dbHandler = require('./src/lib/db')
 
 const { PORT = 5000 } = process.env
@@ -37,6 +38,7 @@ client.connect()
     app.get('/', (req, res) => res.json(req.user))
 
     app.use('/api/auth', auth(db))
+    app.use('/api/user', user(db))
 
     app.post('/api/search', searchController(db))
     app.get('/api/profiles/:id', profileController(db))
