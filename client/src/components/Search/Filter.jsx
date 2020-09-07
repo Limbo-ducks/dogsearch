@@ -77,17 +77,17 @@ const Filter = ({ search, searchCredit }) => {
       getOptionLabel={(option) => option.text}
       multiple={filter.multiple}
       disableCloseOnSelect={filter.multiple ? true : false}
-      renderOption={(option, { selected }) => (
-        <React.Fragment>
-          <Checkbox
-            icon={icon}
-            checkedIcon={checkedIcon}
-            style={{ marginRight: 8 }}
-            checked={selected}
-          />
-          {option.text}
-        </React.Fragment>
-      )}
+      // renderOption={(option, { selected }) => (
+      //   <React.Fragment>
+      //     <Checkbox
+      //       icon={icon}
+      //       checkedIcon={checkedIcon}
+      //       style={{ marginRight: 8 }}
+      //       checked={selected}
+      //     />
+      //     {option.text}
+      //   </React.Fragment>
+      // )}
       size="small"
       renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined"/>}
     />

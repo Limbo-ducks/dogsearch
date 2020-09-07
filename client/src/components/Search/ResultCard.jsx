@@ -54,7 +54,7 @@ function ResultCard (props) {
             </article>
             <article className="modal__profile__info">
               <article className="modal__profile__info__attributes">
-                <h3>{props.name}</h3>
+                <h3>Model, stuntwoman</h3>
                 <h4>{props.height}</h4>
                 <h4>{props.eyeColor}</h4>
                 <h4>{props.gender}</h4>
