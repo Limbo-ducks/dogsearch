@@ -2,7 +2,7 @@ const filters = [
   {
     label: 'Gender',
     name: 'gender',
-    class: 'personal',
+    class: 'primary',
     options: [
       { value: 'female', text: 'Female' },
       { value: 'male', text: 'Male' },
@@ -12,25 +12,71 @@ const filters = [
     multiple: false,
     input: false,
     type:'select'
-  }, {
-    label: 'Eye color',
-    name: 'eyeColor',
+  },{
+    label: 'Acting Age',
+    unit: "",
+    name: 'age',
     class: 'personal',
+    min: 5,
+    max: 100,
+    type: 'range'    
+  }, {
+    label: 'Body type',
+    name: 'measurements.bodyType',
+    class: 'appearance',
     options: [
-      { value: 'blue', text: 'Blue' },
-      { value: 'brown', text: 'Brown' },
-      { value: 'green', text: 'Green' },
-      { value: 'black', text: 'Black' },
-      { value: 'grey', text: 'Grey' },
-      { value: 'hazel', text: 'Hazel' }
+      { value: 'slender', text: 'Slender' },
+      { value: 'very thin', text: 'Very thin' },
+      { value: 'average', text: 'Average' },
+      { value: 'athletic', text: 'Athletic' },
+      { value: 'husky', text: 'Husky' },
+      { value: 'body builder', text: 'Body builder' },
+      { value: 'large', text: 'Large' },
+      { value: 'n/a', text: 'n/a' }
+    ],
+    multiple: true,
+    input: false,
+    type:'select'
+  }, {
+    label: 'Nudity',
+    name: 'nudity',
+    class: 'appearance',
+    options: [
+      { value: 'none', text: 'No Nudity'},
+      { value: 'partial', text: 'Partial Nudity' },
+      { value: 'full', text: 'Full Nudity' }
+    ],
+    multiple: true,
+    input: true,
+    type:'select'
+  }, {
+    label: 'Ethnic Appearance',
+    name: 'ethnicity',
+    class: 'appearance',
+    options: [
+      { value: 'african', text: 'African' },
+      { value: 'caucassian', text: 'Caucassian' },
+      { value: 'east asian', text: 'East Asian' },
+      { value: 'hispanic', text: 'Hispanic' }
     ],
     multiple: false,
     input: false,
     type:'select'
   }, {
+    label: 'Body Modifications',
+    name: 'bodyModifications',
+    class: 'appearance',
+    options: [
+      { value: 'piercings', text: 'Piercings' },
+      { value: 'tatoos', text: 'Tatoos' }
+    ],
+    multiple: true,
+    input: true,
+    type:'select'
+  }, {
     label: 'Hair color',
     name: 'hairColor',
-    class: 'personal',
+    class: 'appearance',
     options: [
       { value: 'black', text: 'Black' },
       { value: 'blonde', text: 'Blonde' },
@@ -44,7 +90,7 @@ const filters = [
   }, {
     label: 'Hair Length',
     name: 'hairLength',
-    class: 'personal',
+    class: 'appearance',
     options: [
       { value: 'afro', text: 'Afro' },
       { value: 'bald', text: 'Bald' },
@@ -56,14 +102,16 @@ const filters = [
     input: false,
     type:'select'
   }, {
-    label: 'Ethnic Appearance',
-    name: 'ethnicity',
-    class: 'personal',
+    label: 'Eye color',
+    name: 'eyeColor',
+    class: 'appearance',
     options: [
-      { value: 'african', text: 'African' },
-      { value: 'caucassian', text: 'Caucassian' },
-      { value: 'east asian', text: 'East Asian' },
-      { value: 'hispanic', text: 'Hispanic' }
+      { value: 'blue', text: 'Blue' },
+      { value: 'brown', text: 'Brown' },
+      { value: 'green', text: 'Green' },
+      { value: 'black', text: 'Black' },
+      { value: 'grey', text: 'Grey' },
+      { value: 'hazel', text: 'Hazel' }
     ],
     multiple: false,
     input: false,
@@ -71,7 +119,7 @@ const filters = [
   }, {
     label: 'Cast',
     name: 'cast',
-    class: 'personal',
+    class: 'primary',
     options: [
       { value: 'actor', text: 'Actor' },
       { value: 'stunt actor', text: 'Stunt Actor' },
@@ -86,7 +134,7 @@ const filters = [
   }, {
     label: 'Filmmakers',
     name: 'filmmakers',
-    class: 'personal',
+    class: 'experience',
     options: [
       { value: 'director', text: 'Director' },
       { value: 'producer', text: 'Producer' },
@@ -101,11 +149,16 @@ const filters = [
   }, {
     label: 'Athletic Endeavors',
     name: 'athleticEndeavors',
-    class: 'personal',
+    class: 'skills',
     options: [
       { value: 'diving', text: 'Diving' },
       { value: 'tennis', text: 'Tennis' },
-      { value: 'football', text: 'Football' }
+      { value: 'football', text: 'Football' },
+      { value: 'combat - stage', text: 'Combat - stage' },
+      { value: 'martial arts', text: 'Martial Arts' },
+      { value: 'horseback riding', text: 'Horseback riding' },
+      { value: 'weapons handling', text: 'Weapons handling' },
+      { value: 'knife fighting', text: 'Knife fighting' },
     ],
     multiple: true,
     input: true,
@@ -113,10 +166,12 @@ const filters = [
   }, {
     label: 'Performance',
     name: 'performance',
-    class: 'personal',
+    class: 'experience',
     options: [
       { value: 'comedian', text: 'Comedian' },
-      { value: 'modeling', text: 'Modeling' }
+      { value: 'modeling', text: 'Modeling' },
+      { value: 'licensed driver', text: 'Licensed Driver' },
+      { value: 'dancing', text: 'Dancing' }
     ],
     multiple: true,
     input: true,
@@ -124,7 +179,7 @@ const filters = [
   }, {
     label: 'Active years in profession',
     name: 'professionYears',
-    class: 'personal',
+    class: 'primary',
     options: [
       { value: '0', text: '< 1' },
       { value: '1', text: '1 year' },
@@ -144,7 +199,7 @@ const filters = [
   }, {
     label: 'Accents',
     name: 'accent',
-    class: 'personal',
+    class: 'skills',
     options: [
       { value: 'eastern eurpoean', text: 'Eastern European' },
       { value: 'russian', text: 'Russian' },
@@ -157,12 +212,15 @@ const filters = [
   }, {
     label: 'Languages',
     name: 'languages',
-    class: 'personal',
+    class: 'skills',
     options: [
       { value: 'english', text: 'English' },
       { value: 'swedish', text: 'Swedish' },
       { value: 'german', text: 'German' },
-      { value: 'spanish', text: 'Spanish' }
+      { value: 'spanish', text: 'Spanish' },
+      { value: 'danish', text: 'Danish' },
+      { value: 'norwegian', text: 'Norwegian' },
+      { value: 'albanian', text: 'Albanian' },
     ],
     multiple: true,
     input: true,
@@ -170,7 +228,7 @@ const filters = [
   }, {
     label: 'Disabilities',
     name: 'disabilities',
-    class: 'personal',
+    class: 'skills',
     options: [
       { value: 'autism', text: 'Autism' },
       { value: 'amputee', text: 'Amputee' }
@@ -178,49 +236,9 @@ const filters = [
     multiple: true,
     input: true,
     type:'select'
-  }, {
-    label: 'Body Modifications',
-    name: 'bodyModifications',
-    class: 'personal',
-    options: [
-      { value: 'piercings', text: 'Piercings' },
-      { value: 'tatoos', text: 'Tatoos' }
-    ],
-    multiple: true,
-    input: true,
-    type:'select'
-  }, {
-    label: 'Nudity',
-    name: 'nudity',
-    class: 'personal',
-    options: [
-      { value: 'none', text: 'No Nudity'},
-      { value: 'partial', text: 'Partial Nudity' },
-      { value: 'full', text: 'Full Nudity' }
-    ],
-    multiple: true,
-    input: true,
-    type:'select'
-  },
+  }, 
   // Measurements
   {
-    label: 'Body type',
-    name: 'measurements.bodyType',
-    class: 'measurements',
-    options: [
-      { value: 'slender', text: 'Slender' },
-      { value: 'very thin', text: 'Very thin' },
-      { value: 'average', text: 'Average' },
-      { value: 'athletic', text: 'Athletic' },
-      { value: 'husky', text: 'Husky' },
-      { value: 'body builder', text: 'Body builder' },
-      { value: 'large', text: 'Large' },
-      { value: 'n/a', text: 'n/a' }
-    ],
-    multiple: true,
-    input: false,
-    type:'select'
-  }, {
     label: 'Shirt size',
     name: 'measurements.shirtSize',
     class: 'measurements',
