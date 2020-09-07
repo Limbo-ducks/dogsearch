@@ -17,11 +17,11 @@ const parseCredit = R.pipe(
 )
 
 const parseRanges = fields => ({
-    $and: Object.entries(fields)
-      .flatMap(([ key, [ min, max ] ]) => [
-        { [key]: { $gte: min } },
-        { [key]: { $lte: max } }
-      ])
+  $and: Object.entries(fields)
+    .flatMap(([ key, [ min, max ] ]) => [
+      { [key]: { $gte: min } },
+      { [key]: { $lte: max } }
+    ])
 })
 
 const makeQuery = ({ credit = [], options, ranges }) => ({
