@@ -1,0 +1,31 @@
+@import "../../variables.scss";
+
+#attributes {
+  display: block;
+  height: 130px;
+  margin-top: -130px;
+  visibility: hidden;
+}
+
+.content {
+  &__attributes {
+    padding: 10px;
+
+    &__list {
+      &__row {
+        display: flex;
+        justify-content: space-between;
+        background-color: $beige;
+        padding: 0 10px;
+
+        &--odd {
+          background-color: whitesmoke;
+        }
+
+        article {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
