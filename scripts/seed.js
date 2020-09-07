@@ -7,9 +7,18 @@ const mongoOpts = {
     useUnifiedTopology: true,
 }
 
-const data = Array.from({ length: 200 }, () => ({
+const makeDates = () =>
+    Array.from({ length: 3 }, (_, i) => ({
+        from: `2020-${10 + i}-${faker.random.number({ min: 1, max: 10 }).toString().padStart(2, '0')}`,
+        to: `2020-${10 + i}-${faker.random.number({ min: 11, max: 30 })}`,
+    }))
+
+const talents = require('./talents.js')
+
+let data = Array.from({ length: 200 }, () => ({
     id: faker.random.uuid(),
     premium: faker.random.arrayElement([ true, false, false, false, false ]),
+    available: makeDates(),
     name: faker.name.findName(),
     contact: {
         address: faker.address.streetAddress(),
@@ -18,7 +27,7 @@ const data = Array.from({ length: 200 }, () => ({
         email: faker.internet.email(),
         phone: faker.phone.phoneNumber(),
     },
-    age: faker.random.number({min: 0, max: 100}),
+    actingAge: faker.random.number({min: 0, max: 100}),
     image: `https://source.unsplash.com/collection/159213/480x300?sig=${faker.random.number({min: 0, max: 200})}`,
     profession: faker.name.jobDescriptor(),
     representation: {
@@ -126,6 +135,8 @@ const data = Array.from({ length: 200 }, () => ({
         audio: faker.lorem.words(1),
     },
 }))
+
+data = [...data, ...talents];
 
 const client = new MongoClient(mongoUri, mongoOpts)
 
