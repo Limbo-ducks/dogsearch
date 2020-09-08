@@ -6,6 +6,8 @@ import Image from '../../assets/images/banner.png'
 import ExampleImageOne from '../../assets/images/1.jpg'
 import ExampleImageTwo from '../../assets/images/2.jpg'
 import ExampleImageThree from '../../assets/images/3.jpg'
+import CollectionsBookmarkOutlinedIcon from '@material-ui/icons/CollectionsBookmarkOutlined';
+import { grey } from '@material-ui/core/colors'
 
 
 
@@ -89,7 +91,11 @@ function ResultCard (props) {
         </section>
       </Modal>
       <article className="talentcard max-w-sm rounded overflow-hidden shadow-lg" onClick={handleToggle(true)}>
-        <img className="talentcard__image w-full" src={props.image} alt="Sunset in the mountains" />
+        <img className="talentcard__image w-full" src={props.image} alt="talent-image" /> 
+        <button className="talentcard__bookmark">
+          <CollectionsBookmarkOutlinedIcon fontSize="small" className="talentcard__bookmark--click"/>
+          </button>
+        
         <div className="talentcard__info px-6 py-4">
           <p className="talentcard__info__text text-gray-700 text-base">
             <ul className="talentcard__info__text--list">

@@ -101,19 +101,10 @@
 
 .flex-row {
     flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
     @media (min-width: $breakpoint-md) {
         flex-direction: row;
     }
 }
 
-.makeStyles-root-3 {
-    max-width: 100%;
-
-    @media (min-width: $breakpoint-md) {
-        max-width: 85%;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-        max-width: 20%;
-    }
-}

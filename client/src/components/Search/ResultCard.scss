@@ -2,21 +2,42 @@
 
 .talentcard {
     width: calc(100% - 30px);
-		margin: 15px;
+	margin: 15px;
+	position: relative;
 
 		@media (min-width: $breakpoint-sm) {
-			width: calc(50% - 30px);
+			width: calc(100% - 30px);
 		}
 
 		@media (min-width: $breakpoint-md) {
-			width: calc(33% - 30px);
+			width: calc(50% - 30px);
 		}
 
 		@media (min-width: $breakpoint-xl) {
-			width: calc(25% - 30px);
+			width: calc(33% - 30px);
 		}
 
-    &__info {
+	&__bookmark {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		margin: 4px;
+		box-sizing: content-box;
+		border-radius: 4px;
+		color: rgba(0, 0, 0, 0.87);
+		background-color: $beige;
+		transition: ease-in-out 0.5s;
+
+		&:hover {
+			cursor: pointer;
+			background-color: $white;
+		}
+		&--click {
+			margin: 8px 10px;
+		}
+		
+	}
+    &__info {	
         
         &__text {
             

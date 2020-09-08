@@ -7,7 +7,8 @@ const Buttons = () => {
     <section className="header__buttons">
       <Link to='/signup'>
         <button 
-          className="header__buttons__button header__buttons__button--signup">
+          className="header__buttons__button header__buttons__button--signup"
+          >
             sign-up</button>
       </Link>
       <Link to='/login'>

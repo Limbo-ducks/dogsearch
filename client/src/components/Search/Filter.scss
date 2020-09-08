@@ -105,3 +105,16 @@ h1 {
     width: calc(25% - 10px);
     margin: 5px;
 }
+
+.filterwrapper {
+    max-width: 70%;
+    margin: 0 auto;
+
+    // @media (min-width: $breakpoint-md) {
+    //     max-width: 85%;
+    // }
+
+    // @media (min-width: $breakpoint-lg) {
+    //     max-width: 90%;
+    // }
+}

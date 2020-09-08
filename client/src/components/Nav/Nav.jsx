@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Icon from '../../assets/images/talentwyre-icon-gold.png'
 import './Nav.scss'
 
-function Nav ({ authenticated }) {
+function Nav ({ authenticated}) {
   return (
     <nav className="header__nav">
       <ul className="header__nav__list">
