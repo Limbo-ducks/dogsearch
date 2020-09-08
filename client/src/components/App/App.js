@@ -18,6 +18,17 @@ function App () {
     openMenu ? setOpenMenu(false) : setOpenMenu(true)
   }
 
+  React.useEffect(() => {
+    window.addEventListener("resize", function(){
+      if (document.documentElement.clientWidth > 821) {
+        setOpenMenu(false)
+      }
+      else {
+        setOpenMenu(true)
+      }
+    }, true);
+  }, [])
+
   return (
     <Router>
       <Header openMenu={openMenu} burgerMenu={burgerMenu}/>
