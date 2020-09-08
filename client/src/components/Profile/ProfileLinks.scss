@@ -2,13 +2,14 @@
 
 .profilenav {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   position: inherit;
   z-index: 400;
   width: 100%;
   min-height: 30px;
+  margin-top: 20px;
   color: black;
   background-color: rgba(255,255,255, 0.0);
 
@@ -19,9 +20,9 @@
     transform: translate(-50%, 0%);
     background-color: white;
     height: 35px;
+    margin-top: 0px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: flex-end;
   }
 
