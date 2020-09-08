@@ -11,12 +11,18 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import { Tooltip } from '@material-ui/core';
 
-const ProfileInfo = ({viewCalendar, viewContact, viewProfile}) => {
+const calculateHeight = height => {
+  const feet = Math.floor(height / 12)
+  return `${feet}'${Math.floor((((height/12)-feet)*10))}"` 
+}
+
+const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile}) => {
+
   return (
     <section className="info">
       <article className="info__header">
-        <img src={Image} alt="" className="info__header__banner"/>
-        <img src={ExampleImageOne} alt="" className="info__header__profileimg"/>
+        <img src={data.media.slateShot} alt="" className="info__header__banner"/>
+        <img src={data.image} alt="" className="info__header__profileimg"/>
         <Tooltip title="Add to shortlist"><StarBorderOutlinedIcon/></Tooltip>
       </article>
       <article className="info__navigation">
@@ -43,14 +49,19 @@ const ProfileInfo = ({viewCalendar, viewContact, viewProfile}) => {
         </Tooltip>
       </article>
       <article className="info__content">
-        <h2 className="info__content__text">Model, stuntman</h2>
-        <h3 className="info__content__text"><LocationOnOutlinedIcon/> Stockholm, Sweden</h3>
+        <h2 className="info__content__text">
+          {data.gender === 'female' && data.profession.toLowerCase() === 'actor' ? 
+            'Actress' : 'Actor'}
+        </h2>
+        <h3 className="info__content__text"><LocationOnOutlinedIcon/> 
+            {data.contact.city}, {data.contact.citizenship}
+        </h3>
         <article className="info__content__attributes">
           <InfoOutlinedIcon/>
           <article className="info__content__attributes__text">
-            <h3 className="info__content__text">Height: </h3>
-            <h3 className="info__content__text">Eyes:</h3>
-            <h3 className="info__content__text">Acting age:</h3>
+            <h3 className="info__content__text">Height: {calculateHeight(data.measurements.height)}</h3>
+            <h3 className="info__content__text">Eyes: {data.eyeColor}</h3>
+            <h3 className="info__content__text">Acting age: {data.age - 5} - {data.age + 5}</h3>
           </article>
         </article>
         <h3 className="info__content__text info__content__text--representation"><BusinessCenterOutlinedIcon/> Representation AB</h3>

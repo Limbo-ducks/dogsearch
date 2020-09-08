@@ -37,7 +37,7 @@ const Profile = (props) => {
             .then(res => res.json())
             .then(data => setProfileData(data))
             .catch(console.log)
-            .finally(() => setStatus('idle'))
+            .finally(() => setStatus('loaded'))
         }
   }, [status])
 
@@ -65,12 +65,13 @@ const Profile = (props) => {
   })
 
   return (
+    status === 'loaded'? 
     <>
       <LoggedInNav />
       <main className="profile">
         <section className="profile__content">
-          <ProfileInfo viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile}/>
-          {openProfile ? <><ProfileLinks/><ProfileContent /></> : null }
+          <ProfileInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile}/>
+          {openProfile ? <><ProfileLinks/><ProfileContent data={profileData}/></> : null }
           {openCalendar ? <><section className="profilenav">
                               <a href="#images"><h3 className="profilenav__link">Calendar</h3></a>
                             </section><ProfileCalendar /></> : null}
@@ -81,6 +82,7 @@ const Profile = (props) => {
         </section>
       </main>
     </>
+    : null
   )
 }
 
