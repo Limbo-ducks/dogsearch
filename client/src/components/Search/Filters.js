@@ -12,11 +12,26 @@ const filters = [
     multiple: false,
     input: false,
     type:'select'
-  },{
+  }, {
+    label: 'Profession',
+    name: 'cast',
+    class: 'primary',
+    options: [
+      { value: 'actor', text: 'Actor' },
+      { value: 'stunt actor', text: 'Stunt Actor' },
+      { value: 'dj', text: 'DJ' },
+      { value: 'singer', text: 'Singer' },
+      { value: 'painter', text: 'Painter' },
+      { value: 'model', text: 'Model' }
+    ],
+    multiple: false,
+    input: true,
+    type:'select'
+  }, {
     label: 'Acting Age',
     unit: "",
     name: 'age',
-    class: 'personal',
+    class: 'primary',
     min: 5,
     max: 100,
     type: 'range'    
@@ -115,21 +130,6 @@ const filters = [
     ],
     multiple: false,
     input: false,
-    type:'select'
-  }, {
-    label: 'Cast',
-    name: 'cast',
-    class: 'primary',
-    options: [
-      { value: 'actor', text: 'Actor' },
-      { value: 'stunt actor', text: 'Stunt Actor' },
-      { value: 'dj', text: 'DJ' },
-      { value: 'singer', text: 'Singer' },
-      { value: 'painter', text: 'Painter' },
-      { value: 'model', text: 'Model' }
-    ],
-    multiple: false,
-    input: true,
     type:'select'
   }, {
     label: 'Filmmakers',
@@ -286,15 +286,6 @@ const filters = [
     input: false,
     type:'select'
   }, {
-    label: 'Shoe Length',
-    unit: "'",
-    name: 'measurements.shoeLength',
-    class: 'measurements',
-    min: 1,
-    max: 17,
-    step:0.5,
-    type: 'range'    
-  }, {
     label: 'Gloves',
     name: 'measurements.gloves',
     class: 'measurements',
@@ -308,6 +299,15 @@ const filters = [
     multiple: false,
     input: false,
     type:'select'
+  }, {
+    label: 'Shoe Length',
+    unit: "'",
+    name: 'measurements.shoeLength',
+    class: 'measurements',
+    min: 1,
+    max: 17,
+    step:0.5,
+    type: 'range'    
   }, {
     label: 'Height',
     unit: "'",
