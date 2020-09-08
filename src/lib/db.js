@@ -22,7 +22,7 @@ module.exports = client => {
       .then(R.prop('value'))
 
   const findById = id => 
-    db.collection('profiles').findOne({ id })
+    db.collection('profiles').findOne({ id }, { projection: { _id: 0 }})
 
   const search = query =>
     db.collection('profiles')

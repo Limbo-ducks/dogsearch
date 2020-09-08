@@ -39,7 +39,7 @@ client.connect()
     app.get('/', (req, res) => res.json(req.user))
 
     app.use('/api/auth', auth(db))
-    app.use('/api/user', user(db))
+    app.use('/api/users', user(db))
 
     app.post('/api/search', searchController(db))
     app.get('/api/profiles/:id', profileController(db))

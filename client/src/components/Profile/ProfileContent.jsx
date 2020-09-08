@@ -10,7 +10,7 @@ import ProfileAudio from './ProfileAudio';
 import ProfileAttributes from './ProfileAttributes';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
-const ProfileContent = () => {
+const ProfileContent = props => {
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -51,7 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       <ProfileNews />
       <span id="attributes" className="spanscroll"></span>
       <h3 className="content__title">Attributes</h3>
-      <ProfileAttributes />
+      <ProfileAttributes data={props.data}/>
     </section>
   )
 }

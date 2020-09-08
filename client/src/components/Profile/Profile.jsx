@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ProfileInfo from './ProfileInfo';
 import ProfileAbout from './ProfileAbout';
 import ProfileContent from './ProfileContent';
@@ -10,10 +10,37 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import './Profile.scss'
 import ProfileContact from './ProfileContact';
 
+const makeOpts = (body, method = 'GET') => ({
+  method,
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body
+})
+
 const Profile = (props) => {
-  const [openProfile, setOpenProfile] = React.useState(true);
-  const [openCalendar, setOpenCalendar] = React.useState(false);
-  const [openContact, setOpenContact] = React.useState(false);
+  const profileId = props.match.params.id
+
+  const [openProfile, setOpenProfile] = useState(true);
+  const [openCalendar, setOpenCalendar] = useState(false);
+  const [openContact, setOpenContact] = useState(false);
+  const [profileData, setProfileData] = useState({});
+  const [status, setStatus] = useState('loading');
+
+  useEffect(()=>{
+    if(status === 'loading'){
+          fetch(`/api/profiles/${profileId}`, 
+            {
+              method:'GET',
+              headers: {'Content-Type' : 'application/json'}
+             })
+            .then(res => res.json())
+            .then(data => setProfileData(data))
+            .catch(console.log)
+            .finally(() => setStatus('loaded'))
+        }
+  }, [status])
+
 
   const viewCalendar = () => {
     setOpenCalendar(true)
@@ -38,22 +65,24 @@ const Profile = (props) => {
   })
 
   return (
+    status === 'loaded'? 
     <>
       <LoggedInNav />
       <main className="profile">
         <section className="profile__content">
-          <ProfileInfo viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile}/>
-          {openProfile ? <><ProfileLinks/><ProfileContent /></> : null }
+          <ProfileInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile}/>
+          {openProfile ? <><ProfileLinks/><ProfileContent data={profileData}/></> : null }
           {openCalendar ? <><section className="profilenav">
                               <a href="#images"><h3 className="profilenav__link">Calendar</h3></a>
                             </section><ProfileCalendar /></> : null}
           {openContact ? <><section className="profilenav">
                               <a href="#images"><h3 className="profilenav__link">Contact</h3></a>
                             </section><ProfileContact /></> : null}
-          <ProfileAbout />
+          <ProfileAbout data={profileData.resume}/>
         </section>
       </main>
     </>
+    : null
   )
 }
 
