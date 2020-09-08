@@ -1,1 +1,9 @@
 @import "../../variables.scss";
+
+.info {
+  &__content {
+    &__searcher {
+      margin-top: 25px;
+    }
+  }
+}

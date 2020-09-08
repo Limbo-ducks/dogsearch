@@ -1,0 +1,24 @@
+@import "../../variables.scss";
+
+.about {
+  &__content {
+    &__project {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      margin: 5px;
+      border-bottom: 1px solid $lightblue;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $lightblue;
+      }
+
+      &__icons {
+        svg {
+          margin: 0 2px;
+        }
+      }
+    }
+  }
+}

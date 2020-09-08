@@ -66,7 +66,7 @@ function ResultCard (props) {
               </article>
             </article>
             <article className="modal__profile__button">
-              <Link to={`/profile`}>
+              <Link to={`/profile/${props.id}`}>
                 <button>
                   View Profile
                 </button>
