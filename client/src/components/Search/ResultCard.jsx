@@ -95,7 +95,7 @@ function ResultCard (props) {
             <ul className="talentcard__info__text--list">
               <li>{props.contact.city}</li>
               <li>{props.gender}</li>
-              <li>{calculateActingAge(props.actingAge)}</li>
+              <li>{calculateActingAge(props.age)}</li>
               <li>{`${calculateHeight(props.measurements.height)}(~${calculateHeightCM(props.measurements.height)}cm)`}</li>
             </ul>
           </p>
