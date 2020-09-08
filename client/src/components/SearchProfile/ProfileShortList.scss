@@ -1,0 +1,19 @@
+@import "../../variables.scss";
+
+.shortlist {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__person {
+    width: calc(33% - 20px);
+    margin: 5px 10px;
+    &__img {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+  }
+}
