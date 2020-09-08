@@ -10,21 +10,36 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import './Profile.scss'
 import ProfileContact from './ProfileContact';
 
+const makeOpts = (body, method = 'GET') => ({
+  method,
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body
+})
+
 const Profile = (props) => {
   const profileId = props.match.params.id
-  const baseURL = '/api/search'
 
   const [openProfile, setOpenProfile] = useState(true);
   const [openCalendar, setOpenCalendar] = useState(false);
   const [openContact, setOpenContact] = useState(false);
   const [profileData, setProfileData] = useState({});
+  const [status, setStatus] = useState('loading');
 
-  const getData = id => {
-    fetch(baseURL)
-      .then(res => res.json())
-      .then(data => setProfileData(data))
-      .catch(console.log)
-  }
+  useEffect(()=>{
+    if(status === 'loading'){
+          fetch(`/api/profiles/${profileId}`, 
+            {
+              method:'GET',
+              headers: {'Content-Type' : 'application/json'}
+             })
+            .then(res => res.json())
+            .then(data => setProfileData(data))
+            .catch(console.log)
+            .finally(() => setStatus('idle'))
+        }
+  }, [status])
 
 
   const viewCalendar = () => {
@@ -62,7 +77,7 @@ const Profile = (props) => {
           {openContact ? <><section className="profilenav">
                               <a href="#images"><h3 className="profilenav__link">Contact</h3></a>
                             </section><ProfileContact /></> : null}
-          <ProfileAbout />
+          <ProfileAbout data={profileData.resume}/>
         </section>
       </main>
     </>
