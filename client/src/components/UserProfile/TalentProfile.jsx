@@ -5,6 +5,7 @@ import { map } from '../../lib/helpers'
 import aboutFields from './aboutFields'
 import appearanceFields from './appearanceFields'
 import contactFields from './contactFields'
+import measurementFields from './measurementFields'
 
 const types = {
   autocomplete: (onChange, x) => (
@@ -50,6 +51,10 @@ const TalentProfile = ({ data, handleChange }) => {
       <section>
         <h3>Appearance</h3>
         {printFields(appearanceFields)}
+      </section>
+      <section>
+        <h3>Measurements</h3>
+        {printFields(measurementFields)}
       </section>
     </section>
   )

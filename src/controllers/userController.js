@@ -53,7 +53,7 @@ const getProfile = db => (req, res, next) => {
 
 const update = db => (req, res, next) => {
   db.updateProfile(req.user.profile, req.body)
-    .then(checkFinished)
+    .then(checkFinished(db))
     .then(data => res.json(data))
     .catch(next)
 }
