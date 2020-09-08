@@ -22,7 +22,7 @@ import './FilterComponent.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: '100%',
     '& > * + *': {
         marginTop: theme.spacing(2),
       },

@@ -30,6 +30,9 @@ const useStyles = makeStyles({
     padding: 0,
     width: '48%',
     margin: '1.6% 0',
+    3: {
+      "max-width": "100%",
+    }
   },
   outlined: {
     transform: 'translate(14px, 14px) scale(1)',
@@ -208,16 +211,18 @@ const Filter = ({ search, searchCredit }) => {
     <div className='flex flex-col'>
     {sortClasses()}
     <ThemeProvider theme={theme}>
-      <FilterComponent 
-        primary={primary} 
-        appearance={appearance} 
-        skills={skills} 
-        experience={experience}
-        measurements={measurements}
-        handleSubmit={handleSubmit}
-        searchCredit={searchCredit} 
-        handleCreditChange={handleCreditChange}
-        />
+      <section className="filterwrapper">
+        <FilterComponent 
+          primary={primary} 
+          appearance={appearance} 
+          skills={skills} 
+          experience={experience}
+          measurements={measurements}
+          handleSubmit={handleSubmit}
+          searchCredit={searchCredit} 
+          handleCreditChange={handleCreditChange}
+          />
+        </section>
     </ThemeProvider>
     
     {/* <article className="searchengine">

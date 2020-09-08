@@ -5,8 +5,8 @@ import Film from '../../assets/images/film.png'
 import Theatre from '../../assets/images/theatre.png'
 import Modeling from '../../assets/images/model.png'
 import Tv from '../../assets/images/tv.png'
-import Narrators from '../../assets/images/narrators.jpeg'
-import Other from '../../assets/images/other.jpeg'
+import Narrators from '../../assets/images/narrators.jpg'
+import Other from '../../assets/images/other.jpg'  
 
 
 
@@ -45,7 +45,7 @@ const Grid = () => {
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search/modeling">          
+        <Link to="/search/other">          
           <img src={Other} alt=""/>
           <h2>Other</h2>
         </Link>

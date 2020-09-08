@@ -17,7 +17,6 @@ const talents = require('./talents.js')
 
 let data = Array.from({ length: 200 }, () => ({
     id: faker.random.uuid(),
-    premium: faker.random.arrayElement([ true, false, false, false, false ]),
     available: makeDates(),
     name: faker.name.findName(),
     contact: {
