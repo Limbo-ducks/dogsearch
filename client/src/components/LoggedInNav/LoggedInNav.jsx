@@ -4,6 +4,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 
 import ExampleImageOne from '../../assets/images/1.jpg'
 
@@ -15,6 +16,7 @@ const LoggedInNav = () => {
         <article className="secondarynav__profile__link"><MailOutlineIcon/><h5>Messages</h5></article>
         <article className="secondarynav__profile__link"><DateRangeIcon /><h5>Calendar</h5></article>
         <article className="secondarynav__profile__link"><NotificationsNoneIcon /><h5>Notifications</h5></article>
+        <article className="secondarynav__profile__link"><SettingsOutlinedIcon /><h5>Seetings</h5></article>
         <img src={ExampleImageOne} alt="" className="secondarynav__profile__img"/>
       </article>
     </section>
