@@ -36,6 +36,18 @@ const Grid = () => {
           <h2>Modeling</h2>
         </Link>
         </article>
+        <article className="grid__wrapper__item">
+        <Link to="/search/narrator">          
+          <img src={Modeling} alt=""/>
+          <h2>Narrator</h2>
+        </Link>
+        </article>
+        <article className="grid__wrapper__item">
+        <Link to="/search/modeling">          
+          <img src={Modeling} alt=""/>
+          <h2>Example</h2>
+        </Link>
+        </article>
       </section>
     </section>
   )

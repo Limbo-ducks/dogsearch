@@ -45,6 +45,12 @@ const checkFinished = db => profile =>
     ? db.updateProfile(req.user.profile, { finishedProfile: true })
     : profile
 
+const getProfile = db => (req, res, next) => {
+  db.findById(req.user.id)
+    .then(data => res.json(data))
+    .catch(next)
+}
+
 const update = db => (req, res, next) => {
   db.updateProfile(req.user.profile, req.body)
     .then(checkFinished)
@@ -52,6 +58,15 @@ const update = db => (req, res, next) => {
     .catch(next)
 }
 
+const whoami = (req, res) => {
+  const id = req.user
+    ? req.user.id
+    : ''
+  res.json({ id })
+}
+
 module.exports = {
+  getProfile,
   update,
+  whoami
 }
