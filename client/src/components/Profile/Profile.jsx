@@ -37,20 +37,6 @@ const Profile = (props) => {
     window.scrollTo(0, 0)
   })
 
-  // window.onscroll = function() {scrollFunction()};
-
-  // const scrollFunction = () => {
-  // if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-  //     document.getElementById("scrolltop").style.display = "block";
-  //   } else {
-  //     document.getElementById("scrolltop").style.display = "none";
-  //   }
-  // }
-
-  // const scrollTop = () => {
-  //   window.scrollTo({top: 0, behavior: 'smooth'});
-  // }
-
   return (
     <>
       <LoggedInNav />
@@ -66,13 +52,6 @@ const Profile = (props) => {
                             </section><ProfileContact /></> : null}
           <ProfileAbout />
         </section>
-        {/* <a href="" className="profile__scroll" id="scrolltop" onClick={(e) => {
-            e.preventDefault();
-            scrollTop()
-            }}> */}
-        <a>
-          <ArrowUpwardIcon/>
-        </a>
       </main>
     </>
   )

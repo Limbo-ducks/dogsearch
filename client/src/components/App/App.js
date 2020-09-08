@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer'
 import Login from '../Login/Login'
 import Main from '../Main/Main'
 import Profile from '../Profile/Profile'
+import SearchProfile from '../SearchProfile/SearchProfile'
 import Search from '../Search/Search'
 import Signup from '../Signup/Signup'
 import Talent from '../Talents/Talent'
@@ -25,6 +26,15 @@ function App () {
       .then(res => res.json())
       .then(({ id }) => setUser(id))
       .catch(console.error)
+      
+    window.addEventListener("resize", function(){
+      if (document.documentElement.clientWidth > 821) {
+        setOpenMenu(false)
+      }
+      else {
+        setOpenMenu(true)
+      }
+    }, true);
   }, [])
 
   return (
@@ -34,6 +44,7 @@ function App () {
         <Route path='/' exact component={Main}/>
         <Route path='/about' exact component={About}/>
         <Route path='/profile' component={Profile} />
+        <Route path='/searchprofile' component={SearchProfile} />
         <Route path='/search/:credit?' component={Search} />
         <Route path='/talents/:id' exact component={Talent} />
         <Route path='/login' exact component={Login} />

@@ -9,15 +9,42 @@ import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { map, maybe, pipe, prop } from '../../lib/helpers'
 import FilterComponent from './FilterComponent';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+// const GlobalCss = withStyles({
+//   // @global is handled by jss-plugin-global.
+//   '@global': {
+//     // You should target [class*="MuiButton-root"] instead if you nest themes.
+//     '.MuiInputLabel-root': {
+//       transform: 'translate(14px, 14px) scale(1)',
+//     },
+//   },
+// })(() => null);
+
+// // …
+
+// <GlobalCss />
 
 const useStyles = makeStyles({
   root: {
     padding: 0,
     width: '48%',
     margin: '1.6% 0',
-    backgroundColor: 'white'
-  }
+  },
+  outlined: {
+    transform: 'translate(14px, 14px) scale(1)',
+  },
+});
+
+const theme = createMuiTheme({
+  overrides: {
+      MuiInputLabel: { // Name of the component ⚛️ / style sheet
+          outlined: { // Name of the rule
+              transform: 'translate(14px, 14px) scale(1);', // Some CSS
+              'text-transform': 'capitalize',
+          },
+      },
+  },
 });
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -116,10 +143,10 @@ const Filter = ({ search, searchCredit }) => {
       // )}
       // size="small"
       classes={{
-        root: classes.root
+        root: classes.root,
       }}
       
-      renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined"/>}
+      renderInput={(params) => <TextField {...params} label={filter.label} variant="outlined" classes={{outlined: classes.outlined}}/>}
     />
   )
 
@@ -130,7 +157,7 @@ const Filter = ({ search, searchCredit }) => {
         ${filter.unit ? filter.max +''+ filter.unit : filter.max})`}
       key={filter.name}
       name={filter.name}
-      className={`${filter.class} w-1/2 ${filter.name} bg-white`}
+      className={`${filter.class} w-1/2 ${filter.name}`}
       value={ranges[filter.name]}
       onChange={handleRangeChange(filter.name)}
       min={filter.min}
@@ -158,9 +185,7 @@ const Filter = ({ search, searchCredit }) => {
   }
 
   const selectRoot = filter => {
-    return filter.type === 'select'
-    ? makeSelect(filter) : null
-    ? makeRange(filter) : null
+    return filter.type === 'select'? makeSelect(filter) : makeRange(filter);
   }
       
 
@@ -182,16 +207,19 @@ const Filter = ({ search, searchCredit }) => {
   return (
     <div className='flex flex-col'>
     {sortClasses()}
-    <FilterComponent 
-      primary={primary} 
-      appearance={appearance} 
-      skills={skills} 
-      experience={experience}
-      measurements={measurements}
-      handleSubmit={handleSubmit}
-      searchCredit={searchCredit} 
-      handleCreditChange={handleCreditChange}
-      />
+    <ThemeProvider theme={theme}>
+      <FilterComponent 
+        primary={primary} 
+        appearance={appearance} 
+        skills={skills} 
+        experience={experience}
+        measurements={measurements}
+        handleSubmit={handleSubmit}
+        searchCredit={searchCredit} 
+        handleCreditChange={handleCreditChange}
+        />
+    </ThemeProvider>
+    
     {/* <article className="searchengine">
     <h3>Filter Results</h3>
     

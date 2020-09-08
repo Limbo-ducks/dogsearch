@@ -16,7 +16,7 @@ const getDefValue = def => {
 
 const ExperienceBox = ({ def, onChange }) => (
     <Autocomplete
-        className="picklist bg-white"
+        className="picklist"
         id='credit'
         defaultValue={getDefValue(def)}
         options={options}

@@ -60,3 +60,60 @@
 .MuiTypography-gutterBottom {
     margin-bottom: 0em !important;
 }
+
+.MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+    .MuiAutocomplete-input {
+        padding: 2.5px 4px!important;
+    }
+}
+
+// .MuiInputLabel-outlined {
+//     transform: translate(14px, 14px) scale(1)!important;
+
+//     .MuiInputLabel-shrink {
+//         transform: translate(14px, -6px) scale(0.75)!important;
+//     }
+// }
+
+.slider {
+    width: calc(100% - 20px);
+}
+
+.mx-8 {
+    margin: 0 auto!important; 
+
+    .age {
+        width: calc(100% - 20px);
+        margin: 0 auto!important;
+    }
+}
+
+.MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon {
+    .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+        background-color: white!important;
+    }
+}
+
+.MuiOutlinedInput-input {
+    padding: 11.5px 14px!important;
+    background-color: white;
+}
+
+.flex-row {
+    flex-direction: column;
+    @media (min-width: $breakpoint-md) {
+        flex-direction: row;
+    }
+}
+
+.makeStyles-root-3 {
+    max-width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+        max-width: 85%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        max-width: 20%;
+    }
+}
