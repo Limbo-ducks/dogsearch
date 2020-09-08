@@ -35,7 +35,7 @@ function App () {
       <Switch>
         <Route path='/' exact component={Main}/>
         <Route path='/about' exact component={About}/>
-        <Route path='/profile' component={Profile} />
+        <Route path='/profile/:id' component={Profile} />
         <Route path='/search/:credit?' component={Search} />
         <Route path='/talents/:id' exact component={Talent} />
         <Route path='/login' exact component={Login} />

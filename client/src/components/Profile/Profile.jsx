@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ProfileInfo from './ProfileInfo';
 import ProfileAbout from './ProfileAbout';
 import ProfileContent from './ProfileContent';
@@ -11,9 +11,21 @@ import './Profile.scss'
 import ProfileContact from './ProfileContact';
 
 const Profile = (props) => {
-  const [openProfile, setOpenProfile] = React.useState(true);
-  const [openCalendar, setOpenCalendar] = React.useState(false);
-  const [openContact, setOpenContact] = React.useState(false);
+  const profileId = props.match.params.id
+  const baseURL = '/api/search'
+
+  const [openProfile, setOpenProfile] = useState(true);
+  const [openCalendar, setOpenCalendar] = useState(false);
+  const [openContact, setOpenContact] = useState(false);
+  const [profileData, setProfileData] = useState({});
+
+  const getData = id => {
+    fetch(baseURL)
+      .then(res => res.json())
+      .then(data => setProfileData(data))
+      .catch(console.log)
+  }
+
 
   const viewCalendar = () => {
     setOpenCalendar(true)
