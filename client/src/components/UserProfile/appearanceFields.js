@@ -1,0 +1,96 @@
+export default [{
+  label: 'Age Range to Play',
+  name: 'age',
+  type: 'autocomplete',
+  multiple: false,
+  options: Array.from({ length: 75 }, (_, i) => ({ value: i + '', text: i + '' }))
+    .concat({ value: '75+', text: '75+' }),
+}, {
+  label: 'Hair Color',
+  name: 'hairColor',
+  type: 'autocomplete',
+  multiple: false,
+  options: [
+    { value: 'Auburn', text: 'Auburn' },
+    { value: 'Bald', text: 'Bald' },
+    { value: 'Black', text: 'Black' },
+    { value: 'Blonde', text: 'Blonde' },
+    { value: 'Blue', text: 'Blue' },
+    { value: 'Brown', text: 'Brown' },
+    { value: 'Grey', text: 'Grey' },
+    { value: 'Honey Brown', text: 'Honey Brown' },
+    { value: 'Multi-Colored', text: 'Multi-Colored' },
+    { value: 'Red', text: 'Red' },
+    { value: 'Salt and Pepper', text: 'Salt and Pepper' },
+    { value: 'Silver', text: 'Silver' },
+    { value: 'Strawberry Blond', text: 'Strawberry Blond' },
+    { value: 'White', text: 'White' },
+  ]
+}, {
+  label: 'Hair Length',
+  name: 'hairLength',
+  type: 'autocomplete',
+  multiple: false,
+  options: [
+    { value: 'Afro', text: 'Afro' },
+    { value: 'Bald (total)', text: 'Bald (total)' },
+    { value: 'Bald (on top)', text: 'Bald (on top)' },
+    { value: 'Buzzcut', text: 'Buzzcut' },
+    { value: 'Chin length', text: 'Chin length' },
+    { value: 'Cornrows', text: 'Cornrows' },
+    { value: 'Dreadlocks', text: 'Dreadlocks' },
+    { value: 'Long', text: 'Long' },
+    { value: 'Mullet', text: 'Mullet' },
+    { value: 'Receding', text: 'Receding' },
+    { value: 'Shaved', text: 'Shaved' },
+    { value: 'Short', text: 'Short' },
+    { value: 'Shoulder length', text: 'Shoulder length' },
+    { value: 'Spiky', text: 'Spiky' },
+    { value: 'Undercut', text: 'Undercut' },
+  ]
+}, {
+  label: 'Eye Color',
+  name: 'eyeColor',
+  type: 'autocomplete',
+  multiple: false,
+  options: [
+    { value: 'Black', text: 'Black' },
+    { value: 'Blue', text: 'Blue' },
+    { value: 'Brown', text: 'Brown' },
+    { value: 'Green', text: 'Green' },
+    { value: 'Grey', text: 'Grey' },
+    { value: 'Hazel', text: 'Hazel' },
+  ]
+}, {
+  label: 'Gender',
+  name: 'gender',
+  type: 'autocomplete',
+  multiple: false,
+  options: [
+    { value: 'Female', text: 'Female' },
+    { value: 'Male', text: 'Male' },
+  ]
+},{
+  label: 'Ethnic Appearance',
+  name: 'ethnicity',
+  type: 'autocomplete',
+  multiple: false,
+  options: [
+    { value: 'African', text: 'African' },
+    { value: 'Black/African American', text: 'Black/African American' },
+    { value: 'Caucassian', text: 'Caucassian' },
+    { value: 'East Asian', text: 'East Asian' },
+    { value: 'Eastern European', text: 'Eastern European' },
+    { value: 'Filipino', text: 'Filipino' },
+    { value: 'Hispanic', text: 'Hispanic' },
+    { value: 'Mediterranean', text: 'Mediterranean' },
+    { value: 'Middle Eastern', text: 'Middle Eastern' },
+    { value: 'Mixed Ethnicity', text: 'Mixed Ethnicity' },
+    { value: 'Native American Indian', text: 'Native American Indian' },
+    { value: 'North African', text: 'North African' },
+    { value: 'Pacifist Islander', text: 'Pacifist Islander' },
+    { value: 'South Asian', text: 'South Asian' },
+    { value: 'Southeast Asian', text: 'Southeast Asian' },
+    { value: 'West Indies/Carbibbean', text: 'West Indies/Carbibbean' },
+  ]
+}]
