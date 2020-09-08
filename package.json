@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": ". ./.env node index.js",
-    "dev": ". ./.env && nodemon index.js --ignore 'client/'",
+    "start": "node index.js",
+    "dev": "nodemon index.js --ignore 'client/'",
     "heroku-postbuild": "cd client && npm i && npm run build",
     "seed": "cd scripts && node seed.js",
     "empty": "cd scripts && node empty.js"
@@ -15,8 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "date-fns": "^2.0.0-beta.5",
     "cookie-session": "^1.4.0",
+    "date-fns": "^2.0.0-beta.5",
+    "dotenv": "^8.2.0",
     "eslint-config-standard": "^14.1.1",
     "express": "^4.17.1",
     "json-server": "^0.16.1",
