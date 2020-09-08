@@ -4,13 +4,20 @@ import { TextField } from '@material-ui/core'
 import TalentProfile from './TalentProfile'
 import { map, maybe, pipe, prop } from '../../lib/helpers'
 
+const fetchOpts = {
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  method: 'POST'
+}
+
 const typeOpts = [ 'Talent', 'Searcher', 'Representation' ]
 
 const parseValue = map(prop('value'))
 
 const getValue = pipe(
   parseValue,
-  maybe(x => x.length > 0)
+  maybe(x => x.length > 0 || typeof x === 'number')
 )
 
 const UserProfile = ({ history, user }) =>  {
@@ -21,6 +28,7 @@ const UserProfile = ({ history, user }) =>  {
 
   const handleChangeData = prop =>
     (event, value) => {
+      console.log(value)
       const newValue = value
         ? getValue(value)
         : event.target.value
@@ -33,14 +41,19 @@ const UserProfile = ({ history, user }) =>  {
       })
     }
 
-  console.log(data)
+  // useEffect(() => {
+  //   fetch('/api/users/me')
+  //     .then(res => res.json())
+  //     .then(setData)
+  //     .catch(console.error)
+  // }, [])
 
-  useEffect(() => {
-    fetch('/api/users/me')
-      .then(res => res.json())
-      .then(setData)
+  const updateProfile = () => {
+    console.log(data)
+    fetch('/api/users', { ...fetchOpts, body: JSON.stringify(data) })
+      .then(() => history.push(`/`))
       .catch(console.error)
-  }, [])
+  }
 
   return (
     <section className='my-32'>
@@ -50,6 +63,7 @@ const UserProfile = ({ history, user }) =>  {
         renderInput={ps => <TextField {...ps} label="Type" variant="outlined" />}
       />
       {type === 'Talent' && <TalentProfile data={data} handleChange={handleChangeData} />}
+      <button onClick={updateProfile}>Submit</button>
     </section>
   )
 }
