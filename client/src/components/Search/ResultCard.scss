@@ -4,6 +4,13 @@
     width: calc(100% - 30px);
 	margin: 15px;
 	position: relative;
+	transition: ease-in-out 0.2s;
+
+	&:hover {
+		filter: grayscale(50%);
+		cursor: pointer;
+		
+	}
 
 		@media (min-width: $breakpoint-sm) {
 			width: calc(100% - 30px);
@@ -27,6 +34,7 @@
 		color: rgba(0, 0, 0, 0.87);
 		background-color: $beige;
 		transition: ease-in-out 0.5s;
+		z-index: 1;
 
 		&:hover {
 			cursor: pointer;
@@ -227,4 +235,12 @@
 		object-fit: cover;
 		margin: 5px 5px;
 	}
+}
+
+.popover {
+	overflow-y: hidden;
+}
+
+.popover__card {
+	background-color: $beige!important;
 }
