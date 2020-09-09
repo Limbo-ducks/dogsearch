@@ -2,7 +2,7 @@ import React from 'react'
 import * as R from 'ramda'
 import { Checkbox, FormControlLabel, TextField } from '@material-ui/core'
 import { Autocomplete } from '@material-ui/lab'
-import { map } from '../../lib/helpers'
+import { getAutocompleteValue, map } from '../../lib/helpers'
 import aboutFields from './aboutFields'
 import accentFields from './accentFields'
 import appearanceFields from './appearanceFields'
@@ -13,10 +13,6 @@ import experienceFields from './experienceFields'
 import languageFields from './languageFields'
 import measurementFields from './measurementFields'
 import performanceFields from './performanceFields'
-
-const getAutocompleteValue = (options, value) => R.is(Object, value)
-  ? value
-  : options.find(x => x.value === value)
 
 const types = (data, onChange, handleCheck) => ({
   autocomplete: x => (

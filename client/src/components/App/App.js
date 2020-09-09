@@ -39,7 +39,7 @@ function App () {
 
   return (
     <Router>
-      <Header openMenu={openMenu} burgerMenu={burgerMenu}/>
+      <Header openMenu={openMenu} burgerMenu={burgerMenu} />
       <Switch>
         <Route path='/' exact component={Main}/>
         <Route path='/about' exact component={About}/>
