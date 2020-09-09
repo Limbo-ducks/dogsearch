@@ -6,7 +6,7 @@ import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 
-const Dashboard = () => {
+const Dashboard = ({ viewProjects }) => {
 
   return (
       <section className="dashboard">
@@ -20,7 +20,11 @@ const Dashboard = () => {
             <PeopleAltOutlinedIcon />
           </article>
         </button>
-        <button className="dashboard__button">
+        <button className="dashboard__button" onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            viewProjects(e.currentTarget)
+            }}>
           <h3 className="dashboard__button__text">My Projects</h3>
           <article className="dashboard__button__icon">
             <FileCopyOutlinedIcon />

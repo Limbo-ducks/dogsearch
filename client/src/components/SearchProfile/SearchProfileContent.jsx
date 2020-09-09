@@ -3,12 +3,12 @@ import './SearchProfileContent.scss'
 import Dashboard from './Dashboard';
 import ProfileNews from '../Profile/ProfileNews'
 
-const SearchProfileContent = () => {
+const SearchProfileContent = ({viewProjects}) => {
 
   return (
     <section className="content">
       <article className="content__navigation">
-        <Dashboard/>
+        <Dashboard viewProjects={viewProjects}/>
       </article>
       <h3 className="content__title">News</h3>
       <ProfileNews />

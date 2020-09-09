@@ -5,5 +5,32 @@
     &__searcher {
       margin-top: 25px;
     }
+    &__text {
+      svg {
+        color: $bluegrey;
+      }
+    }
+  }
+
+  &__nav {
+    margin: 15px 0; 
+
+    &__button {
+      padding: 5px 15px;
+      margin: 0 auto;
+      width: calc(100% - 10px);
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $lightblue;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        background-color: $lightblue;
+      }
+
+      &__text {
+
+      }
+    }
   }
 }

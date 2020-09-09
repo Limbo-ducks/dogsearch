@@ -6,30 +6,32 @@ import ExampleImageOne from '../../assets/images/1.jpg'
 
 const ProfileShortList = () => {
   return (
-    <section className="shortlist">
-      <article className="shortlist__person">
-        <article className="shortlist__person__img">
+    <section className="profileshortlist">
+      <article className="profileshortlist__person">
+        <article className="profileshortlist__person__img">
           <img src={ExampleImageOne} alt=""/>
         </article>
         <h3>Stuntman</h3>
       </article>
-      <article className="shortlist__person">
-        <article className="shortlist__person__img">
+      <article className="profileshortlist__person">
+        <article className="profileshortlist__person__img">
           <img src={ExampleImageOne} alt=""/>
         </article>
         <h3>Stuntman</h3>
       </article>
-      <article className="shortlist__person">
-        <article className="shortlist__person__img">
+      <article className="profileshortlist__person">
+        <article className="profileshortlist__person__img">
           <img src={ExampleImageOne} alt=""/>
         </article>
         <h3>Stuntman</h3>
       </article>
-      <article className="shortlist__person">
-        <article className="shortlist__person__img">
+      <article className="profileshortlist__person">
+        <article className="profileshortlist__person__img">
           <img src={ExampleImageOne} alt=""/>
         </article>
         <h3>Stuntman</h3>
+      </article>
+      <article>
       </article>
     </section>
   )
