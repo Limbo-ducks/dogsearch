@@ -3,9 +3,10 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './SingleProject.scss'
 import ProfileShortList from './ProfileShortList';
+import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 
 
-const SingleProject = () => {
+const SingleProject = ({viewShortlist}) => {
 
   return (
     <section className="content">
@@ -19,6 +20,14 @@ const SingleProject = () => {
       <span id="shortlist" className="spanscroll"></span>
       <h3 className="content__title">Shortlist</h3>
       <ProfileShortList />
+      <article className="content__link" onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  viewShortlist(e.currentTarget)
+                  }}>
+        <h4 className="content__link__text">View full shortlist</h4>
+        <ArrowForwardIosOutlinedIcon/>
+      </article>
       <span id="news" className="spanscroll"></span>
       <h3 className="content__title">News</h3>
     </section>

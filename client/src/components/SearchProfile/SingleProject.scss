@@ -1,7 +1,24 @@
+@import "../../variables.scss";
 
 .spanscroll {
   display: block;
   height: 130px;
   margin-top: -130px;
   visibility: hidden;
+}
+
+.content {
+  &__link {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+
+    &__text {
+      color: $blue;
+    }
+
+    svg {
+      color: $blue;
+    }
+  }
 }

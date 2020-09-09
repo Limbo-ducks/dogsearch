@@ -16,7 +16,7 @@ import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
 import { Tooltip } from '@material-ui/core';
 
-const SearchProfileInfo = ({ viewSingleProject, viewProfile}) => {
+const SearchProfileInfo = ({ viewMessages, viewProfile, viewProjects}) => {
   return (
     <section className="info">
       <article className="info__header">
@@ -34,7 +34,7 @@ const SearchProfileInfo = ({ viewSingleProject, viewProfile}) => {
         <Tooltip title="Messages" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
-            viewProfile(e.currentTarget)
+            viewMessages(e.currentTarget)
             }}><MailOutlineIcon />
           </article>
         </Tooltip>
@@ -58,16 +58,19 @@ const SearchProfileInfo = ({ viewSingleProject, viewProfile}) => {
         <h3 className="info__content__text">Recruiter</h3>
         <h3 className="info__content__text"><LocationOnOutlinedIcon/> Stockholm, Sweden</h3>
       </article>
-      <article className="info__footer">
-      <button className="dashboard__button dashboard__button--info">
-          <h3 className="dashboard__button__text">My projects</h3>
-          <article className="dashboard__button__icon">
+      <article className="info__nav">
+        <button className="info__nav__button" onClick={(e) => {
+            e.preventDefault();
+            viewProjects(e.currentTarget)
+            }}>
+          <h3 className="info__nav__button__text">My projects</h3>
+          <article className="info__nav__button__icon">
             <FileCopyOutlinedIcon />
           </article>
         </button>
-        <button className="dashboard__button dashboard__button--info">
-          <h3 className="dashboard__button__text">Profile Settings</h3>
-          <article className="dashboard__button__icon">
+        <button className="info__nav__button">
+          <h3 className="info__nav__button__text">Profile Settings</h3>
+          <article className="info__nav__button__icon">
             <SettingsOutlinedIcon />
           </article>
         </button>

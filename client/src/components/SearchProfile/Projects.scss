@@ -1,0 +1,33 @@
+@import "../../variables.scss";
+
+.projects {
+  height: 60vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 50px;
+    margin: 0 auto;
+    background-color: white;
+    border-bottom: 1px solid $lightblue;
+
+    &--title {
+      font-weight: 700;
+    }
+  }
+
+  &__column {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: calc(100% / 6);
+    padding: 0 10px;
+
+    &--centered {
+      justify-content: center;
+    }
+  }
+}
