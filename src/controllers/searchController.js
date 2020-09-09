@@ -1,5 +1,6 @@
 const R = require('ramda')
 const { shuffle } = require('../lib/helpers')
+const util = require('util')
 
 const formatListField = ([ key, val ]) => Array.isArray(val)
   ? [ key, { $all: val } ]
@@ -45,7 +46,7 @@ const parseRanges = fields => ({
 
 const makeQuery = ({ credit = [], dates, options, ranges }) => ({
   ...parseCredit(credit),
-  ...parseDates(dates),
+  // ...parseDates(dates),
   ...parseLists(options),
   ...parseRanges(ranges),
   finishedProfile: true,
@@ -59,7 +60,7 @@ const sortData = R.pipe(
 )
 
 const searchController = db => (req, res, next) => {
-  console.log(makeQuery(req.body))
+  console.log(util.inspect(makeQuery(req.body), { showHidden: false, depth: null }))
   db.search(makeQuery(req.body))
     .then(sortData)
     .then(data => res.json(data))
