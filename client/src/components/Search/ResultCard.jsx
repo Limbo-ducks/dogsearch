@@ -7,12 +7,28 @@ import ExampleImageOne from '../../assets/images/1.jpg'
 import ExampleImageTwo from '../../assets/images/2.jpg'
 import ExampleImageThree from '../../assets/images/3.jpg'
 import CollectionsBookmarkOutlinedIcon from '@material-ui/icons/CollectionsBookmarkOutlined';
-import { grey } from '@material-ui/core/colors'
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
+import PopoverContent from './PopoverContent';
 
 
 
 function ResultCard (props) {
   const [open, setOpen] = useState(false)
+  const [placement, setPlacement] = React.useState();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    event.stopPropagation()
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const popoverOpen = Boolean(anchorEl);
+  const id = popoverOpen ? 'simple-popover' : undefined;
 
   const handleToggle = bool => () => {
     setOpen(bool)
@@ -92,9 +108,10 @@ function ResultCard (props) {
       </Modal>
       <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
         <img className="talentcard__image w-full" src={props.image} alt="talent-image" /> 
-        <button className="talentcard__bookmark">
+        <button className="talentcard__bookmark" onClick={handleClick}>
           <CollectionsBookmarkOutlinedIcon fontSize="small" className="talentcard__bookmark--click"/>
           </button>
+          
         
         <div className="talentcard__info px-6 py-4">
           <p className="talentcard__info__text text-gray-700 text-base">
@@ -115,6 +132,24 @@ function ResultCard (props) {
            : null}
         </div>
       </article>
+      <Popover
+            id={id}
+            className="popover"
+            open={popoverOpen}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            placement='top-start'
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+          >
+            <PopoverContent className="TESTINGEEE"/>
+        </Popover>
     </>
   )
 }

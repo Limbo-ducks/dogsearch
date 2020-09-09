@@ -1,3 +1,5 @@
+import * as R from 'ramda'
+
 const pipe = (...fns) => val => fns.reduce((x, fn) => fn(x), val)
 
 const prop = key => obj => obj[key]
@@ -11,8 +13,13 @@ const map = fn => xs => Array.isArray(xs)
 const capitalise = str => str[0].toUpperCase() + str.slice(1)
 const spaciate = str => str.replace(/([a-z])([A-Z])/, (_, a, b) => `${a} ${b}`)
 
+const getAutocompleteValue = (options, value) => R.is(Object, value)
+  ? value
+  : options.find(x => x.value === value)
+
 export {
     capitalise,
+    getAutocompleteValue,
     map,
     maybe,
     pipe,

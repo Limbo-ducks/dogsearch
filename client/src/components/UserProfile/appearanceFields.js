@@ -3,9 +3,9 @@ export default [{
   name: 'age',
   type: 'autocomplete',
   multiple: false,
+  options: Array.from({ length: 75 }, (_, i) => ({ value: i, text: i + '' }))
+    .concat({ value: 76, text: '75+' }),
   required: true,
-  options: Array.from({ length: 75 }, (_, i) => ({ value: i + '', text: i + '' }))
-    .concat({ value: '75+', text: '75+' }),
 }, {
   label: 'Hair Color',
   name: 'hairColor',
