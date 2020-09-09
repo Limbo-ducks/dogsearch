@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.add-profile {
+  max-width: 60%;
+  margin: 5% auto;
+  position: relative;
+  min-height: 100vh;
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  padding: 50px;
+  box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
+
+  .type-input {
+    padding: 0;
+  }
+
+  h1 {
+    padding: 0;
+  }
+}

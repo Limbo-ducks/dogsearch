@@ -31,7 +31,7 @@ const makeMeasuredOption = (start, end, { unit = '\'', step = 1 } = {}) => (_, i
   return { value, text }
 }
 
-const makeGloveOption = (_, i) => [
+const makeHatOption = (_, i) => [
   { value: `${6 + i}`, text: `${6 + i}` },
   { value: `${6 + i} 1/2`, text: `${6 + i} 1/2` },
   { value: `${6 + i} 1/4`, text: `${6 + i} 1/4` },
@@ -169,5 +169,18 @@ export default [{
   name: 'measurements.gloves',
   type: 'autocomplete',
   multiple: false,
-  options: na.concat(Array.from({ length: 5 }, makeGloveOption).flat()),
+  options: [
+    na[0],
+    { value: 'xsm', text: 'XSM' },
+    { value: 'sm', text: 'SM' },
+    { value: 'm', text: 'M' },
+    { value: 'lg', text: 'LG' },
+    { value: 'xlg', text: 'XLG' },
+  ]
+}, {
+  label: 'Hat',
+  name: 'measurements.hat',
+  type: 'autocomplete',
+  multiple: false,
+  options: na.concat(Array.from({ length: 5 }, makeHatOption).flat()),
 }]
