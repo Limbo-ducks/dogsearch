@@ -10,14 +10,28 @@ import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@material-ui/pickers/adapter/date-fns"; // choose your lib
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIcon from '@material-ui/icons/Info';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  overrides: {
+      MuiGrid: { // Name of the component ⚛️ / style sheet
+          container: { // Name of the rule
+              "margin-bottom": '40px', // Some CSS
+          },
+      },
+  },
+});
 
 export default function BasicDateRangePicker() {
   const [selectedDate, handleDateChange] = React.useState([null, null]);
 
   return (
     <LocalizationProvider dateAdapter={DateFnsUtils}>
-    <Grid container direction="column" alignItems="center">
-    <Typography gutterBottom>Select Available Dates  
+    <ThemeProvider theme={theme}>
+
+    
+    <Grid container direction="column" alignItems="center" className="date__grid">
+    <Typography gutterBottom className="calendar__title">Select Available Dates  
          <Tooltip title="Talents can specify which dates they are available. Select the dates you are looking for." placement="top-start" color="secondary" style={{ fontSize: 18 }}>
             <InfoIcon className="info__icon" fontSize="small">Default Width [300px]</InfoIcon>
         </Tooltip>
@@ -29,6 +43,7 @@ export default function BasicDateRangePicker() {
         endText="To"
         value={selectedDate}
         onChange={date => handleDateChange(date)}
+        
         renderInput={(startProps, endProps) => (
           <>
             <TextField {...startProps}/>
@@ -38,7 +53,7 @@ export default function BasicDateRangePicker() {
         )}
       />
     </Grid>
-    
+    </ThemeProvider>
     </LocalizationProvider>
   );
 }

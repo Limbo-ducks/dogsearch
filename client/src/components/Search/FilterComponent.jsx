@@ -78,6 +78,7 @@ export default function RecipeReviewCard(props) {
         //   </IconButton>
         // }
         title="Filter Results"
+        className="card__title"
         // subheader="September 14, 2016"
       />
       {/* <CardMedia
