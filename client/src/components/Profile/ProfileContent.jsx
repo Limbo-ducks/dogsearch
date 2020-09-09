@@ -47,8 +47,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       <h3 className="content__title">Audio</h3>
       <ProfileAudio />
       <span id="news" className="spanscroll"></span>
-      <h3 className="content__title">News</h3>
-      <ProfileNews />
+      <h3 className="content__title">News feed</h3>
+      <ProfileNews data={props.data}/>
       <span id="attributes" className="spanscroll"></span>
       <h3 className="content__title">Attributes</h3>
       <ProfileAttributes data={props.data}/>
