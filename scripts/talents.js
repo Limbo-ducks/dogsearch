@@ -128,6 +128,18 @@ const talents = [
         mediaReel: 'https://youtu.be/qYKVy0pfkNA',
         audio: 'https://player.vimeo.com/video/402939962',
     },
+    education: [{
+        school: 'Stella Alder Conservatory of Acting',
+        course: 'Acting',
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    },
+    {
+        school: 'University of Gothenburg',
+        course: 'Drama',
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 // David S Lindgren
 {
@@ -253,6 +265,12 @@ const talents = [
         mediaReel: 'https://player.vimeo.com/video/407508647',
         audio: 'https://player.vimeo.com/video/403962999',
     },
+    education: [{
+        school: 'American Academy of Framatic Arts',
+        course: 'Acting',
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 }, 
     // Moa Malan
 {
@@ -398,6 +416,12 @@ const talents = [
         mediaReel: 'https://youtu.be/yd7XUBTS9uk',
         audio: 'https://player.vimeo.com/video/402939962',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
     //Marten Eckerstrom
 {
@@ -527,6 +551,12 @@ const talents = [
         mediaReel: 'https://vimeo.com/430974916',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 //
 {
@@ -623,6 +653,12 @@ const talents = [
         mediaReel: 'https://vimeo.com/431070759',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 //
 {
@@ -743,6 +779,12 @@ const talents = [
         mediaReel: 'https://vimeo.com/412032088',
         audio: 'https://vimeo.com/412032088',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 //Freida Farrell
 {
@@ -869,6 +911,12 @@ const talents = [
         mediaReel: 'https://vimeo.com/411967800',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 // Oskar Sternulf
 {
@@ -969,6 +1017,12 @@ const talents = [
         mediaReel: 'https://vimeo.com/401980557',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 // ANGELIKA ROBERTS
 {
@@ -1090,6 +1144,12 @@ const talents = [
         mediaReel: 'https://vimeo.com/401990620',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
     //SOLVEIG HAUGEN
 {
@@ -1219,6 +1279,12 @@ const talents = [
         mediaReel: '',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
     //MITCHO BATALOV
 {
@@ -1337,6 +1403,12 @@ const talents = [
         mediaReel: 'https://vimeo.com/401996336',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
     //LINA FREDLUND
 {
@@ -1454,6 +1526,12 @@ const talents = [
         mediaReel: 'https://www.youtube.com/watch?v=3nNzB7zWRAI&feature=emb_logo',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 ]
 
@@ -1580,5 +1658,11 @@ module.exports = talents
         mediaReel: '',
         audio: '',
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: faker.lorem.words(2),
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 },
 */
