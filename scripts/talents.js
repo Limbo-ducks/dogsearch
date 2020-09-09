@@ -96,14 +96,14 @@ const talents = [
             castType:'Co-star',
             year:2018
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'Women and War', 
                 character:'Barbara Berry',
                 castType:'Co-star',
                 year:2018
             }],
-        tv: [,
+        tv: [
             {
                 title:'FBI', 
                 character:'Kate Atherton',
@@ -378,7 +378,7 @@ const talents = [
             castType:'Actor',
             year:2010
         }],
-        stunts: [{
+        tv: [{
             title:'Midnattssol', 
             character:'Stunt performer',
             castType:'Stunf',
@@ -500,14 +500,14 @@ const talents = [
             castType:'Cast',
             year:2018
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'The hardy boy', 
                 character:'Frank hardy',
                 castType:'Cast',
                 year:2018
             }],
-        tv: [,
+        tv: [
             {
                 title:'The Duel', 
                 character:'Rodney',
@@ -718,7 +718,7 @@ const talents = [
             year:2018
         }],
         theatre: [],
-        tv: [,
+        tv: [
             {
                 title:'Johan Falk', 
                 character:'Danne',
@@ -837,14 +837,14 @@ const talents = [
             castType:'Lead',
             year:2019
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'Women and War', 
                 character:'Barbara Berry',
                 castType:'Co-star',
                 year:2018
             }],
-        tv: [,
+        tv: [
             {
                 title:'Bones', 
                 character:'-',
@@ -948,7 +948,7 @@ const talents = [
     professionYears:10,
     actingCredits: {
         films: [],
-        theatre: [,
+        theatre: [
             {
                 title:'The Seaman', 
                 character:'-',
@@ -1065,7 +1065,7 @@ const talents = [
             castType:'Lead',
             year:2018
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'Fri att flyg', 
                 character:'',
@@ -1192,14 +1192,14 @@ const talents = [
             castType:'Lead',
             year:2018
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'Medusa', 
                 character:'Scientist',
                 castType:'Introducer',
                 year:2018
             }],
-        tv: [,
+        tv: [
             {
                 title:'CSI: Miami', 
                 character:'Luxury Shopper',
@@ -1316,7 +1316,7 @@ const talents = [
             castType:'-',
             year:2018
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'Circus murder', 
                 character:'Mr. Tillmar',
@@ -1427,14 +1427,14 @@ const talents = [
             castType:'Lead',
             year:2018
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'När barnen sove', 
                 character:'',
                 castType:'Lead',
                 year:2018
             }],
-        tv: [,
+        tv: [
             {
                 title:'Web series', 
                 character:'',
@@ -1548,14 +1548,14 @@ module.exports = talents
             castType:'Co-star',
             year:2018
         }],
-        theatre: [,
+        theatre: [
             {
                 title:'Women and War', 
                 character:'Barbara Berry',
                 castType:'Co-star',
                 year:2018
             }],
-        tv: [,
+        tv: [
             {
                 title:'FBI', 
                 character:'Kate Atherton',

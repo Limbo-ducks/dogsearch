@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './LoggedInNav.scss'
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import DateRangeIcon from '@material-ui/icons/DateRange';
@@ -17,7 +18,9 @@ const LoggedInNav = () => {
         <article className="secondarynav__profile__link"><DateRangeIcon /><h5>Calendar</h5></article>
         <article className="secondarynav__profile__link"><NotificationsNoneIcon /><h5>Notifications</h5></article>
         <article className="secondarynav__profile__link"><SettingsOutlinedIcon /><h5>Settings</h5></article>
-        <img src={ExampleImageOne} alt="" className="secondarynav__profile__img"/>
+        <Link to="/my-profile">
+          <img src={ExampleImageOne} alt="" className="secondarynav__profile__img"/>
+        </Link>
       </article>
     </section>
   )
