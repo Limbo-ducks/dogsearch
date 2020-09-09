@@ -5,7 +5,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import BookmarksOutlinedIcon from '@material-ui/icons/BookmarksOutlined';
 
-const SearchProjects = ({ viewSingleProject }) => {
+const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
   return (
     <section className="about">
       <article className="about__header">
@@ -19,7 +19,16 @@ const SearchProjects = ({ viewSingleProject }) => {
             viewSingleProject(e.currentTarget)
             }}>
               <h3>Project</h3>
-              <article className="about__content__project__icons"><NotificationsNoneIcon /><BookmarksOutlinedIcon /> <DateRangeIcon /><MailOutlineIcon /></article>
+              <article className="about__content__project__icons">
+                <NotificationsNoneIcon />
+                <BookmarksOutlinedIcon onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  viewShortlist(e.currentTarget)
+                  }}/> 
+                <DateRangeIcon />
+                <MailOutlineIcon />
+              </article>
             </article>
           </li>
           <li>
