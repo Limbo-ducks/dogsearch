@@ -33,7 +33,7 @@ const setArray = R.pathOr([])
 
 const UserProfile = ({ history, user }) => {
   console.log(user)
-  if (!user) history.push('/')
+  // if (!user) history.push('/')
   const [data, setData] = useState({})
   const [type, setType] = useState('')
 
