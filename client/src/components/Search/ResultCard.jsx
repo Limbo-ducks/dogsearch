@@ -106,7 +106,7 @@ function ResultCard (props) {
           </article>
         </section>
       </Modal>
-      <article className="talentcard max-w-sm rounded overflow-hidden shadow-lg" onClick={handleToggle(true)}>
+      <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
         <img className="talentcard__image w-full" src={props.image} alt="talent-image" /> 
         <button className="talentcard__bookmark" onClick={handleClick}>
           <CollectionsBookmarkOutlinedIcon fontSize="small" className="talentcard__bookmark--click"/>
@@ -127,6 +127,9 @@ function ResultCard (props) {
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+          {props.premium ? 
+          <span className="premium-chip inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#premium</span>
+           : null}
         </div>
       </article>
       <Popover

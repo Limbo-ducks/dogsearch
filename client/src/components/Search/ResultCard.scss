@@ -1,5 +1,13 @@
 @import "../../variables.scss";
 
+.talentcard.premium {
+	box-shadow: 0 10px 15px -3px $gold, 0 4px 6px -2px $gold;	
+}
+
+.premium-chip {
+	background-color: rgb(197, 171, 103, 0.5);
+}
+
 .talentcard {
     width: calc(100% - 30px);
 	margin: 15px;
