@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.content {
+  &__cv {
+    margin-bottom: 10px;
+    
+    &__acting {
+      width: 95%;
+      margin: 0 auto;
+      background-color: whitesmoke;
+      border-radius: 3px;
+      padding: 10px;
+    }
+  }
+
+  &__header {
+    margin-left: 20px;
+    font-weight: 700;
+  }
+}
