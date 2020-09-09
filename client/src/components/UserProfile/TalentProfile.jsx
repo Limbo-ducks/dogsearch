@@ -80,25 +80,25 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         <div className='talent-subfield'>{printFields(appearanceFields)}</div>
         <p>* Fields are required</p>
       </section>
-      <section>
-        <h3>Athletic Endeavors</h3>
+      <section className='talent-registration-athletic info-container'>
+        <h2>Athletic Endeavors</h2>
         {printFields(athleticFields)}
       </section>
-      <section>
-        <h3>Performance Skills</h3>
+      <section className='talent-registration-skills info-container'>
+        <h2>Performance Skills</h2>
         {printFields(performanceFields)}
       </section>
-      <section>
-        <h3>Accents</h3>
+      <section className='talent-registration-accents info-container'>
+        <h2>Accents</h2>
         {printFields(accentFields)}
       </section>
-      <section>
-        <h3>Languages</h3>
+      <section className='talent-registration-languages info-container'>
+        <h2>Languages</h2>
         {printFields(languageFields)}
       </section>
       <AdditionalSkills />
-      <section>
-        <h3>Disabilities</h3>
+      <section className='talent-registration-disabilities info-container'>
+        <h2>Disabilities</h2>
         {printFields(disabilityFields)}
       </section>
       <SocialMedia />
@@ -107,9 +107,9 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         <div className='talent-subfield'>{printFields(measurementFields)}</div>
         <p>* Fields are required</p>
       </section>
-      <section>
-        <h3>Experience</h3>
-        {printFields(experienceFields)}
+      <section className='talent-registration-experience info-container'>
+        <h2>Experience</h2>
+        <div className='talent-subfield'>{printFields(experienceFields)}</div>
       </section>
       <CreditSection />
       <section>
