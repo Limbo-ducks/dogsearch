@@ -4,6 +4,8 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import BookmarksOutlinedIcon from '@material-ui/icons/BookmarksOutlined';
+import { Tooltip } from '@material-ui/core';
+
 
 const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
   return (
@@ -18,16 +20,16 @@ const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
             e.preventDefault();
             viewSingleProject(e.currentTarget)
             }}>
-              <h3>Project</h3>
+              <Tooltip title="View Project" placement="top"><h3>Project one</h3></Tooltip>
               <article className="about__content__project__icons">
-                <NotificationsNoneIcon />
-                <BookmarksOutlinedIcon onClick={(e) => {
+                <Tooltip title="View Project notifications" placement="top"><NotificationsNoneIcon /></Tooltip>
+                <Tooltip title="View Project Shortlist" placement="top"><BookmarksOutlinedIcon onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
                   viewShortlist(e.currentTarget)
-                  }}/> 
-                <DateRangeIcon />
-                <MailOutlineIcon />
+                  }}/></Tooltip> 
+                <Tooltip title="View Project Calendar" placement="top"><DateRangeIcon /></Tooltip>
+                <Tooltip title="View Project Messages" placement="top"><MailOutlineIcon /></Tooltip>
               </article>
             </article>
           </li>

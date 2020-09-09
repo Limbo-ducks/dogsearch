@@ -23,11 +23,11 @@
   &__profile {
     display: flex;
     position: relative;
+    align-items: center;
 
     svg {
-      font-size: 2em;
+      font-size: 1.6em;
       margin: 0 3px;
-      color: $grey;
     }
 
     &__img {

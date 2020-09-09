@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import * as R from 'ramda'
 import { Autocomplete } from '@material-ui/lab'
+import Button from '@material-ui/core/Button'
 import { TextField } from '@material-ui/core'
 import TalentProfile from './TalentProfile'
 import { getAutocompleteValue, map, maybe } from '../../lib/helpers'
-import Button from '@material-ui/core/Button'
 import './UserProfile.scss'
 
 const fetchOpts = {
@@ -28,22 +28,21 @@ const getValue = R.pipe(
   maybe(x => x.length > 0 || typeof x === 'number')
 )
 
-const setIfDefined = R.pathOr(undefined)
+const setIfDefined = R.pathOr('')
 const setArray = R.pathOr([])
 
 const UserProfile = ({ history, user }) => {
   console.log(user)
   // if (!user) history.push('/')
   const [data, setData] = useState({})
-  const [type, setType] = useState('')
 
   const handleChangeData = prop =>
     (event, value) => {
       const newValue = value
         ? getValue(value)
         : event.target.value
-        ? event.target.value
-        : undefined
+          ? event.target.value
+          : undefined
 
       setData({
         ...data,
@@ -81,6 +80,8 @@ const UserProfile = ({ history, user }) => {
     'eyeColor': setIfDefined(['eyeColor'], data),
     'gender': setIfDefined(['gender'], data),
     'ethnicity': setIfDefined(['ethnicity'], data),
+    'nudity': setIfDefined(['nudity'], data),
+    'bodyModifications': setArray(['bodyModifications'], data),
     'measurements.height': setIfDefined(['measurements', 'height'], data),
     'measurements.weight': setIfDefined(['measurements', 'weight'], data),
     'measurements.bodyType': setIfDefined(['measurements', 'bodyType'], data),
@@ -95,6 +96,7 @@ const UserProfile = ({ history, user }) => {
     'measurements.shoeLength': setIfDefined(['measurements', 'shoeLength'], data),
     'measurements.gloves': setIfDefined(['measurements', 'gloves'], data),
     'measurements.hat': setIfDefined(['measurements', 'hat'], data),
+    'measurements.notes': setIfDefined(['measurements', 'notes'], data),
     'athleticEndeavors': setArray(['athleticEndeavors'], data),
     'performance': setArray(['performance'], data),
     'accent': setArray(['accent'], data),
@@ -143,12 +145,12 @@ const UserProfile = ({ history, user }) => {
         handleCheckBoxes={handleCheckBoxes}
       />}
       {data.type ? <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            onClick={updateProfile}
-          >Submit</Button> : null}
+        type="submit"
+        fullWidth
+        variant="contained"
+        color="primary"
+        onClick={updateProfile}
+      >Submit</Button> : null}
     </section>
   )
 }

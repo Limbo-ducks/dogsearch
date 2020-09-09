@@ -16,7 +16,12 @@
 
       &__icons {
         svg {
+          color: $bluegrey;
           margin: 0 2px;
+
+          &:hover {
+            color: $grey;
+          }
         }
       }
     }
