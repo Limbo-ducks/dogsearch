@@ -135,6 +135,12 @@ let data = Array.from({ length: 200 }, () => ({
         mediaReel: faker.image.imageUrl(),
         audio: faker.lorem.words(1),
     },
+    education: [{
+        school: faker.lorem.words(2),
+        course: 'Acting',
+        from: faker.random.number({min: 1990, max: 2020}),
+        to: faker.random.number({min: 1990, max:2020})
+    }]
 }))
 
 data = [...data, ...talents];
