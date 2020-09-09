@@ -24,7 +24,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   return (
     <section className="content">
-      <span id="images"></span>
+      <span id="images" className="spanscroll"></span>
       <h3 className="content__title">Images</h3>
       <article className="gallery gallery--profile">
         <article className="gallery__column gallery__column--profile">
