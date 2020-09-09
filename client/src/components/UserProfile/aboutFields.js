@@ -7,6 +7,18 @@ const countryList = [
 ]
 
 export default [{
+  label: 'Profession',
+  name: 'profession',
+  type: 'autocomplete',
+  multiple: false,
+  required: true,
+  options: [
+    { value: 'actor', text: 'Actor' },
+    { value: 'musician', text: 'Musician' },
+    { value: 'voice over', text: 'Voice Over' },
+    { value: 'songwriter', text: 'Song Writer' },
+  ]
+}, {
   label: 'Name',
   name: 'name',
   type: 'text',
