@@ -183,4 +183,8 @@ export default [{
   type: 'autocomplete',
   multiple: false,
   options: na.concat(Array.from({ length: 5 }, makeHatOption).flat()),
+}, {
+  label: 'Notes to Wardrobe',
+  name: 'measurements.notes',
+  type: 'text',
 }]
