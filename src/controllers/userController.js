@@ -23,6 +23,8 @@ const isComplete = allPathsFilled([
   [ 'languages'],
   [ 'contact', 'address' ],
   [ 'contact', 'city' ],
+  [ 'contact', 'postalCode' ],
+  [ 'contact', 'country' ],
   [ 'contact', 'email' ],
   [ 'contact', 'phone' ],
   [ 'measurements', 'height' ],

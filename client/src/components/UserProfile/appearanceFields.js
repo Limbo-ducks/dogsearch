@@ -75,7 +75,7 @@ export default [{
     { value: 'female', text: 'Female' },
     { value: 'male', text: 'Male' },
   ]
-},{
+}, {
   label: 'Ethnic Appearance',
   name: 'ethnicity',
   type: 'autocomplete',
@@ -99,4 +99,25 @@ export default [{
     { value: 'southeast asian', text: 'Southeast Asian' },
     { value: 'west indies/carbibbean', text: 'West Indies/Carbibbean' },
   ]
+}, {
+  label: 'Nudity',
+  name: 'nudity',
+  type: 'autocomplete',
+  multiple: false,
+  required: false,
+  options: [
+    { value: 'none', text: 'No Nudity' },
+    { value: 'partial', text: 'Partial Nudity' },
+    { value: 'full', text: 'Full Nudity' },
+  ]
+}, {
+  label: 'Body Piercings',
+  name: 'piercings',
+  type: 'check',
+  prop: 'bodyModifications',
+}, {
+  label: 'Tattoos',
+  name: 'tattoos',
+  type: 'check',
+  prop: 'bodyModifications',
 }]
