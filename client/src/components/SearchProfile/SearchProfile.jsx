@@ -36,11 +36,12 @@ const SearchProfile = (props) => {
   const viewShortlist = () => {
     if (!openShortlist) { 
       setOpenShortlist(true)
-      setOpenSingleProject(false)
+      setOpenSingleProject(true)
       setOpenProfile(false)
       setOpenProjects(false)
     } else {
       setOpenShortlist(false)
+      setOpenProfile(true)
       setOpenProjects(false)
       setOpenSingleProject(true)
     }
@@ -50,7 +51,7 @@ const SearchProfile = (props) => {
     if (!openProjects) { 
       setOpenProjects(true)
       setOpenSingleProject(false)
-      setOpenProfile(false)
+      setOpenProfile(true)
       setOpenShortlist(false)
     } else {
       setOpenProjects(false)
@@ -64,7 +65,7 @@ const SearchProfile = (props) => {
     if (!openMessages) { 
       setOpenMessages(true)
       setOpenSingleProject(false)
-      setOpenProfile(false)
+      setOpenProfile(true)
       setOpenShortlist(false)
     } else {
       setOpenMessages(false)
