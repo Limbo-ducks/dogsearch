@@ -1,5 +1,6 @@
 const countryList = [
   { value: 'Denmark', text: 'Denmark' },
+  { value: 'Finland', text: 'Finland' },
   { value: 'Norway', text: 'Norway' },
   { value: 'Sweden', text: 'Sweden' },
   { value: 'United Kingdom', text: 'United Kingdom' },
