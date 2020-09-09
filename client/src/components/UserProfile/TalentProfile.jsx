@@ -2,6 +2,9 @@ import React from 'react'
 import * as R from 'ramda'
 import { Checkbox, FormControlLabel, TextField } from '@material-ui/core'
 import { Autocomplete } from '@material-ui/lab'
+import AdditionalSkills from './AdditionalSkills'
+import CreditSection from './CreditSection'
+import SocialMedia from './SocialMedia'
 import { getAutocompleteValue, map } from '../../lib/helpers'
 import aboutFields from './aboutFields'
 import accentFields from './accentFields'
@@ -12,6 +15,7 @@ import disabilityFields from './disabilityFields'
 import experienceFields from './experienceFields'
 import languageFields from './languageFields'
 import measurementFields from './measurementFields'
+import mediaFields from './mediaFields'
 import performanceFields from './performanceFields'
 import './TalentProfile.scss'
 
@@ -27,7 +31,7 @@ const types = (data, onChange, handleCheck) => ({
       multiple={x.multiple}
       disableCloseOnSelect={x.multiple ? true : false}
       value={getAutocompleteValue(x.options, data[x.name])}
-      renderInput={params => <TextField {...params} label={`${x.label}${x.required ? '*' : ''}`} variant="outlined"/>}
+      renderInput={params => <TextField {...params} label={`${x.label}${x.required ? '*' : ''}`} variant="outlined" />}
     />
   ),
   check: x => (
@@ -57,7 +61,6 @@ const types = (data, onChange, handleCheck) => ({
 const makeField = (data, onChange, handleCheck) => x => types(data, onChange, handleCheck)[x.type](x)
 
 const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
-  console.log(data)
   const printFields = map(makeField(data, handleChange, handleCheckBoxes))
 
   return (
@@ -77,34 +80,41 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         <div className='talent-subfield'>{printFields(appearanceFields)}</div>
         <p>* Fields are required</p>
       </section>
-      <section>
-        <h3>Athletic Endeavors</h3>
+      <section className='talent-registration-athletic info-container'>
+        <h2>Athletic Endeavors</h2>
         {printFields(athleticFields)}
       </section>
-      <section>
-        <h3>Performance Skills</h3>
+      <section className='talent-registration-skills info-container'>
+        <h2>Performance Skills</h2>
         {printFields(performanceFields)}
       </section>
-      <section>
-        <h3>Accents</h3>
+      <section className='talent-registration-accents info-container'>
+        <h2>Accents</h2>
         {printFields(accentFields)}
       </section>
-      <section>
-        <h3>Languages</h3>
+      <section className='talent-registration-languages info-container'>
+        <h2>Languages</h2>
         {printFields(languageFields)}
       </section>
-      <section>
-        <h3>Disabilities</h3>
+      <AdditionalSkills />
+      <section className='talent-registration-disabilities info-container'>
+        <h2>Disabilities</h2>
         {printFields(disabilityFields)}
       </section>
+      <SocialMedia />
       <section className='talent-registration-measurements info-container'>
         <h2>Measurements</h2>
         <div className='talent-subfield'>{printFields(measurementFields)}</div>
         <p>* Fields are required</p>
       </section>
+      <section className='talent-registration-experience info-container'>
+        <h2>Experience</h2>
+        <div className='talent-subfield'>{printFields(experienceFields)}</div>
+      </section>
+      <CreditSection />
       <section>
-        <h3>Experience</h3>
-        {printFields(experienceFields)}
+        <h3>Media Uploads</h3>
+        {printFields(mediaFields)}
       </section>
     </section>
   )
