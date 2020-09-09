@@ -6,6 +6,7 @@ import aboutFields from './aboutFields'
 import appearanceFields from './appearanceFields'
 import contactFields from './contactFields'
 import measurementFields from './measurementFields'
+import './TalentProfile.scss'
 
 const types = {
   autocomplete: (onChange, x) => (
@@ -18,13 +19,14 @@ const types = {
       getOptionLabel={option => option.text}
       multiple={x.multiple}
       disableCloseOnSelect={x.multiple ? true : false}
-      renderInput={params => <TextField {...params} label={x.label} variant="outlined"/>}
+      renderInput={params => <TextField {...params} label={`${x.label}${x.required ? '*' : ''}`} variant="outlined"/>}
     />
   ),
   text: (onChange, x) => (
     <TextField
       key={x.name}
-      label={x.label}
+      className={`${x.label.toLowerCase()}`}
+      label={`${x.label}${x.required ? '*' : ''}`}
       onChange={onChange(x.name)}
       variant="outlined"
       multiline={x.multiline}
@@ -39,22 +41,26 @@ const TalentProfile = ({ data, handleChange }) => {
   const printFields = map(makeField(handleChange))
 
   return (
-    <section className="my-8">
-      <section>
-        <h3>Contact Information</h3>
-        {printFields(contactFields)}
+    <section className='my-8 talent-registration' >
+      <section className='talent-registration-contact info-container'>
+        <h2>Contact Information</h2>
+        <div className='talent-subfield'>{printFields(contactFields)}</div>
+        <p>* Fields are required</p>
       </section>
-      <section>
-        <h3>About Me</h3>
-        {printFields(aboutFields)}
+      <section className='talent-registration-about info-container'>
+        <h2>About Me</h2>
+        <div className='talent-subfield'>{printFields(aboutFields)}</div>
+        <p>* Fields are required</p>
       </section>
-      <section>
-        <h3>Appearance</h3>
-        {printFields(appearanceFields)}
+      <section className='talent-registration-appearance info-container'>
+        <h2>Appearance</h2>
+        <div className='talent-subfield'>{printFields(appearanceFields)}</div>
+        <p>* Fields are required</p>
       </section>
-      <section>
-        <h3>Measurements</h3>
-        {printFields(measurementFields)}
+      <section className='talent-registration-measurements info-container'>
+        <h2>Measurements</h2>
+        <div className='talent-subfield'>{printFields(measurementFields)}</div>
+        <p>* Fields are required</p>
       </section>
     </section>
   )
