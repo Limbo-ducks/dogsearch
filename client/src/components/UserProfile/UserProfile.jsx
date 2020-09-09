@@ -4,6 +4,8 @@ import { Autocomplete } from '@material-ui/lab'
 import { TextField } from '@material-ui/core'
 import TalentProfile from './TalentProfile'
 import { getAutocompleteValue, map, maybe } from '../../lib/helpers'
+import Button from '@material-ui/core/Button'
+import './UserProfile.scss'
 
 const fetchOpts = {
   headers: {
@@ -124,8 +126,10 @@ const UserProfile = ({ history, user }) => {
   if (R.isEmpty(data)) return <div>Loading...</div>
 
   return (
-    <section className='my-32'>
+    <section className='add-profile my-32'>
+      <h1 className='m-0 w-full'>What is your role?</h1>
       <Autocomplete
+        className='type-input'
         options={typeOpts}
         id='type'
         onChange={handleChangeData('type')}
@@ -138,7 +142,13 @@ const UserProfile = ({ history, user }) => {
         handleChange={handleChangeData}
         handleCheckBoxes={handleCheckBoxes}
       />}
-      <button onClick={updateProfile}>Submit</button>
+      {data.type ? <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            onClick={updateProfile}
+          >Submit</Button> : null}
     </section>
   )
 }

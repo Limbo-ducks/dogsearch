@@ -9,6 +9,7 @@ import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutline
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
+import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 import { Tooltip } from '@material-ui/core';
 
 const calculateHeight = height => {
@@ -16,7 +17,7 @@ const calculateHeight = height => {
   return `${feet}'${Math.floor((((height/12)-feet)*10))}"` 
 }
 
-const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile}) => {
+const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => {
 
   return (
     <section className="info">
@@ -26,26 +27,33 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile}) => {
         <Tooltip title="Add to shortlist"><StarBorderOutlinedIcon/></Tooltip>
       </article>
       <article className="info__navigation">
-        <Tooltip title="profile" placement="top">
+        <Tooltip title="View profile" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
             viewProfile(e.currentTarget)
             }}><PersonOutlineIcon />
           </article>
         </Tooltip>
-        <Tooltip title="Contact" placement="top">
+        <Tooltip title="View CV" placement="top">
+          <article onClick={(e) => {
+            e.preventDefault();
+            viewCv(e.currentTarget)
+            }}><DescriptionOutlinedIcon />
+          </article>
+        </Tooltip>
+        <Tooltip title="Contact Talent" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
             viewContact(e.currentTarget)
             }}><MailOutlineIcon />
           </article>
         </Tooltip>
-        <Tooltip title="Calendar" placement="top">
+        <Tooltip title="View Calendar" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
             viewCalendar(e.currentTarget)
             }}><DateRangeIcon />
-        </article>
+          </article>
         </Tooltip>
       </article>
       <article className="info__content">

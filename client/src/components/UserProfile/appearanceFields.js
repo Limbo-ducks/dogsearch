@@ -1,15 +1,17 @@
 export default [{
-  label: 'Age Range to Play',
+  label: 'Age',
   name: 'age',
   type: 'autocomplete',
   multiple: false,
   options: Array.from({ length: 75 }, (_, i) => ({ value: i, text: i + '' }))
     .concat({ value: 76, text: '75+' }),
+  required: true,
 }, {
   label: 'Hair Color',
   name: 'hairColor',
   type: 'autocomplete',
   multiple: false,
+  required: false,
   options: [
     { value: 'auburn', text: 'Auburn' },
     { value: 'bald', text: 'Bald' },
@@ -31,6 +33,7 @@ export default [{
   name: 'hairLength',
   type: 'autocomplete',
   multiple: false,
+  required: false,
   options: [
     { value: 'afro', text: 'Afro' },
     { value: 'bald (total)', text: 'Bald (total)' },
@@ -53,6 +56,7 @@ export default [{
   name: 'eyeColor',
   type: 'autocomplete',
   multiple: false,
+  required: false,
   options: [
     { value: 'black', text: 'Black' },
     { value: 'blue', text: 'Blue' },
@@ -66,6 +70,7 @@ export default [{
   name: 'gender',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: [
     { value: 'female', text: 'Female' },
     { value: 'male', text: 'Male' },
@@ -75,6 +80,7 @@ export default [{
   name: 'ethnicity',
   type: 'autocomplete',
   multiple: false,
+  required: false,
   options: [
     { value: 'african', text: 'African' },
     { value: 'black/african american', text: 'Black/African American' },
