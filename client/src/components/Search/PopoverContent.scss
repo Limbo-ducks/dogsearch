@@ -1,0 +1,62 @@
+@import "../../variables.scss";
+
+.popover__title {
+    margin: 5px 10px!important;
+}
+
+.popover__list {
+    overflow-y: scroll;
+}
+
+.popover__paper {
+    background-color: $beige!important;
+}
+
+.MuiListItemSecondaryAction-root {
+    max-width: 50px!important;
+}
+
+.container {
+    display: flex;
+    position: relative;
+
+    &:hover .overlay {
+        opacity: 0.8;
+    }
+
+}
+
+.hidden {
+    display: none!important;
+}
+
+.button {
+    background-color: #ececec!important;
+}
+
+.new__item__button {
+    background-color: $beige!important;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.2s ease;
+    background-color: black;
+    overflow: hidden;
+  }
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

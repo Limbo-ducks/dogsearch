@@ -1,0 +1,100 @@
+@import "../../variables.scss";
+
+.messages {
+  display: flex;
+  height: 60vh;
+  width: 90%;
+  margin: 0 auto;
+
+  &__people {
+    width: 25%;
+
+    &__list {
+      &__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: whitesmoke;
+        padding: 4px 4px;
+        margin: 5px 10px;
+        border-radius: 40px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $bluegrey;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 3px solid white;
+          object-fit: cover;
+        }
+
+        h3 {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  &__chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 60vh;
+    background-color: $white;
+
+    &__messages {
+      height: 50vh;
+
+      &__header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 50px;
+        border-bottom: 2px solid #e2e8f0;
+        padding: 0 15px;
+        background-color: whitesmoke;
+      }
+
+      &__message {
+        background-color: $lightblue;
+        width: 90%;
+        border-radius: 16px;
+        padding: 10px 15px;
+        margin: 5px;
+
+        &--response {
+          margin-left: 9%;
+          background-color: whitesmoke;
+        }
+      }
+    }
+
+    &__input {
+      background-color: $lightblue;
+
+      input {
+        width: 70%
+      }
+    }
+  }
+}
+
+.send {
+  &__button {
+    margin: 10px;
+    padding: 2px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: "Catamaran", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: ease-in-out 0.5s;
+    box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
+    background-color: $grey;
+  }
+}
