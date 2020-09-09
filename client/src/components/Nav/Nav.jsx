@@ -20,7 +20,7 @@ function Nav ({ authenticated}) {
           <li>Latest News</li>
         </a>
 
-        {authenticated && <Link to='/profile'>
+        {authenticated && <Link to='/about'>
           <li>About</li>
         </Link>}
       </ul>
