@@ -2,8 +2,11 @@ const R = require('ramda')
 
 const isFilledPath = path => R.pipe(
   R.path(path),
-  R.length,
-  R.gt(R.__, 0)
+  R.ifElse(
+    R.is(Number),
+    R.T,
+    R.pipe(R.length, R.gt(R.__, 0))
+  )
 )
 const allPathsFilled = list => R.allPass(list.map(isFilledPath))
 
@@ -42,7 +45,7 @@ const checkFinished = db => profile =>
   profile.finishedProfile
     ? profile
     : isComplete(profile)
-    ? db.updateProfile(req.user.profile, { finishedProfile: true })
+    ? db.updateProfile(profile.profile, { finishedProfile: true })
     : profile
 
 const getProfile = db => (req, res, next) => {

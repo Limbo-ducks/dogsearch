@@ -1,0 +1,51 @@
+export default [{
+    label: 'Afrikaans',
+    name: 'afrikaans',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Arabic',
+    name: 'arabic',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Armenian',
+    name: 'armeanian',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Bengali',
+    name: 'bengali',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Bulgarian',
+    name: 'bulgarian',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Cantonese',
+    name: 'cantonese',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'English',
+    name: 'english',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Finnish',
+    name: 'finnish',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Norwegian',
+    name: 'norwegian',
+    type: 'check',
+    prop: 'languages',
+}, {
+    label: 'Swedish',
+    name: 'swedish',
+    type: 'check',
+    prop: 'languages',
+}]

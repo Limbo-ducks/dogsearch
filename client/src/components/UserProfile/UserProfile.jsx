@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import * as R from 'ramda'
 import { Autocomplete } from '@material-ui/lab'
 import { TextField } from '@material-ui/core'
 import TalentProfile from './TalentProfile'
@@ -13,12 +14,16 @@ const fetchOpts = {
 
 const typeOpts = [ 'Talent', 'Searcher', 'Representation' ]
 
-const parseValue = map(prop('value'))
+const parseValue = map(R.prop('value'))
 
-const getValue = pipe(
+const getValue = R.pipe(
   parseValue,
+  x => console.log(x) || x,
   maybe(x => x.length > 0 || typeof x === 'number')
 )
+
+const setIfDefined = R.pathOr(undefined)
+const setArray = R.pathOr([])
 
 const UserProfile = ({ history, user }) =>  {
   console.log(user)
@@ -28,7 +33,6 @@ const UserProfile = ({ history, user }) =>  {
 
   const handleChangeData = prop =>
     (event, value) => {
-      console.log(value)
       const newValue = value
         ? getValue(value)
         : event.target.value
@@ -41,12 +45,70 @@ const UserProfile = ({ history, user }) =>  {
       })
     }
 
-  // useEffect(() => {
-  //   fetch('/api/users/me')
-  //     .then(res => res.json())
-  //     .then(setData)
-  //     .catch(console.error)
-  // }, [])
+  const handleCheckBoxes = prop => event => setData({
+    ...data,
+    [prop]: event.target.checked
+      ? data[prop].concat(event.target.name)
+      : data[prop].filter(x => x !== event.target.name)
+  })
+
+  const setFormData = data => setData({
+    'contact.address': setIfDefined([ 'contact', 'address' ], data),
+    'contact.city': setIfDefined([ 'contact', 'city' ], data),
+    'contact.postalCode': setIfDefined([ 'contact', 'postalCode' ], data),
+    'contact.state': setIfDefined([ 'contact', 'state' ], data),
+    'contact.country': setIfDefined([ 'contact', 'country' ], data),
+    'contact.phone': setIfDefined([ 'contact', 'phone' ], data),
+    'contact.email': setIfDefined([ 'contact', 'email' ], data),
+    'name': setIfDefined([ 'name' ], data),
+    'biography': setIfDefined([ 'biography' ], data),
+    'education': setIfDefined([ 'education' ], data),
+    'training': setIfDefined([ 'training' ], data),
+    'citizenship': setIfDefined([ 'citizenship' ], data),
+    'passport': setIfDefined([ 'passport' ], data),
+    'workPermit': setIfDefined([ 'workPermit' ], data),
+    'imdb': setIfDefined([ 'imdb' ], data),
+    'birthDate': setIfDefined([ 'birthDate' ], data),
+    'age': setIfDefined([ 'age' ], data),
+    'hairColor': setIfDefined([ 'hairColor' ], data),
+    'hairLength': setIfDefined([ 'hairLength' ], data),
+    'eyeColor': setIfDefined([ 'eyeColor' ], data),
+    'gender': setIfDefined([ 'gender' ], data),
+    'ethnicity': setIfDefined([ 'ethnicity' ], data),
+    'measurements.height': setIfDefined([ 'measurements', 'height' ], data),
+    'measurements.weight': setIfDefined([ 'measurements', 'weight' ], data),
+    'measurements.bodyType': setIfDefined([ 'measurements', 'bodyType' ], data),
+    'measurements.shirtSize': setIfDefined([ 'measurements', 'shirtSize' ], data),
+    'measurements.sleeveLength': setIfDefined([ 'measurements', 'sleeveLength' ], data),
+    'measurements.neck': setIfDefined([ 'measurements', 'neck' ], data),
+    'measurements.jacketChest': setIfDefined([ 'measurements', 'jacketChest' ], data),
+    'measurements.jacketLength': setIfDefined([ 'measurements', 'jacketLength' ], data),
+    'measurements.waist': setIfDefined([ 'measurements', 'waist' ], data),
+    'measurements.inseam': setIfDefined([ 'measurements', 'inseam' ], data),
+    'measurements.shoeWidth': setIfDefined([ 'measurements', 'shoeWidth' ], data),
+    'measurements.shoeLength': setIfDefined([ 'measurements', 'shoeLength' ], data),
+    'measurements.gloves': setIfDefined([ 'measurements', 'gloves' ], data),
+    'measurements.hat': setIfDefined([ 'measurements', 'hat' ], data),
+    'athleticEndeavors': setArray([ 'athleticEndeavors' ], data),
+    'performance': setArray([ 'performance' ], data),
+    'accent': setArray([ 'accent' ], data),
+    'languages': setArray([ 'languages' ], data),
+    'disabilities': setArray([ 'disabilities' ], data),
+    'resume': setIfDefined([ 'resume' ], data),
+    'professionYears': setIfDefined([ 'professionYears' ], data),
+    'media.headShot': setIfDefined([ 'media', 'headShot' ], data),
+    'media.slateShot': setIfDefined([ 'media', 'slateShot' ], data),
+    'media.mediaReel': setIfDefined([ 'media', 'mediaReel' ], data),
+    'media.audio': setIfDefined([ 'media', 'audio' ], data),
+  })
+
+  useEffect(() => {
+    fetch('/api/users/me')
+      .then(res => res.json())
+      .then(x => console.log(x) || x)
+      .then(setFormData)
+      .catch(console.error)
+  }, [])
 
   const updateProfile = () => {
     console.log(data)
@@ -55,6 +117,8 @@ const UserProfile = ({ history, user }) =>  {
       .catch(console.error)
   }
 
+  console.log(data)
+
   return (
     <section className='my-32'>
       <Autocomplete
@@ -62,7 +126,11 @@ const UserProfile = ({ history, user }) =>  {
         onChange={(_, v) => setType(v)}
         renderInput={ps => <TextField {...ps} label="Type" variant="outlined" />}
       />
-      {type === 'Talent' && <TalentProfile data={data} handleChange={handleChangeData} />}
+      {type === 'Talent' && <TalentProfile
+        data={data}
+        handleChange={handleChangeData}
+        handleCheckBoxes={handleCheckBoxes}
+      />}
       <button onClick={updateProfile}>Submit</button>
     </section>
   )
