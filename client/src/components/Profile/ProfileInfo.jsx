@@ -17,6 +17,8 @@ const calculateHeight = height => {
   return `${feet}'${Math.floor((((height/12)-feet)*10))}"` 
 }
 
+const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
+
 const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => {
 
   return (
@@ -68,7 +70,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
           <InfoOutlinedIcon/>
           <article className="info__content__attributes__text">
             <h3 className="info__content__text">Height: {calculateHeight(data.measurements.height)}</h3>
-            <h3 className="info__content__text">Eyes: {data.eyeColor}</h3>
+            <h3 className="info__content__text">Eyes: {upCaseFirst(data.eyeColor)}</h3>
             <h3 className="info__content__text">Acting age: {data.age - 5} - {data.age + 5}</h3>
           </article>
         </article>
