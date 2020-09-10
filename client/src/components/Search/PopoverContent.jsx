@@ -88,8 +88,8 @@ const PopoverContent = () => {
     const classes = useStyles();
     return (
         <>
-        <div className="LOLOL">
-        <Typography align='left' className="popover__title">My Shortlists</Typography>
+        <div>
+        <Typography align='left' className="popover__title">Add to My Shortlists</Typography>
         <div className={classes.root   + ' popover__list'}>
             <Paper elevation={0} className="popover__paper">
                 <CheckboxListSecondary></CheckboxListSecondary>
