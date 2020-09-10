@@ -6,7 +6,9 @@ const options = [
     { value: 'films', text: 'Film' },
     { value: 'theatre', text: 'Theatre' },
     { value: 'tv', text: 'TV' },
-    { value: 'modeling', text: 'Modeling' }
+    { value: 'modeling', text: 'Modeling' },
+    { value: 'narrator', text: 'Narration' },
+    { value: 'other', text: 'Other' }
 ]
 
 const getDefValue = def => {
