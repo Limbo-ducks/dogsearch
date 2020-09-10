@@ -36,6 +36,7 @@ const types = (data, onChange, handleCheck) => ({
   ),
   check: x => (
     <FormControlLabel
+      className={`${x.label.toLowerCase()}`}
       key={x.name}
       label={x.label}
       control={<Checkbox
@@ -82,24 +83,24 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
       </section>
       <section className='talent-registration-athletic info-container'>
         <h2>Athletic Endeavors</h2>
-        {printFields(athleticFields)}
+        <div className='talent-subfield'>{printFields(athleticFields)}</div>
       </section>
       <section className='talent-registration-skills info-container'>
         <h2>Performance Skills</h2>
-        {printFields(performanceFields)}
+        <div className='talent-subfield'>{printFields(performanceFields)}</div>
       </section>
       <section className='talent-registration-accents info-container'>
         <h2>Accents</h2>
-        {printFields(accentFields)}
+        <div className='talent-subfield'>{printFields(accentFields)}</div>
       </section>
       <section className='talent-registration-languages info-container'>
         <h2>Languages</h2>
-        {printFields(languageFields)}
+        <div className='talent-subfield'>{printFields(languageFields)}</div>
       </section>
       <AdditionalSkills />
       <section className='talent-registration-disabilities info-container'>
         <h2>Disabilities</h2>
-        {printFields(disabilityFields)}
+        <div className='talent-subfield'>{printFields(disabilityFields)}</div>
       </section>
       <SocialMedia />
       <section className='talent-registration-measurements info-container'>
@@ -112,9 +113,9 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         <div className='talent-subfield'>{printFields(experienceFields)}</div>
       </section>
       <CreditSection />
-      <section>
-        <h3>Media Uploads</h3>
-        {printFields(mediaFields)}
+      <section className='talent-registration-media info-container'>
+        <h2>Media Uploads</h2>
+        <div className='talent-subfield'>{printFields(mediaFields)}</div>
       </section>
     </section>
   )
