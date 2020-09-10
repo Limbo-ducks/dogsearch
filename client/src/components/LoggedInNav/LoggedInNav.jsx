@@ -16,9 +16,7 @@ const LoggedInNav = () => {
           <article className="secondarynav__back"><h3><ArrowBackIcon/>Back to search</h3></article>
         </Link>
       <article className="secondarynav__profile">
-        <Link to="/searchprofile">
-          <article className="secondarynav__profile__link"><MailOutlineIcon/><h5>Messages</h5></article>
-        </Link>
+        <article className="secondarynav__profile__link"><MailOutlineIcon/><h5>Messages</h5></article>
         <article className="secondarynav__profile__link"><DateRangeIcon /><h5>Calendar</h5></article>
         <article className="secondarynav__profile__link"><NotificationsNoneIcon /><h5>Notifications</h5></article>
         <Link to="/my-profile">

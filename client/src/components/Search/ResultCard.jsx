@@ -13,7 +13,7 @@ import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutline
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import Logo from '../../assets/images/Logo.svg';
 import BlankImage from '../../assets/images/blank-profile-picture.png'
-
+import ImageGallery from '../Profile/ImageGallery'
 
 function ResultCard (props) {
   const {measurements} = props;
@@ -99,21 +99,44 @@ function ResultCard (props) {
                 </button>
               </Link>
             </article>
+  
+          {props.gallery ?
             <article className="gallery">
               <article className="gallery__gradient"></article>
               <article className="gallery__column">
-                <img src={ExampleImageOne} alt=""/>
+                  <img src={props.gallery[0] ? props.gallery[0].url: BlankImage} alt=""/>
+                  <img src={props.gallery[1] ? props.gallery[1].url: BlankImage} alt=""/>   
+              </article>
+
+              <article className="gallery__column">
+                  <img src={props.gallery[2] ? props.gallery[2].url: BlankImage} alt=""/>
+                  <img src={props.gallery[3] ? props.gallery[3].url: BlankImage} alt=""/>   
+              </article>
+
+              <article className="gallery__column">
+                  <img src={props.gallery[4] ? props.gallery[4].url: BlankImage} alt=""/>
+                  <img src={props.gallery[5] ? props.gallery[5].url: BlankImage} alt=""/>   
+              </article> 
+            </article>
+            :
+            <article className="gallery">
+              <article className="gallery__column">
+                <img src={ExampleImageTwo} alt=""/>
                 <img src={ExampleImageTwo} alt=""/>
               </article>
+
               <article className="gallery__column">
                 <img src={ExampleImageThree} alt=""/>
                 <img src={ExampleImageOne} alt=""/>
               </article>
+
               <article className="gallery__column">
                 <img src={ExampleImageTwo} alt=""/>
                 <img src={ExampleImageThree} alt=""/>
               </article>
             </article>
+            }
+
           </section>
         </section>
       </Modal>
