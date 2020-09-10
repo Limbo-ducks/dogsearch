@@ -13,11 +13,13 @@
 	margin: 15px;
 	position: relative;
 	transition: ease-in-out 0.2s;
+	filter: grayscale(50%);
 
 	&:hover {
-		filter: grayscale(50%);
+		filter: grayscale(0%);
 		cursor: pointer;
-		
+		margin-top: 10px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
 	}
 
 		@media (min-width: $breakpoint-sm) {
@@ -163,6 +165,7 @@
 		&__info {
 			display: flex;
 			justify-content: space-between;
+			align-items: center;
 			margin: 40px 10px 0px 10px;
 			height: calc(20vh - 50px);
 
@@ -177,6 +180,10 @@
 
 			&__representation {
 				margin-right: 16%;
+			}
+
+			&__attributes {
+				width: 100%;
 			}
 		}
 
@@ -201,6 +208,21 @@
 
 			&:hover {
 				background-color: $gold;
+			}
+		}
+	}
+
+	&__attributes {
+		display: flex;
+
+		&__items {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 5px;
+			width: 100%;
+
+			h4 {
+				width: calc(50% - 10px);
 			}
 		}
 	}

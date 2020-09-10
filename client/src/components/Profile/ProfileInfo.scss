@@ -22,7 +22,7 @@
 
     &__banner {
       width: 100%;
-      height: 100px;
+      height: 125px;
       object-fit: cover;
     }
 
@@ -52,7 +52,6 @@
   }
 
   &__navigation {
-    margin-top: 30px;
     display: flex;
     justify-content: flex-end;
     border: 1px solid $lightblue;
@@ -83,7 +82,7 @@
     }
 
     svg {
-      color: $grey;
+      color: $bluegrey;
     }
 
     &__attributes {
