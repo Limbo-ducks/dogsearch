@@ -1,2 +1,25 @@
 @import "../../variables.scss";
 
+.content {
+  &__video {
+    margin: 5px;
+    padding: 15px 0px;
+    
+    &__list {
+      margin: 5px 10px;
+      color: $blue;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid $lightblue;
+
+      li {
+        width: 50%;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

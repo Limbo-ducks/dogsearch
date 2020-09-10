@@ -1,12 +1,45 @@
 @import "../../variables.scss";
 
 .post {
-  background-color: whitesmoke;
+  background-color: $lightblue;
   border-radius: 3px;
   padding: 10px;
+  margin: 5px 0;
 
   &__header {
     display: flex;
+    padding: 5px;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #3b3a46;
+    
+    &__text {
+
+      &__title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+  
+      &__posted {
+        font-size: 14px;
+        font-style: italic;
+        color: $bluegrey;
+      }
+    }
+
+    &__img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
+    }
+  }
+
+  &__content {
+    &__text {
+      padding: 10px;
+    }
   }
 }

@@ -1,5 +1,10 @@
 @import "../../variables.scss";
+@supports (-moz-appearance:none) {
+  .content { 
+    transform: none;
 
+   } 
+}
 .content {
   position: inherit;
   margin: 10px auto;
@@ -11,8 +16,7 @@
     position: sticky;
     margin-top: 130px;
     margin-bottom: 40px;
-    left: 50%;
-    transform: translate(-50%, -0%);
+    left: 31%;
     width: 38%;
   }
 
