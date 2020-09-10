@@ -10,9 +10,10 @@
 
   @media (min-width: $breakpoint-md) {
     position: fixed;
-    top: 135px;
+    top: 150px;
     right: 10%;
     width: 20%;
+    height: 50vh;
   }
 
   &__header {
@@ -24,6 +25,10 @@
   }
 
   &__content {
+    height: 40vh;
+    overflow: scroll;
+    overflow-x: hidden;
+
     p {
       font-family: $paragraph;
     }
