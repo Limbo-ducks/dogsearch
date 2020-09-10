@@ -73,6 +73,8 @@ const getValue = pipe(
 )
 
 const Filter = ({ search, searchCredit }) => {
+  console.log('searchCredit')
+  console.log(searchCredit)
   const classes = useStyles();
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)

@@ -1,71 +1,24 @@
 export default [{
-    label: 'Amputee Arm',
-    name: 'amputee arm',
-    type: 'check',
+    label: 'Disabilities',
+    name: 'disabilities',
+    type: 'autocomplete',
     prop: 'disabilities',
-}, {
-    label: 'Amputee Double',
-    name: 'amputee double',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Amputee Leg',
-    name: 'amputee leg',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Amputee Single',
-    name: 'amputee single',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Asperger\'s',
-    name: 'asperger\'s',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Autism',
-    name: 'autism',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Blind or Low Vision',
-    name: 'blind or low vision',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Cerebral Palsy',
-    name: 'cerebral palsy',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Deaf or Hard of Hearing',
-    name: 'deaf or hard of hearing',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Down Syndrome',
-    name: 'down syndrome',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Intellectual Disability',
-    name: 'intellectual disability',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Little Person',
-    name: 'little person',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Mobility Disability',
-    name: 'mobility disability',
-    type: 'check',
-    prop: 'disabilities',
-}, {
-    label: 'Wheelchair User',
-    name: 'wheelchair user',
-    type: 'check',
-    prop: 'disabilities',
-}]
+    multiple: true,
+    required: false, 
+    options: [
+        { value: 'amputeeArm', text: 'Amputee Arm' },
+        { value: 'amputee double', text: 'Amputee Double' },
+        { value: 'amputeeLeg', text: 'Amputee Leg' },
+        { value: 'amputeeSingle', text: 'Amputee Single' },
+        { value: 'asperger\'s', text: 'Asperger\'s' },
+        { value: 'autism', text: 'Autism' },
+        { value: 'blind or low vision', text: 'Blind or Low Vision' },
+        { value: 'cerebral palsy', text: 'Cerebral Palsy' },
+        { value: 'deaf or hard of hearing', text: 'Deaf or Hard of Hearing' },
+        { value: 'down syndrome', text: 'Down Syndrome' },
+        { value: 'intellectual disability', text: 'Intellectual Disability' },
+        { value: 'little person', text: 'Little Person' },
+        { value: 'mobility disability', text: 'Mobility Disability' },
+        { value: 'wheelchair user', text: 'Wheelchair User' },
+      ]
+  }]

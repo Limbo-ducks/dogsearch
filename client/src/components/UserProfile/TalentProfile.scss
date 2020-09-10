@@ -23,9 +23,16 @@
     color: rgba(0, 0, 0, 0.54);
   }
   .MuiButtonBase-root {
-    color: rgba(0, 0, 0, 0.54);
     margin-top: 2%;
   }
+}
+
+.MuiAccordianDetails-root {
+  display: block!important;
+}
+
+.MuiAccordionSummary-content {
+  margin: 0;
 }
 
 .talent-registration-contact {

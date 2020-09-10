@@ -1,51 +1,20 @@
 export default [{
-    label: 'Afrikaans',
-    name: 'afrikaans',
-    type: 'check',
+    label: 'Languages',
+    name: 'languages',
+    type: 'autocomplete',
     prop: 'languages',
-}, {
-    label: 'Arabic',
-    name: 'arabic',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'Armenian',
-    name: 'armeanian',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'Bengali',
-    name: 'bengali',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'Bulgarian',
-    name: 'bulgarian',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'Cantonese',
-    name: 'cantonese',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'English',
-    name: 'english',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'Finnish',
-    name: 'finnish',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'Norwegian',
-    name: 'norwegian',
-    type: 'check',
-    prop: 'languages',
-}, {
-    label: 'Swedish',
-    name: 'swedish',
-    type: 'check',
-    prop: 'languages',
-}]
+    multiple: true,
+    required: false, 
+    options: [
+        { value: 'afrikaans', text: 'Afrikaans' },
+        { value: 'arabic', text: 'Arabic' },
+        { value: 'armeanian', text: 'Armenian' },
+        { value: 'bengali', text: 'Bengali' },
+        { value: 'bulgarian', text: 'Bulgarian' },
+        { value: 'cantonese', text: 'Cantonese' },
+        { value: 'english', text: 'English' },
+        { value: 'finnish', text: 'Finnish' },
+        { value: 'norwegian', text: 'Norwegian' },
+        { value: 'swedish', text: 'Swedish' },
+      ]
+  }]
