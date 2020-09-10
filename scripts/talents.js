@@ -141,7 +141,23 @@ const talents = [
         course: 'Drama',
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-7-1024x683.jpeg'
+    },
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-3-1024x683.jpeg'
+    }
+    ,
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-1-1024x683.jpeg'
+    }
+    ,
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-8-683x1024.jpeg'
+    }
+    ]
 },
 // David S Lindgren
 {
