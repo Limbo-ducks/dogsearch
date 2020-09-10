@@ -55,13 +55,13 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 const initRanges = {
   'age': [5, 100],
-  'measurements.height': [40, 120],
-  'measurements.weight': [50, 280],
-  'measurements.sleeveLength': [29, 40],
-  'measurements.neck': [12.0, 25.0],
+  'measurements.height': [23, 100],
+  'measurements.weight': [40, 290],
+  'measurements.sleeveLength': [28, 41],
+  'measurements.neck': [11.0, 26.0],
   'measurements.jacketChest': [32, 58],
-  'measurements.waist': [18, 58],
-  'measurements.inseam': [25, 40],
+  'measurements.waist': [17, 59],
+  'measurements.inseam': [24, 41],
   'measurements.shoeLength': [1.0, 17.0]
 }
 
