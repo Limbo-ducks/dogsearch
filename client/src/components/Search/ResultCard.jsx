@@ -99,13 +99,13 @@ function ResultCard (props) {
                 <h4><BusinessCenterOutlinedIcon/>Representation</h4>
               </article>
             </article>
-            {props.user && <article className="modal__profile__button">
-              <Link to={`/profile/${props.id}`}>
+            <article className="modal__profile__button">
+              <Link to={props.user ? `/profile/${props.id}` : '/login'}>
                 <button>
                   View Profile
                 </button>
               </Link>
-            </article>}
+            </article>
             <article className="gallery">
               <article className="gallery__gradient"></article>
               <article className="gallery__column">
