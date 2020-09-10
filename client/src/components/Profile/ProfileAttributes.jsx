@@ -72,51 +72,6 @@ const ProfileAttributes = ({data}) => {
           label={['Neck', 'Notes']} 
           unit={['"', '']} />
 
-      <article className={`content__attributes__list__row content__attributes__list__row--odd`}>
-        <article>
-          <p><b>Performance</b></p>
-        </article>
-      </article>
-
-        <ProfileAttribute 
-          data={[data.athleticEndeavors]} 
-          label={['Athletic Endeavors']} 
-          unit={['']} 
-          />
-
-        <ProfileAttribute 
-          data={[data.performance]} 
-          label={['Performance']} 
-          unit={['', '']} 
-          odd={true}/>
-
-        <ProfileAttribute 
-          data={[data.accent]} 
-          label={['Accents']} 
-          unit={['']}/>
-
-        <ProfileAttribute 
-          data={[data.languages]} 
-          label={['Languages']} 
-          unit={['', '']} 
-          odd={true}/>
-
-        <ProfileAttribute 
-          data={[data.additionalSkills]} 
-          label={['Additional Skills']} 
-          unit={['']}/>
-
-        <ProfileAttribute 
-          data={[data.professionYears]} 
-          label={['Profession Years']} 
-          unit={['']} 
-          odd={true}/>
-
-        
-
-
-        
-
       </article>
     </section>
   )

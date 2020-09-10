@@ -15,7 +15,7 @@
       &__row {
         display: flex;
         justify-content: space-between;
-        background-color: $beige;
+        background-color: $white;
         padding: 0 10px;
 
         &--odd {
@@ -23,8 +23,10 @@
         }
 
         article {
-          width:50%
+          width:100%
         }
+
+        
 
       }
     }
