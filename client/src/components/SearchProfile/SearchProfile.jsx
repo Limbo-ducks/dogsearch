@@ -111,7 +111,7 @@ const SearchProfile = (props) => {
   return (
     status === 'loaded' ? 
     <>
-      <LoggedInNav />
+      <LoggedInNav viewMessages={viewMessages}/>
       <main className="profile">
         <section className="profile__content">
           <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages}/>

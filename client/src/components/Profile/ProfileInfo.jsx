@@ -26,7 +26,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
       <article className="info__header">
         <img src={data.media.slateShot} alt="" className="info__header__banner"/>
         <img src={data.image} alt="" className="info__header__profileimg"/>
-        <Tooltip title="Add to shortlist"><StarBorderOutlinedIcon/></Tooltip>
+        {data.premium ? <h3 className="modal__premium">Premium</h3> : null}
       </article>
       <article className="info__navigation">
         <Tooltip title="View profile" placement="top">

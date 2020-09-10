@@ -2,31 +2,22 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Modal } from '@material-ui/core'
 import './ResultCard.scss'
-import Image from '../../assets/images/banner.png'
+import Image from '../../assets/images/talentwyre-background.jpg'
 import ExampleImageOne from '../../assets/images/1.jpg'
 import ExampleImageTwo from '../../assets/images/2.jpg'
 import ExampleImageThree from '../../assets/images/3.jpg'
 import CollectionsBookmarkOutlinedIcon from '@material-ui/icons/CollectionsBookmarkOutlined';
 import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 import PopoverContent from './PopoverContent';
-import DateRangeIcon from '@material-ui/icons/DateRange';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
-import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
-import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
-import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
-import { Tooltip } from '@material-ui/core';
+import Logo from '../../assets/images/Logo.svg';
+import BlankImage from '../../assets/images/blank-profile-picture.png'
+
 
 function ResultCard (props) {
   const {measurements} = props;
-  console.log(measurements)
+
   const [open, setOpen] = useState(false)
   const [placement, setPlacement] = React.useState();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -75,22 +66,24 @@ function ResultCard (props) {
         aria-describedby="simple-modal-description"
       >
         <section className="modal">
+          {props.premium ? <h3 className="modal__premium">Premium</h3> : null}
+          <img src={Logo} alt="" className="modal__logo"/>
           <img src={Image} alt="" className="modal__header"/>
-          <article className="modal__profile">
-            <img src={props.image} alt='profile-pic' className="modal__profile__image"/>
+          <section className="modal__profile">
+            <img src={props.image ? `${props.image}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
-              <button className="modal__buttons__button modal__buttons__button--save">Save</button>
+              <button className="modal__buttons__button modal__buttons__button--save">Shortlist</button>
               <button className="modal__buttons__button modal__buttons__button--contact">Contact</button>
             </article>
-            <article className="modal__profile__info">
+            <section className="modal__profile__info">
               <article className="modal__profile__info__attributes">
-                <h3>Model, stuntwoman</h3>
+                <h3>{props.profession} - <i>{props.citizenship}</i></h3>
                 <article className="modal__attributes">
                   <InfoOutlinedIcon/>
                   <article className="modal__attributes__items">
                     <h4><b>Height:</b> {calculateHeight(props.measurements.height)}(~{calculateHeightCM(props.measurements.height)}cm)</h4>
                     <h4><b>Eyecolour:</b> {props.eyeColor}</h4>
-                    <h4><b>Bodytype:</b> {measurements.bodyType}</h4>
+                    <h4><b>Body Type:</b> {measurements.bodyType}</h4>
                     <h4><b>Gender:</b> {props.gender}</h4>
                   </article>
                 </article>
@@ -98,7 +91,7 @@ function ResultCard (props) {
               <article className="modal__profile__info__representation">
                 <h4><BusinessCenterOutlinedIcon/>Representation</h4>
               </article>
-            </article>
+            </section>
             <article className="modal__profile__button">
               <Link to={!props.user ? `/profile/${props.id}` : '/login'}>
                 <button>
@@ -121,11 +114,11 @@ function ResultCard (props) {
                 <img src={ExampleImageThree} alt=""/>
               </article>
             </article>
-          </article>
+          </section>
         </section>
       </Modal>
       <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
-        <img className="talentcard__image w-full" src={props.image} alt="talent-image" /> 
+        <img className="talentcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
         <button className="talentcard__bookmark" onClick={handleClick}>
           <CollectionsBookmarkOutlinedIcon fontSize="small" className="talentcard__bookmark--click"/>
           </button>
