@@ -4,16 +4,23 @@ import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import './ProfileVideo.scss'
 
 const ProfileVideo = ({data}) => {
-  console.log(data)
+  const [playing, setPlaying] = React.useState(false);
+  const [videoUrl, setVideoUrl] = React.useState(data.mediaReel);
+
+  const setVideo = (url) => {
+      setVideoUrl(url);
+      setPlaying(true);
+  }
+
   return (
     <section className="content__video">
-      <ReactPlayer url={data.mediaReel} width="100%" height="315px" controls="true"/>
+      <ReactPlayer url={videoUrl} width="100%" height="315px" playing={playing} controls="true"/>
       <article className="content__description">
         <h4>Description:</h4>
         <h4>Length:</h4>
       </article>
       <ul className="content__video__list">
-        <li><VideocamOutlinedIcon /> Theatre reel</li>
+        <li onClick={() => setVideo("https://player.vimeo.com/video/402940166")}><VideocamOutlinedIcon/> Theatre reel</li>
         <li><VideocamOutlinedIcon /> Character reel</li>
         <li><VideocamOutlinedIcon /> Commercial reel</li>
         <li><VideocamOutlinedIcon /> Various</li>
