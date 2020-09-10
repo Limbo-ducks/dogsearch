@@ -18,18 +18,6 @@ function App () {
   const [openMenu, setOpenMenu] = useState(false)
   const [user, setUser] = useState('')
 
-  const [openMessages, setOpenMessages,] = useState(false);
-
-  const viewMessages = () => {
-    if (!openMessages) { 
-      setOpenMessages(true)
-
-    } else {
-      setOpenMessages(false)
-
-    }
-  }
-
   const burgerMenu = () => {
     openMenu ? setOpenMenu(false) : setOpenMenu(true)
   }
@@ -67,11 +55,11 @@ function App () {
             setHits={setHits}
           />}
         />
-        <Route path='/searchprofile/:id' component={SearchProfile} viewMessages={viewMessages}/>
+        <Route path='/searchprofile/:id' component={SearchProfile} />
         <Route path='/talents/:id' exact component={Talent} />
         <Route path='/login' exact component={Login} />
         <Route path='/signup' exact component={Signup} />
-        <Route path='/my-profile' render={props => <UserProfile {...props} user={user} viewMessages={viewMessages} />} />
+        <Route path='/my-profile' render={props => <UserProfile {...props} user={user} />} />
       </Switch>
       <Footer />
     </Router>

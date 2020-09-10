@@ -9,17 +9,14 @@ import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 
 import ExampleImageOne from '../../assets/images/1.jpg'
 
-const LoggedInNav = ({viewMessages}) => {
+const LoggedInNav = () => {
   return (
     <section className="secondarynav">
         <Link to="/search">
           <article className="secondarynav__back"><h3><ArrowBackIcon/>Back to search</h3></article>
         </Link>
       <article className="secondarynav__profile">
-        <Link to="/searchprofile" onClick={(e) => {
-            e.preventDefault();
-            viewMessages(e.currentTarget)
-            }}>
+        <Link to="/searchprofile">
           <article className="secondarynav__profile__link"><MailOutlineIcon/><h5>Messages</h5></article>
         </Link>
         <article className="secondarynav__profile__link"><DateRangeIcon /><h5>Calendar</h5></article>

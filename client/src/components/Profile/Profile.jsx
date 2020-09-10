@@ -22,7 +22,6 @@ const makeOpts = (body, method = 'GET') => ({
 const Profile = (props) => {
   if (!props.user) props.history.push('/')
   const profileId = props.match.params.id
-  const {viewMessages} = props;
 
   const [openProfile, setOpenProfile] = useState(true);
   const [openCalendar, setOpenCalendar] = useState(false);
@@ -81,7 +80,7 @@ const Profile = (props) => {
   return (
     status === 'loaded'? 
     <>
-      <LoggedInNav viewMessages={viewMessages}/>
+      <LoggedInNav/>
       <main className="profile__main">
         <section className="profile__content">
           <ProfileInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} viewCv={viewCv}/>
