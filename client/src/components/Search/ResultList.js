@@ -3,6 +3,7 @@ import ResultCard from './ResultCard'
 import './ResultList.scss';
 import Pagination from '@material-ui/lab/Pagination'
 
+
 function ResultList (props) {
   const [page, setPage] = useState(1)
 
@@ -12,14 +13,17 @@ function ResultList (props) {
   const end = 16 * page
 
   return (
+    <>
+    
     <article className="talentwrapper">
       {props.data
         .slice(start, end)
         .map(profile => {
           return <ResultCard {...profile} key={JSON.stringify(profile)} />
         })}
-      <Pagination count={pages} onChange={(_, p) => setPage(p)} />
+      {props.data.length ? <Pagination count={pages} onChange={(_, p) => setPage(p)} /> : null }
     </article>
+    </>
   )
 }
 export default ResultList

@@ -18,6 +18,9 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import DatePicker from './DatePicker';
 import Grid from "@material-ui/core/Grid";
 import ExperienceBox from './ExperienceBox'
+import FilterListIcon from '@material-ui/icons/FilterList';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';  
 import './FilterComponent.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -72,15 +75,15 @@ export default function RecipeReviewCard(props) {
         //     R
         //   </Avatar>
         // }
-        // action={
-        //   <IconButton aria-label="settings">
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
+        action={
+          <Tooltip title="Filter Your Results: (A->Z) or (Z->A)" placement="top-start" style={{ fontSize: 18 }}>
+            
+            <Button className="filter__button"><FilterListIcon /></Button></Tooltip>
+        }
         title="Filter Results"
         className="card__title"
         // subheader="September 14, 2016"
-      />
+      ></CardHeader>
       {/* <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
