@@ -4,11 +4,11 @@ const util = require('util')
 
 const makeOperation = operator => ([ key, val ]) => [ key, { [operator]: val } ]
 
-const formatListField = ([ key, val ]) => R.cond([
-  [ () => R.equals('professionYears', key), makeOperation('$gte') ],
-  [ () => Array.isArray(val), makeOperation('$all') ],
+const formatListField = R.cond([
+  [ ([ key ]) => R.equals('professionYears', key), makeOperation('$gte') ],
+  [ ([ _key, val ]) => Array.isArray(val), makeOperation('$all') ],
   [ R.T, R.identity ]
-])([ key, val ])
+])
 
 const parseLists = R.pipe(
   Object.entries,

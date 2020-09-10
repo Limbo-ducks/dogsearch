@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import Filter from './Filter'
 import ResultList from './ResultList'
-import Filter from './Filter.jsx'
-import Typography from '@material-ui/core/Typography';
 
 const makeOpts = (body, method = 'GET') => ({
   method,
@@ -15,7 +14,6 @@ const Search = ({ hits, setHits, user, match: { params: { credit }}}) => {
   const baseURL = '/api/search'
   const [status, setStatus] = useState('idle')
   const [searchPerformed, setSearchPerformed] = useState(false)
-  // const [hits, setHits] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
 
   const search = query => {
