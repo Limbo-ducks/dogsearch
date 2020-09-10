@@ -1,8 +1,10 @@
 import React from 'react'
+import './ProfileAttributes.scss'
 
 const ProfileAttribute = ({data, label, unit ,odd = false}) => {
     return(
-        <article className={`content__attributes__list__row ${odd?'content__attributes__list__row--odd':null}`}>
+        <article 
+          className={`content__attributes__list__row ${odd?'content__attributes__list__row--odd':null} `}>
           <article>
             <p>{label[0]}: {Array.isArray(data[0]) ? data[0].join(' ,') : data[0]}{unit[0]}</p>
           </article>

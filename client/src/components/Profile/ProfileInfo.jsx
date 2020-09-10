@@ -64,7 +64,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
             'Actress' : 'Actor'}
         </h2>
         <h3 className="info__content__text"><LocationOnOutlinedIcon/> 
-            {data.contact.city}, {data.contact.citizenship}
+        {data.contact.city === '' ? 'Unknown' : `${data.contact.city}, ${data.contact.citizenship}`}
         </h3>
         <article className="info__content__attributes">
           <InfoOutlinedIcon/>
