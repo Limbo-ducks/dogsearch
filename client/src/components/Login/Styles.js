@@ -29,6 +29,20 @@ const useStyles = makeStyles((theme) => ({
     submit: {
       margin: theme.spacing(3, 0, 2),
     },
+    google: {
+      border: '1px solid #000',
+      borderRadius: '3px',
+      color: '#000',
+      display: 'block',
+      marginTop: '20px',
+      padding: '6px',
+      textAlign: 'center',
+      textTransform: 'uppercase',
+      width: '100%',
+      '&:hover': {
+        textDecoration: 'none',
+      }
+    }
   }));
 
 export default useStyles

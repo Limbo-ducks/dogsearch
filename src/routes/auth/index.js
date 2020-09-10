@@ -10,7 +10,7 @@ module.exports = db => {
 
   router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: '/',
-    successRedirect: 'http://localhost:3000',
+    successRedirect: '/',
   }))
 
   router.get('/logout', (req, res) => {

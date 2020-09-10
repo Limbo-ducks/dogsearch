@@ -77,7 +77,7 @@ const Login = props => {
                 </Link>
               </Grid>
             </Grid>
-            <Link href="http://localhost:5000/api/auth/google">
+            <Link href="/api/auth/google" className={classes.google}>
               Google login
             </Link>
             <Box mt={5}>
