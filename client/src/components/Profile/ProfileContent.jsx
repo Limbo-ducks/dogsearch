@@ -9,6 +9,7 @@ import ProfileVideo from './ProfileVideo';
 import ProfileAudio from './ProfileAudio';
 import ProfileAttributes from './ProfileAttributes';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ImageGallery from './ImageGallery'
 
 const ProfileContent = ({data}) => {
 
@@ -29,21 +30,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
       <article className="gallery gallery--profile">
 
-        <article className="gallery__column gallery__column--profile">
-          <img src={data.gallery[0].url} alt=""/>
-          <img src={ExampleImageTwo} alt=""/>
-        </article>
+        {data.gallery ? 
+        <ImageGallery data={data.gallery} />
+          :
+          <>
+          <article className="gallery__column gallery__column--profile">
+            <img src={ExampleImageTwo} alt=""/>
+            <img src={ExampleImageTwo} alt=""/>
+          </article>
 
-        <article className="gallery__column gallery__column--profile">
-          <img src={ExampleImageThree} alt=""/>
-          <img src={ExampleImageOne} alt=""/>
-        </article>
+          <article className="gallery__column gallery__column--profile">
+            <img src={ExampleImageThree} alt=""/>
+            <img src={ExampleImageOne} alt=""/>
+          </article>
 
-        <article className="gallery__column gallery__column--profile">
-          <img src={ExampleImageTwo} alt=""/>
-          <img src={ExampleImageThree} alt=""/>
-        </article>
-        
+          <article className="gallery__column gallery__column--profile">
+            <img src={ExampleImageTwo} alt=""/>
+            <img src={ExampleImageThree} alt=""/>
+          </article>
+          </>
+          }
+
+
       </article>
 
       <span id="video" className="spanscroll"></span>
