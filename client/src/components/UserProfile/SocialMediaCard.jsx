@@ -2,11 +2,13 @@ import React from 'react'
 import { TextField } from '@material-ui/core'
 
 const SocialMediaCard = ({ name }) => (
-  <article className="flex">
-    <div>{name}</div>
-    <TextField label="Link" variant="outlined" />
-    <TextField label="Followers" variant="outlined" />
-  </article>
+  <div className='my-4'>
+    <h3>{name}</h3>
+    <div className='my-4 media-field'>  
+      <TextField label="Link" variant="outlined" />
+      <TextField label="Followers" variant="outlined" />
+    </div>
+  </div>
 )
 
 export default SocialMediaCard
