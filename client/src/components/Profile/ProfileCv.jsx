@@ -6,7 +6,7 @@ import './ProfileCv.scss'
 
 const ProfileCv = ({data}) => {
 
-  console.log(data.education[0].school)
+  // console.log(data.education[0].school)
 
   return (
     <section className="content">

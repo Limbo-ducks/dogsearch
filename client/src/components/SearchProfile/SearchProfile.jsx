@@ -92,7 +92,7 @@ const SearchProfile = (props) => {
   
   return (
     <>
-      <LoggedInNav />
+      <LoggedInNav viewMessages={viewMessages}/>
       <main className="profile">
         <section className="profile__content">
           <SearchProfileInfo viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages}/>
