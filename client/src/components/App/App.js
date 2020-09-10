@@ -46,7 +46,7 @@ function App () {
         <Route path='/' exact component={Main}/>
         <Route path='/about' exact component={About}/>
         <Route path='/profile/:id' render={props => <Profile {...props} user={user} />} />
-        <Route path='/searchprofile' component={SearchProfile} />
+        <Route path='/searchprofile/:id' component={SearchProfile} />
         <Route path='/search/:credit?' render={props => <Search {...props} user={user} />} />
         <Route path='/talents/:id' exact component={Talent} />
         <Route path='/login' exact component={Login} />
