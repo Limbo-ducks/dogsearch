@@ -110,6 +110,10 @@
     @media (min-width: $breakpoint-md) {
         flex-direction: row;
     }
+
+    @media (min-width: $breakpoint-xxl) {
+        max-width: 1800px;
+    }
 }
 
 .card__title {
