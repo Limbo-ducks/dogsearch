@@ -5,7 +5,6 @@ import ProfileContent from './ProfileContent';
 import ProfileLinks from './ProfileLinks';
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
 import ProfileCalendar from './ProfileCalendar';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import './Profile.scss'
 import ProfileContact from './ProfileContact';

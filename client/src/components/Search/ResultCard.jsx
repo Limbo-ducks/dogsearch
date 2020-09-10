@@ -13,7 +13,6 @@ import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutline
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import Logo from '../../assets/images/Logo.svg';
 import BlankImage from '../../assets/images/blank-profile-picture.png'
-import ImageGallery from '../Profile/ImageGallery'
 
 function ResultCard (props) {
   const {measurements} = props;
@@ -56,7 +55,7 @@ function ResultCard (props) {
     const cm = height/0.39370
     return Math.ceil(cm)
   }
-
+  console.log(props.gallery)
   return (
     <>
       <Modal
@@ -82,7 +81,7 @@ function ResultCard (props) {
                   <InfoOutlinedIcon/>
                   <article className="modal__attributes__items">
                     <h4><b>Height:</b> {calculateHeight(props.measurements.height)}(~{calculateHeightCM(props.measurements.height)}cm)</h4>
-                    <h4><b>Eyecolour:</b> {props.eyeColor}</h4>
+                    <h4><b>Eye Colour:</b> {props.eyeColor}</h4>
                     <h4><b>Body Type:</b> {measurements.bodyType}</h4>
                     <h4><b>Gender:</b> {props.gender}</h4>
                   </article>
@@ -120,6 +119,7 @@ function ResultCard (props) {
             </article>
             :
             <article className="gallery">
+              <article className="gallery__gradient"></article>
               <article className="gallery__column">
                 <img src={ExampleImageTwo} alt=""/>
                 <img src={ExampleImageTwo} alt=""/>
