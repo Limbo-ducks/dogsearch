@@ -32,8 +32,6 @@ const setIfDefined = R.pathOr('')
 const setArray = R.pathOr([])
 
 const UserProfile = ({ history, user }) => {
-  console.log(user)
-  // if (!user) history.push('/')
   const [data, setData] = useState({})
 
   const handleChangeData = prop =>
@@ -126,6 +124,7 @@ const UserProfile = ({ history, user }) => {
       .catch(console.error)
   }
 
+  if (!user) return <div>You need to sign in to create a profile!</div>
   if (R.isEmpty(data)) return <div>Loading...</div>
 
   return (

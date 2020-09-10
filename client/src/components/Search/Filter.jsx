@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Slider from './Slider'
 import filters from './Filters'
 import './Filter.scss';
@@ -83,6 +83,10 @@ const Filter = ({ search, searchCredit }) => {
   const experience = [];
   const measurements = [];
   const [dates, setDates] = useState({})
+
+  useEffect(() => {
+    if (searchCredit) handleSubmit()
+  }, [])
 
   const handleCreditChange = (_, value) => pipe(
     parseValue,

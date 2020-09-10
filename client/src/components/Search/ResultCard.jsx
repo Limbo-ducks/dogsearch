@@ -90,7 +90,7 @@ function ResultCard (props) {
               </article>
             </section>
             <article className="modal__profile__button">
-              <Link to={`/profile/${props.id}`}>
+              <Link to={props.user ? `/profile/${props.id}` : '/login'}>
                 <button>
                   View Profile
                 </button>
@@ -156,7 +156,7 @@ function ResultCard (props) {
               horizontal: 'center',
             }}
           >
-            <PopoverContent className="TESTINGEEE"/>
+            <PopoverContent/>
         </Popover>
     </>
   )
