@@ -8,16 +8,20 @@ const CreditSection = () => {
   const [naCredits, setNACredits] = useState(1)
 
   return (
-    <section>
-      <h3>Acting Credit</h3>
-      <p>This section is not fully functional and none of the credits will be actually added to your profile</p>
-      {Array.from({ length: aCredits }, (_, i) => <ActingCredit key={`acting-credit-${i}`} />)}
-      <Button onClick={() => setACredits(aCredits + 1)}>Add</Button>
-      <h3>Non-Acting Credit</h3>
-      <p>This section is not fully functional and none of the credits will be actually added to your profile</p>
-      {Array.from({ length: naCredits }, (_, i) => <NonActingCredit key={`acting-credit-${i}`} />)}
-      <Button onClick={() => setNACredits(naCredits + 1)}>Add</Button>
-    </section>
+    <>
+      <section className='talent-registration-credits info-container'>
+        <h2>Acting Credit</h2>
+        <p>This section is not fully functional and none of the credits will be actually added to your profile</p>
+        <div className='talent-subfield'>{Array.from({ length: aCredits }, (_, i) => <ActingCredit key={`acting-credit-${i}`} />)}</div>
+        <Button variant='outlined' onClick={() => setACredits(aCredits + 1)}>Add More</Button>
+      </section>
+      <section className='talent-registration-credits info-container'>
+        <h2>Non-Acting Credit</h2>
+        <p>This section is not fully functional and none of the credits will be actually added to your profile</p>
+        <div className='talent-subfield'>{Array.from({ length: naCredits }, (_, i) => <NonActingCredit key={`acting-credit-${i}`} />)}</div>
+        <Button variant='outlined' onClick={() => setNACredits(naCredits + 1)}>Add More</Button>
+      </section>
+    </>
   )
 }
 

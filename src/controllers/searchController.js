@@ -1,6 +1,5 @@
 const R = require('ramda')
 const { shuffle } = require('../lib/helpers')
-const util = require('util')
 
 const formatListField = ([ key, val ]) => Array.isArray(val)
   ? [ key, { $all: val } ]
@@ -60,7 +59,6 @@ const sortData = R.pipe(
 )
 
 const searchController = db => (req, res, next) => {
-  console.log(util.inspect(makeQuery(req.body), { showHidden: false, depth: null }))
   db.search(makeQuery(req.body))
     .then(sortData)
     .then(data => res.json(data))
