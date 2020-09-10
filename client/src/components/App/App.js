@@ -14,6 +14,7 @@ import Talent from '../Talents/Talent'
 import UserProfile from '../UserProfile/UserProfile'
 
 function App () {
+  const [hits, setHits] = useState([])
   const [openMenu, setOpenMenu] = useState(false)
   const [user, setUser] = useState('')
 
@@ -47,7 +48,14 @@ function App () {
         <Route path='/about' exact component={About}/>
         <Route path='/profile/:id' render={props => <Profile {...props} user={user} />} />
         <Route path='/searchprofile' component={SearchProfile} />
-        <Route path='/search/:credit?' render={props => <Search {...props} user={user} />} />
+        <Route path='/search/:credit?'
+          render={props => <Search
+            {...props}
+            user={user}
+            hits={hits}
+            setHits={setHits}
+          />}
+        />
         <Route path='/talents/:id' exact component={Talent} />
         <Route path='/login' exact component={Login} />
         <Route path='/signup' exact component={Signup} />
