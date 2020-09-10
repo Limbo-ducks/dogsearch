@@ -77,6 +77,7 @@ const Filter = ({ search, searchCredit }) => {
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
   const [credit, setCredit] = useState(searchCredit ? [ searchCredit ] : [])
+  
   const primary = [];
   const appearance = [];
   const skills = [];

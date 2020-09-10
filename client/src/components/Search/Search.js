@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ResultList from './ResultList'
 import Filter from './Filter.jsx'
+import Typography from '@material-ui/core/Typography';
 
 const makeOpts = (body, method = 'GET') => ({
   method,
@@ -13,11 +14,13 @@ const makeOpts = (body, method = 'GET') => ({
 const Search = ({ user, match: { params: { credit }}}) => {
   const baseURL = '/api/search'
   const [status, setStatus] = useState('idle')
+  const [searchPerformed, setSearchPerformed] = useState(false)
   const [hits, setHits] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
 
   const search = query => {
     setSearchQuery(JSON.stringify(query))
+    setSearchPerformed(true);
     setStatus('loading')
   }
 
@@ -36,7 +39,7 @@ const Search = ({ user, match: { params: { credit }}}) => {
       <h1>Browse Talent Profiles</h1>
       <div className='flex flex-row'>
         <Filter search={search} searchCredit={credit} />
-        <ResultList data={hits} user={user} />
+        <ResultList data={hits} status={status} searchPerformed={searchPerformed} user={user} />
       </div>
     </section>
   )

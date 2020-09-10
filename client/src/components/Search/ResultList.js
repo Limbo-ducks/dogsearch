@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ResultCard from './ResultCard'
 import './ResultList.scss';
 import Pagination from '@material-ui/lab/Pagination'
+import Typography from '@material-ui/core/Typography';
 
 
 function ResultList (props) {
@@ -14,14 +15,24 @@ function ResultList (props) {
 
   return (
     <>
-    
+    {console.log(props.searchPerformed + 'TESTING EEEEE')}
     <article className="talentwrapper">
-      {props.data
+      {props.status === 'loading' ? 
+      null :
+      (props.data.length ? 
+        props.data
         .slice(start, end)
         .map(profile => {
           return <ResultCard {...profile} key={JSON.stringify(profile)} />
-        })}
-      {props.data.length ? <Pagination count={pages} onChange={(_, p) => setPage(p)} /> : null }
+        })
+        : 
+        (props.searchPerformed ?
+        <Typography>No Results Were Found. Please Adjust Your Filter And Try Again</Typography> 
+        : 
+        <Typography>Make a Search to Find Talents</Typography>))}
+    
+      
+      {props.status ==='idle' && props.data.length ? <Pagination count={pages} onChange={(_, p) => setPage(p)} /> : null }
     </article>
     </>
   )
