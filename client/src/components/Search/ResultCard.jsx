@@ -10,14 +10,26 @@ import CollectionsBookmarkOutlinedIcon from '@material-ui/icons/CollectionsBookm
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
 import PopoverContent from './PopoverContent';
-
-
+import DateRangeIcon from '@material-ui/icons/DateRange';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
+import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
+import { Tooltip } from '@material-ui/core';
 
 function ResultCard (props) {
+  const {measurements} = props;
+  console.log(measurements)
   const [open, setOpen] = useState(false)
   const [placement, setPlacement] = React.useState();
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const handleClick = (event) => {
     event.stopPropagation()
     setAnchorEl(event.currentTarget);
@@ -73,12 +85,18 @@ function ResultCard (props) {
             <article className="modal__profile__info">
               <article className="modal__profile__info__attributes">
                 <h3>Model, stuntwoman</h3>
-                <h4>{props.height}</h4>
-                <h4>{props.eyeColor}</h4>
-                <h4>{props.gender}</h4>
+                <article className="modal__attributes">
+                  <InfoOutlinedIcon/>
+                  <article className="modal__attributes__items">
+                    <h4><b>Height:</b> {calculateHeight(props.measurements.height)}(~{calculateHeightCM(props.measurements.height)}cm)</h4>
+                    <h4><b>Eyecolour:</b> {props.eyeColor}</h4>
+                    <h4><b>Bodytype:</b> {measurements.bodyType}</h4>
+                    <h4><b>Gender:</b> {props.gender}</h4>
+                  </article>
+                </article>
               </article>
               <article className="modal__profile__info__representation">
-                <h4>Representation</h4>
+                <h4><BusinessCenterOutlinedIcon/>Representation</h4>
               </article>
             </article>
             <article className="modal__profile__button">
