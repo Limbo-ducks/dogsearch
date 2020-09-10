@@ -10,7 +10,8 @@
 }
 
 .talentcard {
-  width: calc(100% - 30px);
+	width: calc(100% - 30px);
+	max-width: 250px;
 	margin: 15px;
 	position: relative;
 	transition: ease-in-out 0.2s;
@@ -27,7 +28,7 @@
 		}
 
 		@media (min-width: $breakpoint-md) {
-			width: calc(100% - 30px);
+			width: calc(50% - 30px);
 		}
 
 		@media (min-width: $breakpoint-lg) {
@@ -109,6 +110,13 @@
 		text-shadow: 1px 1px #000000;
 	}
 
+	&__logo {
+		right: 0;
+    position: absolute;
+    width: 250px;
+    top: 150px;
+	}
+
 	&__buttons {
 		position: absolute;
 		top: 0;
@@ -157,6 +165,7 @@
 		width: 100%;
 		height: 30vh;
 		object-fit: cover;
+		object-position: top;
   }
 	
 	&__profile {
@@ -296,4 +305,9 @@
 
 .popover__card {
 	background-color: $beige!important;
+}
+
+.w-full {
+	height: 150px;
+	object-fit: cover;
 }

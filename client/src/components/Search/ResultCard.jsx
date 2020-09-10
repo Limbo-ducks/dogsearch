@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Modal } from '@material-ui/core'
 import './ResultCard.scss'
-import Image from '../../assets/images/banner.png'
+import Image from '../../assets/images/talentwyre-background.jpg'
 import ExampleImageOne from '../../assets/images/1.jpg'
 import ExampleImageTwo from '../../assets/images/2.jpg'
 import ExampleImageThree from '../../assets/images/3.jpg'
@@ -11,6 +11,8 @@ import Popover from '@material-ui/core/Popover';
 import PopoverContent from './PopoverContent';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import Logo from '../../assets/images/Logo.svg';
+import BlankImage from '../../assets/images/blank-profile-picture.png'
 
 
 function ResultCard (props) {
@@ -65,16 +67,17 @@ function ResultCard (props) {
       >
         <section className="modal">
           {props.premium ? <h3 className="modal__premium">Premium</h3> : null}
+          <img src={Logo} alt="" className="modal__logo"/>
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
-            <img src={props.image} alt='profile-pic' className="modal__profile__image"/>
+            <img src={props.image ? `${props.image}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
-              <button className="modal__buttons__button modal__buttons__button--save">Save</button>
+              <button className="modal__buttons__button modal__buttons__button--save">Shortlist</button>
               <button className="modal__buttons__button modal__buttons__button--contact">Contact</button>
             </article>
             <section className="modal__profile__info">
               <article className="modal__profile__info__attributes">
-                <h3>Model, stuntwoman - <i>{props.citizenship}</i></h3>
+                <h3>{props.profession} - <i>{props.citizenship}</i></h3>
                 <article className="modal__attributes">
                   <InfoOutlinedIcon/>
                   <article className="modal__attributes__items">
@@ -115,7 +118,7 @@ function ResultCard (props) {
         </section>
       </Modal>
       <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
-        <img className="talentcard__image w-full" src={props.image} alt="talent-image" /> 
+        <img className="talentcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
         <button className="talentcard__bookmark" onClick={handleClick}>
           <CollectionsBookmarkOutlinedIcon fontSize="small" className="talentcard__bookmark--click"/>
           </button>
