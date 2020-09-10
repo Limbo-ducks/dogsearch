@@ -11,6 +11,8 @@ const talents = [
     {
     id: '0',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Else Rovinsky',
     contact: {
@@ -145,6 +147,8 @@ const talents = [
 {
     id: '1',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'David S. Lindgren',
     contact: {
@@ -276,6 +280,8 @@ const talents = [
 {
     id: '2',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Moa Malan',
     contact: {
@@ -427,6 +433,8 @@ const talents = [
 {
     id: '3',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Marten Eckerstrom',
     contact: {
@@ -562,6 +570,8 @@ const talents = [
 {
     id: '4',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Josefine Backman Juliff',
     contact: {
@@ -664,6 +674,8 @@ const talents = [
 {
     id: '5',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Mikael Spreitz',
     contact: {
@@ -790,6 +802,8 @@ const talents = [
 {
     id: '6',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Freida Farrell',
     contact: {
@@ -922,6 +936,8 @@ const talents = [
 {
     id: '7',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Oskar Sternulf',
     contact: {
@@ -1028,6 +1044,8 @@ const talents = [
 {
     id: '8',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Angelika Roberts',
     contact: {
@@ -1155,6 +1173,8 @@ const talents = [
 {
     id: '9',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Solveig Haugen',
     contact: {
@@ -1290,6 +1310,8 @@ const talents = [
 {
     id: '10',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Mitcho Batalov',
     contact: {
@@ -1414,6 +1436,8 @@ const talents = [
 {
     id: '11',
     premium: true,
+    type: 'talent',
+    finishedProfile: true,
     available: makeDates(),
     name: 'Lina Fredlund',
     contact: {

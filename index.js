@@ -36,13 +36,15 @@ client.connect()
     app.use(express.static(path.resolve('./client/build')))
     app.use((req, res, next) => console.log('Request body: ', req.body) || next())
 
-    app.get('/', (req, res) => res.json(req.user))
+    app.get('/debug', (req, res) => res.json(req.user))
 
     app.use('/api/auth', auth(db))
     app.use('/api/users', user(db))
 
     app.post('/api/search', searchController(db))
     app.get('/api/profiles/:id', profileController(db))
+
+    app.get('*', (req, res) => res.sendFile(path.resolve('client/build/index.html')));
 
     app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
   })
