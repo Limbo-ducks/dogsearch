@@ -24,7 +24,6 @@ const parseValue = map(R.prop('value'))
 
 const getValue = R.pipe(
   parseValue,
-  x => console.log(x) || x,
   maybe(x => x.length > 0 || typeof x === 'number')
 )
 
@@ -96,6 +95,9 @@ const UserProfile = ({ history, user }) => {
     'measurements.gloves': setIfDefined(['measurements', 'gloves'], data),
     'measurements.hat': setIfDefined(['measurements', 'hat'], data),
     'measurements.notes': setIfDefined(['measurements', 'notes'], data),
+    'unionStatus': setIfDefined(['unionStatus'], data),
+    'unionNumber': setIfDefined(['unionNumber'], data),
+    'willingNonUnion': setIfDefined(['willingNonUnion'], data),
     'athleticEndeavors': setArray(['athleticEndeavors'], data),
     'performance': setArray(['performance'], data),
     'accent': setArray(['accent'], data),
@@ -118,7 +120,6 @@ const UserProfile = ({ history, user }) => {
   }, [])
 
   const updateProfile = () => {
-    console.log(data)
     fetch('/api/users', { ...fetchOpts, body: JSON.stringify(data) })
       .then(() => history.push(`/`))
       .catch(console.error)
