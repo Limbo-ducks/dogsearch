@@ -1,51 +1,19 @@
 export default [{
-    label: 'Aerobics',
-    name: 'aerobics',
-    type: 'check',
+    label: 'Athletic Endeavors',
+    name: 'athleticEndeavors',
+    type: 'autocomplete',
     prop: 'athleticEndeavors',
-}, {
-    label: 'Archery',
-    name: 'archery',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Badminton',
-    name: 'badminton',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Baseball',
-    name: 'baseball',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Basketball',
-    name: 'basketball',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Baton Twirling',
-    name: 'baton twirling',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Billiards/Pool',
-    name: 'billiards',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Boating - Engine',
-    name: 'boating engine',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Boating - Sail',
-    name: 'boating sail',
-    type: 'check',
-    prop: 'athleticEndeavors',
-}, {
-    label: 'Body Building',
-    name: 'body building',
-    type: 'check',
-    prop: 'athleticEndeavors',
+    multiple: true,
+    required: false, 
+    options: [
+        { value: 'archery', text: 'Archery' },
+        { value: 'badminton', text: 'Badminton' },
+        { value: 'baseball', text: 'Baseball' },
+        { value: 'basketball', text: 'Basketball' },
+        { value: 'batonTwirling', text: 'Baton Twirling' },
+        { value: 'billiards', text: 'Billiards/Pool' },
+        { value: 'boatingEngine', text: 'Boating - Engine' },
+        { value: 'boatingSail', text: 'Boating - Sail' },
+        { value: 'bodyBuilding', text: 'Body Building' },
+      ]
 }]

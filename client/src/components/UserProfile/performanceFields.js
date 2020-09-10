@@ -1,51 +1,20 @@
 export default [{
-    label: 'Accordion',
-    name: 'accordion',
-    type: 'check',
+    label: 'Performance Skills',
+    name: 'performance',
+    type: 'autocomplete',
     prop: 'performance',
-}, {
-    label: 'Acoustic Bass',
-    name: 'acoustic bass',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Auctioneer',
-    name: 'auctioneer',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Audio Prompter',
-    name: 'audio prompter',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Autoharp',
-    name: 'autoharp',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Bagpipes',
-    name: 'bagpipes',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Banjo',
-    name: 'banjo',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Bartender',
-    name: 'bartender',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Bassoon',
-    name: 'bassoon',
-    type: 'check',
-    prop: 'performance',
-}, {
-    label: 'Bones',
-    name: 'bones',
-    type: 'check',
-    prop: 'performance',
+    multiple: true,
+    required: false, 
+    options: [
+        { value: 'accordion', text: 'Accordion' },
+        { value: 'acousticBass', text: 'Acoustic Bass' },
+        { value: 'auctioneer', text: 'Auctioneer' },
+        { value: 'audioPrompter', text: 'Audio Prompter' },
+        { value: 'autoharp', text: 'Autoharp' },
+        { value: 'bagpipes', text: 'Bagpipes' },
+        { value: 'banjo', text: 'Banjo' },
+        { value: 'bartender', text: 'Bartender' },
+        { value: 'bassoon', text: 'Bassoon' },
+        { value: 'bones', text: 'Bones' },
+      ]
 }]
