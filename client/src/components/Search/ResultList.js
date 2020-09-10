@@ -19,7 +19,7 @@ function ResultList (props) {
       {props.data
         .slice(start, end)
         .map(profile => {
-          return <ResultCard {...profile} key={JSON.stringify(profile)} />
+          return <ResultCard {...profile} user={props.user} key={JSON.stringify(profile)} />
         })}
       {props.data.length ? <Pagination count={pages} onChange={(_, p) => setPage(p)} /> : null }
     </article>
