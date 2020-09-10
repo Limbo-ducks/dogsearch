@@ -10,7 +10,7 @@ const makeOpts = (body, method = 'GET') => ({
   body
 })
 
-const Search = ({ match: { params: { credit }}}) => {
+const Search = ({ user, match: { params: { credit }}}) => {
   const baseURL = '/api/search'
   const [status, setStatus] = useState('idle')
   const [hits, setHits] = useState([])
@@ -36,7 +36,7 @@ const Search = ({ match: { params: { credit }}}) => {
       <h1>Browse Talent Profiles</h1>
       <div className='flex flex-row'>
         <Filter search={search} searchCredit={credit} />
-        <ResultList data={hits} />
+        <ResultList data={hits} user={user} />
       </div>
     </section>
   )
