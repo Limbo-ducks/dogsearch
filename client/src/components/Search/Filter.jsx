@@ -69,7 +69,7 @@ const parseValue = map(prop('value'))
 
 const getValue = pipe(
   parseValue,
-  maybe(x => x.length > 0)
+  maybe(x => x.length > 0 || typeof x === 'number')
 )
 
 const Filter = ({ search, searchCredit }) => {
