@@ -8,13 +8,15 @@
     justify-content: center;
     width: 100%;
 
-    
-
     @media (min-width: $breakpoint-md) {
-    width: 72%;
+    // width: 72%;
       }
 }
 
 .MuiPagination-root {
   width: 100%;
 } 
+
+.MuiPagination-ul {
+  justify-content: center;
+}

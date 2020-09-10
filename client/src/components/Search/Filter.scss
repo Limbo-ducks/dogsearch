@@ -107,7 +107,9 @@ h1 {
 }
 
 .filterwrapper {
-    max-width: 70%;
+    // max-width: 70%;
+    max-width: 560px;
+    padding: 15px;
     margin: 0 auto;
 
     // @media (min-width: $breakpoint-md) {

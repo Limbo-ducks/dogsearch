@@ -16,11 +16,11 @@ const talents = [
     available: makeDates(),
     name: 'Else Rovinsky',
     contact: {
-        address: faker.address.streetAddress(),
-        city: faker.address.city(),
-        citizenship: faker.address.country(),
-        email: faker.internet.email(),
-        phone: faker.phone.phoneNumber(),
+        address: 'Wallstreet 1',
+        city: 'New York',
+        citizenship: 'USA',
+        email: 'else.rovinsky@talentwyre.com',
+        phone: '012345678',
     },
     age: faker.random.number({min: 30, max: 40}),
     image: `https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-7.jpeg`,
@@ -127,7 +127,7 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-3-1024x683.jpeg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-8-683x1024.jpeg',
-        mediaReel: 'https://youtu.be/qYKVy0pfkNA',
+        mediaReel: 'https://www.youtube.com/embed/qYKVy0pfkNA',
         audio: 'https://player.vimeo.com/video/402939962',
     },
     education: [{
@@ -141,7 +141,23 @@ const talents = [
         course: 'Drama',
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-7-1024x683.jpeg'
+    },
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-3-1024x683.jpeg'
+    }
+    ,
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-1-1024x683.jpeg'
+    }
+    ,
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-8-683x1024.jpeg'
+    }
+    ]
 },
 // David S Lindgren
 {
@@ -152,11 +168,11 @@ const talents = [
     available: makeDates(),
     name: 'David S. Lindgren',
     contact: {
-        address: faker.address.streetAddress(),
-        city: faker.address.city(),
-        citizenship: faker.address.country(),
-        email: faker.internet.email(),
-        phone: faker.phone.phoneNumber(),
+        address: 'Karlavägen 1',
+        city: 'Stockholm',
+        citizenship: 'Sweden',
+        email: 'david.s.lindgren@talentwyre.com',
+        phone: '0987654321',
     },
     age: faker.random.number({min: 25, max: 35}),
     image: `https://www.imacontent.com/wp-content/uploads/2020/06/David-S-.-Lindgren-Actor-IMA-Content2-web-1-1024x682.jpg`,
@@ -285,11 +301,11 @@ const talents = [
     available: makeDates(),
     name: 'Moa Malan',
     contact: {
-        address: faker.address.streetAddress(),
-        city: faker.address.city(),
-        citizenship: faker.address.country(),
-        email: faker.internet.email(),
-        phone: faker.phone.phoneNumber(),
+        address: '',
+        city: '',
+        citizenship: '',
+        email: '',
+        phone: '',
     },
     age: faker.random.number({min: 30, max: 40}),
     image: `https://www.imacontent.com/wp-content/uploads/2019/04/Moa-3-web.jpg`,
@@ -556,7 +572,7 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2020/04/image003.jpg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2020/06/Actor-Marten-Eckerstrom-IMA-Content-5-682x1024.jpg',
-        mediaReel: 'https://vimeo.com/430974916',
+        mediaReel: 'https://player.vimeo.com/video/430974916',
         audio: '',
     },
     education: [{
@@ -660,7 +676,7 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2020/06/1-Josefin-Backman-Juliff-IMA-Content-Child-Actress.jpeg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2020/06/12-12-Child-Actress-Josefine-Backman-Juliff-IMA-Content-683x1024.jpg',
-        mediaReel: 'https://vimeo.com/431070759',
+        mediaReel: 'https://player.vimeo.com/video/431070759',
         audio: '',
     },
     education: [{
@@ -788,8 +804,8 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2017/06/Actor-Micke-Spreiz-IMA-Content-2.jpg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2018/05/Mikael-Spreitz-Actor-IMA-Content-2-683x1024.jpg',
-        mediaReel: 'https://vimeo.com/412032088',
-        audio: 'https://vimeo.com/412032088',
+        mediaReel: 'https://player.vimeo.com/video/412032088',
+        audio: 'https://player.vimeo.com/video/412032088',
     },
     education: [{
         school: faker.lorem.words(2),
@@ -922,7 +938,7 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2019/09/FridaFarrell-4-e1594015837469.jpeg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2019/09/Frida-Farrell-6.jpeg',
-        mediaReel: 'https://vimeo.com/411967800',
+        mediaReel: 'https://player.vimeo.com/video/411967800',
         audio: '',
     },
     education: [{
@@ -1030,7 +1046,7 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2020/02/20_02_06-Oskar-CV-web-003.jpg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2019/06/Klocka.jpg',
-        mediaReel: 'https://vimeo.com/401980557',
+        mediaReel: 'https://player.vimeo.com/video/401980557',
         audio: '',
     },
     education: [{
@@ -1159,7 +1175,7 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2019/04/Angelika-6-web.jpg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2019/04/Angelica-Roberts-4-web-683x1024.jpg',
-        mediaReel: 'https://vimeo.com/401990620',
+        mediaReel: 'https://player.vimeo.com/video/401990620',
         audio: '',
     },
     education: [{
@@ -1422,7 +1438,7 @@ const talents = [
     media: {
         headShot:'https://www.imacontent.com/wp-content/uploads/2020/01/webmail.websupport-1.jpg',
         slateShot:'https://www.imacontent.com/wp-content/uploads/2018/01/Actor-Mitcho-Batalov-IMA-Content-4-683x1024.jpg',
-        mediaReel: 'https://vimeo.com/401996336',
+        mediaReel: 'https://player.vimeo.com/video/401996336',
         audio: '',
     },
     education: [{
@@ -1557,6 +1573,33 @@ const talents = [
         to: faker.random.number({min: 1990, max:2020})
     }]
 },
+////
+//                  SEARCH PROFILES
+////
+{
+    id: 'a',
+    premium: true,
+    type: 'search',
+    available: makeDates(),
+    name: 'John Searcher',
+    contact: {
+        address: faker.address.streetAddress(),
+        city: faker.address.city(),
+        citizenship: faker.address.country(),
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber(),
+    },
+    age: faker.random.number({min: 30, max: 40}),
+    image: `https://source.unsplash.com/collection/159213/480x300?sig=${faker.random.number({min: 0, max: 200})}`,
+    profession: 'recruiter',
+    socialMedia: [{
+        name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
+        link: faker.internet.url(),
+        followers: faker.random.number({min: 3000, max: 9000}),
+    }],
+    hashtags:'recruiter',
+},
+
 ]
 
 module.exports = talents

@@ -9,8 +9,9 @@ import ProfileVideo from './ProfileVideo';
 import ProfileAudio from './ProfileAudio';
 import ProfileAttributes from './ProfileAttributes';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ImageGallery from './ImageGallery'
 
-const ProfileContent = props => {
+const ProfileContent = ({data}) => {
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -24,34 +25,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   return (
     <section className="content">
-      <span id="images" className="spanscroll"></span>
-      <h3 className="content__title">Images</h3>
-      <article className="gallery gallery--profile">
-        <article className="gallery__column gallery__column--profile">
-          <img src={ExampleImageOne} alt=""/>
-          <img src={ExampleImageTwo} alt=""/>
-        </article>
-        <article className="gallery__column gallery__column--profile">
-          <img src={ExampleImageThree} alt=""/>
-          <img src={ExampleImageOne} alt=""/>
-        </article>
-        <article className="gallery__column gallery__column--profile">
-          <img src={ExampleImageTwo} alt=""/>
-          <img src={ExampleImageThree} alt=""/>
-        </article>
-      </article>
       <span id="video" className="spanscroll"></span>
       <h3 className="content__title">Video</h3>
-      <ProfileVideo />
+      <ProfileVideo data={data.media}/>
+      <span id="images" className="spanscroll"></span>
+      <h3 className="content__title">Images</h3>
+
+      <article className="gallery gallery--profile">
+
+        {data.gallery ? 
+        <ImageGallery data={data.gallery} />
+          :
+          <>
+          <article className="gallery__column gallery__column--profile">
+            <img src={ExampleImageTwo} alt=""/>
+            <img src={ExampleImageTwo} alt=""/>
+          </article>
+
+          <article className="gallery__column gallery__column--profile">
+            <img src={ExampleImageThree} alt=""/>
+            <img src={ExampleImageOne} alt=""/>
+          </article>
+
+          <article className="gallery__column gallery__column--profile">
+            <img src={ExampleImageTwo} alt=""/>
+            <img src={ExampleImageThree} alt=""/>
+          </article>
+          </>
+          }
+
+
+      </article>
       <span id="audio" className="spanscroll"></span>
       <h3 className="content__title">Audio</h3>
-      <ProfileAudio />
+      <ProfileAudio data={data.media}/>
       <span id="news" className="spanscroll"></span>
       <h3 className="content__title">News feed</h3>
-      <ProfileNews data={props.data}/>
+      <ProfileNews data={data}/>
       <span id="attributes" className="spanscroll"></span>
       <h3 className="content__title">Attributes</h3>
-      <ProfileAttributes data={props.data}/>
+      <ProfileAttributes data={data}/>
     </section>
   )
 }

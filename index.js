@@ -11,8 +11,10 @@ const auth = require('./src/routes/auth')
 const user = require('./src/routes/user')
 const dbHandler = require('./src/lib/db')
 
-const { PORT = 5000 } = process.env
-const mongoUri = 'mongodb://localhost:27017'
+const { PORT = 5000, NODE_ENV = 'prod', MONGO_URI } = process.env
+const mongoUri = NODE_ENV === 'dev'
+  ? 'mongodb://localhost:27017'
+  : MONGO_URI
 const mongoOpts = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -34,9 +36,6 @@ client.connect()
     app.use(passport.session())
     
     app.use(express.static(path.resolve('./client/build')))
-    app.use((req, res, next) => console.log('Request body: ', req.body) || next())
-
-    app.get('/debug', (req, res) => res.json(req.user))
 
     app.use('/api/auth', auth(db))
     app.use('/api/users', user(db))

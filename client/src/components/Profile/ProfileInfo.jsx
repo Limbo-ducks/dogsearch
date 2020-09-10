@@ -10,6 +10,8 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
+import Blank from '../../assets/images/blank-profile-picture.png'
+import HeaderBackground from '../../assets/images/talentwyre-background.jpg'
 import { Tooltip } from '@material-ui/core';
 
 const calculateHeight = height => {
@@ -24,9 +26,9 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
   return (
     <section className="info">
       <article className="info__header">
-        <img src={data.media.slateShot} alt="" className="info__header__banner"/>
-        <img src={data.image} alt="" className="info__header__profileimg"/>
-        <Tooltip title="Add to shortlist"><StarBorderOutlinedIcon/></Tooltip>
+        <img src={HeaderBackground} alt="" className="info__header__banner"/>
+        <img src={data.image ? `${data.image}` : `${Blank}`} alt="" className="info__header__profileimg"/>
+        {data.premium ? <h3 className="modal__premium">Premium</h3> : null}
       </article>
       <article className="info__navigation">
         <Tooltip title="View profile" placement="top">
@@ -64,7 +66,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
             'Actress' : 'Actor'}
         </h2>
         <h3 className="info__content__text"><LocationOnOutlinedIcon/> 
-            {data.contact.city}, {data.contact.citizenship}
+        {data.contact.city === '' ? 'Unknown' : `${data.contact.city}, ${data.contact.citizenship}`}
         </h3>
         <article className="info__content__attributes">
           <InfoOutlinedIcon/>

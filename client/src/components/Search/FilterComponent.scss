@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .filtercomponent {
-    background-color: #edf2f7 !important;
+    background-color: $lightblue !important;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
@@ -102,10 +102,17 @@
 
 .flex-row {
     flex-direction: column;
-    width: 90%;
+    // width: 90%;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+
     @media (min-width: $breakpoint-md) {
         flex-direction: row;
+    }
+
+    @media (min-width: $breakpoint-xxl) {
+        max-width: 1800px;
     }
 }
 

@@ -1,11 +1,13 @@
 import React from 'react'
+import ReactPlayer from 'react-player/lazy'
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import './ProfileVideo.scss'
 
-const ProfileVideo = () => {
+const ProfileVideo = ({data}) => {
+  console.log(data)
   return (
     <section className="content__video">
-      <iframe width="100%" height="315px" src="https://www.youtube.com/embed/W0rC3DhvcRA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <ReactPlayer url={data.mediaReel} width="100%" height="315px" controls="true"/>
       <article className="content__description">
         <h4>Description:</h4>
         <h4>Length:</h4>
