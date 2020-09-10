@@ -313,32 +313,32 @@ const filters = [
     unit: "'",
     name: 'measurements.height',
     class: 'measurements',
-    min: 40,
-    max: 120,
+    min: 23,
+    max: 100,
     type: 'range'    
   }, {
     label: 'Weight',
     unit: 'lbs',
     name: 'measurements.weight',
     class: 'measurements',
-    min: 50,
-    max: 280,
+    min: 40,
+    max: 290,
     type: 'range'    
   }, {
     label: 'Sleeve Length',
     unit: "'",
     name: 'measurements.sleeveLength',
     class: 'measurements',
-    min: 29,
-    max: 40,
+    min: 28,
+    max: 41,
     type: 'range'    
   }, {
     label: 'Neck',
     unit: "'",
     name: 'measurements.neck',
     class: 'measurements',
-    min: 12,
-    max: 25,
+    min: 11,
+    max: 26,
     step:0.5,
     type: 'range'    
   }, {
@@ -354,16 +354,16 @@ const filters = [
     unit: "'",
     name: 'measurements.waist',
     class: 'measurements',
-    min: 18,
-    max: 58,
+    min: 17,
+    max: 59,
     type: 'range'    
   }, {
     label: 'Inseam',
     unit: "'",
     name: 'measurements.inseam',
     class: 'measurements',
-    min: 25,
-    max: 40,
+    min: 24,
+    max: 41,
     type: 'range'    
   }, {
     label: 'Social Media',
