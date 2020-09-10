@@ -93,7 +93,7 @@ function ResultCard (props) {
               </article>
             </section>
             <article className="modal__profile__button">
-              <Link to={!props.user ? `/profile/${props.id}` : '/login'}>
+              <Link to={props.user ? `/profile/${props.id}` : '/login'}>
                 <button>
                   View Profile
                 </button>
