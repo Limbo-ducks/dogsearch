@@ -25,6 +25,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   return (
     <section className="content">
+      <span id="video" className="spanscroll"></span>
+      <h3 className="content__title">Video</h3>
+      <ProfileVideo data={data.media}/>
       <span id="images" className="spanscroll"></span>
       <h3 className="content__title">Images</h3>
 
@@ -53,13 +56,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
       </article>
-
-      <span id="video" className="spanscroll"></span>
-      <h3 className="content__title">Video</h3>
-      <ProfileVideo />
       <span id="audio" className="spanscroll"></span>
       <h3 className="content__title">Audio</h3>
-      <ProfileAudio />
+      <ProfileAudio data={data.media}/>
       <span id="news" className="spanscroll"></span>
       <h3 className="content__title">News feed</h3>
       <ProfileNews data={data}/>

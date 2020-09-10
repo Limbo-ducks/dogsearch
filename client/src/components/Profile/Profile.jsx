@@ -80,7 +80,7 @@ const Profile = (props) => {
   return (
     status === 'loaded'? 
     <>
-      <LoggedInNav />
+      <LoggedInNav/>
       <main className="profile__main">
         <section className="profile__content">
           <ProfileInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} viewCv={viewCv}/>
