@@ -166,7 +166,7 @@ function ResultCard (props) {
               horizontal: 'center',
             }}
           >
-            <PopoverContent className="TESTINGEEE"/>
+            <PopoverContent/>
         </Popover>
     </>
   )
