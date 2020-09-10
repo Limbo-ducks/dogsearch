@@ -1557,6 +1557,33 @@ const talents = [
         to: faker.random.number({min: 1990, max:2020})
     }]
 },
+////
+//                  SEARCH PROFILES
+////
+{
+    id: 'a',
+    premium: true,
+    type: 'search',
+    available: makeDates(),
+    name: 'John Searcher',
+    contact: {
+        address: faker.address.streetAddress(),
+        city: faker.address.city(),
+        citizenship: faker.address.country(),
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber(),
+    },
+    age: faker.random.number({min: 30, max: 40}),
+    image: `https://source.unsplash.com/collection/159213/480x300?sig=${faker.random.number({min: 0, max: 200})}`,
+    profession: 'recruiter',
+    socialMedia: [{
+        name: faker.random.arrayElement(['facebook', 'instagram', 'twitter']),
+        link: faker.internet.url(),
+        followers: faker.random.number({min: 3000, max: 9000}),
+    }],
+    hashtags:'recruiter',
+},
+
 ]
 
 module.exports = talents

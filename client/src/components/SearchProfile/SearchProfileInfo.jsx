@@ -16,7 +16,9 @@ import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
 import { Tooltip } from '@material-ui/core';
 
-const SearchProfileInfo = ({ viewMessages, viewProfile, viewProjects}) => {
+const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
+
+const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects}) => {
   return (
     <section className="info">
       <article className="info__header">
@@ -54,9 +56,9 @@ const SearchProfileInfo = ({ viewMessages, viewProfile, viewProjects}) => {
         </Tooltip>
       </article>
       <article className="info__content info__content--info">
-        <h2 className="info__content__text">Jane Doe</h2>
-        <h3 className="info__content__text">Recruiter</h3>
-        <h3 className="info__content__text"><LocationOnOutlinedIcon/> Stockholm, Sweden</h3>
+        <h2 className="info__content__text">{data.name}</h2>
+        <h3 className="info__content__text">{upCaseFirst(data.profession)}</h3>
+        <h3 className="info__content__text"><LocationOnOutlinedIcon/> {data.contact.city}, {data.contact.citizenship}</h3>
       </article>
       <article className="info__nav">
         <button className="info__nav__button" onClick={(e) => {

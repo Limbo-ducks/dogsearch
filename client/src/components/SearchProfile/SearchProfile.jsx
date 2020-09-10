@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
 import SearchProfileInfo from './SearchProfileInfo.jsx';
 import SearchProjects from './SearchProjects.jsx';
@@ -13,11 +13,29 @@ import Messages from './Messages';
 
 
 const SearchProfile = (props) => {
-  const [openProfile, setOpenProfile] = React.useState(true);
-  const [openSingleProject, setOpenSingleProject,] = React.useState(false);
-  const [openShortlist, setOpenShortlist,] = React.useState(false);
-  const [openProjects, setOpenProjects,] = React.useState(false);
-  const [openMessages, setOpenMessages,] = React.useState(false);
+  const profileId = props.match.params.id
+
+  const [openProfile, setOpenProfile] = useState(true);
+  const [openSingleProject, setOpenSingleProject,] = useState(false);
+  const [openShortlist, setOpenShortlist,] = useState(false);
+  const [openProjects, setOpenProjects,] = useState(false);
+  const [openMessages, setOpenMessages,] = useState(false);
+  const [profileData, setProfileData] = useState({});
+  const [status, setStatus] = useState('loading');
+
+  useEffect(()=>{
+    if(status === 'loading'){
+          fetch(`/api/profiles/${profileId}`, 
+            {
+              method:'GET',
+              headers: {'Content-Type' : 'application/json'}
+             })
+            .then(res => res.json())
+            .then(data => setProfileData(data))
+            .catch(console.log)
+            .finally(() => setStatus('loaded'))
+        }
+  }, [status])
 
   const viewSingleProject = () => {
     setOpenSingleProject(true)
@@ -91,11 +109,12 @@ const SearchProfile = (props) => {
   });
   
   return (
+    status === 'loaded' ? 
     <>
       <LoggedInNav viewMessages={viewMessages}/>
       <main className="profile">
         <section className="profile__content">
-          <SearchProfileInfo viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages}/>
+          <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages}/>
           { openProfile ? <SearchProfileContent viewProjects={viewProjects}/> : null }
           { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null}
           { openShortlist ? <ProjectShortlist viewShortlist={viewShortlist}/> : null }
@@ -104,7 +123,8 @@ const SearchProfile = (props) => {
           <SearchProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/>
         </section>
       </main>
-    </>
+    </> 
+    : null
   )
 }
 

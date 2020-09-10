@@ -4,6 +4,7 @@ import { Checkbox, FormControlLabel, TextField } from '@material-ui/core'
 import { Autocomplete } from '@material-ui/lab'
 import AdditionalSkills from './AdditionalSkills'
 import CreditSection from './CreditSection'
+import Representation from './Representation'
 import SocialMedia from './SocialMedia'
 import { getAutocompleteValue, map } from '../../lib/helpers'
 import aboutFields from './aboutFields'
@@ -17,6 +18,7 @@ import languageFields from './languageFields'
 import measurementFields from './measurementFields'
 import mediaFields from './mediaFields'
 import performanceFields from './performanceFields'
+import unionFields from './unionFields'
 import './TalentProfile.scss'
 
 const types = (data, onChange, handleCheck) => ({
@@ -76,10 +78,15 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         <div className='talent-subfield'>{printFields(aboutFields)}</div>
         <p>* Fields are required</p>
       </section>
+      <Representation />
       <section className='talent-registration-appearance info-container'>
         <h2>Appearance</h2>
         <div className='talent-subfield'>{printFields(appearanceFields)}</div>
         <p>* Fields are required</p>
+      </section>
+      <section className='info-container'>
+        <h2>Union Information</h2>
+        {printFields(unionFields)}
       </section>
       <section className='talent-registration-athletic info-container'>
         <h2>Athletic Endeavors</h2>

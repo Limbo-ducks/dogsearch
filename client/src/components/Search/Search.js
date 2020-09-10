@@ -11,11 +11,11 @@ const makeOpts = (body, method = 'GET') => ({
   body
 })
 
-const Search = ({ user, match: { params: { credit }}}) => {
+const Search = ({ hits, setHits, user, match: { params: { credit }}}) => {
   const baseURL = '/api/search'
   const [status, setStatus] = useState('idle')
   const [searchPerformed, setSearchPerformed] = useState(false)
-  const [hits, setHits] = useState([])
+  // const [hits, setHits] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
 
   const search = query => {
