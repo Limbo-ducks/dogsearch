@@ -20,7 +20,7 @@ const makeOpts = (body, method = 'GET') => ({
 })
 
 const Profile = (props) => {
-  //if (!props.user) props.history.push('/')
+  if (!props.user) props.history.push('/')
   const profileId = props.match.params.id
 
   const [openProfile, setOpenProfile] = useState(true);
