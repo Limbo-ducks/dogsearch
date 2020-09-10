@@ -1,51 +1,20 @@
 export default [{
-    label: 'African',
-    name: 'african',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Asian',
-    name: 'asian',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Asian - Chinese',
-    name: 'asian chinese',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Asian - Japanese',
-    name: 'asian japanese',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Asian - Korean',
-    name: 'asian korean',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Australian',
-    name: 'australian',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Boston',
-    name: 'boston',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'British BBC English',
-    name: 'british bbc',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Finnish',
-    name: 'finnish',
-    type: 'check',
-    prop: 'accent',
-}, {
-    label: 'Swedish',
-    name: 'swedish',
-    type: 'check',
-    prop: 'accent',
+  label: 'Accents',
+  name: 'accent',
+  type: 'autocomplete',
+  prop: 'accent',
+  multiple: true,
+  required: false, 
+  options: [
+      { value: 'african', text: 'African' },
+      { value: 'asian', text: 'Asian' },
+      { value: 'asianChinese', text: 'Asian - Chinese' },
+      { value: 'asianJapanese', text: 'Asian - Japanese' },
+      { value: 'asianKorean', text: 'Asian - Korean' },
+      { value: 'australian', text: 'Australian' },
+      { value: 'boston', text: 'Boston' },
+      { value: 'britishBbc', text: 'British BBC English' },
+      { value: 'finnish', text: 'Finnish' },
+      { value: 'swedish', text: 'Swedish' },
+    ]
 }]

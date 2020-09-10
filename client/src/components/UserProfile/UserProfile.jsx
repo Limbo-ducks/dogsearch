@@ -25,7 +25,6 @@ const parseValue = map(R.prop('value'))
 const getValue = R.pipe(
   parseValue,
   x => console.log(x) || x,
-  maybe(x => x.length > 0 || typeof x === 'number')
 )
 
 const setIfDefined = R.pathOr('')
@@ -48,12 +47,13 @@ const UserProfile = ({ history, user }) => {
       })
     }
 
-  const handleCheckBoxes = prop => event => setData({
+  const handleCheckBoxes = prop => event => {
+    setData({
     ...data,
     [prop]: event.target.checked
       ? data[prop].concat(event.target.name)
       : data[prop].filter(x => x !== event.target.name)
-  })
+  })}
 
   const setFormData = data => setData({
     'contact.address': setIfDefined(['contact', 'address'], data),
@@ -129,9 +129,10 @@ const UserProfile = ({ history, user }) => {
 
   return (
     <section className='add-profile my-32'>
-      <h1 className='m-0 w-full'>What is your role?</h1>
+      <h1 className='m-0 ml-4 w-full' >What is your role?</h1>
       <Autocomplete
         className='type-input'
+        style={{'margin': '3em 1.5em'}}
         options={typeOpts}
         id='type'
         onChange={handleChangeData('type')}
