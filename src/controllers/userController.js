@@ -11,7 +11,7 @@ const isFilledPath = path => R.pipe(
 const allPathsFilled = list => R.allPass(list.map(isFilledPath))
 
 const isComplete = allPathsFilled([
-  [ 'profession' ],
+  [ 'cast' ],
   [ 'name' ],
   [ 'citizenship' ],
   [ 'age' ],
