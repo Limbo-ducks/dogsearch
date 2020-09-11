@@ -17,17 +17,17 @@ const ActingCredit = () => (
   <>
     <Autocomplete
       options={typeOpts}
-      renderInput={ps => <TextField {...ps} label="Type" variant="outlined" />}
+      renderInput={ps => <TextField {...ps} label="Type" />}
     />
-    <TextField label="Title" variant="outlined" />
-    <TextField label="Character" variant="outlined" />
+    <TextField label="Title" />
+    <TextField label="Character" />
     <Autocomplete
       options={castOpts}
-      renderInput={ps => <TextField {...ps} label="Cast Type" variant="outlined" />}
+      renderInput={ps => <TextField {...ps} label="Cast Type" />}
     />
     <Autocomplete 
       options={years}
-      renderInput={ps => <TextField {...ps} label="Year" variant="outlined" />}
+      renderInput={ps => <TextField {...ps} label="Year" />}
     />
   </>
 )

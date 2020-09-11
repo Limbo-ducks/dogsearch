@@ -9,6 +9,7 @@
     "dev": "NODE_ENV=dev nodemon index.js --ignore 'client/'",
     "heroku-postbuild": "cd client && npm i && npm run build",
     "seed": "cd scripts && node seed.js",
+    "seed:talents": "cd scripts && node seed.js -t",
     "empty": "cd scripts && node empty.js"
   },
   "keywords": [],

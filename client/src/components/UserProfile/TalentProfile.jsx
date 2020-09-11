@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 const types = (data, onChange, handleCheck) => ({
   autocomplete: x => (
     <Autocomplete
-      className={`picklist ${x.name} `}
+      className={`picklist ${x.name}`}
       key={x.name}
       id={x.name}
       options={x.options}
@@ -52,7 +52,7 @@ const types = (data, onChange, handleCheck) => ({
       multiple={x.multiple}
       disableCloseOnSelect={x.multiple ? true : false}
       value={getAutocompleteValue(x.options, data[x.name])}
-      renderInput={params => <TextField {...params} label={`${x.label}${x.required ? '*' : ''}`} variant="outlined" />}
+      renderInput={params => <TextField {...params} label={`${x.label}${x.required ? '*' : ''}`} className='mx-4' />}
     />
   ),
   check: x => (
@@ -73,7 +73,6 @@ const types = (data, onChange, handleCheck) => ({
       className={`${x.label.toLowerCase()}`}
       label={`${x.label}${x.required ? '*' : ''}`}
       onChange={onChange(x.name)}
-      variant="outlined"
       multiline={x.multiline}
       value={data[x.name]}
     />
@@ -153,24 +152,19 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         </Accordion> 
       </section>
       <section className='talent-registration-athletic info-container'>
-        <h2>Athletic Endeavors</h2>
         <div className='talent-subfield'>{printFields(athleticFields)}</div>
       </section>
       <section className='talent-registration-skills info-container'>
-        <h2>Performance Skills</h2>
         <div className='talent-subfield'>{printFields(performanceFields)}</div>
       </section>
       <section className='talent-registration-accents info-container'>
-        <h2>Accents</h2>
         <div className='talent-subfield'>{printFields(accentFields)}</div>
       </section>
       <section className='talent-registration-languages info-container'>
-        <h2>Languages</h2>
         <div className='talent-subfield'>{printFields(languageFields)}</div>
       </section>
       <AdditionalSkills />
       <section className='talent-registration-disabilities info-container'>
-        <h2>Disabilities</h2>
         <div className='talent-subfield'>{printFields(disabilityFields)}</div>
       </section>
       <SocialMedia />

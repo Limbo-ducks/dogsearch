@@ -8,7 +8,7 @@ const countryList = [
 
 export default [{
   label: 'Profession',
-  name: 'profession',
+  name: 'cast',
   type: 'autocomplete',
   multiple: false,
   required: true,

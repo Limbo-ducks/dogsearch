@@ -18,16 +18,16 @@ const NonActingCredit = () => (
   <>
     <Autocomplete
       options={typeOpts}
-      renderInput={ps => <TextField {...ps} label="Type" variant="outlined" />}
+      renderInput={ps => <TextField {...ps} label="Type" />}
     />
-    <TextField label="Title" variant="outlined" />
+    <TextField label="Title" />
     <Autocomplete
       options={roleOpts}
-      renderInput={ps => <TextField {...ps} label="Role" variant="outlined" />}
+      renderInput={ps => <TextField {...ps} label="Role" />}
     />
     <Autocomplete 
       options={years}
-      renderInput={ps => <TextField {...ps} label="Year" variant="outlined" />}
+      renderInput={ps => <TextField {...ps} label="Year" />}
     />
   </>
 )
