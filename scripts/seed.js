@@ -15,7 +15,7 @@ const makeDates = () =>
 
 const talents = require('./talents.js')
 
-let data = Array.from({ length: 200 }, () => ({
+const data = Array.from({ length: 200 }, () => ({
     id: faker.random.uuid(),
     available: makeDates(),
     name: faker.name.findName(),
@@ -143,13 +143,15 @@ let data = Array.from({ length: 200 }, () => ({
     }]
 }))
 
-data = [...data, ...talents];
+const seed = process.argv.includes('-t')
+    ? talents
+    : data.concat(talents)
 
 const client = new MongoClient(mongoUri, mongoOpts)
 
 client.connect()
     .then(client => client.db('talentwyre').collection('profiles'))
-    .then(col => col.insertMany(data))
+    .then(col => col.insertMany(seed))
     .then(() => console.log('Success!'))
     .catch(console.error)
     .finally(() => client.close())

@@ -38,9 +38,11 @@ const useStyles = makeStyles((theme) => ({
       padding: '6px',
       textAlign: 'center',
       textTransform: 'uppercase',
+      transition: "all ease-in-out 0.3s",
       width: '100%',
       '&:hover': {
         textDecoration: 'none',
+        backgroundColor: '#e1e1e1',
       }
     }
   }));
