@@ -29,6 +29,9 @@ const Signup = props => {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
+        <Link href="/api/auth/google" className={classes.google}>
+          Sign-up with Google
+        </Link>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

@@ -1,10 +1,6 @@
 @import "../../variables.scss";
 
 .talent-registration {
-  .info-container {
-    margin: 3em 1.5em;
-  }
-
   h2 {
     font-size: 21px;
     margin: 5px 0;
@@ -227,13 +223,12 @@
   }
 }
 
-// .MuiTypography-body1 {
-//   background-color: whitesmoke!important;
-//   height: 50px!important;
-//   display: flex!important;
-//   flex-direction: column!important;
-//   align-content: center!important;
-//   justify-content: center!important;
-//   padding: 30px!important;
-//   margin-top: 15px!important;
-//  }
+.talent-registration-representation {
+  .talent-subfield {
+    display: grid;
+    row-gap: 1em;
+    column-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
