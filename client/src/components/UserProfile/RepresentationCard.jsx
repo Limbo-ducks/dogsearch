@@ -9,15 +9,18 @@ const typeOpts = [
 ]
 
 const RepresentationCard = () => (
-  <div className='my-4'>
+  <div>
     <Autocomplete
+      className='my-4'
       options={typeOpts}
       renderInput={ps => <TextField {...ps} label="Type" variant="outlined" />}
     />
-    <TextField label="Name" variant="outlined" />
-    <TextField label="Company" variant="outlined" />
-    <TextField label="Phone" variant="outlined" />
-    <TextField label="Email" variant="outlined" />
+    <div className='talent-subfield'>
+      <TextField className='textA' label="Name" variant="outlined" />
+      <TextField className='textB' label="Company" variant="outlined" />
+      <TextField className='textC' label="Phone" variant="outlined" />
+      <TextField className='textD' label="Email" variant="outlined" />
+    </div>
   </div>
 )
 
