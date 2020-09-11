@@ -26,7 +26,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, view
       <article className="info__header">
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
         <img src={data.image ? `${data.image}` : `${Blank}`} alt="" className="info__header__profileimg"/>
-        {data.premium ? <h3 className="modal__premium">Premium</h3> : null}
+        {data.premium ? <h3 className="modal__premium modal__premium--profile">Premium</h3> : null}
       </article>
       <article className="info__navigation">
         <Tooltip title="View profile" placement="top">
@@ -74,7 +74,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, view
             <h3 className="info__content__text"><b>Acting age:</b> {data.age - 5} - {data.age + 5}</h3>
           </article>
         </article>
-        <h3 className="info__content__text info__content__text--representation"><BusinessCenterOutlinedIcon/> Representation AB</h3>
+        <h3 className="info__content__text info__content__text--representation"><BusinessCenterOutlinedIcon/> Representation</h3>
       </article>
       <article className="info__footer">
 

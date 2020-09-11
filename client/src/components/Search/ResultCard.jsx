@@ -76,7 +76,7 @@ function ResultCard (props) {
             </article>
             <section className="modal__profile__info">
               <article className="modal__profile__info__attributes">
-                <h3>{props.profession} - <i>{props.citizenship}</i></h3>
+                <h3><b>{props.profession}</b> - <i>{props.citizenship}</i></h3>
                 <article className="modal__attributes">
                   <InfoOutlinedIcon/>
                   <article className="modal__attributes__items">
