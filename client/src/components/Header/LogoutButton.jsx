@@ -1,7 +1,27 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './Buttons.scss'
 
 const AuthenticatedButtons = () => {
+  const [status, setStatus] = useState('loading')
+  const [userData, setUserData] = useState({})
+
+  useEffect(()=>{
+    if(status === 'loading'){
+      fetch('api/users/me',
+      {
+        method: 'GET',
+        headers: {'Content-Type' : 'application-json'}
+      })
+        .then(res => res.json())
+        .then(data => setUserData(data))
+        .catch(console.log)
+        .finally(()=> setStatus('loaded'))
+    }
+  }
+  )
+
+  console.log(userData.id)
+
   return (
     <section className="header__buttons">
       <a href='/my-profile'
