@@ -17,18 +17,31 @@ const AuthenticatedButtons = () => {
         .catch(console.log)
         .finally(()=> setStatus('loaded'))
     }
-  }
+  }, [status]
   )
 
-  console.log(userData.id)
+  if(status === 'loaded'){
+    console.log(userData)
+  }
 
   return (
     <section className="header__buttons">
-      <a href='/my-profile'
-        className="header__buttons__button header__buttons__button--login"
-      >
-        My Profile
-      </a>
+      {status === 'loaded'? 
+        userData.type === 'talent' ?
+              <a href={`/profile/${userData.id}`}
+                className="header__buttons__button header__buttons__button--login"
+              >
+                My Profile
+              </a>
+              :
+              <a href={`/searchprofile/a`}
+                className="header__buttons__button header__buttons__button--login"
+              >
+                My Profile
+              </a>
+      
+      : null}
+
       <a href='/api/auth/logout'
         className="header__buttons__button header__buttons__button--signup"
       >
