@@ -8,10 +8,14 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  min-height: 50px;
+  height: 100px;
   padding: 0px 10px;
   background-color: $black;
   box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
+
+  @media (min-width: $breakpoint-md) {
+    height: 50px;
+  }
 
   &__logo {
     width: auto;
@@ -20,10 +24,23 @@
 
   &__burger {
     display: block;
+    position: absolute;
+    right: 10px;
+    top: 0px;
     color: $white;
+    font-size: 2em;
 
     @media (min-width: $breakpoint-md) {
 			display: none;
 		}
+  }
+}
+.main {
+  &__section {
+    &__menu {
+      svg {
+        font-size: 2rem;
+      }
+    }
   }
 }
