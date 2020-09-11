@@ -1,21 +1,11 @@
 import React from 'react'
 import './ProjectShortlist.scss'
-import ExampleImageOne from '../../assets/images/1.jpg'
+import BlankImage from '../../assets/images/blank-profile-picture.png'
 import { Tooltip } from '@material-ui/core';
 
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
-import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
-import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
-import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
@@ -45,7 +35,7 @@ const ProjectShortlist = ({ viewShortlist }) => {
         </article>
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={ExampleImageOne} alt=""/>
+              <img src={BlankImage} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
@@ -66,7 +56,7 @@ const ProjectShortlist = ({ viewShortlist }) => {
 
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={ExampleImageOne} alt=""/>
+              <img src={BlankImage} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
@@ -86,7 +76,7 @@ const ProjectShortlist = ({ viewShortlist }) => {
         </article>
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={ExampleImageOne} alt=""/>
+              <img src={BlankImage} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
@@ -106,7 +96,7 @@ const ProjectShortlist = ({ viewShortlist }) => {
         </article>
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={ExampleImageOne} alt=""/>
+              <img src={BlankImage} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
@@ -126,7 +116,7 @@ const ProjectShortlist = ({ viewShortlist }) => {
         </article>
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={ExampleImageOne} alt=""/>
+              <img src={BlankImage} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
@@ -146,7 +136,7 @@ const ProjectShortlist = ({ viewShortlist }) => {
         </article>
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={ExampleImageOne} alt=""/>
+              <img src={BlankImage} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>

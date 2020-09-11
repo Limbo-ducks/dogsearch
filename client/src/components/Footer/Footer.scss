@@ -8,6 +8,7 @@
   height: 470px;
   background-color: $grey;
   font-size: 12px;
+  z-index: -50;
 
   @media (min-width: $breakpoint-md) {
     height: 250px;

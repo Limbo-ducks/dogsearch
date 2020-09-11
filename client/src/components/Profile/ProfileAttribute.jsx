@@ -6,11 +6,11 @@ const ProfileAttribute = ({data, label, unit ,odd = false}) => {
         <article 
           className={`content__attributes__list__row ${odd?'content__attributes__list__row--odd':null} `}>
           <article>
-            <p>{label[0]}: {Array.isArray(data[0]) ? data[0].join(' ,') : data[0]}{unit[0]}</p>
+            <p><b>{label[0]}:</b> {Array.isArray(data[0]) ? data[0].join(' ,') : data[0]}{unit[0]}</p>
           </article>
           {data[1] ? 
               <article>
-                 <p>{label[1]}: {Array.isArray(data[1]) ? data[1].join(' ,') : data[1]}{unit[1]}</p>
+                 <p><b className="attributes__thick">{label[1]}:</b> {Array.isArray(data[1]) ? data[1].join(' ,') : data[1]}{unit[1]}</p>
               </article>
             : null}
          

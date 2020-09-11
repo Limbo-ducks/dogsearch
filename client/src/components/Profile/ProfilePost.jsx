@@ -4,7 +4,6 @@ import './ProfilePost.scss'
 import Blank from '../../assets/images/blank-profile-picture.png'
 
 const ProfilePost = ({data}) => {
-  console.log(data.image)
   return (
     <article className="post">
       <article className="post__header">

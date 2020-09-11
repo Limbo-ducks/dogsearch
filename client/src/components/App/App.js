@@ -38,8 +38,6 @@ function App () {
     }, true);
   }, [])
 
-  console.log(user)
-
   return (
     <Router>
       <Header openMenu={openMenu} burgerMenu={burgerMenu} user={user} />

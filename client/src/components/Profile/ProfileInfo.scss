@@ -82,7 +82,7 @@
     }
 
     svg {
-      color: $bluegrey;
+      color: $grey;
     }
 
     &__attributes {
@@ -104,9 +104,11 @@
         align-items: center;
         font-family: $header;
         font-weight: 800;
+        margin: 10px 0;
 
         svg {
           margin-right: 5px;
+          color: $grey;
         }
       }
     }
