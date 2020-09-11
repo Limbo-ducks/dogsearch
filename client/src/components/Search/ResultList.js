@@ -27,9 +27,9 @@ function ResultList (props) {
         })
         : 
         (props.searchPerformed ?
-        <Typography>No Results Were Found. Please Adjust Your Filter And Try Again</Typography> 
+        <p className="errormessage">No Results Were Found. Please Adjust Your Filter And Try Again</p> 
         : 
-        <Typography>Make a Search to Find Talents</Typography>))}
+        <p className="errormessage">Make a Search to Find Talents</p>))}
     
       
       {props.status ==='idle' && props.data.length ? <Pagination count={pages} onChange={(_, p) => setPage(p)} /> : null }

@@ -4,7 +4,8 @@ import FilmCredit from './FilmCredit'
 const FilmCredits = ({data}) => {
     return(
         <section>
-            <h3 className="content__title">Acting Credits</h3>
+            <span id="actingcredits" className="spanscroll"></span>
+            <h3 className="content__title" >Acting Credits</h3>
 
             {data.actingCredits.films.length > 0 ? 
             <div>
@@ -25,8 +26,8 @@ const FilmCredits = ({data}) => {
                 {data.actingCredits.tv.map(film => <FilmCredit data={film}/>)}
             </div> : null
             }
-
-            <h3 className="content__title">Non Acting Credits</h3>
+            <span id="nonactingcredits" className="spanscroll"></span>
+            <h3 className="content__title" >Non Acting Credits</h3>
 
             {data.nonActingCredits.films.length > 0 ?
             <div>

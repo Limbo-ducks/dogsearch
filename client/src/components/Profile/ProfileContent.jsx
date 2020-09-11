@@ -9,6 +9,7 @@ import ProfileVideo from './ProfileVideo';
 import ProfileAudio from './ProfileAudio';
 import ProfileAttributes from './ProfileAttributes';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
 import ImageGallery from './ImageGallery'
 
 const ProfileContent = ({data}) => {
@@ -53,9 +54,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           </article>
           </>
           }
-
-
       </article>
+      <h3 className="content__link__text content__link__text--right">View Gallery<ArrowForwardIosOutlinedIcon/></h3>
       <span id="audio" className="spanscroll"></span>
       <h3 className="content__title">Audio</h3>
       <ProfileAudio data={data.media}/>
