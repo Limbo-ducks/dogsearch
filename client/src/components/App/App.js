@@ -17,6 +17,7 @@ function App () {
   const [hits, setHits] = useState([])
   const [openMenu, setOpenMenu] = useState(false)
   const [user, setUser] = useState('')
+  const [status, setStatus] = useState('loading')
 
   const burgerMenu = () => {
     openMenu ? setOpenMenu(false) : setOpenMenu(true)
@@ -27,6 +28,7 @@ function App () {
       .then(res => res.json())
       .then(({ id }) => setUser(id))
       .catch(console.error)
+      .finally(() => setStatus('idle'))
       
     window.addEventListener("resize", function(){
       if (document.documentElement.clientWidth > 821) {
@@ -41,24 +43,26 @@ function App () {
   return (
     <Router>
       <Header openMenu={openMenu} burgerMenu={burgerMenu} user={user} />
-      <Switch>
-        <Route path='/' exact component={Main}/>
-        <Route path='/about' exact component={About}/>
-        <Route path='/profile/:id' render={props => <Profile {...props} user={user} />} />
-        <Route path='/search/:credit?'
-          render={props => <Search
-            {...props}
-            user={user}
-            hits={hits}
-            setHits={setHits}
-          />}
-        />
-        <Route path='/searchprofile/:id' component={SearchProfile} />
-        <Route path='/talents/:id' exact component={Talent} />
-        <Route path='/login' exact component={Login} />
-        <Route path='/signup' exact component={Signup} />
-        <Route path='/my-profile' render={props => <UserProfile {...props} user={user} />} />
-      </Switch>
+      {status === 'loading'
+        ? <div>Loading...</div>
+        : <Switch>
+          <Route path='/' exact component={Main}/>
+          <Route path='/about' exact component={About}/>
+          <Route path='/profile/:id' render={props => <Profile {...props} user={user} />} />
+          <Route path='/search/:credit?'
+            render={props => <Search
+              {...props}
+              user={user}
+              hits={hits}
+              setHits={setHits}
+              />}
+              />
+          <Route path='/searchprofile/:id' component={SearchProfile} />
+          <Route path='/talents/:id' exact component={Talent} />
+          <Route path='/login' exact component={Login} />
+          <Route path='/signup' exact component={Signup} />
+          <Route path='/my-profile' render={props => <UserProfile {...props} user={user} />} />
+        </Switch>}
       <Footer />
     </Router>
   )
