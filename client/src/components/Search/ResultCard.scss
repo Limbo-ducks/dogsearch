@@ -100,7 +100,7 @@
 	&__premium {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 50px;
     padding: 2px 18px;
     background-color: #C5AB67;
     border-radius: 24px;
@@ -108,13 +108,26 @@
     color: #fff;
 		font-size: 16px;
 		text-shadow: 1px 1px #000000;
+
+		@media (min-width: $breakpoint-md) {
+			right: 10px;
+			top: 10px;
+		}
+
+		&--profile {
+			top: 10px;
+		}
 	}
 
 	&__logo {
 		right: 0;
     position: absolute;
-    width: 250px;
-    top: 150px;
+    width: 150px;
+		top: 150px;
+		
+		@media (min-width: $breakpoint-md) {
+			width: 250px;
+		}
 	}
 
 	&__buttons {
@@ -172,17 +185,18 @@
 		display: flex;
 		flex-direction: column;
 		height: 60vh;
+		padding: 20px 0px;
 		
 		&__image {
 			position: absolute;
-			left: 50%;
-			top: 25%;
+			left: 25%;
+			top: 20%;
 			transform: translate(-50%, -50%);
 			width: 130px;
 			height: 130px;
 			object-fit: cover;
 			border-radius: 50%;
-			border: 5px solid $white;
+			border: 5px solid #fff;
 			box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
 
 			@media (min-width: $breakpoint-md) {
@@ -196,12 +210,14 @@
 		&__info {
 			display: flex;
 			justify-content: space-between;
+			flex-direction: column;
 			align-items: center;
-			margin: 40px 10px 0px 10px;
-			height: calc(20vh - 50px);
+			height: calc(40vh - 50px);
 
 			@media (min-width: $breakpoint-md) {
 				margin: 10px 10px 10px 20px;
+				flex-direction: row;
+				height: calc(30vh - 50px);
 			}
 			
 			h3 {
@@ -210,11 +226,30 @@
 			}
 
 			&__representation {
-				margin-right: 10px;
+				width: 100%;
+				margin: 10px 0px 10px 20px;
+
+				@media (min-width: $breakpoint-md) {
+					margin-right: 10px;
+					width: 20%;
+				}
+
+				h4 {
+					font-weight: 600;
+					cursor: pointer;
+
+					svg {
+						margin-right: 5px;
+					}
+				}
 			}
 
 			&__attributes {
-				width: 70%;
+				width: calc(100% - 20px);
+
+				@media (min-width: $breakpoint-md) {
+					width: 70%;
+				}
 			}
 		}
 
@@ -249,8 +284,11 @@
 		&__items {
 			display: flex;
 			flex-wrap: wrap;
-			margin: 0 5px;
+			justify-content: space-around;
+			margin: 0 5px 10px 5px;
+			padding: 5px;
 			width: 100%;
+			border: 1px solid $lightblue;
 
 			h4 {
 				width: calc(50% - 10px);
@@ -310,4 +348,15 @@
 .w-full {
 	height: 150px;
 	object-fit: cover;
+}
+
+.errormessage {
+	background: $lightblue;
+	height: 50px;
+	padding: 5px 15px;
+	margin: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }

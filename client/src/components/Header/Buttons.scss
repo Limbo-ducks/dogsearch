@@ -2,12 +2,15 @@
 
 .header {
   &__buttons {
-    display: none;
-    justify-content: space-between;
-    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 5000;
 
     @media (min-width: $breakpoint-md) {
-			display: flex;
+      display: flex;
+      position: absolute;
+      top: 0;
 		}
 
     &__button {

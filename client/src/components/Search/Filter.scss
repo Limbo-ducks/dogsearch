@@ -83,14 +83,19 @@
     }
 }
 
-h1 {
+.searchtitle {
     display: flex;
     flex-wrap: wrap;
-    padding: 25px;
+    padding: 50px 25px 0;
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
     font-family: $header;
     font-size: 32px;
+
+    @media (min-width: $breakpoint-lg) {
+			width: 70%;
+			padding: 25px;
+    }
 }
 
 .option__picklist {

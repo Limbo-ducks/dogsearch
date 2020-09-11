@@ -19,7 +19,7 @@ const makeOpts = (body, method = 'GET') => ({
 })
 
 const Profile = (props) => {
-  if (!props.user) props.history.push('/')
+  if (!props.user) props.history.push('/login')
   const profileId = props.match.params.id
 
   const [openProfile, setOpenProfile] = useState(true);
@@ -91,7 +91,10 @@ const Profile = (props) => {
                               <h3 className="profilenav__link">Contact</h3>
                             </section><ProfileContact /></> : null}
           {openCv ? <><section className="profilenav">
-                        <h3 className="profilenav__link">CV</h3>
+                        <a href="#actingcredits"><h3 className="profilenav__link">Acting Credits</h3></a> /
+                        <a href="#nonactingcredits"><h3 className="profilenav__link">Non Acting Credits</h3></a> /
+                        <a href="#education"><h3 className="profilenav__link">Education</h3></a> /
+                        <a href="#skills"><h3 className="profilenav__link">Skills</h3></a>
                       </section><ProfileCv data={profileData}/></> : null }
           <ProfileAbout data={profileData.resume}/>
         </section>
