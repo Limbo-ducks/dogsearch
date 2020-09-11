@@ -7,11 +7,15 @@
   background-color: $white;
   box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
 
+  p {
+    padding: 5px;
+  }
+
   @media (min-width: $breakpoint-md) {
     position: fixed;
     top: 150px;
-    right: 10%;
-    width: 20%;
+    right: 5%;
+    width: 25%;
     max-height: 50vh;
   }
 

@@ -15,10 +15,6 @@ const ProfileVideo = ({data}) => {
   return (
     <section className="content__video">
       <ReactPlayer url={videoUrl} width="100%" height="315px" playing={playing} controls="true"/>
-      <article className="content__description">
-        <h4>Description:</h4>
-        <h4>Length:</h4>
-      </article>
       <ul className="content__video__list">
         <li onClick={() => setVideo("https://player.vimeo.com/video/402940166")}><VideocamOutlinedIcon/> Theatre reel</li>
         <li><VideocamOutlinedIcon /> Character reel</li>

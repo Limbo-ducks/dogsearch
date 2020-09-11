@@ -55,7 +55,7 @@ function ResultCard (props) {
     const cm = height/0.39370
     return Math.ceil(cm)
   }
-  console.log(props.gallery)
+
   return (
     <>
       <Modal

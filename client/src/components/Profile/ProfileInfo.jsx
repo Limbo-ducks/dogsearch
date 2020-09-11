@@ -19,7 +19,7 @@ const calculateHeight = height => {
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => {
+const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, viewComponent}) => {
 
   return (
     <section className="info">
