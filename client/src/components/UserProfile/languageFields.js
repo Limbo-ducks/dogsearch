@@ -4,7 +4,7 @@ export default [{
     type: 'autocomplete',
     prop: 'languages',
     multiple: true,
-    required: false, 
+    required: true, 
     options: [
         { value: 'afrikaans', text: 'Afrikaans' },
         { value: 'arabic', text: 'Arabic' },

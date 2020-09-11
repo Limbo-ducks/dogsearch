@@ -4,7 +4,7 @@ export default [{
   type: 'autocomplete',
   prop: 'accent',
   multiple: true,
-  required: false, 
+  required: true, 
   options: [
       { value: 'african', text: 'African' },
       { value: 'asian', text: 'Asian' },

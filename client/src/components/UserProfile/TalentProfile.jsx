@@ -26,6 +26,8 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
+const isError = x => R.or(R.isEmpty(x), R.isNil(x))
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'block',
@@ -40,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const types = (data, onChange, handleCheck) => ({
+const types = (checked, data, onChange, handleCheck) => ({
   autocomplete: x => (
     <Autocomplete
       className={`picklist ${x.name}`}
@@ -52,7 +54,13 @@ const types = (data, onChange, handleCheck) => ({
       multiple={x.multiple}
       disableCloseOnSelect={x.multiple ? true : false}
       value={getAutocompleteValue(x.options, data[x.name])}
-      renderInput={params => <TextField {...params} label={`${x.label}${x.required ? '*' : ''}`} className='mx-4' />}
+      renderInput={params => <TextField
+        {...params}
+        label={`${x.label}${x.required ? '*' : ''}`}
+        className='mx-4'
+        error={checked && x.required && isError(getAutocompleteValue(x.options, data[x.name]))}
+        helperText={checked && x.required && params.inputProps.value === '' ? 'Please fill in the form' : ''}
+      />}
     />
   ),
   check: x => (
@@ -75,25 +83,30 @@ const types = (data, onChange, handleCheck) => ({
       onChange={onChange(x.name)}
       multiline={x.multiline}
       value={data[x.name]}
+      error={checked && x.required && isError(data[x.name])}
+      helperText={checked && data[x.name] === '' ? 'Please fill in the form' : ''}
     />
   ),
 })
 
-const makeField = (data, onChange, handleCheck) => x => types(data, onChange, handleCheck)[x.type](x)
+const makeField = (checked, data, onChange, handleCheck) => x => types(checked, data, onChange, handleCheck)[x.type](x)
 
-const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
+const TalentProfile = ({ checked, data, handleChange, handleCheckBoxes }) => {
   const classes = useStyles();
-  const printFields = map(makeField(data, handleChange, handleCheckBoxes))
+  const printFields = map(makeField(checked, data, handleChange, handleCheckBoxes))
 
   return (
     <section className='my-8 talent-registration' >
       <section className='talent-registration-contact info-container'>
+
+
         <Accordion className={classes.border}>
           <AccordionSummary
             className={classes.content}
-            expandIcon={<ArrowDropDownIcon />}
+            expandIcon={<ArrowDropDownIcon/>}
             aria-controls="panel1a-content"
             id="panel1a-header"
+            
           >
             <h2>Contact Information</h2>
           </AccordionSummary>
@@ -102,6 +115,8 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
             <p>* Fields are required</p>
           </AccordionDetails>
         </Accordion>  
+
+
       </section>
       <section className='talent-registration-about info-container'>
         <Accordion className={classes.border}>
