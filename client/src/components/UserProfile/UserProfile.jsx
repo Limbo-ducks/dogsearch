@@ -63,7 +63,7 @@ const UserProfile = ({ history, user }) => {
     'contact.country': setIfDefined(['contact', 'country'], data),
     'contact.phone': setIfDefined(['contact', 'phone'], data),
     'contact.email': setIfDefined(['contact', 'email'], data),
-    'profession': setIfDefined(['profession'], data),
+    'cast': setIfDefined(['cast'], data),
     'name': setIfDefined(['name'], data),
     'biography': setIfDefined(['biography'], data),
     'education': setIfDefined(['education'], data),
