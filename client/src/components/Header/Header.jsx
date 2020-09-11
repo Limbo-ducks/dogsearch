@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import Nav from '../Nav/Nav';
 import Buttons from './Buttons';
-import Logo from '../../assets/images/logo.png';
+import Logo from '../../assets/images/Logo.svg';
 import { Link } from 'react-router-dom'
 import './Header.scss';
 import LogoutButton from './LogoutButton';
+import CloseIcon from '@material-ui/icons/Close';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const Header = ({ burgerMenu, openMenu, user }) => {
   return (
@@ -21,7 +23,7 @@ const Header = ({ burgerMenu, openMenu, user }) => {
             e.preventDefault();
             burgerMenu(e.currentTarget)
             }} className="main__section__menu">
-          {!openMenu ? <h2>Close</h2> : <h2>Open</h2>}
+          {!openMenu ? <h2><CloseIcon/></h2> : <h2><MenuIcon/></h2>}
         </a>
         </section>
     </header>

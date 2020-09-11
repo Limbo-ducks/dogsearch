@@ -12,7 +12,7 @@ const Jumbotron = () => {
       <h1 className="jumbotron__title">A Full Search Global Talent Database for the Entertainment Industry</h1>
       <article className="jumbotron__buttons">
         <Link to="/search">
-          <button className="jumbotron__buttons__button jumbotron__buttons__button--talent"><p>Find Talent</p>  <SearchIcon className="searchicon"/></button>
+          <button className="jumbotron__buttons__button jumbotron__buttons__button--talent"><p>Find Talent<SearchIcon className="searchicon"/></p></button>
         </Link>
         <Link to="/about">
           <button className="jumbotron__buttons__button jumbotron__buttons__button--learn">Learn More</button>

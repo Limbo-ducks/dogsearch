@@ -22,7 +22,7 @@ const LoggedInNav = () => {
         <Link to="/my-profile">
           <article className="secondarynav__profile__link"><SettingsOutlinedIcon /><h5>Settings</h5></article>
         </Link>
-        <Link to="/searchprofile">
+        <Link to="/searchprofile/a">
           <img src={ExampleImageOne} alt="" className="secondarynav__profile__img"/>
         </Link>
       </article>

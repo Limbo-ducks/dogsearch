@@ -31,3 +31,77 @@
     }
   }
 }
+
+.calendar {
+  &__instructions {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(100% / 3);
+      margin: 5px;
+
+      h3 {
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      &__box {
+        width: calc(100% - 10px);
+        height: 50px;
+        border: 1px solid black;
+
+        &--available {
+          background-color: #c4f099;
+        }
+  
+        &--booked {
+          background-color: red;
+        }
+  
+        &--unknown {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &__day {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid $lightblue;
+
+    &__info {
+      width: 60%;
+      &__text {
+        h3 {
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 14px;
+          font-style: italic; 
+        }
+      }
+    }
+
+    &__contact {
+      width: 40%;
+      display: flex;
+      justify-content: flex-end;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.scss';
-import Icon from '../../assets/images/Talent Wyre Icon Gold.png'
+import Icon from '../../assets/images/Icon.svg'
 
 const Footer = () => {
   return (

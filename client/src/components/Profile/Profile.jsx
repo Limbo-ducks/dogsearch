@@ -5,7 +5,6 @@ import ProfileContent from './ProfileContent';
 import ProfileLinks from './ProfileLinks';
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
 import ProfileCalendar from './ProfileCalendar';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 import './Profile.scss'
 import ProfileContact from './ProfileContact';
@@ -80,10 +79,10 @@ const Profile = (props) => {
   return (
     status === 'loaded'? 
     <>
-      <LoggedInNav/>
+      <LoggedInNav />
       <main className="profile__main">
         <section className="profile__content">
-          <ProfileInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} viewCv={viewCv}/>
+          <ProfileInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} viewCv={viewCv} />
           {openProfile ? <><ProfileLinks/><ProfileContent data={profileData}/></> : null }
           {openCalendar ? <><section className="profilenav">
                               <h3 className="profilenav__link">Calendar</h3>

@@ -157,6 +157,14 @@ const talents = [
     {
         url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-8-683x1024.jpeg'
     }
+    ,
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-2.jpeg'
+    }
+    ,
+    {
+        url:'https://www.imacontent.com/wp-content/uploads/2017/11/Actress-Elise-Rovinsky-IMA-Content-5.jpeg'
+    }
     ]
 },
 // David S Lindgren
@@ -290,7 +298,31 @@ const talents = [
         course: 'Acting',
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/DavidL-3-web-1024x1536.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/DavidL-S.-Lindgren-Actor-IMA-Content-1-web-1024x682.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/David-S.-Lindgren-Actor-IMA-Content-4-web-1024x682.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/David-S.-Lindgren-Actor-IMA-Content-5-web-768x1152.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/David-S.-Lindgrem-Actor-IMA-Content-6-web-1024x682.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/David-S-.-Lindgren-Actor-IMA-Content2-web-1.jpg'
+        }
+    ]
 }, 
     // Moa Malan
 {
@@ -443,7 +475,31 @@ const talents = [
         course: faker.lorem.words(2),
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/Moa-Malan-IMA-Content-Actress-5-768x1154.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/04/Moa-3-web-1024x682.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/Moa-Malan-IMA-Content-Actress-2-768x1073.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/04/Moa-1-web-1024x682.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/Moa-Malan-IMA-Content-Actress-13-768x1154.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2017/05/Moa-Malan-Actress-Managed-by-IMA-Content-Manager-Maria-Vascsak-8--1024x683.jpg'
+        }
+    ]
 },
     //Marten Eckerstrom
 {
@@ -580,7 +636,31 @@ const talents = [
         course: faker.lorem.words(2),
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/04/image003.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/Actor-Marten-Eckerstrom-IMA-Content-3-1083x1536.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/04/image006.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/04/image001.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/Actor-Marten-Eckerstrom-IMA-Content-4-6-768x1086.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/04/image006.jpg'
+        }
+    ]
 },
 //
 {
@@ -684,7 +764,31 @@ const talents = [
         course: faker.lorem.words(2),
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/12-12-Child-Actress-Josefine-Backman-Juliff-IMA-Content-768x1152.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/1-Josefin-Backman-Juliff-IMA-Content-Child-Actress.jpeg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/1-Child-Actress-Josefine-Backman-Juliff-IMA-Content.jpeg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/11-Child-Actress-Josefine-Backman-Juliff-IMA-Content-768x1152.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/8-Child-Actress-Josefine-Backman-Juliff-IMA-Content.jpeg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/06/2-Child-Actress-Josefine-Backman-Juliff-IMA-Content.jpeg'
+        }
+    ]
 },
 //
 {
@@ -946,7 +1050,31 @@ const talents = [
         course: faker.lorem.words(2),
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/04/Mikael-Spreitz-IMA-Content-front.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2017/06/Actor-Micke-Spreiz-IMA-Content-4-768x1152.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2017/06/Actor-Micke-Spreiz-IMA-Content-1-e1534075900356.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2018/05/Mikael-Spreitz-Actor-IMA-Content-6-768x1152.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2017/06/Actor-Micke-Spreiz-IMA-Content-5-web-768x1151.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2018/05/Mikael-Spreitz-Actor-IMA-Content-2-768x1152.jpg'
+        }
+    ]
 },
 // Oskar Sternulf
 {
@@ -1054,7 +1182,31 @@ const talents = [
         course: faker.lorem.words(2),
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/06/Ansikte-sv-cut.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/02/Actor-Oskar-Sternulf-IMA-Content-5jpg-e1594016275145.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/06/Klocka.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/02/Actor-Oskar-Sternulf-IMA-Content-5jpg-e1594016275145.jpg'
+        }
+        ,
+        {
+            url:''
+        }
+        ,
+        {
+            url:''
+        }
+    ]
 },
 // ANGELIKA ROBERTS
 {
@@ -1183,7 +1335,31 @@ const talents = [
         course: faker.lorem.words(2),
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/04/Angelica-Roberts-4-web-768x1152.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/03/IMG_0009-768x1152.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/03/IMG_9819-768x1152.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/04/Angelika-4-web-768x1152.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2019/04/Angelika-2-web-768x1152.jpg'
+        }
+        ,
+        {
+            url:''
+        }
+    ]
 },
     //SOLVEIG HAUGEN
 {
@@ -1320,7 +1496,31 @@ const talents = [
         course: faker.lorem.words(2),
         from: faker.random.number({min: 1990, max: 2020}),
         to: faker.random.number({min: 1990, max:2020})
-    }]
+    }],
+    gallery : [
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/SolveigH-1-768x1152.jpg'
+        },
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/DSC_7180-768x1151.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/DSC_7131-3.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/DSC_7135-768x1151.jpg'
+        }
+        ,
+        {
+            url:'https://www.imacontent.com/wp-content/uploads/2020/01/Solveig_KA-2.jpg'
+        }
+        ,
+        {
+            url:''
+        }
+    ]
 },
     //MITCHO BATALOV
 {

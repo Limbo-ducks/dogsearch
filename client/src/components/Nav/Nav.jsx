@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Icon from '../../assets/images/talentwyre-icon-gold.png'
+import Icon from '../../assets/images/Icon.svg'
 import './Nav.scss'
 
 function Nav ({ authenticated}) {

@@ -1,14 +1,12 @@
 import React from 'react'
 import './ProfileInfo.scss'
-import Image from '../../assets/images/banner.png'
-import ExampleImageOne from '../../assets/images/1.jpg'
+
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 import Blank from '../../assets/images/blank-profile-picture.png'
 import HeaderBackground from '../../assets/images/talentwyre-background.jpg'
@@ -21,7 +19,7 @@ const calculateHeight = height => {
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => {
+const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, viewComponent}) => {
 
   return (
     <section className="info">
@@ -66,14 +64,14 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
             'Actress' : 'Actor'}
         </h2>
         <h3 className="info__content__text"><LocationOnOutlinedIcon/> 
-        {data.contact.city === '' ? 'Unknown' : `${data.contact.city}, ${data.contact.citizenship}`}
+        <i>{data.contact.city === '' ? 'Unknown' : `${data.contact.city}, ${data.contact.citizenship}`}</i>
         </h3>
         <article className="info__content__attributes">
           <InfoOutlinedIcon/>
           <article className="info__content__attributes__text">
-            <h3 className="info__content__text">Height: {calculateHeight(data.measurements.height)}</h3>
-            <h3 className="info__content__text">Eyes: {upCaseFirst(data.eyeColor)}</h3>
-            <h3 className="info__content__text">Acting age: {data.age - 5} - {data.age + 5}</h3>
+            <h3 className="info__content__text"><b>Height:</b> {calculateHeight(data.measurements.height)}</h3>
+            <h3 className="info__content__text"><b>Eyes:</b> {upCaseFirst(data.eyeColor)}</h3>
+            <h3 className="info__content__text"><b>Acting age:</b> {data.age - 5} - {data.age + 5}</h3>
           </article>
         </article>
         <h3 className="info__content__text info__content__text--representation"><BusinessCenterOutlinedIcon/> Representation AB</h3>

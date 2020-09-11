@@ -14,6 +14,7 @@ import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
+import HeaderBackground from '../../assets/images/talentwyre-background.jpg'
 import { Tooltip } from '@material-ui/core';
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
@@ -22,7 +23,7 @@ const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects}) => 
   return (
     <section className="info">
       <article className="info__header">
-        <img src={Image} alt="" className="info__header__banner"/>
+        <img src={HeaderBackground} alt="" className="info__header__banner"/>
         <img src={ExampleImageOne} alt="" className="info__header__profileimg"/>
       </article>
       <article className="info__navigation">
