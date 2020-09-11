@@ -13,13 +13,13 @@ const RepresentationCard = () => (
     <Autocomplete
       className='my-4'
       options={typeOpts}
-      renderInput={ps => <TextField {...ps} label="Type" variant="outlined" />}
+      renderInput={ps => <TextField {...ps} label="Type" />}
     />
     <div className='talent-subfield'>
-      <TextField className='textA' label="Name" variant="outlined" />
-      <TextField className='textB' label="Company" variant="outlined" />
-      <TextField className='textC' label="Phone" variant="outlined" />
-      <TextField className='textD' label="Email" variant="outlined" />
+      <TextField className='textA' label="Name" />
+      <TextField className='textB' label="Company" />
+      <TextField className='textC' label="Phone" />
+      <TextField className='textD' label="Email" />
     </div>
   </div>
 )

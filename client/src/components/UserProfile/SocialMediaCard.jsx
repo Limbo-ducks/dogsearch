@@ -5,8 +5,8 @@ const SocialMediaCard = ({ name }) => (
   <div className='my-4'>
     <h3>{name}</h3>
     <div className='my-4 media-field'>  
-      <TextField label="Link" variant="outlined" />
-      <TextField label="Followers" variant="outlined" />
+      <TextField label="Link" />
+      <TextField label="Followers" />
     </div>
   </div>
 )
