@@ -1,9 +1,9 @@
 @import "../../variables.scss";
 
 .talent-registration {
-  .info-container {
-    margin: 3em 1.5em;
-  }
+  // .info-container {
+  //   margin: 3em 1.5em;
+  // }
 
   h2 {
     font-size: 21px;
@@ -223,6 +223,16 @@
     row-gap: 1em;
     column-gap: 1em;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.talent-registration-representation {
+  .talent-subfield {
+    display: grid;
+    row-gap: 1em;
+    column-gap: 1em;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
 }

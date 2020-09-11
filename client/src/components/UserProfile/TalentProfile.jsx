@@ -24,14 +24,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'block',
   },
   border: {
-    border: '1px solid lightgray',
+    'border-bottom': '1px solid lightgray',
     padding: 0,
     'box-shadow': 'none'
   },
@@ -48,7 +48,7 @@ const types = (data, onChange, handleCheck) => ({
       id={x.name}
       options={x.options}
       onChange={onChange(x.name)}
-      getOptionLabel={option => {console.log('HERE!!'); console.log(option); return typeof option === 'string' ? option : option.text}}
+      getOptionLabel={option => typeof option === 'string' ? option : option.text}
       multiple={x.multiple}
       disableCloseOnSelect={x.multiple ? true : false}
       value={getAutocompleteValue(x.options, data[x.name])}
@@ -78,20 +78,6 @@ const types = (data, onChange, handleCheck) => ({
       value={data[x.name]}
     />
   ),
-  autocompleteMultiple: x => (
-    <Autocomplete
-      className={`picklist ${x.name} `}
-      key={x.name}
-      id={x.name}
-      options={x.options}
-      onChange={onChange(x.name)}
-      getOptionLabel={option => typeof option === 'string' ? option : option.text}
-      multiple={x.multiple}
-      disableCloseOnSelect={x.multiple ? true : false}
-      value={getAutocompleteValue(x.options, data[x.name])}
-      renderInput={params => <TextField {...params} label={`${x.label}${x.required ? '*' : ''}`} variant="outlined" />}
-    />
-  ),
 })
 
 const makeField = (data, onChange, handleCheck) => x => types(data, onChange, handleCheck)[x.type](x)
@@ -106,7 +92,7 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         <Accordion className={classes.border}>
           <AccordionSummary
             className={classes.content}
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ArrowDropDownIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -119,9 +105,10 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         </Accordion>  
       </section>
       <section className='talent-registration-about info-container'>
-        <Accordion>
+        <Accordion className={classes.border}>
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              className={classes.content}
+              expandIcon={<ArrowDropDownIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
@@ -135,9 +122,10 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
       </section>
       <Representation />
       <section className='talent-registration-appearance info-container'>
-        <Accordion>
+        <Accordion className={classes.border}>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            className={classes.content}
+            expandIcon={<ArrowDropDownIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -149,9 +137,20 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
           </AccordionDetails>
         </Accordion>
       </section>
-      <section className='info-container'>
-        <h2>Union Information</h2>
-        {printFields(unionFields)}
+      <section className='talent-registration-union info-container'>
+        <Accordion className={classes.border}>
+          <AccordionSummary
+            className={classes.content}
+            expandIcon={<ArrowDropDownIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <h2>Union Information</h2>
+          </AccordionSummary>
+          <AccordionDetails className={classes.root}>
+            <div className='talent-subfield'>{printFields(unionFields)}</div>
+          </AccordionDetails>
+        </Accordion> 
       </section>
       <section className='talent-registration-athletic info-container'>
         <h2>Athletic Endeavors</h2>
@@ -176,9 +175,10 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
       </section>
       <SocialMedia />
       <section className='talent-registration-measurements info-container'>
-        <Accordion>
+        <Accordion className={classes.border}>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            className={classes.content}
+            expandIcon={<ArrowDropDownIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -191,9 +191,10 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
         </Accordion>
       </section>
       <section className='talent-registration-experience info-container'>
-        <Accordion>
+        <Accordion className={classes.border}>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            className={classes.content}
+            expandIcon={<ArrowDropDownIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
@@ -206,9 +207,10 @@ const TalentProfile = ({ data, handleChange, handleCheckBoxes }) => {
       </section>
       <CreditSection />
       <section className='talent-registration-media info-container'>
-        <Accordion>
+        <Accordion className={classes.border}>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            className={classes.content}
+            expandIcon={<ArrowDropDownIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >

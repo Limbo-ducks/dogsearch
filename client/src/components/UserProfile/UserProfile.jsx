@@ -131,7 +131,7 @@ const UserProfile = ({ history, user }) => {
 
   return (
     <section className='add-profile my-32'>
-      <h1 className='m-0 ml-4 w-full' >What is your role?</h1>
+      <h1 className='m-0 ml-4 h-2' >What is your role?</h1>
       <Autocomplete
         className='type-input'
         style={{'margin': '3em 1.5em'}}
