@@ -14,12 +14,9 @@ import Button from '@material-ui/core/Button';
 import LaunchIcon from '@material-ui/icons/Launch';
 import './PopoverContent.scss'
 
-
-
-  
-export function CheckboxListSecondary() {
+export const CheckboxListSecondary = () => {
     const [added, setAdded] = React.useState([false, false, false, false]);
-    const useStyles = makeStyles((theme) => ({
+    const useStyles = makeStyles(theme => ({
         root: {
             width: '100%',
             maxWidth: 350,
@@ -29,7 +26,7 @@ export function CheckboxListSecondary() {
     const classes = useStyles();
     const [checked, setChecked] = React.useState([1]);
 
-    const handleToggle = (value) => () => {
+    const handleToggle = value => () => {
         const currentIndex = checked.indexOf(value);
         const newChecked = [...checked];
 
@@ -42,7 +39,7 @@ export function CheckboxListSecondary() {
         setChecked(newChecked);
     };
 
-    const handleListItemClick = (i) => {
+    const handleListItemClick = i => {
         const newAdded = Array.from(added, (value, idx) => idx === i ? true : value);
         setAdded(newAdded);
     };
@@ -97,15 +94,12 @@ const PopoverContent = () => {
             
         </div>
         <ListItem key="add" button 
-        className="new__item__button"
-        >
-        <   ListItemText id="add__text" inset="true">New List</ListItemText>
+        className="new__item__button">
+          <ListItemText id="add__text" inset="true">New List</ListItemText>
         </ListItem>
         </div>
         </>
     )
 }
-
-
 
 export default PopoverContent
