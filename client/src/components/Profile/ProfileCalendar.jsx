@@ -7,7 +7,7 @@ import { isSameDay } from "date-fns";
 
 
 const ProfileCalendar = () => {
-  const [calendar, setCalendar] = React.useState({date: ''});
+  const [calendar, setCalendar] = React.useState({ date: '' });
 
   const disabledDates = [new Date(2020, 8, 20), new Date(2020, 8, 22), new Date(2020, 8, 19)]
   const availableDates = [new Date(2020, 8, 15)]
@@ -47,7 +47,7 @@ const ProfileCalendar = () => {
           </article>
           <article className="calendar__instructions__item  calendar__instructions--unknown">
             <article className="calendar__instructions__item__box calendar__instructions__item__box--unknown"></article>
-            <h3>Unknown</h3>
+            <h3>Not set</h3>
           </article>
       </section>
       <section className="calendar__day">
