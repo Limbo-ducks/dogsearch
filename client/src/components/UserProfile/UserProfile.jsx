@@ -20,18 +20,51 @@ const typeOpts = [
   { value: 'representation', text: 'Representation' },
 ]
 
-const parseValue = map(R.prop('value'))
+const requiredFields = [
+  'cast',
+  'name',
+  'citizenship',
+  'age',
+  'eyeColor',
+  'hairColor',
+  'hairLength',
+  'gender',
+  'ethnicity',
+  'accent',
+  'languages',
+  'contact.address',
+  'contact.city',
+  'contact.postalCode',
+  'contact.country',
+  'contact.email',
+  'contact.phone',
+  'measurements.height',
+  'measurements.weight',
+  'measurements.bodyType',
+  'measurements.shirtSize',
+  'measurements.sleeveLength',
+  'measurements.neck',
+  'measurements.jacketChest',
+  'measurements.jacketLength',
+  'measurements.waist',
+  'measurements.inseam',
+  'measurements.shoeWidth',
+  'measurements.shoeLength',
+  'measurements.gloves',
+  'measurements.hat',
+]
 
-const getValue = R.pipe(
-  parseValue,
-  x => console.log(x) || x,
-)
+const isError = data => x => R.or(R.isEmpty(data[x]), R.isNil(data[x]))
+const anyError = data => R.any(isError(data))
+
+const getValue = map(R.prop('value'))
 
 const setIfDefined = R.pathOr('')
 const setArray = R.pathOr([])
 
 const UserProfile = ({ history, user }) => {
   const [data, setData] = useState({})
+  const [checked, setChecked] = useState(false)
 
   const handleChangeData = prop =>
     (event, value) => {
@@ -65,7 +98,7 @@ const UserProfile = ({ history, user }) => {
     'contact.email': setIfDefined(['contact', 'email'], data),
     'cast': setIfDefined(['cast'], data),
     'name': setIfDefined(['name'], data),
-    'biography': setIfDefined(['biography'], data),
+    'biography': setIfDefined(['biographyobject'], data),
     'education': setIfDefined(['education'], data),
     'training': setIfDefined(['training'], data),
     'citizenship': setIfDefined(['citizenship'], data),
@@ -121,6 +154,10 @@ const UserProfile = ({ history, user }) => {
   }, [])
 
   const updateProfile = () => {
+    if (anyError(data)(requiredFields)) {
+      setChecked(true)
+      return
+    }
     fetch('/api/users', { ...fetchOpts, body: JSON.stringify(data) })
       .then(() => history.push(`/`))
       .catch(console.error)
@@ -143,6 +180,7 @@ const UserProfile = ({ history, user }) => {
         value={getAutocompleteValue(typeOpts, data.type)}
       />
       {data.type === 'talent' && <TalentProfile
+        checked={checked}
         data={data}
         handleChange={handleChangeData}
         handleCheckBoxes={handleCheckBoxes}
