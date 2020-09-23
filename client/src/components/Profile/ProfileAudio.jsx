@@ -9,12 +9,7 @@ const ProfileAudio = ({data}) => {
       {data.audio ? (<><iframe title="vimeo-player" src={data.audio} width="100%" height="auto" frameborder="0" allowfullscreen></iframe>
 
       <ul className="content__audio__list">
-        <li><AudiotrackIcon /> Commercial reel</li>
-        <li><AudiotrackIcon /> Character reel</li>
-        <li><AudiotrackIcon /> Commercial reel</li>
-        <li><AudiotrackIcon /> Character reel</li>
-        <li><AudiotrackIcon /> Commercial reel</li>
-        <li><AudiotrackIcon /> Character reel</li>
+        <li><AudiotrackIcon />Example of other Audio</li>
       </ul></>) : <p>No Audio has been provided by the Talent.</p>}
 
     </section>

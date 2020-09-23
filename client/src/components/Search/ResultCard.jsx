@@ -6,6 +6,7 @@ import Image from '../../assets/images/talentwyre-background.jpg'
 import ExampleImageOne from '../../assets/images/1.jpg'
 import ExampleImageTwo from '../../assets/images/2.jpg'
 import ExampleImageThree from '../../assets/images/3.jpg'
+import AddIcon from '@material-ui/icons/Add';
 import CollectionsBookmarkOutlinedIcon from '@material-ui/icons/CollectionsBookmarkOutlined';
 import Popover from '@material-ui/core/Popover';
 import PopoverContent from './PopoverContent';
@@ -20,6 +21,7 @@ function ResultCard (props) {
   const [open, setOpen] = useState(false)
   const [placement, setPlacement] = React.useState();
   const [anchorEl, setAnchorEl] = React.useState(null);
+
   const handleClick = (event) => {
     event.stopPropagation()
     setAnchorEl(event.currentTarget);
@@ -66,12 +68,14 @@ function ResultCard (props) {
       >
         <section className="modal">
           {props.premium ? <h3 className="modal__premium">Premium</h3> : null}
-          <img src={Logo} alt="" className="modal__logo"/>
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
             <img src={props.image ? `${props.image}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
-              <button className="modal__buttons__button modal__buttons__button--save">Shortlist</button>
+              <button onClick={handleClick} className="modal__buttons__button modal__buttons__button--save">
+                Shortlist
+                  <AddIcon/>             
+              </button>
               <button className="modal__buttons__button modal__buttons__button--contact">Contact</button>
             </article>
             <section className="modal__profile__info">
@@ -143,10 +147,9 @@ function ResultCard (props) {
       <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
         <img className="talentcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
         <button className="talentcard__bookmark" onClick={handleClick}>
-          <CollectionsBookmarkOutlinedIcon fontSize="small" className="talentcard__bookmark--click"/>
-          </button>
+          <AddIcon fontSize="small" className="talentcard__bookmark--click"/>
+        </button>
           
-        
         <div className="talentcard__info px-6 py-4">
           <p className="talentcard__info__text text-gray-700 text-base">
             <ul className="talentcard__info__text--list">
@@ -167,23 +170,23 @@ function ResultCard (props) {
         </div>
       </article>
       <Popover
-            id={id}
-            className="popover"
-            open={popoverOpen}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            placement='top-start'
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
-          >
-            <PopoverContent/>
-        </Popover>
+          id={id}
+          className="popover"
+          open={popoverOpen}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          placement='top-start'
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+        >
+          <PopoverContent/>
+      </Popover>
     </>
   )
 }
