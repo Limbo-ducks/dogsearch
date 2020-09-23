@@ -5,7 +5,6 @@ import 'react-calendar/dist/Calendar.css';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { isSameDay } from "date-fns";
 
-
 const ProfileCalendar = () => {
   const [calendar, setCalendar] = React.useState({date: ''});
 
