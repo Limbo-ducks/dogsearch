@@ -47,7 +47,7 @@ export default function BasicDateRangePicker() {
         renderInput={(startProps, endProps) => (
           <>
             <TextField {...startProps}/>
-            <DateRangeDelimiter> to </DateRangeDelimiter>
+            <DateRangeDelimiter className='bg-white'></DateRangeDelimiter>
             <TextField {...endProps} />
           </>
         )}

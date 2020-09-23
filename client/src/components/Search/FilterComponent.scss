@@ -68,14 +68,6 @@
     }
 }
 
-// .MuiInputLabel-outlined {
-//     transform: translate(14px, 14px) scale(1)!important;
-
-//     .MuiInputLabel-shrink {
-//         transform: translate(14px, -6px) scale(0.75)!important;
-//     }
-// }
-
 .slider {
     width: calc(100% - 20px);
 }
@@ -118,4 +110,16 @@
 
 .card__title {
     padding-bottom: 0px!important;
+}
+
+.MuiInputLabel-formControl-173 {
+    top: -7px !important;
+}
+
+.MuiOutlinedInput-input-190 {
+    padding: 12.5px 14px !important;
+}
+
+.MuiInputBase-root-195 {
+    background-color: white;
 }
