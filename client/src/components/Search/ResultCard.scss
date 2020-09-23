@@ -59,10 +59,19 @@
 			cursor: pointer;
 			background-color: $white;
 		}
+
 		&--click {
 			margin: 8px 10px;
 		}
-		
+
+		&--profile {
+			border: 2px solid $white;
+			border-radius: 4px;
+			
+			&:hover {
+				border: 2px solid $gold;
+			}
+		}
 	}
     &__info {	
         
@@ -115,7 +124,7 @@
 		}
 
 		&--profile {
-			top: 10px;
+			top: 85px;
 		}
 	}
 
@@ -127,6 +136,7 @@
 		
 		@media (min-width: $breakpoint-md) {
 			width: 250px;
+			top: 85px;
 		}
 	}
 
