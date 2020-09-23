@@ -14,7 +14,7 @@ const ProfileVideo = ({data}) => {
 
   return (
     <section className="content__video">
-      {videoUrl ? (<><ReactPlayer url={videoUrl} width="100%" height="315px" playing={playing} controls="true"/>
+      {videoUrl ? (<><ReactPlayer url={videoUrl} width="100%" height="315px" playing={playing} controls={true}/>
       <ul className="content__video__list">
         <li onClick={() => setVideo("https://player.vimeo.com/video/402940166")}><VideocamOutlinedIcon/> Example of other video</li>
       </ul></>) : <p>No video has been provided by the Talent</p>}

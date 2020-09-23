@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import './ProfileInfo.scss'
+import React, { useState } from 'react';
+import './ProfileInfo.scss';
 import Popover from '@material-ui/core/Popover';
 import PopoverContent from '../Search/PopoverContent';
 
@@ -12,8 +12,8 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 import AddIcon from '@material-ui/icons/Add';
 
-import Blank from '../../assets/images/blank-profile-picture.png'
-import HeaderBackground from '../../assets/images/talentwyre-background.jpg'
+import Blank from '../../assets/images/blank-profile-picture.png';
+import HeaderBackground from '../../assets/images/talentwyre-background.jpg';
 import { Tooltip } from '@material-ui/core';
 
 const calculateHeight = height => {
@@ -25,16 +25,11 @@ const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
 const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, viewComponent}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [open, setOpen] = useState(false)
 
   const popoverOpen = Boolean(anchorEl);
   const id = popoverOpen ? 'simple-popover' : undefined;
 
-  const handleToggle = bool => () => {
-    setOpen(bool)
-  }
-
-  const handleClick = (event) => {
+  const handleClick = event => {
     event.stopPropagation()
     setAnchorEl(event.currentTarget);
   };
