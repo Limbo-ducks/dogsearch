@@ -1,10 +1,9 @@
 const faker = require('faker')
 
 const makeDates = () =>
-    Array.from({ length: 3 }, (_, i) => ({
-        from: `2020-${10 + i}-${faker.random.number({ min: 1, max: 10 }).toString().padStart(2, '0')}`,
-        to: `2020-${10 + i}-${faker.random.number({ min: 11, max: 30 })}`,
-    }))
+    Array.from({ length: 6 }, (_, i) => (
+        new Date(2020, 8, faker.random.number({ min: 1, max: 30 }))
+    ))
 
 const talents = [
     // Else Rovinsky
