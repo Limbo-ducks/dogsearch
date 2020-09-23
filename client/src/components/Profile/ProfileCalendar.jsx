@@ -4,10 +4,11 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
+const ProfileCalendar = ({ dates }) => {
 
-const ProfileCalendar = () => {
   return (
     <section className="content">
+      {console.log(dates)}
       <Calendar />
       <section className="calendar__instructions">
           <article className="calendar__instructions__item calendar__instructions--available">
