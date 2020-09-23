@@ -10,20 +10,20 @@ const FilmCredits = ({data}) => {
             {data.actingCredits.films.length > 0 ? 
             <div>
             <h4 className="content__header">Film</h4>
-                {data.actingCredits.films.map(film => <FilmCredit data = {film}/>)}
+                {data.actingCredits.films.map((film, index) => <FilmCredit data = {film} key={index}/>)}
             </div> : null}
 
             {data.actingCredits.theatre.length > 0 ?
             <div>
             <h4 className="content__header">Theatre</h4>
-                {data.actingCredits.theatre.map(film => <FilmCredit data = {film}/>)}
+                {data.actingCredits.theatre.map((film, index) => <FilmCredit data = {film} key={index}/>)}
             </div> : null
             }
 
             {data.actingCredits.tv.length > 0 ?
             <div>
             <h4 className="content__header">TV</h4>
-                {data.actingCredits.tv.map(film => <FilmCredit data={film}/>)}
+                {data.actingCredits.tv.map((film, index) => <FilmCredit data={film} key={index}/>)}
             </div> : null
             }
             <span id="nonactingcredits" className="spanscroll"></span>
@@ -32,21 +32,21 @@ const FilmCredits = ({data}) => {
             {data.nonActingCredits.films.length > 0 ?
             <div>
                 <h4 className="content__header">Film</h4>
-            {data.nonActingCredits.films.map(film => <FilmCredit data = {film}/>)}
+            {data.nonActingCredits.films.map((film, index) => <FilmCredit data = {film} key={index}/>)}
             </div> : null
             }
 
             {data.nonActingCredits.theatre.length > 0 ? 
             <div>
             <h4 className="content__header">Theatre</h4>
-            {data.nonActingCredits.theatre.map(film => <FilmCredit data = {film}/>)}
+            {data.nonActingCredits.theatre.map((film, index) => <FilmCredit data = {film} key={index}/>)}
             </div> : null
             }
 
             {data.nonActingCredits.nomination.length > 0 ? 
             <div>
             <h3 className="content__title">Nominations</h3>
-            {data.nonActingCredits.nomination.map(film => <FilmCredit data = {film}/>)}</div> : null
+            {data.nonActingCredits.nomination.map((film, index) => <FilmCredit data = {film} key={index}/>)}</div> : null
 }
         </section>
     )

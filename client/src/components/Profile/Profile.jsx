@@ -43,7 +43,6 @@ const Profile = (props) => {
         }
   }, [status])
 
-
   const viewCalendar = () => {
     setOpenCalendar(true)
     setOpenProfile(false)
@@ -80,7 +79,6 @@ const Profile = (props) => {
     
     status === 'loaded'? 
     <>
-    {console.log(profileData)}
       <LoggedInNav />
       <main className="profile__main">
         <section className="profile__content">
@@ -88,7 +86,7 @@ const Profile = (props) => {
           {openProfile ? <><ProfileLinks/><ProfileContent data={profileData}/></> : null }
           {openCalendar ? <><section className="profilenav">
                               <h3 className="profilenav__link">Calendar</h3>
-                            </section><ProfileCalendar dates={profileData.available}/></> : null}
+                            </section><ProfileCalendar dates={profileData.available} unavailable={profileData.unavailable}/></> : null}
           {openContact ? <><section className="profilenav">
                               <h3 className="profilenav__link">Contact</h3>
                             </section><ProfileContact /></> : null}

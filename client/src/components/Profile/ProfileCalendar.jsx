@@ -3,13 +3,13 @@ import './ProfileCalendar.scss';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { isSameDay } from "date-fns";
+import { isSameDay, parseISO } from "date-fns";
 
-const ProfileCalendar = () => {
+const ProfileCalendar = ({dates, unavailable}) => {
   const [calendar, setCalendar] = React.useState({ date: '' });
 
-  const disabledDates = [new Date(2020, 8, 20), new Date(2020, 8, 22), new Date(2020, 8, 19)]
-  const availableDates = [new Date(2020, 8, 15)]
+  const disabledDates = unavailable;
+  const availableDates = dates;
 
   const onChange = date => {
     const day = date.toDateString()
@@ -18,15 +18,15 @@ const ProfileCalendar = () => {
 
   const tileDisabled = ({ date, view }) => {
     if( view === 'month') {
-      return disabledDates.find(dDate => isSameDay(dDate, date))
+      return disabledDates.find(dDate => isSameDay(parseISO(dDate), date))
     }
   }
 
   const tileClassName = ({ date, view }) => {
     if(view === 'month') {
-      if(disabledDates.find(dDate => isSameDay(dDate, date))) {
+      if(disabledDates.find(dDate => isSameDay(parseISO(dDate), date))) {
         return 'calendar__unavailable'
-      } else if (availableDates.find(aDate => isSameDay(aDate, date))) {
+      } else if (availableDates.find(aDate => isSameDay(parseISO(aDate), date))) {
         return 'calendar__available'
       }
     }
