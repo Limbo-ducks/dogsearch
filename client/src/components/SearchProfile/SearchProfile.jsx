@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import  { Redirect } from 'react-router-dom'
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
 import SearchProfileInfo from './SearchProfileInfo.jsx';
 import SearchProjects from './SearchProjects.jsx';
@@ -108,24 +109,30 @@ const SearchProfile = (props) => {
     });
   });
   
-  return (
-    status === 'loaded' ? 
-    <>
-      <LoggedInNav viewMessages={viewMessages}/>
-      <main className="profile">
-        <section className="profile__content">
-          <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages}/>
-          { openProfile ? <SearchProfileContent viewProjects={viewProjects}/> : null }
-          { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null}
-          { openShortlist ? <ProjectShortlist viewShortlist={viewShortlist}/> : null }
-          { openProjects ? <Projects viewShortlist={viewShortlist} viewProjects={viewProjects}/> : null }
-          { openMessages ? <Messages viewMessages={viewMessages}/> : null }
-          <SearchProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/>
-        </section>
-      </main>
-    </> 
-    : null
-  )
+  if(status === 'loaded') {
+    console.log(profileData)
+    if(!profileData.type) {
+      return <Redirect to='/my-profile' />
+    }
+    return (
+      <>
+        <LoggedInNav viewMessages={viewMessages}/>
+        <main className="profile">
+          <section className="profile__content">
+            <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages}/>
+            { openProfile ? <SearchProfileContent viewProjects={viewProjects}/> : null }
+            { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null}
+            { openShortlist ? <ProjectShortlist viewShortlist={viewShortlist}/> : null }
+            { openProjects ? <Projects viewShortlist={viewShortlist} viewProjects={viewProjects}/> : null }
+            { openMessages ? <Messages viewMessages={viewMessages}/> : null }
+            <SearchProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/>
+          </section>
+        </main>
+      </> 
+    )
+  } else {
+    return null
+  }
 }
 
 export default SearchProfile
