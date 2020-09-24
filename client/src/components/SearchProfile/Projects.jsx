@@ -38,15 +38,15 @@ const Projects = ({ viewProjects }) => {
       <h2 className="contentmodal__title">All projects</h2>
       <article className="projects">
         <article className="projects__row projects__row--title">
-          <article className="projects__column">Project Title</article>
-          <article className="projects__column projects__column--centered">Alerts</article>
-          <article className="projects__column projects__column--centered">Calendar</article>
-          <article className="projects__column projects__column--centered">Shortlist</article>
-          <article className="projects__column projects__column--centered">Stuff</article>
-          <article className="projects__column projects__column--centered">Three</article>
+          <article className="projects__column"><h4>Example</h4></article>
+          <article className="projects__column projects__column--centered"><h4>Alerts</h4></article>
+          <article className="projects__column projects__column--centered"><h4>Calendar</h4></article>
+          <article className="projects__column projects__column--centered"><h4>Shortlist</h4></article>
+          <article className="projects__column projects__column--centered"><h4>Stuff</h4></article>
+          <article className="projects__column projects__column--centered"><h4>Three</h4></article>
         </article>
         <article className="projects__row">
-          <article className="projects__column">Project Title</article>
+          <article className="projects__column"><h4>Project Title</h4></article>
           <article className="projects__column projects__column--centered"><NotificationsActiveIcon/></article>
           <article className="projects__column projects__column--centered"><DateRangeIcon/></article>
           <article className="projects__column projects__column--centered"><BookmarksOutlinedIcon/><FiberNewIcon/></article>
@@ -54,7 +54,7 @@ const Projects = ({ viewProjects }) => {
           <article className="projects__column projects__column--centered">Three</article>
         </article>
         <article className="projects__row">
-          <article className="projects__column">Project Title</article>
+          <article className="projects__column"><h4>Project Title</h4></article>
           <article className="projects__column projects__column--centered"><NotificationsNoneIcon/></article>
           <article className="projects__column projects__column--centered"><DateRangeIcon/></article>
           <article className="projects__column projects__column--centered"><BookmarksOutlinedIcon/></article>
@@ -62,7 +62,7 @@ const Projects = ({ viewProjects }) => {
           <article className="projects__column projects__column--centered">Three</article>
         </article>
         <article className="projects__row">
-          <article className="projects__column">Project Title</article>
+          <article className="projects__column"><h4>Project Title</h4></article>
           <article className="projects__column projects__column--centered"><NotificationsNoneIcon/></article>
           <article className="projects__column projects__column--centered"><DateRangeIcon/></article>
           <article className="projects__column projects__column--centered"><BookmarksOutlinedIcon/></article>

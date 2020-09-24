@@ -1,7 +1,6 @@
 import React from 'react'
 import './ProjectShortlist.scss'
 import BlankImage from '../../assets/images/blank-profile-picture.png'
-import { Tooltip } from '@material-ui/core';
 
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import DateRangeIcon from '@material-ui/icons/DateRange';
@@ -24,14 +23,14 @@ const ProjectShortlist = ({ viewShortlist }) => {
       <section className="shortlist">
         <article className="shortlist__row shortlist__row--title">
           <article className="shortlist__column">
-            <h3>Image</h3>
+            <h4>Image</h4>
           </article>
-          <article className="shortlist__column">Role</article>
-          <article className="shortlist__column">Three</article>
-          <article className="shortlist__column">Availability</article>
-          <article className="shortlist__column">Request</article>
-          <article className="shortlist__column">Contact</article>
-          <article className="shortlist__column">Remove</article>
+          <article className="shortlist__column"><h4>Role</h4></article>
+          <article className="shortlist__column"><h4>Three</h4></article>
+          <article className="shortlist__column"><h4>Availability</h4></article>
+          <article className="shortlist__column"><h4>Request</h4></article>
+          <article className="shortlist__column"><h4>Contact</h4></article>
+          <article className="shortlist__column"><h4>Remove</h4></article>
         </article>
         <article className="shortlist__row">
           <article className="shortlist__column">

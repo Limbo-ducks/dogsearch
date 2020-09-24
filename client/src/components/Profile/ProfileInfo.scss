@@ -7,11 +7,11 @@
   padding-bottom: 10px;
   min-height: 45vh;
   background-color: $white;
-  box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
+  box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.25);
 
   @media (min-width: $breakpoint-md) {
     position: fixed;
-    top: 150px;
+    top: 120px;
     left: 10%;
     width: 20%;
     margin-top: 0px;
@@ -44,7 +44,7 @@
       right: 0;
       top: 0;
       color: white;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
 
       &:hover {
         color: $gold;

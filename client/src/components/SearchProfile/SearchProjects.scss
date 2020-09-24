@@ -5,6 +5,7 @@
     &__project {
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
       padding: 5px;
       margin: 5px;
       border-bottom: 1px solid $lightblue;
@@ -16,7 +17,7 @@
 
       &__icons {
         svg {
-          color: $bluegrey;
+          color: $gold;
           margin: 0 2px;
 
           &:hover {

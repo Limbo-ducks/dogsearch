@@ -108,9 +108,9 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, view
         <article className="info__content__attributes">
           <InfoOutlinedIcon/>
           <article className="info__content__attributes__text">
-            <h3 className="info__content__text"><b>Height:</b> {calculateHeight(data.measurements.height)}</h3>
-            <h3 className="info__content__text"><b>Eyes:</b> {upCaseFirst(data.eyeColor)}</h3>
-            <h3 className="info__content__text"><b>Acting age:</b> {data.age - 5} - {data.age + 5}</h3>
+            <h5 className="info__content__text"><b>Height:</b> {calculateHeight(data.measurements.height)}</h5>
+            <h5 className="info__content__text"><b>Eyes:</b> {upCaseFirst(data.eyeColor)}</h5>
+            <h5 className="info__content__text"><b>Acting age:</b> {data.age - 5} - {data.age + 5}</h5>
           </article>
         </article>
         <h3 className="info__content__text info__content__text--representation"><BusinessCenterOutlinedIcon/> Representation</h3>

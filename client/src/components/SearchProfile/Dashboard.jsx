@@ -10,12 +10,12 @@ const Dashboard = ({ viewProjects }) => {
 
   return (
       <section className="dashboard">
-        <article className="dashboard__search">
+        {/* <article className="dashboard__search">
           <input type="text"/>
           <button className="dashboard__search__button">Quick Search <SearchOutlinedIcon /> </button> 
-        </article>
+        </article> */}
         <button className="dashboard__button">
-          <h3 className="dashboard__button__text">My Network</h3>
+          <h4 className="dashboard__button__text">My Network</h4>
           <article className="dashboard__button__icon">
             <PeopleAltOutlinedIcon />
           </article>
@@ -25,19 +25,31 @@ const Dashboard = ({ viewProjects }) => {
             e.stopPropagation();
             viewProjects(e.currentTarget)
             }}>
-          <h3 className="dashboard__button__text">My Projects</h3>
+          <h4 className="dashboard__button__text">My Projects</h4>
           <article className="dashboard__button__icon">
             <FileCopyOutlinedIcon />
           </article>
         </button>
         <button className="dashboard__button">
-          <h3 className="dashboard__button__text">Recent Talents</h3>
+          <h4 className="dashboard__button__text">Recent Talents</h4>
           <article className="dashboard__button__icon">
             <RecentActorsOutlinedIcon />
           </article>
         </button>
         <button className="dashboard__button">
-          <h3 className="dashboard__button__text">Profile Settings</h3>
+          <h4 className="dashboard__button__text">My messages</h4>
+          <article className="dashboard__button__icon">
+            <SettingsOutlinedIcon />
+          </article>
+        </button>
+        <button className="dashboard__button">
+          <h4 className="dashboard__button__text">My calendar</h4>
+          <article className="dashboard__button__icon">
+            <SettingsOutlinedIcon />
+          </article>
+        </button>
+        <button className="dashboard__button">
+          <h4 className="dashboard__button__text">Profile Settings</h4>
           <article className="dashboard__button__icon">
             <SettingsOutlinedIcon />
           </article>
