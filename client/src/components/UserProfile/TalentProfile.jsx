@@ -92,6 +92,7 @@ const types = (checked, data, onChange, handleCheck) => ({
     <Upload
       key={x.name}
       onChange={onChange(x.name)}
+      label={x.label}
     />
   )
 })

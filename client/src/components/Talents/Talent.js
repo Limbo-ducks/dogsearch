@@ -23,7 +23,7 @@ const Talent = (props) => {
       <ProfileCard data={data}/>
       <h1>{data.name}</h1>
       <InfoSection data={data} />
-      <img src={data.image} alt='profile-pic'/>
+      <img src={data.media.headShot} alt='profile-pic'/>
     </div>
   )
 }

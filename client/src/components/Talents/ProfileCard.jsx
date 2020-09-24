@@ -4,7 +4,7 @@ const ProfileCard = props => {
     const {data} = props;
     return(
     <div>
-        <img src={data.image} alt='profile-pic' width='100px'/>
+        <img src={data.media.headShot} alt='profile-pic' width='100px'/>
         <button>M</button>
         <button>C</button>
         <h3>{data.profession}</h3>

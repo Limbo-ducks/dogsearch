@@ -1,7 +1,7 @@
 import React from 'react'
 import {app} from './base.js'
 
-const Upload = ({onChange}) => {
+const Upload = ({onChange, label}) => {
     const [fileUrl, setFileUrl] = React.useState('')
 
     const onFileChange = async (e) => {
@@ -15,7 +15,8 @@ const Upload = ({onChange}) => {
 
     return (
         <div>
-            <input type='file' onChange={(e)=>onFileChange(e)}></input>
+            <h4>{label}</h4>
+                <input type='file' onChange={(e)=>onFileChange(e)} name='fileInput'></input>
         </div>
     )
 }
