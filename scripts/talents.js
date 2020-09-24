@@ -2,7 +2,7 @@ const faker = require('faker')
 
 const makeDates = () =>
     Array.from({ length: 6 }, (_, i) => (
-        new Date(2020, 8, faker.random.number({ min: 1, max: 30 }))
+        `2020-09-${faker.random.number({ min: 1, max: 30 })}`
     ))
 
 const talents = [

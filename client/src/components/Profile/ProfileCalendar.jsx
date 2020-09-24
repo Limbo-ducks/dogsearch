@@ -17,16 +17,18 @@ const ProfileCalendar = () => {
   }
 
   const tileDisabled = ({ date, view }) => {
+    const day = date.toDateString()
     if( view === 'month') {
-      return disabledDates.find(dDate => isSameDay(dDate, date))
+      return disabledDates.find(dDate => isSameDay(dDate, day))
     }
   }
 
   const tileClassName = ({ date, view }) => {
+    const day = date.toDateString()
     if(view === 'month') {
-      if(disabledDates.find(dDate => isSameDay(dDate, date))) {
+      if(disabledDates.find(dDate => isSameDay(dDate, day))) {
         return 'calendar__unavailable'
-      } else if (availableDates.find(aDate => isSameDay(aDate, date))) {
+      } else if (availableDates.find(aDate => isSameDay(aDate, day))) {
         return 'calendar__available'
       }
     }
