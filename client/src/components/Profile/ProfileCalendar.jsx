@@ -17,12 +17,14 @@ const ProfileCalendar = ({dates, unavailable}) => {
   }
 
   const tileDisabled = ({ date, view }) => {
+    const day = date.toDateString()
     if( view === 'month') {
       return disabledDates.find(dDate => isSameDay(parseISO(dDate), date))
     }
   }
 
   const tileClassName = ({ date, view }) => {
+    const day = date.toDateString()
     if(view === 'month') {
       if(disabledDates.find(dDate => isSameDay(parseISO(dDate), date))) {
         return 'calendar__unavailable'
