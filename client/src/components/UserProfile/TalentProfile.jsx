@@ -25,6 +25,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import Upload from '../Upload/Upload'
 
 const isError = x => R.or(R.isEmpty(x), R.isNil(x))
 
@@ -87,6 +88,13 @@ const types = (checked, data, onChange, handleCheck) => ({
       helperText={checked && data[x.name] === '' ? 'Please fill in the form' : ''}
     />
   ),
+  file: x => (
+    <Upload
+      key={x.name}
+      onChange={onChange(x.name)}
+      label={x.label}
+    />
+  )
 })
 
 const makeField = (checked, data, onChange, handleCheck) => x => types(checked, data, onChange, handleCheck)[x.type](x)

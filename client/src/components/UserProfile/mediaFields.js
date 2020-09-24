@@ -1,17 +1,17 @@
 export default [{
     label: 'Head Shot',
     name: 'media.headShot',
-    type: 'text',
+    type: 'file',
 }, {
     label: 'Slate Shot',
     name: 'media.slateShot',
-    type: 'text',
+    type: 'file',
 }, {
-    label: 'Media / Reel',
+    label: 'Media / Reel (url)',
     name: 'media.mediaReel',
     type: 'text',
 }, {
-    label: 'Audio',
+    label: 'Audio (url)',
     name: 'media.audio',
     type: 'text',
 }]
