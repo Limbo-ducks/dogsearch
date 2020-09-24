@@ -59,7 +59,7 @@ export default [{
   type: 'autocomplete',
   options: countryList,
   multiline: true,
-  required: true,
+  required: false,
 }, {
   label: 'IMDb Profile',
   name: 'imdb',
