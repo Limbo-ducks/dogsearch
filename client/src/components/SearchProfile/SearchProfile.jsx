@@ -110,7 +110,6 @@ const SearchProfile = (props) => {
   });
   
   if(status === 'loaded') {
-    console.log(profileData)
     if(!profileData.type) {
       return <Redirect to='/my-profile' />
     }
