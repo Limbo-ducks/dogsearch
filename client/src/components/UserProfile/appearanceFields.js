@@ -11,7 +11,7 @@ export default [{
   name: 'hairColor',
   type: 'autocomplete',
   multiple: false,
-  required: false,
+  required: true,
   options: [
     { value: 'auburn', text: 'Auburn' },
     { value: 'bald', text: 'Bald' },
@@ -33,7 +33,7 @@ export default [{
   name: 'hairLength',
   type: 'autocomplete',
   multiple: false,
-  required: false,
+  required: true,
   options: [
     { value: 'afro', text: 'Afro' },
     { value: 'bald (total)', text: 'Bald (total)' },
@@ -56,7 +56,7 @@ export default [{
   name: 'eyeColor',
   type: 'autocomplete',
   multiple: false,
-  required: false,
+  required: true,
   options: [
     { value: 'black', text: 'Black' },
     { value: 'blue', text: 'Blue' },
@@ -80,7 +80,7 @@ export default [{
   name: 'ethnicity',
   type: 'autocomplete',
   multiple: false,
-  required: false,
+  required: true,
   options: [
     { value: 'african', text: 'African' },
     { value: 'black/african american', text: 'Black/African American' },
@@ -104,7 +104,7 @@ export default [{
   name: 'nudity',
   type: 'autocomplete',
   multiple: false,
-  required: false,
+  required: true,
   options: [
     { value: 'none', text: 'No Nudity' },
     { value: 'partial', text: 'Partial Nudity' },
