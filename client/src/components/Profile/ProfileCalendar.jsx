@@ -3,13 +3,13 @@ import './ProfileCalendar.scss';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { isSameDay } from "date-fns";
+import { isSameDay, parseISO } from "date-fns";
 
-const ProfileCalendar = () => {
-  const [calendar, setCalendar] = React.useState({date: ''});
+const ProfileCalendar = ({dates, unavailable}) => {
+  const [calendar, setCalendar] = React.useState({ date: '' });
 
-  const disabledDates = [new Date(2020, 8, 20), new Date(2020, 8, 22), new Date(2020, 8, 19)]
-  const availableDates = [new Date(2020, 8, 15)]
+  const disabledDates = unavailable;
+  const availableDates = dates;
 
   const onChange = date => {
     const day = date.toDateString()
@@ -19,16 +19,16 @@ const ProfileCalendar = () => {
   const tileDisabled = ({ date, view }) => {
     const day = date.toDateString()
     if( view === 'month') {
-      return disabledDates.find(dDate => isSameDay(dDate, day))
+      return disabledDates.find(dDate => isSameDay(parseISO(dDate), date))
     }
   }
 
   const tileClassName = ({ date, view }) => {
     const day = date.toDateString()
     if(view === 'month') {
-      if(disabledDates.find(dDate => isSameDay(dDate, day))) {
+      if(disabledDates.find(dDate => isSameDay(parseISO(dDate), date))) {
         return 'calendar__unavailable'
-      } else if (availableDates.find(aDate => isSameDay(aDate, day))) {
+      } else if (availableDates.find(aDate => isSameDay(parseISO(aDate), date))) {
         return 'calendar__available'
       }
     }
@@ -48,7 +48,7 @@ const ProfileCalendar = () => {
           </article>
           <article className="calendar__instructions__item  calendar__instructions--unknown">
             <article className="calendar__instructions__item__box calendar__instructions__item__box--unknown"></article>
-            <h3>Unknown</h3>
+            <h3>Not set</h3>
           </article>
       </section>
       <section className="calendar__day">
