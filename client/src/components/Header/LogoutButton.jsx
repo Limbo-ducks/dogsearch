@@ -7,7 +7,7 @@ const AuthenticatedButtons = () => {
 
   useEffect(()=>{
     if(status === 'loading'){
-      fetch('api/users/me',
+      fetch('/api/users/me',
       {
         method: 'GET',
         headers: {'Content-Type' : 'application-json'}
@@ -21,6 +21,7 @@ const AuthenticatedButtons = () => {
   )
 
   if(status === 'loaded'){
+    console.log('TYPE')
     console.log(userData)
   }
 

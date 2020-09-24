@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import LoggedInNav from '../LoggedInNav/LoggedInNav'
 import Filter from './Filter'
 import ResultList from './ResultList'
 
@@ -33,13 +34,16 @@ const Search = ({ hits, setHits, user, match: { params: { credit }}}) => {
   }, [status, searchQuery])
 
   return (
-    <section className='mt-20 mb-8'>
-      <h1 className="searchtitle">Browse Talent Profiles</h1>
-      <div className='flex flex-row'>
-        <Filter search={search} searchCredit={credit} />
-        <ResultList data={hits} status={status} searchPerformed={searchPerformed} user={user} />
-      </div>
-    </section>
+    <>
+      {user ? <LoggedInNav authenticated={true}/> : null}
+      <section className='mt-20 mb-8'>
+        <h1 className="searchtitle">Browse Talent Profiles</h1>
+        <div className='flex flex-row'>
+          <Filter search={search} searchCredit={credit} />
+          <ResultList data={hits} status={status} searchPerformed={searchPerformed} user={user} />
+        </div>
+      </section>
+    </>
   )
 }
 
