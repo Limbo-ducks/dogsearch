@@ -9,7 +9,7 @@ import { Tooltip } from '@material-ui/core';
 
 const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
   return (
-    <section className="about">
+    <section className="about about--search">
       <article className="about__header">
         <h2>Projects</h2>
       </article>
@@ -20,7 +20,7 @@ const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
             e.preventDefault();
             viewSingleProject(e.currentTarget)
             }}>
-              <Tooltip title="View Project" placement="top"><h3>Project one</h3></Tooltip>
+              <Tooltip title="View Project" placement="top"><h4>Example</h4></Tooltip>
               <article className="about__content__project__icons">
                 <Tooltip title="View Project notifications" placement="top"><NotificationsNoneIcon /></Tooltip>
                 <Tooltip title="View Project Shortlist" placement="top"><BookmarksOutlinedIcon onClick={(e) => {
@@ -35,13 +35,13 @@ const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
           </li>
           <li>
             <article className="about__content__project">
-              <h3>Project</h3>
+              <h4>Project</h4>
               <article className="about__content__project__icons"><NotificationsNoneIcon /><BookmarksOutlinedIcon /><DateRangeIcon /><MailOutlineIcon /></article>
             </article>
           </li>
           <li>
             <article className="about__content__project">
-              <h3>Project</h3>
+              <h4>Project</h4>
               <article className="about__content__project__icons"><NotificationsNoneIcon /><BookmarksOutlinedIcon /><DateRangeIcon /><MailOutlineIcon /></article>
             </article>
           </li>

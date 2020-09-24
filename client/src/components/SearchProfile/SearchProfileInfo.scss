@@ -16,6 +16,7 @@
       width: calc(100% - 10px);
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
       border-bottom: 1px solid $lightblue;
       transition: all ease-in-out 0.2s;
 

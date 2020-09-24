@@ -63,7 +63,7 @@ function App () {
           <Route path='/signup' exact component={Signup} />
           <Route path='/my-profile' render={props => <UserProfile {...props} user={user} />} />
         </Switch>}
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   )
 }

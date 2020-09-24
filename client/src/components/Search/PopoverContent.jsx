@@ -6,7 +6,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Checkbox from '@material-ui/core/Checkbox';
 import DescriptionIcon from '@material-ui/icons/Description';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -26,18 +25,18 @@ export const CheckboxListSecondary = () => {
     const classes = useStyles();
     const [checked, setChecked] = React.useState([1]);
 
-    const handleToggle = value => () => {
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
+    // const handleToggle = value => () => {
+    //     const currentIndex = checked.indexOf(value);
+    //     const newChecked = [...checked];
 
-        if (currentIndex === -1) {
-        newChecked.push(value);
-        } else {
-        newChecked.splice(currentIndex, 1);
-        }
+    //     if (currentIndex === -1) {
+    //     newChecked.push(value);
+    //     } else {
+    //     newChecked.splice(currentIndex, 1);
+    //     }
 
-        setChecked(newChecked);
-    };
+    //     setChecked(newChecked);
+    // };
 
     const handleListItemClick = i => {
         const newAdded = Array.from(added, (value, idx) => idx === i ? true : value);

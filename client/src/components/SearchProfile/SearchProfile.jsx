@@ -11,6 +11,7 @@ import SingleProjectNav from './SingleProjectNav';
 import ProjectShortlist from './ProjectShortlist';
 import Projects from './Projects';
 import Messages from './Messages';
+import SearchProfileCalendar from './SearchProfileCalendar';
 
 
 const SearchProfile = (props) => {
@@ -21,6 +22,7 @@ const SearchProfile = (props) => {
   const [openShortlist, setOpenShortlist,] = useState(false);
   const [openProjects, setOpenProjects,] = useState(false);
   const [openMessages, setOpenMessages,] = useState(false);
+  const [openCalendar, setOpenCalendar,] = useState(false);
   const [profileData, setProfileData] = useState({});
   const [status, setStatus] = useState('loading');
 
@@ -45,6 +47,7 @@ const SearchProfile = (props) => {
     setOpenProfile(false)
     setOpenShortlist(false)
     setOpenProjects(false)
+    setOpenCalendar(false)
   }
 
   const viewProfile = () => {
@@ -52,6 +55,7 @@ const SearchProfile = (props) => {
     setOpenSingleProject(false)
     setOpenShortlist(false)
     setOpenProjects(false)
+    setOpenCalendar(false)
   }
 
   const viewShortlist = () => {
@@ -60,11 +64,13 @@ const SearchProfile = (props) => {
       setOpenSingleProject(true)
       setOpenProfile(false)
       setOpenProjects(false)
+      setOpenCalendar(false)
     } else {
       setOpenShortlist(false)
       setOpenProfile(true)
       setOpenProjects(false)
       setOpenSingleProject(true)
+      setOpenCalendar(false)
     }
   }
 
@@ -74,10 +80,12 @@ const SearchProfile = (props) => {
       setOpenSingleProject(false)
       setOpenProfile(true)
       setOpenShortlist(false)
+      setOpenCalendar(false)
     } else {
       setOpenProjects(false)
       setOpenShortlist(false)
       setOpenSingleProject(false)
+      setOpenCalendar(false)
       setOpenProfile(true)
     }
   }
@@ -88,14 +96,31 @@ const SearchProfile = (props) => {
       setOpenSingleProject(false)
       setOpenProfile(true)
       setOpenShortlist(false)
+      setOpenCalendar(false)
     } else {
+      setOpenMessages(false)
+      setOpenShortlist(false)
+      setOpenSingleProject(false)
+      setOpenCalendar(false)
+      setOpenProfile(true)
+    }
+  }
+
+  const viewCalendar = () => {
+    if (!openCalendar) { 
+      setOpenCalendar(true)
+      setOpenSingleProject(false)
+      setOpenProfile(true)
+      setOpenShortlist(false)
+      setOpenMessages(false)
+    } else {
+      setOpenCalendar(false)
       setOpenMessages(false)
       setOpenShortlist(false)
       setOpenSingleProject(false)
       setOpenProfile(true)
     }
   }
-
 
   React.useEffect(() => {
     window.scrollTo(0, 0)
@@ -124,12 +149,13 @@ const SearchProfile = (props) => {
         <LoggedInNav viewMessages={viewMessages}/>
         <main className="profile">
           <section className="profile__content">
-            <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages}/>
+            <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages} viewCalendar={viewCalendar}/>
             { openProfile ? <SearchProfileContent viewProjects={viewProjects}/> : null }
             { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null}
             { openShortlist ? <ProjectShortlist viewShortlist={viewShortlist}/> : null }
             { openProjects ? <Projects viewShortlist={viewShortlist} viewProjects={viewProjects}/> : null }
             { openMessages ? <Messages viewMessages={viewMessages}/> : null }
+            { openCalendar? <SearchProfileCalendar viewCalendar={viewCalendar} available={profileData.available} unavailable={profileData.unavailable}/> : null }
             <SearchProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/>
           </section>
         </main>

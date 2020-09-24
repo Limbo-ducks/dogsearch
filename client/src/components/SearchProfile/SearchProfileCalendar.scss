@@ -1,0 +1,78 @@
+@import "../../variables.scss";
+
+.contentmodal{
+  &--calendar {
+    width: 64%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    top: 120px;
+    left: 31%;
+    transform: none;
+  }
+}
+
+.modal {
+  &__calendar {
+    width: 30%;
+    margin: 50px 5px 5px 5px;
+    padding: 5px;
+    background-color: white;
+  }
+
+  &__calendarinfo {
+    width: 40%;
+    height: 60vh;
+    margin: 50px 5px 5px 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &__date {
+      min-height: 30px;
+    }
+
+    &__day {
+      height: 50vh;
+      width: calc(100% - 10px);
+      margin: 5px;
+      padding: 5px;
+      background-color: white;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      table {
+        width: 100%;
+
+        tr {
+          border-bottom: 1px solid $lightblue;
+        }
+
+        td {
+          padding: 5px;
+        }
+      }
+    }
+
+    &__details {
+      width: 30%;
+      height: 50vh;
+    }
+  }
+}
+
+.calendar {
+  &__row {
+    &--true {
+      background-color: $lightblue;
+
+      &--pending {
+        background-color: $beige;
+      }
+    }
+  }
+}

@@ -1,25 +1,19 @@
 import React from 'react'
 import './SearchProfileInfo.scss'
-import Image from '../../assets/images/banner.png'
 import ExampleImageOne from '../../assets/images/1.jpg'
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
-import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
 import HeaderBackground from '../../assets/images/talentwyre-background.jpg'
 import { Tooltip } from '@material-ui/core';
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects}) => {
+const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalendar}) => {
   return (
     <section className="info">
       <article className="info__header">
@@ -51,7 +45,7 @@ const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects}) => 
         <Tooltip title="Calendar" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
-            viewProfile(e.currentTarget)
+            viewCalendar(e.currentTarget)
             }}><DateRangeIcon />
           </article>
         </Tooltip>
@@ -66,13 +60,25 @@ const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects}) => 
             e.preventDefault();
             viewProjects(e.currentTarget)
             }}>
-          <h3 className="info__nav__button__text">My projects</h3>
+          <h4 className="info__nav__button__text">My projects</h4>
           <article className="info__nav__button__icon">
             <FileCopyOutlinedIcon />
           </article>
         </button>
         <button className="info__nav__button">
-          <h3 className="info__nav__button__text">Profile Settings</h3>
+          <h4 className="info__nav__button__text">My calendar</h4>
+          <article className="info__nav__button__icon">
+            <DateRangeIcon />
+          </article>
+        </button>
+        <button className="info__nav__button">
+          <h4 className="info__nav__button__text">My messages</h4>
+          <article className="info__nav__button__icon">
+            <MailOutlineIcon />
+          </article>
+        </button>
+        <button className="info__nav__button">
+          <h4 className="info__nav__button__text">Profile Settings</h4>
           <article className="info__nav__button__icon">
             <SettingsOutlinedIcon />
           </article>
