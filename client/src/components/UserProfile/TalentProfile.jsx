@@ -25,6 +25,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import Upload from '../Upload/Upload'
 
 const isError = x => R.or(R.isEmpty(x), R.isNil(x))
 
@@ -228,6 +229,7 @@ const TalentProfile = ({ checked, data, handleChange, handleCheckBoxes }) => {
           <AccordionDetails className={classes.root}>
             <div className='talent-subfield'>{printFields(mediaFields)}</div>
           </AccordionDetails>
+            <Upload/>
         </Accordion>
       </section>
     </section>
