@@ -7,7 +7,7 @@ export const app = firebase.initializeApp({
     "databaseURL": "https://talentwyre-154ae.firebaseio.com",
     "storageBucket": "talentwyre-154ae.appspot.com",
     "locationId": "us-central",
-    "apiKey": "AIzaSyAjW3hm_Fh9nA0GgtrOGI4lHYgHaHMlyDI",
+    "apiKey": process.env.FIREBASE_SECRET,
     "authDomain": "talentwyre-154ae.firebaseapp.com",
     "messagingSenderId": "323854692676"
   });
