@@ -88,6 +88,12 @@ const types = (checked, data, onChange, handleCheck) => ({
       helperText={checked && data[x.name] === '' ? 'Please fill in the form' : ''}
     />
   ),
+  file: x => (
+    <Upload
+      key={x.name}
+      onChange={onChange(x.name)}
+    />
+  )
 })
 
 const makeField = (checked, data, onChange, handleCheck) => x => types(checked, data, onChange, handleCheck)[x.type](x)
@@ -229,7 +235,6 @@ const TalentProfile = ({ checked, data, handleChange, handleCheckBoxes }) => {
           <AccordionDetails className={classes.root}>
             <div className='talent-subfield'>{printFields(mediaFields)}</div>
           </AccordionDetails>
-            <Upload/>
         </Accordion>
       </section>
     </section>

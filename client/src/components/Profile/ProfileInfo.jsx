@@ -42,7 +42,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, view
     <section className="info">
       <article className="info__header">
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
-        <img src={data.image ? `${data.image}` : `${Blank}`} alt="" className="info__header__profileimg"/>
+        <img src={data.media.headShot ? `${data.media.headShot}` : `${Blank}`} alt="" className="info__header__profileimg"/>
         {data.premium ? <h3 className="modal__premium modal__premium--profile">Premium</h3> : null}
         <button className="talentcard__bookmark" onClick={handleClick}>
           <Tooltip title="Add to shortlist" placement="top">
