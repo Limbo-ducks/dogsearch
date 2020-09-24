@@ -70,7 +70,7 @@ function ResultCard (props) {
           {props.premium ? <h3 className="modal__premium">Premium</h3> : null}
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
-            <img src={props.image ? `${props.image}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
+            <img src={props.media.headShot ? `${props.media.headShot}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
               <button onClick={handleClick} className="modal__buttons__button modal__buttons__button--save">
                 Shortlist
@@ -145,7 +145,7 @@ function ResultCard (props) {
         </section>
       </Modal>
       <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
-        <img className="talentcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
+        <img className="talentcard__image w-full" src={props.media.headShot ? `${props.media.headShot}` : `${BlankImage}`} alt="talent-image" /> 
         <button className="talentcard__bookmark" onClick={handleClick}>
           <AddIcon fontSize="small" className="talentcard__bookmark--click"/>
         </button>

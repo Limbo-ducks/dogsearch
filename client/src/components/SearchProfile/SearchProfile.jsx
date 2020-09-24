@@ -26,9 +26,11 @@ const SearchProfile = (props) => {
   const [profileData, setProfileData] = useState({});
   const [status, setStatus] = useState('loading');
 
+
+  //profiles/${profileId}
   useEffect(()=>{
     if(status === 'loading'){
-          fetch(`/api/profiles/${profileId}`, 
+          fetch(`/api/users/me`, 
             {
               method:'GET',
               headers: {'Content-Type' : 'application/json'}
@@ -138,6 +140,9 @@ const SearchProfile = (props) => {
     console.log(profileData)
     if(!profileData.type) {
       return <Redirect to='/my-profile' />
+    }
+    if (profileData.type === 'talent') {
+      return <Redirect to={`/profile/${profileData.id}`}></Redirect>
     }
     return (
       <>

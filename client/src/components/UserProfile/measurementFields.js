@@ -47,18 +47,21 @@ export default [{
   name: 'measurements.height',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: Array.from({ length: 73 }, makeHeightOption)
 }, {
   label: 'Weight',
   name: 'measurements.weight',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: Array.from({ length: 25 }, makeWeightoption)
 }, {
   label: 'Body Type',
   name: 'measurements.bodyType',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: [
     { value: 'slender', text: 'Slender' },
     { value: 'very thin', text: 'Very Thin' },
@@ -74,6 +77,7 @@ export default [{
   name: 'measurements.shirtSize',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: [
     { value: 's', text: 'S' },
     { value: 'm', text: 'M' },
@@ -87,6 +91,7 @@ export default [{
   label: 'Sleeve Length',
   name: 'measurements.sleeveLength',
   type: 'autocomplete',
+  required: true,
   multiple: false,
   options: na.concat(Array.from({ length: 14 }, makeMeasuredOption(29, 40)))
 }, {
@@ -94,12 +99,14 @@ export default [{
   name: 'measurements.neck',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: na.concat(Array.from({ length: 34 }, makeMeasuredOption(12, 25, { step: 0.5 })))
 }, {
   label: 'Jacket Chest',
   name: 'measurements.jacketChest',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: [
     na[0],
     { value: 32, text: '32' },
@@ -125,6 +132,7 @@ export default [{
   name: 'measurements.jacketLength',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: [
     { value: 's', text: 'S (small)' },
     { value: 'r', text: 'R (regular)' },
@@ -135,18 +143,21 @@ export default [{
   name: 'measurements.waist',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: na.concat(Array.from({ length: 43 }, makeMeasuredOption(18, 58)))
 }, {
   label: 'Inseam',
   name: 'measurements.inseam',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: na.concat(Array.from({ length: 18 }, makeMeasuredOption(25, 40, { unit: '' })))
 }, {
   label: 'Shoes Width',
   name: 'measurements.shoeWidth',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: [
     na[0],
     { value: 'a', text: 'A' },
@@ -163,12 +174,14 @@ export default [{
   name: 'measurements.shoeLength',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: na.concat(Array.from({ length: 34 }, makeMeasuredOption(1, 17, { step: 0.5 })))
 }, {
   label: 'Gloves',
   name: 'measurements.gloves',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: [
     na[0],
     { value: 'xsm', text: 'XSM' },
@@ -182,6 +195,7 @@ export default [{
   name: 'measurements.hat',
   type: 'autocomplete',
   multiple: false,
+  required: true,
   options: na.concat(Array.from({ length: 5 }, makeHatOption).flat()),
 }, {
   label: 'Notes to Wardrobe',

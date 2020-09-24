@@ -8,6 +8,7 @@ export default [{
     name: 'professionYears',
     type: 'autocomplete',
     multiple: false,
+    required: true,
     options: [
         { value: 0, text: '< 1 year' },
         { value: 1, text: '1 year' },
