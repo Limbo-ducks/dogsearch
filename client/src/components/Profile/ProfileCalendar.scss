@@ -36,7 +36,7 @@
   &__instructions {
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 70%;
     margin: 0 auto;
@@ -45,7 +45,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: calc(100% / 3);
       margin: 5px;
 
       h3 {
@@ -54,16 +53,17 @@
       }
 
       &__box {
-        width: calc(100% - 10px);
-        height: 50px;
-        border: 1px solid black;
+        width: 30px;
+        height: 30px;
+        border: 1px solid lightgrey;
+        border-radius: 3px;
 
         &--available {
           background-color: #c4f099;
         }
   
         &--booked {
-          background-color: red;
+          background-color: grey;
         }
   
         &--unknown {
@@ -103,5 +103,13 @@
         cursor: pointer;
       }
     }
+  }
+
+  &__unavailable {
+    background-color: grey!important;
+  }
+
+  &__available {
+    background-color: #c4f099!important;
   }
 }

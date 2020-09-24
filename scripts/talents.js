@@ -1,10 +1,9 @@
 const faker = require('faker')
 
 const makeDates = () =>
-    Array.from({ length: 3 }, (_, i) => ({
-        from: `2020-${10 + i}-${faker.random.number({ min: 1, max: 10 }).toString().padStart(2, '0')}`,
-        to: `2020-${10 + i}-${faker.random.number({ min: 11, max: 30 })}`,
-    }))
+    Array.from({ length: 6 }, (_, i) => (
+        `2020-09-${faker.random.number({ min: 1, max: 30 })}`
+    ))
 
 const talents = [
     // Else Rovinsky
@@ -14,6 +13,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Else Rovinsky',
     contact: {
         address: 'Wallstreet 1',
@@ -174,6 +174,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'David S. Lindgren',
     contact: {
         address: 'Karlavägen 1',
@@ -331,6 +332,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Moa Malan',
     contact: {
         address: '',
@@ -508,6 +510,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Marten Eckerstrom',
     contact: {
         address: faker.address.streetAddress(),
@@ -669,6 +672,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Josefine Backman Juliff',
     contact: {
         address: faker.address.streetAddress(),
@@ -797,6 +801,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Mikael Spreitz',
     contact: {
         address: faker.address.streetAddress(),
@@ -925,6 +930,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Freida Farrell',
     contact: {
         address: faker.address.streetAddress(),
@@ -1083,6 +1089,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Oskar Sternulf',
     contact: {
         address: faker.address.streetAddress(),
@@ -1215,6 +1222,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Angelika Roberts',
     contact: {
         address: faker.address.streetAddress(),
@@ -1368,6 +1376,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Solveig Haugen',
     contact: {
         address: faker.address.streetAddress(),
@@ -1529,6 +1538,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Mitcho Batalov',
     contact: {
         address: faker.address.streetAddress(),
@@ -1655,6 +1665,7 @@ const talents = [
     type: 'talent',
     finishedProfile: true,
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'Lina Fredlund',
     contact: {
         address: faker.address.streetAddress(),
@@ -1781,6 +1792,7 @@ const talents = [
     premium: true,
     type: 'search',
     available: makeDates(),
+    unavailable: makeDates(),
     name: 'John Searcher',
     contact: {
         address: faker.address.streetAddress(),
