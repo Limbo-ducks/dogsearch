@@ -4,12 +4,11 @@ import filters from './Filters'
 import './Filter.scss';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import Checkbox from '@material-ui/core/Checkbox';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { map, maybe, pipe, prop } from '../../lib/helpers'
 import FilterComponent from './FilterComponent';
-import { makeStyles, withStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 // const GlobalCss = withStyles({
 //   // @global is handled by jss-plugin-global.

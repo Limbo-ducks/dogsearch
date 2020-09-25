@@ -4,8 +4,6 @@ import 'react-calendar/dist/Calendar.css';
 import './SingleProject.scss'
 import ProfileShortList from './ProfileShortList';
 import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
-import Blank from '../../assets/images/blank-profile-picture.png'
-
 
 const SingleProject = ({viewShortlist}) => {
 
