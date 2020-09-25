@@ -99,7 +99,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, view
       </article>
       <article className="info__content">
         <h2 className="info__content__text">
-          {data.gender === 'female' && data.profession.toLowerCase() === 'actor' ? 
+          {data.gender === 'female' && data.cast.toLowerCase() === 'actor' ? 
             'Actress' : 'Actor'}
         </h2>
         <h3 className="info__content__text"><LocationOnOutlinedIcon/> 

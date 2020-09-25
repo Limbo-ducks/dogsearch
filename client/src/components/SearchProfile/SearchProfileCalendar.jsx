@@ -3,10 +3,14 @@ import './SearchProfileCalendar.scss';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import { isSameDay, parseISO } from "date-fns";
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
+import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 
 const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
   const [calendar, setCalendar] = React.useState({ 
@@ -59,7 +63,8 @@ const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
   return (
 
     <section className="contentmodal contentmodal--calendar">
-       <article onClick={(e) => {
+      <section className="contentmodal--calendar--wrapper">
+      <article onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
             viewCalendar(e.currentTarget)
@@ -222,8 +227,14 @@ const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
             </table>
           </section>
       </section>
-      <section className="modal__calendarinfo__details">
-        
+        <section className="modal__calendarinfo__details">
+          <h3>Information</h3>
+          <h4>Talent:</h4>
+          <h4>Project:</h4>
+          <h4>Time:</h4>
+          <h4>Location:</h4>
+          <h4>Description:</h4>
+        </section>
       </section>
     </section>
   )
