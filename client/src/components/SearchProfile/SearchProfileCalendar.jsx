@@ -4,15 +4,9 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import VideocamOffOutlinedIcon from '@material-ui/icons/VideocamOffOutlined';
-import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import { isSameDay, parseISO } from "date-fns";
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import { Tooltip } from '@material-ui/core';
 
 const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
   const [calendar, setCalendar] = React.useState({ 

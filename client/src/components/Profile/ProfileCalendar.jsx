@@ -20,6 +20,7 @@ const ProfileCalendar = ({dates, unavailable}) => {
     meeting: false,
     chat: false,
     book: false,
+    buttons: false,
   });
 console.log(calendar)
   const disabledDates = unavailable;
@@ -32,21 +33,24 @@ console.log(calendar)
         ...calendar,
         date: day, 
         message: 'The talent is unavailable this day.',
-        available: false 
+        available: false,
+        buttons: true
       })
     } else if(event.currentTarget.classList.contains('calendar__available')){
       setCalendar({ 
         ...calendar,
         date: day, 
         message: 'The talent is available for booking, contact them below.',
-        available: true
+        available: true,
+        buttons: true
       })
     } else if(event.currentTarget.classList.contains('calendar__notset')){
       setCalendar({ 
         ...calendar,
         date: day, 
         message: 'The talent has not provided any information about availability for this day.', 
-        available: true
+        available: true,
+        buttons: true
       })
     }
   }
@@ -127,6 +131,8 @@ console.log(calendar)
             <p>{calendar.message}</p>
           </article>
         </article>
+        
+        {calendar.buttons ? 
         <section className="calendar__day__contact">
           <article className={`contact__icon contact__icon--message contact__icon--${calendar.available}`}
                     onClick={messageType}
@@ -152,7 +158,8 @@ console.log(calendar)
             <PlaylistAddCheckIcon/>
             <h5>Book Talent</h5>
           </article>
-        </section>
+        </section>         
+          : null}
         {calendar.available ? 
           <section className="request">
             {calendar.chat ? 
@@ -166,6 +173,7 @@ console.log(calendar)
             {calendar.video ?
             <>
               <h3>Request tape:</h3>
+              <p>{calendar.date}</p>
               <article className="request__smallinput">
                 <label htmlFor="videocheck">Video</label>
                 <input type="checkbox" name="videocheck" id="videocheck"/>
@@ -192,6 +200,7 @@ console.log(calendar)
             {calendar.meeting ?
             <>
             <h3>Request meeting:</h3>
+            <p>{calendar.date}</p>
             <article className="request__smallinput">
               <article className="request__smallinput__item">
                 <label htmlFor="meetingtype">Meeting type:</label>
@@ -214,7 +223,8 @@ console.log(calendar)
 
           {calendar.book ?
             <>
-            <h3>Booking Request</h3>
+            <h3>Booking Request:</h3>
+            <p>{calendar.date}</p>
             <article className="request__smallinput">
               <article className="request__smallinput__item">
                 <label htmlFor="meetingtype">Project:</label>
