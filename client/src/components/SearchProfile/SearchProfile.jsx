@@ -56,6 +56,7 @@ const SearchProfile = (props) => {
     setOpenShortlist(false)
     setOpenProjects(false)
     setOpenCalendar(false)
+    setOpenMessages(false)
   }
 
   const viewShortlist = () => {

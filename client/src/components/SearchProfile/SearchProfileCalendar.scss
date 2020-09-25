@@ -11,6 +11,13 @@
     top: 120px;
     left: 31%;
     transform: none;
+
+    &--wrapper {
+      display: flex;
+      width: 100%;
+      margin: 10px;
+      background-color: white;
+    }
   }
 }
 
@@ -61,6 +68,7 @@
     &__details {
       width: 30%;
       height: 50vh;
+      margin: 50px 5px 5px 5px;
     }
   }
 }
