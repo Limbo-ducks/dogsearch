@@ -7,19 +7,16 @@ import ExampleImageOne from '../../assets/images/1.jpg'
 import ExampleImageTwo from '../../assets/images/2.jpg'
 import ExampleImageThree from '../../assets/images/3.jpg'
 import AddIcon from '@material-ui/icons/Add';
-import CollectionsBookmarkOutlinedIcon from '@material-ui/icons/CollectionsBookmarkOutlined';
 import Popover from '@material-ui/core/Popover';
 import PopoverContent from './PopoverContent';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import Logo from '../../assets/images/Logo.svg';
 import BlankImage from '../../assets/images/blank-profile-picture.png'
 
 function ResultCard (props) {
   const {measurements} = props;
 
-  const [open, setOpen] = useState(false)
-  const [placement, setPlacement] = React.useState();
+  const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {

@@ -3,6 +3,7 @@ import './Main.scss';
 import Jumbotron from '../Main/Jumbotron';
 import Grid from '../Main/Grid';
 import InfoSection from './InfoSection';
+import Footer from '../Footer/Footer';
 
 
 const Main = () => {
@@ -11,6 +12,7 @@ const Main = () => {
       <Jumbotron />
       <InfoSection />
       <Grid />
+      <Footer/>
     </main>
   )
 }
