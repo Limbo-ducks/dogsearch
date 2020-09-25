@@ -20,11 +20,6 @@ const AuthenticatedButtons = () => {
   }, [status]
   )
 
-  if(status === 'loaded'){
-    console.log('TYPE')
-    console.log(userData)
-  }
-
   return (
     <section className="header__buttons">
       {status === 'loaded'? 

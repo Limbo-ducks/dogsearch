@@ -86,7 +86,7 @@ const Profile = (props) => {
           {openProfile ? <><ProfileLinks/><ProfileContent data={profileData}/></> : null }
           {openCalendar ? <><section className="profilenav">
                               <h3 className="profilenav__link">Calendar</h3>
-                            </section><ProfileCalendar dates={profileData.available} unavailable={profileData.unavailable}/></> : null}
+                            </section>{profileData.available ? <ProfileCalendar dates={profileData.available} unavailable={profileData.unavailable}/> : null}</> : null}
           {openContact ? <><section className="profilenav">
                               <h3 className="profilenav__link">Contact</h3>
                             </section><ProfileContact /></> : null}

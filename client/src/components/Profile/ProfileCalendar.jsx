@@ -22,7 +22,6 @@ const ProfileCalendar = ({dates, unavailable}) => {
     book: false,
     buttons: false,
   });
-console.log(calendar)
   const disabledDates = unavailable;
   const availableDates = dates;
 
