@@ -77,10 +77,26 @@
   &__row {
     &--true {
       background-color: $lightblue;
+      cursor: pointer;
 
       &--pending {
         background-color: $beige;
       }
     }
+  }
+}
+
+.calendarinfotalent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  &__image {
+    width: 30%;
+    height: auto;
+  }
+
+  &__links {
+    display: flex;
   }
 }

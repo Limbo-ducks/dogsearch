@@ -9,6 +9,7 @@ import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
+
 import { isSameDay, parseISO } from "date-fns";
 
 const ProfileCalendar = ({dates, unavailable}) => {

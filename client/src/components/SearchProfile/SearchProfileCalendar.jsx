@@ -7,16 +7,17 @@ import { isSameDay, parseISO } from "date-fns";
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+
+import Blank from '../../assets/images/blank-profile-picture.png';
 
 const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
   const [calendar, setCalendar] = React.useState({ 
     date: '', 
     pending: false,
-    meeting: false
+    meeting: false,
+    meetinginfo: false
   });
 
   const disabledDates = unavailable;
@@ -29,21 +30,24 @@ const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
         ...calendar,
         date: day, 
         meeting: true,
-        pending: true
+        pending: true,
+        meetinginfo: false
       })
     } else if(event.currentTarget.classList.contains('calendar__available')){
       setCalendar({ 
         ...calendar,
         date: day, 
         meeting: true,
-        pending: false
+        pending: false,
+        meetinginfo: false
       })
     } else if(event.currentTarget.classList.contains('calendar__notset')){
       setCalendar({ 
         ...calendar,
         date: day, 
         meeting: false,
-        pending: false
+        pending: false,
+        meetinginfo: false
       })
     }
   }
@@ -58,6 +62,13 @@ const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
         return 'calendar__notset'
       }
     }
+  }
+
+  const showInfo = () => {
+    setCalendar({
+      ...calendar,
+      meetinginfo: true
+    })
   }
 
   return (
@@ -109,7 +120,7 @@ const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
                 <td></td>
                 <td></td>
               </tr>
-              <tr className={`calendar__row calendar__row--${calendar.meeting}`}>
+              <tr className={`calendar__row calendar__row--${calendar.meeting}`} onClick={showInfo}>
                 <td>09.00</td>
                 <td>{calendar.meeting ? <h5>Meeting planned</h5> : null}</td>
                 <td>{calendar.meeting ? <InfoOutlinedIcon/> : null }</td>
@@ -227,14 +238,25 @@ const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
             </table>
           </section>
       </section>
+
+      {calendar.meetinginfo ?         
         <section className="modal__calendarinfo__details">
           <h3>Information</h3>
-          <h4>Talent:</h4>
-          <h4>Project:</h4>
-          <h4>Time:</h4>
-          <h4>Location:</h4>
-          <h4>Description:</h4>
-        </section>
+          <article className="calendarinfotalent">
+            <h4>Talent:</h4>
+            <img src={Blank} alt="" className="calendarinfotalent__image"/>
+            <article className="calendarinfotalent__links">
+              <article className="calendarinfotalent__links__button"><PersonOutlineIcon/></article>
+              <article className="calendarinfotalent__links__button"><MailOutlineIcon/></article>
+            </article>
+          </article>
+          <article></article>
+          <h4>Project:</h4><p> Example</p>
+          <h4>Time:</h4><p> 09.00</p>
+          <h4>Location:</h4><p> Online <a>link</a></p>
+          <h4>Description:</h4><p> Example</p>
+        </section> : null }
+
       </section>
     </section>
   )
