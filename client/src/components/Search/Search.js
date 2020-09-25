@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import LoggedInNav from '../LoggedInNav/LoggedInNav'
 import Filter from './Filter'
 import ResultList from './ResultList'
+import Footer from '../Footer/Footer';
 
 const makeOpts = (body, method = 'GET') => ({
   method,
@@ -43,6 +44,7 @@ const Search = ({ hits, setHits, user, match: { params: { credit }}}) => {
           <ResultList data={hits} status={status} searchPerformed={searchPerformed} user={user} />
         </div>
       </section>
+      <Footer />
     </>
   )
 }
