@@ -11,7 +11,7 @@ const redirect = NODE_ENV === 'dev'
   : '/searchprofile/a'
 
 module.exports = db => {
-  const passport = passFn(db)
+  const passport = passFn(db);
 
   router.get('/google', passport.authenticate('google', {
     scope: ['openid']
@@ -21,7 +21,13 @@ module.exports = db => {
     failureRedirect: redirect,
     successRedirect: redirectOnLogin,
   }))
-
+  // router.get('/google/callback', passport.authenticate('google', {
+  //   failureRedirect: redirect}), (req, res) => {
+  //     user = db.search({profile: req.user.id})
+  //     console.log(user);
+  //     res.redirect(`/`)
+  //   })
+  
   router.get('/logout', (req, res) => {
     req.logout()
     req.session = null
