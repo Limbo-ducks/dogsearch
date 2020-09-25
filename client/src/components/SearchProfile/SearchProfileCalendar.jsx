@@ -242,19 +242,26 @@ const SearchProfileCalendar = ({ viewCalendar, available, unavailable }) => {
       {calendar.meetinginfo ?         
         <section className="modal__calendarinfo__details">
           <h3>Information</h3>
-          <article className="calendarinfotalent">
-            <h4>Talent:</h4>
-            <img src={Blank} alt="" className="calendarinfotalent__image"/>
-            <article className="calendarinfotalent__links">
-              <article className="calendarinfotalent__links__button"><PersonOutlineIcon/></article>
-              <article className="calendarinfotalent__links__button"><MailOutlineIcon/></article>
+            <article className="calendarinfotalent">
+              <h5>Talent:</h5>
+              <img src={Blank} alt="" className="calendarinfotalent__image"/>
+              <article className="calendarinfotalent__links">
+                <article className="calendarinfotalent__links__button"><PersonOutlineIcon/></article>
+                <article className="calendarinfotalent__links__button"><MailOutlineIcon/></article>
             </article>
           </article>
-          <article></article>
-          <h4>Project:</h4><p> Example</p>
-          <h4>Time:</h4><p> 09.00</p>
-          <h4>Location:</h4><p> Online <a>link</a></p>
-          <h4>Description:</h4><p> Example</p>
+          <article className="calendarinfotalent__item">
+            <h4>Project:</h4><p> Example</p>
+          </article>
+          <article className="calendarinfotalent__item">
+            <h4>Time:</h4><p> 09.00</p>
+          </article>
+          <article className="calendarinfotalent__item">
+            <h4>Location:</h4><p> Online <a>link</a></p>
+          </article>
+          <article className="calendarinfotalent__item calendarinfotalent__item--full">
+            <h4>Description:</h4><p> Example</p>
+          </article>
         </section> : null }
 
       </section>

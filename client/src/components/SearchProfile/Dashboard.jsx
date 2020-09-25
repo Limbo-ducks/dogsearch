@@ -10,10 +10,6 @@ const Dashboard = ({ viewProjects }) => {
 
   return (
       <section className="dashboard">
-        {/* <article className="dashboard__search">
-          <input type="text"/>
-          <button className="dashboard__search__button">Quick Search <SearchOutlinedIcon /> </button> 
-        </article> */}
         <button className="dashboard__button">
           <h4 className="dashboard__button__text">My Network</h4>
           <article className="dashboard__button__icon">

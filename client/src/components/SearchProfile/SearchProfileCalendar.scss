@@ -69,6 +69,9 @@
       width: 30%;
       height: 50vh;
       margin: 50px 5px 5px 5px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 }
@@ -90,7 +93,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
+  border: 1px solid $lightblue;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 5px;
+
   &__image {
     width: 30%;
     height: auto;
@@ -98,5 +106,13 @@
 
   &__links {
     display: flex;
+  }
+
+  &__item {
+    width: calc(50% - 5px);
+    
+    &--full {
+      width: 100%;
+    }
   }
 }
