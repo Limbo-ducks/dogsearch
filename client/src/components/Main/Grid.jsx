@@ -13,37 +13,37 @@ const Grid = () => {
     <section className="grid">
       <section className="grid__wrapper">
         <article className="grid__wrapper__item">
-        <Link to="/search/films">
+        <Link to="/search/golden">
           <img src={Golden} alt=""/>
           <h2>Golden Retrievers</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search/theatre">
+        <Link to="/search/corgi">
           <img src={Corgi} alt=""/>
           <h2>Corgis</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search/tv">
+        <Link to="/search/pitbull">
           <img src={Pitbull} alt=""/>
           <h2>Pitbulls</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search/modeling">          
+        <Link to="/search/pug">          
           <img src={Pug} alt=""/>
           <h2>Pugs</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search/narrator">          
+        <Link to="/search/daschund">          
           <img src={Daschund} alt=""/>
           <h2>Daschounds</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search/other">          
+        <Link to="/search/mixed">          
           <img src={Mixed} alt=""/>
           <h2>Mixed</h2>
         </Link>

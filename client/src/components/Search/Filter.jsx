@@ -34,15 +34,7 @@ const theme = createMuiTheme({
 });
 
 const initRanges = {
-  'age': [5, 100],
-  'measurements.height': [23, 100],
-  'measurements.weight': [40, 290],
-  'measurements.sleeveLength': [28, 41],
-  'measurements.neck': [11.0, 26.0],
-  'measurements.jacketChest': [32, 58],
-  'measurements.waist': [17, 59],
-  'measurements.inseam': [24, 41],
-  'measurements.shoeLength': [1.0, 17.0]
+  'age': [0, 20]
 }
 
 const parseValue = map(prop('value'))

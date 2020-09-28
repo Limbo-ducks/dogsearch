@@ -11,7 +11,7 @@ const makeOpts = (body, method = 'GET') => ({
   body
 })
 
-const Search = ({ hits, setHits, user, match: { params: { credit }}}) => {
+const Search = ({ hits, setHits, user, match: { params: { breed }}}) => {
   const baseURL = '/api/search'
   const [status, setStatus] = useState('idle')
   const [searchPerformed, setSearchPerformed] = useState(false)
@@ -38,7 +38,7 @@ const Search = ({ hits, setHits, user, match: { params: { credit }}}) => {
       <section className='mt-20 mb-8'>
         <h1 className="searchtitle">Browse Dogs</h1>
         <div className='flex flex-row'>
-          <Filter search={search} searchCredit={credit} />
+          <Filter search={search} searchBreed={breed} />
           <ResultList data={hits} status={status} searchPerformed={searchPerformed} user={user} />
         </div>
       </section>

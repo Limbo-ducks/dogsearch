@@ -4,13 +4,11 @@ import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import DatePicker from './DatePicker';
 import Grid from "@material-ui/core/Grid";
 import ExperienceBox from './ExperienceBox'
 import FilterListIcon from '@material-ui/icons/FilterList';
@@ -74,12 +72,10 @@ export default function FilterComponent(props) {
         className="card__title"
       ></CardHeader>
       <CardContent>
-        {/* <DatePicker/> */}
         <ExperienceBox def={searchCredit} onChange={handleCreditChange} />
         <div className='search-main'>
           {[...primary]}
         </div>
-        {!expanded ? <button onClick={handleSubmit} className="searchengine__button">Search</button> : null}
         <h3>Appearance</h3>
         <div className='search-appearance'>
           {[...appearance]}
