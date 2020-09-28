@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.scss';
-import Icon from '../../assets/images/Icon.svg'
+import Icon from '../../assets/images/Icon.png'
 
 const Footer = () => {
   return (
@@ -12,12 +12,12 @@ const Footer = () => {
       <section className="footer__wrapper">
         <article className="footer__wrapper__list">
           <ul>
-            <h4>Talent</h4>
+            <h4>Dogs</h4>
             <Link to='/'>
               <li>How it works</li>
             </Link>
             <Link to='/'>
-              <li>Talent Database</li>
+              <li>Dog Database</li>
             </Link>
           </ul>
         </article>
@@ -28,7 +28,7 @@ const Footer = () => {
               <li>How it works</li>
             </Link>
             <Link to='/'>
-              <li>Find talents</li>
+              <li>Find dogs</li>
             </Link>
             <Link to='/'>
               <li>Premium</li>
@@ -83,7 +83,7 @@ const Footer = () => {
       </section>
       <span className="footer__divider"></span>
       <section className="footer__info">
-        <h4 className="footer__info__text">© 2020 Talentwyre. All rights reserved</h4>
+        <h4 className="footer__info__text">© 2020 Limbo Ducks. All rights reserved</h4>
         <article className="footer__info__links">
           <Link to='/'>
             <h4 className="footer__info__links__link">/ Privacy Policy </h4>

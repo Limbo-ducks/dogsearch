@@ -1,14 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Grid.scss';
-import Film from '../../assets/images/film.png'
-import Theatre from '../../assets/images/theatre.png'
-import Modeling from '../../assets/images/model.png'
-import Tv from '../../assets/images/tv.png'
-import Narrators from '../../assets/images/narrators.jpg'
-import Other from '../../assets/images/other.jpg'  
-
-
+import Golden from '../../assets/images/golden.jpg'
+import Corgi from '../../assets/images/corgi.jpg'
+import Pitbull from '../../assets/images/pitbull.jpg'
+import Pug from '../../assets/images/pug.jpg'
+import Daschund from '../../assets/images/daschund.jpg'
+import Mixed from '../../assets/images/mixed.jpg'  
 
 const Grid = () => {
   return (
@@ -16,38 +14,38 @@ const Grid = () => {
       <section className="grid__wrapper">
         <article className="grid__wrapper__item">
         <Link to="/search/films">
-          <img src={Film} alt=""/>
-          <h2>Film</h2>
+          <img src={Golden} alt=""/>
+          <h2>Golden Retrievers</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
         <Link to="/search/theatre">
-          <img src={Theatre} alt=""/>
-          <h2>Theatre</h2>
+          <img src={Corgi} alt=""/>
+          <h2>Corgis</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
         <Link to="/search/tv">
-          <img src={Tv} alt=""/>
-          <h2>TV</h2>
+          <img src={Pitbull} alt=""/>
+          <h2>Pitbulls</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
         <Link to="/search/modeling">          
-          <img src={Modeling} alt=""/>
-          <h2>Modeling</h2>
+          <img src={Pug} alt=""/>
+          <h2>Pugs</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
         <Link to="/search/narrator">          
-          <img src={Narrators} alt=""/>
-          <h2>Narrator</h2>
+          <img src={Daschund} alt=""/>
+          <h2>Daschounds</h2>
         </Link>
         </article>
         <article className="grid__wrapper__item">
         <Link to="/search/other">          
-          <img src={Other} alt=""/>
-          <h2>Other</h2>
+          <img src={Mixed} alt=""/>
+          <h2>Mixed</h2>
         </Link>
         </article>
       </section>

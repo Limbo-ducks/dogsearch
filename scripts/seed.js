@@ -150,7 +150,7 @@ const seed = process.argv.includes('-t')
 const client = new MongoClient(mongoUri, mongoOpts)
 
 client.connect()
-    .then(client => client.db('talentwyre').collection('profiles'))
+    .then(client => client.db('dogsearch').collection('profiles'))
     .then(col => col.insertMany(seed))
     .then(() => console.log('Success!'))
     .catch(console.error)

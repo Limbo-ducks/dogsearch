@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Nav from '../Nav/Nav';
 import Buttons from './Buttons';
-import Logo from '../../assets/images/Logo.svg';
 import { Link } from 'react-router-dom'
 import './Header.scss';
 import LogoutButton from './LogoutButton';
@@ -12,7 +11,7 @@ const Header = ({ burgerMenu, openMenu, user }) => {
   return (
     <header className="header">
         <Link to='/'>
-          <img src={Logo} alt="Talentwyre logo" className="header__logo"/>
+          <h1 className="header__logo">Dog Search</h1>
         </Link>
         {!openMenu ? <Nav authenticated={true}/> : null}
         {user

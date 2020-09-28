@@ -2,7 +2,7 @@ version: "3.8"
 services:
   mongodb:
     image: mongo:latest
-    container_name: "talentwyre"
+    container_name: "dogsearch"
     volumes:
       - ./data/mongodb:/data/db
     ports:

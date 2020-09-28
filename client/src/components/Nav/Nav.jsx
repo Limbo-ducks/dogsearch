@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Icon from '../../assets/images/Icon.svg'
 import './Nav.scss'
 
 function Nav ({ authenticated}) {
@@ -11,14 +10,8 @@ function Nav ({ authenticated}) {
           <li>Home</li>
         </Link>
         <Link to='/search'>
-          <li>Find Talent</li>
+          <li>Find Dog</li>
         </Link>
-
-          <img src={Icon} alt=""/>
-
-        <a href="http://talentwyre.com/" target="_blank">
-          <li>Latest News</li>
-        </a>
 
         {authenticated && <Link to='/about'>
           <li>About</li>
