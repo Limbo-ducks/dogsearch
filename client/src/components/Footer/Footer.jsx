@@ -83,7 +83,7 @@ const Footer = () => {
       </section>
       <span className="footer__divider"></span>
       <section className="footer__info">
-        <h4 className="footer__info__text">© 2020 Limbo Ducks. All rights reserved</h4>
+        <h4 className="footer__info__text">© 2020 LIMBO DUCKS. All rights reserved</h4>
         <article className="footer__info__links">
           <Link to='/'>
             <h4 className="footer__info__links__link">/ Privacy Policy </h4>

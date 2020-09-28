@@ -7,7 +7,7 @@ const Copyright = () => {
       <Typography variant="body2" color="textPrimary" align="center">
         {'Copyright © '}
         <Link color="inherit" href="https://material-ui.com/">
-          Talentwyre
+          LIMBO DUCKS
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}

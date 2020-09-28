@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ProfileInfo from './ProfileInfo';
-import ProfileAbout from './ProfileAbout';
 import ProfileContent from './ProfileContent';
 import ProfileLinks from './ProfileLinks';
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
@@ -8,15 +7,6 @@ import ProfileCalendar from './ProfileCalendar';
 
 import './Profile.scss'
 import ProfileContact from './ProfileContact';
-import ProfileCv from './ProfileCv';
-
-const makeOpts = (body, method = 'GET') => ({
-  method,
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body
-})
 
 const Profile = (props) => {
   if (!props.user) props.history.push('/login')
@@ -90,13 +80,6 @@ const Profile = (props) => {
           {openContact ? <><section className="profilenav">
                               <h3 className="profilenav__link">Contact</h3>
                             </section><ProfileContact /></> : null}
-          {openCv ? <><section className="profilenav">
-                        <a href="#actingcredits"><h3 className="profilenav__link">Acting Credits</h3></a> /
-                        <a href="#nonactingcredits"><h3 className="profilenav__link">Non Acting Credits</h3></a> /
-                        <a href="#education"><h3 className="profilenav__link">Education</h3></a> /
-                        <a href="#skills"><h3 className="profilenav__link">Skills</h3></a>
-                      </section><ProfileCv data={profileData}/></> : null }
-          <ProfileAbout data={profileData.resume}/>
         </section>
       </main>
     </>

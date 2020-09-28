@@ -37,7 +37,7 @@ const Grid = () => {
         </Link>
         </article>
         <article className="grid__wrapper__item">
-        <Link to="/search/daschund">          
+        <Link to="/search/daschhound">          
           <img src={Daschund} alt=""/>
           <h2>Daschounds</h2>
         </Link>

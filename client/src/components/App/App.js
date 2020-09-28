@@ -3,14 +3,12 @@ import './App.scss'
 import Header from '../Header/Header'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import About from '../About/About.jsx'
-import Footer from '../Footer/Footer'
 import Login from '../Login/Login'
 import Main from '../Main/Main'
 import Profile from '../Profile/Profile'
 import SearchProfile from '../SearchProfile/SearchProfile'
 import Search from '../Search/Search'
 import Signup from '../Signup/Signup'
-import Talent from '../Talents/Talent'
 import UserProfile from '../UserProfile/UserProfile'
 
 function App () {
@@ -58,12 +56,10 @@ function App () {
               />}
               />
           <Route path='/searchprofile/:id' component={SearchProfile} />
-          <Route path='/talents/:id' exact component={Talent} />
           <Route path='/login' exact component={Login} />
           <Route path='/signup' exact component={Signup} />
           <Route path='/my-profile' render={props => <UserProfile {...props} user={user} />} />
         </Switch>}
-      {/* <Footer /> */}
     </Router>
   )
 }

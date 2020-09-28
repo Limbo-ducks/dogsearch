@@ -84,7 +84,7 @@ const dogs = [
     ]
 },
 {
-  id: '1',
+  id: '2',
   premium: true,
   type: 'dog',
   finishedProfile: true,
@@ -125,7 +125,7 @@ const dogs = [
     ]
 },
 {
-  id: '1',
+  id: '3',
   premium: true,
   type: 'dog',
   finishedProfile: true,
@@ -166,7 +166,7 @@ const dogs = [
     ]
 },
 {
-  id: '1',
+  id: '4',
   premium: true,
   type: 'dog',
   finishedProfile: true,
@@ -207,7 +207,7 @@ const dogs = [
     ]
 },
 {
-  id: '1',
+  id: '5',
   premium: true,
   type: 'dog',
   finishedProfile: true,

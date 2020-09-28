@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ProfileInfo.scss';
 import Popover from '@material-ui/core/Popover';
 import PopoverContent from '../Search/PopoverContent';
@@ -23,7 +23,7 @@ const calculateHeight = height => {
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, viewComponent}) => {
+const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const popoverOpen = Boolean(anchorEl);
@@ -42,7 +42,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, view
     <section className="info">
       <article className="info__header">
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
-        <img src={data.media.headShot ? `${data.media.headShot}` : `${Blank}`} alt="" className="info__header__profileimg"/>
+        <img src={data.image ? `${data.image}` : `${Blank}`} alt="" className="info__header__profileimg"/>
         {data.premium ? <h3 className="modal__premium modal__premium--profile">Premium</h3> : null}
         <button className="talentcard__bookmark" onClick={handleClick}>
           <Tooltip title="Add to shortlist" placement="top">
@@ -98,19 +98,15 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv, view
         </Tooltip>
       </article>
       <article className="info__content">
-        <h2 className="info__content__text">
-          {data.gender === 'female' && data.cast.toLowerCase() === 'actor' ? 
-            'Actress' : 'Actor'}
-        </h2>
         <h3 className="info__content__text"><LocationOnOutlinedIcon/> 
-        <i>{data.contact.city === '' ? 'Unknown' : `${data.contact.city}, ${data.contact.citizenship}`}</i>
+        <i>{data.name === '' ? 'Unknown' : `${data.name}, ${data.breed}`}</i>
         </h3>
         <article className="info__content__attributes">
           <InfoOutlinedIcon/>
           <article className="info__content__attributes__text">
-            <h5 className="info__content__text"><b>Height:</b> {calculateHeight(data.measurements.height)}</h5>
-            <h5 className="info__content__text"><b>Eyes:</b> {upCaseFirst(data.eyeColor)}</h5>
-            <h5 className="info__content__text"><b>Acting age:</b> {data.age - 5} - {data.age + 5}</h5>
+            <h5 className="info__content__text"><b>Height:</b> {data.size}</h5>
+            <h5 className="info__content__text"><b>Eyes:</b> {upCaseFirst(data.color)}</h5>
+            <h5 className="info__content__text"><b>Age:</b> {data.age}</h5>
           </article>
         </article>
         <h3 className="info__content__text info__content__text--representation"><BusinessCenterOutlinedIcon/> Representation</h3>
