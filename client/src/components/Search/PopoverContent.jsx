@@ -25,19 +25,6 @@ export const CheckboxListSecondary = () => {
     const classes = useStyles();
     const [checked, setChecked] = React.useState([1]);
 
-    // const handleToggle = value => () => {
-    //     const currentIndex = checked.indexOf(value);
-    //     const newChecked = [...checked];
-
-    //     if (currentIndex === -1) {
-    //     newChecked.push(value);
-    //     } else {
-    //     newChecked.splice(currentIndex, 1);
-    //     }
-
-    //     setChecked(newChecked);
-    // };
-
     const handleListItemClick = i => {
         const newAdded = Array.from(added, (value, idx) => idx === i ? true : value);
         setAdded(newAdded);

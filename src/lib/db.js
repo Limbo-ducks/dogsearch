@@ -2,10 +2,10 @@ const R = require('ramda')
 const { v1: uuid } = require('uuid')
 
 module.exports = client => {
-  const db = client.db('dogsearch')
+  const db = client.db('talentwyre')
 
   const createUser = id =>
-    db.collection('profiles')
+    db.collection('dogs')
       .findOneAndUpdate({
         profile: id,
       }, {
@@ -22,15 +22,15 @@ module.exports = client => {
       .then(R.prop('value'))
 
   const findById = id => 
-    db.collection('profiles').findOne({ id }, { projection: { _id: 0 }})
+    db.collection('dogs').findOne({ id }, { projection: { _id: 0 }})
 
   const search = query =>
-    db.collection('profiles')
+    db.collection('dogs')
       .find(query, { projection: { _id: 0 }})
       .toArray()
 
   const updateProfile = (profile, data) =>
-    db.collection('profiles')
+    db.collection('dogs')
       .findOneAndUpdate({ profile }, { $set: data }, { returnOriginal: false })
       .then(R.prop('value'))
 

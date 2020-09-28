@@ -54,7 +54,7 @@ function ResultCard (props) {
     const cm = height/0.39370
     return Math.ceil(cm)
   }
-
+  console.log(props)
   return (
     <>
       <Modal
@@ -67,7 +67,7 @@ function ResultCard (props) {
           {props.premium ? <h3 className="modal__premium">Premium</h3> : null}
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
-            <img src={props.media.headShot ? `${props.media.headShot}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
+            <img src={props.image ? `${props.image}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
               <button onClick={handleClick} className="modal__buttons__button modal__buttons__button--save">
                 Shortlist
@@ -77,19 +77,16 @@ function ResultCard (props) {
             </article>
             <section className="modal__profile__info">
               <article className="modal__profile__info__attributes">
-                <h3><b>{props.profession}</b> - <i>{props.citizenship}</i></h3>
+                <h3><b>{props.name}</b></h3>
+                <h3><b>{props.breed}</b></h3>
                 <article className="modal__attributes">
                   <InfoOutlinedIcon/>
                   <article className="modal__attributes__items">
-                    <h4><b>Height:</b> {calculateHeight(props.measurements.height)}(~{calculateHeightCM(props.measurements.height)}cm)</h4>
-                    <h4><b>Eye Colour:</b> {props.eyeColor}</h4>
-                    <h4><b>Body Type:</b> {measurements.bodyType}</h4>
+                    <h4><b>Colour:</b> {props.color}</h4>
+                    <h4><b>Size:</b> {props.size}</h4>
                     <h4><b>Gender:</b> {props.gender}</h4>
                   </article>
                 </article>
-              </article>
-              <article className="modal__profile__info__representation">
-                <h4><BusinessCenterOutlinedIcon/>Representation</h4>
               </article>
             </section>
             <article className="modal__profile__button">
@@ -142,7 +139,7 @@ function ResultCard (props) {
         </section>
       </Modal>
       <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
-        <img className="talentcard__image w-full" src={props.media.headShot ? `${props.media.headShot}` : `${BlankImage}`} alt="talent-image" /> 
+        <img className="talentcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
         <button className="talentcard__bookmark" onClick={handleClick}>
           <AddIcon fontSize="small" className="talentcard__bookmark--click"/>
         </button>
@@ -150,10 +147,10 @@ function ResultCard (props) {
         <div className="talentcard__info px-6 py-4">
           <p className="talentcard__info__text text-gray-700 text-base">
             <ul className="talentcard__info__text--list">
-              <li>{props.contact.city}</li>
+              <li>{props.breed}</li>
               <li>{props.gender}</li>
-              <li>{calculateActingAge(props.age)}</li>
-              <li>{`${calculateHeight(props.measurements.height)}(~${calculateHeightCM(props.measurements.height)}cm)`}</li>
+              <li>{props.age}</li>
+              <li>{props.size}</li>
             </ul>
           </p>
         </div>

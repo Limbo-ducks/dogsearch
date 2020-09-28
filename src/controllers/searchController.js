@@ -16,29 +16,15 @@ const parseLists = R.pipe(
   Object.fromEntries
 )
 
+// const parseCredit = R.pipe(
+//   R.map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
+//   Object.fromEntries
+// )
+
 const parseCredit = R.pipe(
-  R.map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
+  R.map(x => [ `${x}`, { $exists: true, $ne: [] } ]),
   Object.fromEntries
 )
-
-const parseDates = dates => {
-  const from = dates.from
-    ? { $lte: dates.from }
-    : { $exists: true }
-
-  const to = dates.to
-    ? { $gte: dates.to }
-    : { $exists: true }
-
-  return ({
-    available: {
-      $elemMatch: {
-        from,
-        to,
-      }
-    }
-  })
-}
 
 const parseRanges = fields => ({
   $and: Object.entries(fields)
@@ -48,13 +34,12 @@ const parseRanges = fields => ({
     ])
 })
 
-const makeQuery = ({ credit = [], dates, options, ranges }) => ({
+const makeQuery = ({ credit = [], options, ranges }) => ({
   ...parseCredit(credit),
-  // ...parseDates(dates),
   ...parseLists(options),
   ...parseRanges(ranges),
   finishedProfile: true,
-  type: 'talent',
+  type: 'dog',
 })
 
 const sortData = R.pipe(

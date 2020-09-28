@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Grid from "@material-ui/core/Grid";
-import ExperienceBox from './ExperienceBox'
+import BreedBox from './BreedBox'
 import FilterListIcon from '@material-ui/icons/FilterList';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';  
@@ -59,7 +59,7 @@ export default function FilterComponent(props) {
     setExpanded(!expanded);
   };
 
-  const {primary, appearance, skills, experience, measurements, handleSubmit, searchCredit, handleCreditChange} = props;
+  const {primary, appearance, skills, experience, measurements, handleSubmit, searchBreed, handleBreedChange} = props;
   return (
     <Card className={`${classes.root} mx-8 filtercomponent`}>
       <CardHeader
@@ -72,7 +72,7 @@ export default function FilterComponent(props) {
         className="card__title"
       ></CardHeader>
       <CardContent>
-        <ExperienceBox def={searchCredit} onChange={handleCreditChange} />
+        <BreedBox def={searchBreed} onChange={handleBreedChange} />
         <div className='search-main'>
           {[...primary]}
         </div>
@@ -83,7 +83,7 @@ export default function FilterComponent(props) {
       </CardContent>
       {!expanded ? <button onClick={handleSubmit} className="searchengine__button">Search</button> : null}
       <Grid container direction="column" alignItems="center">
-    <Typography gutterBottom>{!expanded ? <p>More Filters</p> : <p>Close More Filters</p>}</Typography>
+      <Typography gutterBottom>{!expanded ? <p>More Filters</p> : <p>Close More Filters</p>}</Typography>
       <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,

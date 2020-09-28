@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import ResultCard from './ResultCard'
 import './ResultList.scss';
 import Pagination from '@material-ui/lab/Pagination'
-import Typography from '@material-ui/core/Typography';
 
 
 function ResultList (props) {
@@ -15,21 +14,20 @@ function ResultList (props) {
 
   return (
     <>
-    {console.log(props.searchPerformed + 'TESTING EEEEE')}
-    <article className="talentwrapper">
+    <article className="dogwrapper">
       {props.status === 'loading' ? 
       null :
       (props.data.length ? 
         props.data
         .slice(start, end)
-        .map(profile => {
-          return <ResultCard {...profile} user={props.user} key={JSON.stringify(profile)} />
+        .map(dog => {
+          return <ResultCard {...dog} user={props.user} key={JSON.stringify(dog)} />
         })
         : 
         (props.searchPerformed ?
         <p className="errormessage">No Results Were Found. Please Adjust Your Filter And Try Again</p> 
         : 
-        <p className="errormessage">Make a Search to Find Talents</p>))}
+        <p className="errormessage">Make a Search to Find Dogs</p>))}
     
       
       {props.status ==='idle' && props.data.length ? <Pagination count={pages} onChange={(_, p) => setPage(p)} /> : null }

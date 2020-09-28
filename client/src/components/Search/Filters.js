@@ -11,22 +11,6 @@ const filters = [
     input: false,
     type:'select'
   }, {
-    label: 'Breed',
-    name: 'breed',
-    class: 'primary',
-    options: [
-      { value: 'beagle', text: 'Beagle' },
-      { value: 'goldenRetriever', text: 'Golden Retriever' },
-      { value: 'labrador', text: 'Labrador' },
-      { value: 'pug', text: 'Pug' },
-      { value: 'daschhound', text: 'Daschhound' },
-      { value: 'germanShepherd', text: 'German Shepherd' },
-      { value: 'corgi', text: 'Corgi' },
-    ],
-    multiple: false,
-    input: true,
-    type:'select'
-  }, {
     label: 'Age',
     unit: "",
     name: 'age',

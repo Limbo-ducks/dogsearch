@@ -49,7 +49,7 @@ function App () {
           <Route path='/' exact component={Main}/>
           <Route path='/about' exact component={About}/>
           <Route path='/profile/:id' render={props => <Profile {...props} user={user} />} />
-          <Route path='/search/:credit?'
+          <Route path='/search/:breed?'
             render={props => <Search
               {...props}
               user={user}

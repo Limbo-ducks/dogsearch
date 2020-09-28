@@ -44,11 +44,11 @@ const getValue = pipe(
   maybe(x => x.length > 0 || typeof x === 'number')
 )
 
-const Filter = ({ search, searchCredit }) => {
+const Filter = ({ search, searchBreed }) => {
   const classes = useStyles();
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
-  const [credit, setCredit] = useState(searchCredit ? [ searchCredit ] : [])
+  const [breed, setBreed] = useState(searchBreed ? [ searchBreed ] : [])
   
   const primary = [];
   const appearance = [];
@@ -57,12 +57,12 @@ const Filter = ({ search, searchCredit }) => {
   const measurements = [];
 
   useEffect(() => {
-    if (searchCredit) handleSubmit()
+    if (searchBreed) handleSubmit()
   }, [])
 
-  const handleCreditChange = (_, value) => pipe(
+  const handleBreedChange = (_, value) => pipe(
     parseValue,
-    setCredit
+    setBreed
   )(value)
 
   const handleOptionsChange = prop => (_, value) => {
@@ -83,7 +83,7 @@ const Filter = ({ search, searchCredit }) => {
 
   const handleSubmit = () => {
     const query = {
-      credit,
+      breed,
       options,
       ranges
     }
@@ -159,8 +159,8 @@ const Filter = ({ search, searchCredit }) => {
           experience={experience}
           measurements={measurements}
           handleSubmit={handleSubmit}
-          searchCredit={searchCredit} 
-          handleCreditChange={handleCreditChange}
+          searchBreed={searchBreed} 
+          handleBreedChange={handleBreedChange}
           />
         </section>
     </ThemeProvider>
