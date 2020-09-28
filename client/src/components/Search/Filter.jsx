@@ -4,25 +4,9 @@ import filters from './Filters'
 import './Filter.scss';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { map, maybe, pipe, prop } from '../../lib/helpers'
 import FilterComponent from './FilterComponent';
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-// const GlobalCss = withStyles({
-//   // @global is handled by jss-plugin-global.
-//   '@global': {
-//     // You should target [class*="MuiButton-root"] instead if you nest themes.
-//     '.MuiInputLabel-root': {
-//       transform: 'translate(14px, 14px) scale(1)',
-//     },
-//   },
-// })(() => null);
-
-// // …
-
-// <GlobalCss />
 
 const useStyles = makeStyles({
   root: {
@@ -49,9 +33,6 @@ const theme = createMuiTheme({
   },
 });
 
-const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-const checkedIcon = <CheckBoxIcon fontSize="small" />;
-
 const initRanges = {
   'age': [5, 100],
   'measurements.height': [23, 100],
@@ -72,8 +53,6 @@ const getValue = pipe(
 )
 
 const Filter = ({ search, searchCredit }) => {
-  console.log('searchCredit')
-  console.log(searchCredit)
   const classes = useStyles();
   const [options, setOptions] = useState({})
   const [ranges, setRanges] = useState(initRanges)
@@ -84,7 +63,6 @@ const Filter = ({ search, searchCredit }) => {
   const skills = [];
   const experience = [];
   const measurements = [];
-  const [dates, setDates] = useState({})
 
   useEffect(() => {
     if (searchCredit) handleSubmit()
@@ -94,13 +72,6 @@ const Filter = ({ search, searchCredit }) => {
     parseValue,
     setCredit
   )(value)
-
-  const handleDatesChange = prop => event => {
-    setDates({
-      ...dates,
-      [prop]: event.target.value || undefined
-    })
-  }
 
   const handleOptionsChange = prop => (_, value) => {
     const newValue = value
@@ -121,7 +92,6 @@ const Filter = ({ search, searchCredit }) => {
   const handleSubmit = () => {
     const query = {
       credit,
-      dates,
       options,
       ranges
     }
@@ -139,18 +109,6 @@ const Filter = ({ search, searchCredit }) => {
       getOptionLabel={(option) => option.text}
       multiple={filter.multiple}
       disableCloseOnSelect={filter.multiple ? true : false}
-      // renderOption={(option, { selected }) => (
-      //   <React.Fragment>
-      //     <Checkbox
-      //       icon={icon}
-      //       checkedIcon={checkedIcon}
-      //       style={{ marginRight: 8 }}
-      //       checked={selected}
-      //     />
-      //     {option.text}
-      //   </React.Fragment>
-      // )}
-      // size="small"
       classes={{
         root: classes.root,
       }}
@@ -196,22 +154,6 @@ const Filter = ({ search, searchCredit }) => {
   const selectRoot = filter => {
     return filter.type === 'select'? makeSelect(filter) : makeRange(filter);
   }
-      
-
-
-
-  //   <section className="wrapper__picklists">
-  //   <div className='personal'>
-  //   {filters.map(filter => filter.type === 'select' && filter.class === 'personal'
-  //     ?makeSelect(filter)
-  //     :makeRange(filter))}
-  //   </div>
-  //   <div className='measurements'>
-  //   {filters.map(filter => filter.type === 'select' && filter.class === 'measurements'
-  //     ? makeSelect(filter)
-  //     : makeRange(filter))}
-  //   </div>
-  // </section>
 
   return (
     <div className='flex flex-col'>
@@ -230,31 +172,6 @@ const Filter = ({ search, searchCredit }) => {
           />
         </section>
     </ThemeProvider>
-    
-    {/* <article className="searchengine">
-    <h3>Filter Results</h3>
-    
-      <section className="wrapper__picklists"> */}
-        
-        
-        {/* <ExperienceBox def={searchCredit} onChange={handleCreditChange} /> */}
-        {/* <Autocomplete
-          className="picklist"
-          id='credit'
-          defaultValue={}
-          options={[
-            { value: 'films', text: 'Film' },
-            { value: 'theatre', text: 'Theatre' },
-            { value: 'tv', text: 'TV' },
-            { value: 'modelin', text: 'Modeling' }
-          ]}
-          onChange={handleCreditChange}
-          getOptionLabel={(option) => option.text}
-          multiple={true}
-          renderInput={(params) => <TextField {...params} label={'Experience in'} variant="outlined" />}
-        /> */}
-      {/* </section> */}
-    {/* </article> */}
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import LoggedInNav from '../LoggedInNav/LoggedInNav'
 import Filter from './Filter'
 import ResultList from './ResultList'
 import Footer from '../Footer/Footer';
@@ -36,7 +35,6 @@ const Search = ({ hits, setHits, user, match: { params: { credit }}}) => {
 
   return (
     <>
-      {user ? <LoggedInNav authenticated={true}/> : null}
       <section className='mt-20 mb-8'>
         <h1 className="searchtitle">Browse Dogs</h1>
         <div className='flex flex-row'>

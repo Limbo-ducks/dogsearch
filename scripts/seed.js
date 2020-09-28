@@ -13,7 +13,7 @@ const makeDates = () =>
         to: `2020-${10 + i}-${faker.random.number({ min: 11, max: 30 })}`,
     }))
 
-const talents = require('./talents.js')
+const dogs = require('./dogs.js')
 
 const data = Array.from({ length: 200 }, () => ({
     id: faker.random.uuid(),
@@ -144,8 +144,8 @@ const data = Array.from({ length: 200 }, () => ({
 }))
 
 const seed = process.argv.includes('-t')
-    ? talents
-    : data.concat(talents)
+    ? dogs
+    : data.concat(dogs)
 
 const client = new MongoClient(mongoUri, mongoOpts)
 
