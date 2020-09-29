@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom'
 import './Header.scss';
 import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
+import PetsIcon from '@material-ui/icons/Pets';
 
 const Header = ({ burgerMenu, openMenu, user }) => {
   return (
     <header className="header">
       <article className="header__logo">
-        <Link to='/'>
+        <Link to='/' className="header__logo__item">
+          <PetsIcon />
           <h1>Dog Search</h1>
         </Link>
       </article>

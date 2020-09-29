@@ -2,9 +2,9 @@
 @supports (-moz-appearance:none) {
   .content { 
     transform: none;
-
    } 
 }
+
 .content {
   position: inherit;
   margin: 10px auto;
@@ -17,7 +17,7 @@
     margin-top: 160px;
     margin-bottom: 40px;
     left: 31%;
-    width: 38%;
+    width: 50%;
     padding: 5px;
   }
 
@@ -28,6 +28,6 @@
     font-weight: 700;
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
-    background-color: rgba(226, 232, 240, 0.5);
+    background-color: $bright-seaweed;
   }
 }
