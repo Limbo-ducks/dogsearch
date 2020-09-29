@@ -22,19 +22,12 @@ const AuthenticatedButtons = () => {
 
   return (
     <section className="header__buttons">
-      {status === 'loaded'? 
-        userData.type === 'talent' ?
-              <a href={`/profile/${userData.id}`}
-                className="header__buttons__button header__buttons__button--login"
-              >
-                My Profile
-              </a>
-              :
-              <a href={`/searchprofile/a`}
-                className="header__buttons__button header__buttons__button--login"
-              >
-                My Profile
-              </a>
+      {status === 'loaded'?
+        <a href={`/profile/${userData.id}`}
+          className="header__buttons__button header__buttons__button--login"
+        >
+          My Profile
+        </a>
       
       : null}
 

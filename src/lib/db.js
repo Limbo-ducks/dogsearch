@@ -2,7 +2,7 @@ const R = require('ramda')
 const { v1: uuid } = require('uuid')
 
 module.exports = client => {
-  const db = client.db('talentwyre')
+  const db = client.db('dogsearch')
 
   const createUser = id =>
     db.collection('dogs')

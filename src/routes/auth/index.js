@@ -19,9 +19,9 @@ module.exports = db => {
   // }))
 
   router.get('/google/callback', passport.authenticate('google', {
-    failureRedirect: `${redirect}/login`}), (req, res) => {
+    failureRedirect: `${redirect}login`}), (req, res) => {
       console.log(req.user);
-      res.redirect(`${redirect}/profile/${req.user.id}`)
+      res.redirect(`${redirect}profile/${req.user.id}`)
     })
   
   router.get('/logout', (req, res) => {
