@@ -3,14 +3,17 @@
 .header {
   &__buttons {
     position: absolute;
-    right: 0;
-    top: 50px;
+    left: 0;
+    top: 100px;
+    display: flex;
     z-index: 5000;
 
     @media (min-width: $breakpoint-md) {
       display: flex;
       position: absolute;
-      top: 0;
+      top: -15px;
+      left: initial;
+      right: 0;
 		}
 
     &__button {
@@ -28,8 +31,19 @@
         border: 1px solid white;
 
         &:hover {
-          border: 1px solid $gold;
-          color: $gold;
+          border: 1px solid $teal-light;
+          color: $teal-light;
+        }
+      }
+
+      &--home {
+        color: $black;
+        border: 1px solid $black;
+
+        &:hover {
+          background-color: $teal;
+          // color: $white;
+          border: 1px solid $white;
         }
       }
 
@@ -38,8 +52,8 @@
         border: 1px solid $grey;
 
         &:hover {
-          background-color: $gold;
-          border: 1px solid $gold;
+          background-color: $teal;
+          border: 1px solid $teal;
         }
       }
     }

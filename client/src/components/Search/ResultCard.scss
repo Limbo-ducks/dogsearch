@@ -1,12 +1,7 @@
 @import "../../variables.scss";
 
-.talentcard.premium {
-	box-shadow: 0 10px 15px -3px $gold, 0 4px 6px -2px $gold;	
-}
-
 .premium-chip {
-	background-color: $gold;
-	background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+	background-color: $teal;
 }
 
 .talentcard {
@@ -49,9 +44,9 @@
 		right: 5px;
 		margin: 4px;
 		box-sizing: content-box;
-		border-radius: 4px;
+		border-radius: 35px;
 		color: rgba(0, 0, 0, 0.87);
-		background-color: $beige;
+		background-color: $dust-yellow;
 		transition: ease-in-out 0.5s;
 		z-index: 1;
 

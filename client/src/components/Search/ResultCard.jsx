@@ -11,7 +11,8 @@ import Popover from '@material-ui/core/Popover';
 import PopoverContent from './PopoverContent';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import BlankImage from '../../assets/images/blank-profile-picture.png'
+import BlankImage from '../../assets/images/blank-profile-picture.png';
+import PetsIcon from '@material-ui/icons/Pets';
 
 function ResultCard (props) {
   const {measurements} = props;
@@ -35,26 +36,6 @@ function ResultCard (props) {
     setOpen(bool)
   }
 
-  const calculateActingAge = age => {
-    if(age < 18) {
-      return `${age}-${age+2} (Acting age)`
-    } else if(age > 75) {
-      return '75+ (Acting age)'
-    } else {
-      return `${age}-${age+5} (Acting age)`
-    }
-  }  
-
-  const calculateHeight = height => {
-    const feet = Math.floor(height / 12)
-    return `${feet}'${Math.floor((((height/12)-feet)*10))}"` 
-  }
-
-  const calculateHeightCM = height => {
-    const cm = height/0.39370
-    return Math.ceil(cm)
-  }
-  console.log(props)
   return (
     <>
       <Modal
@@ -155,11 +136,11 @@ function ResultCard (props) {
           </p>
         </div>
         <div className="px-6 pt-4 pb-2">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#treats</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#walks</span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sticks</span>
           {props.premium ? 
-          <span className="premium-chip inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#premium</span>
+          <span className="premium-chip inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><PetsIcon/></span>
            : null}
         </div>
       </article>

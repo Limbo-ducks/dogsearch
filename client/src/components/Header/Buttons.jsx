@@ -9,7 +9,7 @@ const Buttons = () => {
         <button 
           className="header__buttons__button header__buttons__button--signup"
           >
-            sign-up</button>
+            sign up</button>
       </Link>
       <Link to='/login'>
         <button 
