@@ -11,9 +11,9 @@ const auth = require('./src/routes/auth')
 const user = require('./src/routes/user')
 const dbHandler = require('./src/lib/db')
 
-const { PORT = 5000, NODE_ENV = 'prod', MONGO_URI } = process.env
+const { PORT = 5000, NODE_ENV = 'prod', MONGO_URI, MONGO_DEV_URI } = process.env
 const mongoUri = NODE_ENV === 'dev'
-  ? 'mongodb://localhost:27017'
+  ? MONGO_DEV_URI
   : MONGO_URI
 const mongoOpts = {
   useNewUrlParser: true,

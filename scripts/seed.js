@@ -152,7 +152,7 @@ const seed = dogs;
 const client = new MongoClient(mongoUri, mongoOpts)
 
 client.connect()
-    .then(client => client.db('talentwyre').collection('dogs'))
+    .then(client => client.db('dogsearch').collection('dogs'))
     .then(col => col.insertMany(seed))
     .then(() => console.log('Success!'))
     .catch(console.error)
