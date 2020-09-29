@@ -46,7 +46,7 @@ function App () {
         : <Switch>
           <Route path='/' exact component={Main}/>
           <Route path='/about' exact component={About}/>
-          <Route path='/profile/:id' render={props => <Profile {...props} user={user} />} />
+          <Route path='/dog/:id' render={props => <Profile {...props} user={user} />} />
           <Route path='/search/:breed?'
             render={props => <Search
               {...props}
@@ -55,7 +55,7 @@ function App () {
               setHits={setHits}
               />}
               />
-          <Route path='/searchprofile/:id' component={SearchProfile} />
+          <Route path='/profile/:id' component={SearchProfile} />
           <Route path='/login' exact component={Login} />
           <Route path='/signup' exact component={Signup} />
           <Route path='/my-profile' render={props => <UserProfile {...props} user={user} />} />

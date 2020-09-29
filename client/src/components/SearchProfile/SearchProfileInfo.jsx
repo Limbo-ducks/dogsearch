@@ -51,9 +51,9 @@ const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, view
         </Tooltip>
       </article>
       <article className="info__content info__content--info">
-        <h2 className="info__content__text">{data.name}</h2>
-        <h3 className="info__content__text">{upCaseFirst(data.profession)}</h3>
-        <h3 className="info__content__text"><LocationOnOutlinedIcon/> {data.contact.city}, {data.contact.citizenship}</h3>
+        {data.name ? <h2 className="info__content__text">{data.name}</h2> : null}
+        {data.profession ? <h3 className="info__content__text">{upCaseFirst(data.profession)}</h3> : null}
+        {/* <h3 className="info__content__text"><LocationOnOutlinedIcon/> {data.contact.city}, {data.contact.citizenship}</h3> */}
       </article>
       <article className="info__nav">
         <button className="info__nav__button" onClick={(e) => {
