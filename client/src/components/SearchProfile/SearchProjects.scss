@@ -8,11 +8,11 @@
       align-items: flex-end;
       padding: 5px;
       margin: 5px;
-      border-bottom: 1px solid $lightblue;
+      border-bottom: 1px solid $light-seaweed;
       cursor: pointer;
 
       &:hover {
-        background-color: $lightblue;
+        background-color: $light-seaweed;
       }
 
       &__icons {

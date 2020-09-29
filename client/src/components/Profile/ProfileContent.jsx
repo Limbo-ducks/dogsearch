@@ -25,8 +25,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   return (
     <section className="content">
       <span id="video" className="spanscroll"></span>
-      <h3 className="content__title">Video</h3>
+      <h3 className="content__title">Videos</h3>
       <ProfileVideo data={data.media}/>
+      <button className="jumbotron__buttons__button jumbotron__buttons__button--talent">View Videos</button>
       <span id="images" className="spanscroll"></span>
       <h3 className="content__title">Images</h3>
 
@@ -53,9 +54,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           </>
           }
       </article>
-      <h3 className="content__link__text content__link__text--right">View Gallery<ArrowForwardIosOutlinedIcon/></h3>
+      <button className="jumbotron__buttons__button jumbotron__buttons__button--talent">View Gallery</button>
       <span id="attributes" className="spanscroll"></span>
-      <h3 className="content__title">Attributes</h3>
+      <h3 className="content__title">Information</h3>
       {/* <ProfileAttributes data={data}/> */}
     </section>
   )

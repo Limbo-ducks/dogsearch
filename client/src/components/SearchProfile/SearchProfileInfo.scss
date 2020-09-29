@@ -17,11 +17,11 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      border-bottom: 1px solid $lightblue;
+      border-bottom: 1px solid $light-seaweed;
       transition: all ease-in-out 0.2s;
 
       &:hover {
-        background-color: $lightblue;
+        background-color: $light-seaweed;
       }
 
       &__text {
