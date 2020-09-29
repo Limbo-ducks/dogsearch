@@ -21,11 +21,11 @@
         cursor: pointer;
 
         &:hover {
-          background-color: $bluegrey;
+          background-color: $bright-seaweed;
         }
 
         &--active {
-          background-color: $bluegrey;
+          background-color: $bright-seaweed;
         }
 
         img {
@@ -65,7 +65,7 @@
       }
 
       &__message {
-        background-color: $lightblue;
+        background-color: $light-seaweed;
         width: 90%;
         border-radius: 16px;
         padding: 10px 15px;
@@ -79,7 +79,7 @@
     }
 
     &__input {
-      background-color: $lightblue;
+      background-color: $light-seaweed;
 
       input {
         width: 70%

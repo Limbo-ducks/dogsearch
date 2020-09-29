@@ -64,7 +64,7 @@
 			border-radius: 4px;
 			
 			&:hover {
-				border: 2px solid $gold;
+				border: 2px solid $teal;
 			}
 		}
 	}
@@ -101,15 +101,18 @@
 		width: 60%;
 	}
 
+	&__name {
+		display: flex;
+	}
+
 	&__premium {
     position: absolute;
     right: 10px;
     top: 50px;
     padding: 2px 18px;
-    background-color: #C5AB67;
+    background-color: $teal;
     border-radius: 24px;
-    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-    color: #fff;
+    color: $black;
 		font-size: 16px;
 		text-shadow: 1px 1px #000000;
 
@@ -163,7 +166,7 @@
 				background-color: $grey;
 
 				&:hover {
-					background-color: $gold;
+					background-color: $teal-light;
 				}
 			}
 
@@ -226,8 +229,8 @@
 			}
 			
 			h3 {
-				font-family: $header;
 				font-size: 24px;
+				margin-right: 10px;
 			}
 
 			&__representation {
@@ -263,12 +266,12 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 50%;
-			background-color: $grey;
+			background-color: $teal;
 			text-align: center;
 			margin: 10px;
 			padding: 2px 20px;
 			border-radius: 3px;
-			color: white;
+			color: $black;
 			font-family: "Mulish", sans-serif;
 			font-size: 16px;
 			text-transform: uppercase;
@@ -277,7 +280,7 @@
 			z-index: 5000;
 
 			&:hover {
-				background-color: $gold;
+				background-color: $teal-light;
 			}
 		}
 	}
@@ -355,7 +358,7 @@
 }
 
 .errormessage {
-	background: $lightblue;
+	background: $light-seaweed;
 	height: 50px;
 	padding: 5px 15px;
 	margin: 15px;

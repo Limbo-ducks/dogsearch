@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Modal } from '@material-ui/core'
 import './ResultCard.scss'
-import Image from '../../assets/images/talentwyre-background.jpg'
+import Image from '../../assets/images/background.jpg'
 import ExampleImageOne from '../../assets/images/1.jpg'
 import ExampleImageTwo from '../../assets/images/2.jpg'
 import ExampleImageThree from '../../assets/images/3.jpg'
@@ -45,27 +45,29 @@ function ResultCard (props) {
         aria-describedby="simple-modal-description"
       >
         <section className="modal">
-          {props.premium ? <h3 className="modal__premium">Premium</h3> : null}
+          {props.premium ? <h3 className="modal__premium"><PetsIcon/></h3> : null}
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
             <img src={props.image ? `${props.image}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
             <article className="modal__buttons">
               <button onClick={handleClick} className="modal__buttons__button modal__buttons__button--save">
-                Shortlist
+                Favourite
                   <AddIcon/>             
               </button>
-              <button className="modal__buttons__button modal__buttons__button--contact">Contact</button>
             </article>
             <section className="modal__profile__info">
               <article className="modal__profile__info__attributes">
-                <h3><b>{props.name}</b></h3>
-                <h3><b>{props.breed}</b></h3>
+                <article className="modal__name">
+                  <h3><b>{props.name}, </b></h3>
+                  <h3><i>{props.breed}</i></h3>
+                </article>
                 <article className="modal__attributes">
                   <InfoOutlinedIcon/>
                   <article className="modal__attributes__items">
                     <h4><b>Colour:</b> {props.color}</h4>
                     <h4><b>Size:</b> {props.size}</h4>
                     <h4><b>Gender:</b> {props.gender}</h4>
+                    <h4></h4>
                   </article>
                 </article>
               </article>
@@ -73,7 +75,7 @@ function ResultCard (props) {
             <article className="modal__profile__button">
               <Link to={props.user ? `/profile/${props.id}` : '/login'}>
                 <button>
-                  View Profile
+                  {props.user ? 'View Profile' : 'Log in to view profile'}
                 </button>
               </Link>
             </article>

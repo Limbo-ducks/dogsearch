@@ -17,7 +17,7 @@
     position: fixed;
     justify-content: center;
     top: 90px;
-    left: 50%;
+    left: 58%;
     transform: translate(-50%, 0%);
     background-color: white;
     height: 60px;
@@ -25,17 +25,17 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    width: 40%;
+    width: 55%;
   }
 
   &__link {
     padding: 2px 5px;
     font-weight: 600;
-    color: $gold;
+    color: $grey;
     text-transform: uppercase;
 
     &:hover {
-      color: $grey;
+      color: $teal;
       text-decoration: underline;
     }
   }
