@@ -7,7 +7,7 @@
 
   &__image {
     width: 100%;
-    height: 300px;
+    height: 60vh;
     object-fit: cover;
     filter: brightness(50%);
 
@@ -99,4 +99,26 @@
       }
     }
   }
+}
+
+.react-slideshow-container {
+  .default-nav {
+    display: none;
+  } 
+}
+
+.each-slide > article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+}
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
 }

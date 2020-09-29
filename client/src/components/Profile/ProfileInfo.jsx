@@ -75,10 +75,7 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
           </article>
         </Tooltip>
         <Tooltip title="View Videos" placement="top">
-          <article onClick={(e) => {
-            e.preventDefault();
-            viewContact(e.currentTarget)
-            }}><VideoLibraryIcon />
+          <article ><VideoLibraryIcon />
           </article>
         </Tooltip>
         {/* <Tooltip title="View Calendar" placement="top">
@@ -104,7 +101,12 @@ const ProfileInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => 
         </article>
       </article>
       <article className="info__footer">
-      <button className="info__footer__button">Adopt {data.name}!</button>
+      <button 
+        className="info__footer__button"
+        onClick={(e) => {
+          e.preventDefault();
+          viewContact(e.currentTarget)
+          }}>Adopt {data.name}!</button>
       </article>
     </section>
   )

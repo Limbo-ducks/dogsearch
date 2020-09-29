@@ -3,3 +3,36 @@
     margin-top: 50px;
     z-index: 1;
 }
+
+.about {
+	margin-top: 50px;
+	display: flex;
+	
+		&__item {
+			width: 50%;
+			min-height: calc(100vh - 50px);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			&__background {
+				width: 100%;
+				height: calc(100vh - 50px);
+				object-fit: cover;
+				object-position: center;
+			}
+
+			&__content {
+				width: 60%;
+
+				h3 {
+					text-align: center;
+				}
+
+				p {
+					text-align: justify;
+				}
+			}
+		}
+}
