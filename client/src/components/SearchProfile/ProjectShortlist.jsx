@@ -1,13 +1,12 @@
 import React from 'react'
 import './ProjectShortlist.scss'
 import BlankImage from '../../assets/images/blank-profile-picture.png'
+import Dog from '../../assets/images/corgi.jpg'
 
-import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import DateRangeIcon from '@material-ui/icons/DateRange';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
+import CheckIcon from '@material-ui/icons/Check';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 
 const ProjectShortlist = ({ viewShortlist }) => {
 
@@ -19,34 +18,33 @@ const ProjectShortlist = ({ viewShortlist }) => {
                   viewShortlist(e.currentTarget)
                   }} className="contentmodal__exit"><CancelOutlinedIcon/>
       </article>
-      <h2 className="contentmodal__title">Project one</h2>
+      <h3 className="contentmodal__title">Favourites</h3>
       <section className="shortlist">
         <article className="shortlist__row shortlist__row--title">
           <article className="shortlist__column">
-            <h4>Image</h4>
+            <h5>Image</h5>
           </article>
-          <article className="shortlist__column"><h4>Role</h4></article>
-          <article className="shortlist__column"><h4>Three</h4></article>
-          <article className="shortlist__column"><h4>Availability</h4></article>
-          <article className="shortlist__column"><h4>Request</h4></article>
-          <article className="shortlist__column"><h4>Contact</h4></article>
-          <article className="shortlist__column"><h4>Remove</h4></article>
+          <article className="shortlist__column"><h5>Name</h5></article>
+          <article className="shortlist__column"><h5>Breed</h5></article>
+          <article className="shortlist__column"><h5>Size</h5></article>
+          <article className="shortlist__column"><h5>Gallery</h5></article>
+          <article className="shortlist__column"><h5>Availability</h5></article>
+          <article className="shortlist__column"><h5>Remove</h5></article>
         </article>
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={BlankImage} alt=""/>
+              <img src={Dog} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
           <article className="shortlist__column">
-            <DateRangeIcon/>
+            Very Large
           </article>
           <article className="shortlist__column">
-            <VideocamOutlinedIcon />
-            <AccessTimeIcon />
+            <PhotoLibraryIcon />
           </article>
           <article className="shortlist__column">
-            <MailOutlineIcon/>
+            <CheckIcon/>
           </article>
           <article className="shortlist__column">
             <ClearOutlinedIcon/>
@@ -55,19 +53,18 @@ const ProjectShortlist = ({ viewShortlist }) => {
 
         <article className="shortlist__row">
           <article className="shortlist__column">
-              <img src={BlankImage} alt=""/>
+            <img src={Dog} alt=""/>
           </article>
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
           <article className="shortlist__column">
-            <DateRangeIcon/>
+            Large
           </article>
           <article className="shortlist__column">
-            <VideocamOutlinedIcon />
-            <AccessTimeIcon />
+            <PhotoLibraryIcon />
           </article>
           <article className="shortlist__column">
-            <MailOutlineIcon/>
+            <CheckIcon/>
           </article>
           <article className="shortlist__column">
             <ClearOutlinedIcon/>
@@ -80,34 +77,13 @@ const ProjectShortlist = ({ viewShortlist }) => {
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
           <article className="shortlist__column">
-            <DateRangeIcon/>
+            Small
           </article>
           <article className="shortlist__column">
-            <VideocamOutlinedIcon />
-            <AccessTimeIcon />
+            <PhotoLibraryIcon />
           </article>
           <article className="shortlist__column">
-            <MailOutlineIcon/>
-          </article>
-          <article className="shortlist__column">
-            <ClearOutlinedIcon/>
-          </article>
-        </article>
-        <article className="shortlist__row">
-          <article className="shortlist__column">
-              <img src={BlankImage} alt=""/>
-          </article>
-          <article className="shortlist__column">Model</article>
-          <article className="shortlist__column">Three</article>
-          <article className="shortlist__column">
-            <DateRangeIcon/>
-          </article>
-          <article className="shortlist__column">
-            <VideocamOutlinedIcon />
-            <AccessTimeIcon />
-          </article>
-          <article className="shortlist__column">
-            <MailOutlineIcon/>
+            <CheckIcon/>
           </article>
           <article className="shortlist__column">
             <ClearOutlinedIcon/>
@@ -120,14 +96,32 @@ const ProjectShortlist = ({ viewShortlist }) => {
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
           <article className="shortlist__column">
-            <DateRangeIcon/>
+            Medium
           </article>
           <article className="shortlist__column">
-            <VideocamOutlinedIcon />
-            <AccessTimeIcon />
+            <PhotoLibraryIcon />
           </article>
           <article className="shortlist__column">
-            <MailOutlineIcon/>
+            <CheckIcon/>
+          </article>
+          <article className="shortlist__column">
+            <ClearOutlinedIcon/>
+          </article>
+        </article>
+        <article className="shortlist__row">
+          <article className="shortlist__column">
+            <img src={Dog} alt=""/>
+          </article>
+          <article className="shortlist__column">Model</article>
+          <article className="shortlist__column">Three</article>
+          <article className="shortlist__column">
+            Large
+          </article>
+          <article className="shortlist__column">
+            <PhotoLibraryIcon />
+          </article>
+          <article className="shortlist__column">
+            <CheckIcon/>
           </article>
           <article className="shortlist__column">
             <ClearOutlinedIcon/>
@@ -140,14 +134,13 @@ const ProjectShortlist = ({ viewShortlist }) => {
           <article className="shortlist__column">Model</article>
           <article className="shortlist__column">Three</article>
           <article className="shortlist__column">
-            <DateRangeIcon/>
+            Small
           </article>
           <article className="shortlist__column">
-            <VideocamOutlinedIcon />
-            <AccessTimeIcon />
+            <PhotoLibraryIcon />
           </article>
           <article className="shortlist__column">
-            <MailOutlineIcon/>
+            <CheckIcon/>
           </article>
           <article className="shortlist__column">
             <ClearOutlinedIcon/>

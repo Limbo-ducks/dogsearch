@@ -1,17 +1,16 @@
 import React from 'react'
 import './SearchProfileContent.scss'
 import Dashboard from './Dashboard';
-import ExampleImageOne from '../../assets/images/1.jpg'
+import ExampleImageOne from '../../assets/images/profile.jpg'
 
-
-const SearchProfileContent = ({viewProjects}) => {
+const SearchProfileContent = ({ viewProjects, viewShortlist, viewCalendar, viewMessages }) => {
 
   return (
     <section className="content">
       <article className="content__navigation">
-        <Dashboard viewProjects={viewProjects}/>
+        <Dashboard viewProjects={viewProjects} viewShortlist={viewShortlist} viewCalendar={viewCalendar} viewMessages={viewMessages} />
       </article>
-      <h3 className="content__title">News</h3>
+      <h3 className="content__title">Posts</h3>
       <article className="post">
       <article className="post__header">
         <article className="post__header__text">

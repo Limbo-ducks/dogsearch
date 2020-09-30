@@ -1,6 +1,6 @@
 import React from 'react'
 import './Projects.scss'
-import ExampleImageOne from '../../assets/images/1.jpg'
+import ExampleImageOne from '../../assets/images/profile.jpg'
 import { Tooltip } from '@material-ui/core';
 
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';

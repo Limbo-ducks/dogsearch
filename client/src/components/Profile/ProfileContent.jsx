@@ -2,9 +2,9 @@ import React from 'react'
 import './ProfileContent.scss'
 // import ProfileNews from './ProfileNews';
 
-import ExampleImageOne from '../../assets/images/1.jpg'
-import ExampleImageTwo from '../../assets/images/2.jpg'
-import ExampleImageThree from '../../assets/images/3.jpg'
+import ExampleImageOne from '../../assets/images/corgi.jpg'
+import ExampleImageTwo from '../../assets/images/germanshepard.jpg'
+import ExampleImageThree from '../../assets/images/daschund.jpg'
 import ProfileVideo from './ProfileVideo';
 // import ProfileAttributes from './ProfileAttributes';
 import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';

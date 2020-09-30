@@ -146,14 +146,14 @@ const SearchProfile = (props) => {
         <LoggedInNav viewMessages={viewMessages}/>
         <main className="profile">
           <section className="profile__content">
-            <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages} viewCalendar={viewCalendar}/>
-            { openProfile ? <SearchProfileContent viewProjects={viewProjects}/> : null }
-            { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null}
+            <SearchProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages} viewCalendar={viewCalendar} viewShortlist={viewShortlist}/>
+            { openProfile ? <SearchProfileContent viewProjects={viewProjects} viewShortlist={viewShortlist} viewCalendar={viewCalendar} viewMessages={viewMessages}/> : null }
+            {/* { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null} */}
             { openShortlist ? <ProjectShortlist viewShortlist={viewShortlist}/> : null }
             { openProjects ? <Projects viewShortlist={viewShortlist} viewProjects={viewProjects}/> : null }
             { openMessages ? <Messages viewMessages={viewMessages}/> : null }
             { openCalendar? <SearchProfileCalendar viewCalendar={viewCalendar} available={profileData.available} unavailable={profileData.unavailable}/> : null }
-            <SearchProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/>
+            {/* <SearchProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/> */}
           </section>
         </main>
       </> 

@@ -1,7 +1,7 @@
 import React from "react";
 import './ProfileShortList.scss';
 import 'react-calendar/dist/Calendar.css';
-import ExampleImageOne from '../../assets/images/1.jpg'
+import ExampleImageOne from '../../assets/images/profile.jpg'
 import Blank from '../../assets/images/blank-profile-picture.png'
 
 

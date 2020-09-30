@@ -1,19 +1,18 @@
 import React from 'react'
 import './SearchProfileInfo.scss'
-import ExampleImageOne from '../../assets/images/1.jpg'
+import ExampleImageOne from '../../assets/images/profile.jpg'
 import DateRangeIcon from '@material-ui/icons/DateRange';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import EmailIcon from '@material-ui/icons/Email';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
-import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
-import HeaderBackground from '../../assets/images/talentwyre-background.jpg'
+import SettingsIcon from '@material-ui/icons/Settings';
+import HomeIcon from '@material-ui/icons/Home';
+import HeaderBackground from '../../assets/images/background.jpg';
+import PetsIcon from '@material-ui/icons/Pets';
 import { Tooltip } from '@material-ui/core';
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalendar}) => {
+const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalendar, viewShortlist }) => {
   return (
     <section className="info">
       <article className="info__header">
@@ -25,21 +24,21 @@ const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, view
           <article onClick={(e) => {
             e.preventDefault();
             viewProfile(e.currentTarget)
-            }}><HomeOutlinedIcon />
+            }}><HomeIcon />
           </article>
         </Tooltip>
         <Tooltip title="Messages" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
             viewMessages(e.currentTarget)
-            }}><MailOutlineIcon />
+            }}><EmailIcon />
           </article>
         </Tooltip>
-        <Tooltip title="Network" placement="top">
+        <Tooltip title="Favourites" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
-            viewProfile(e.currentTarget)
-            }}><PeopleAltOutlinedIcon />
+            viewShortlist(e.currentTarget)
+            }}><PetsIcon />
           </article>
         </Tooltip>
         <Tooltip title="Calendar" placement="top">
@@ -56,32 +55,44 @@ const SearchProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, view
         {/* <h3 className="info__content__text"><LocationOnOutlinedIcon/> {data.contact.city}, {data.contact.citizenship}</h3> */}
       </article>
       <article className="info__nav">
-        <button className="info__nav__button" onClick={(e) => {
+        <button 
+          className="info__nav__button" 
+          onClick={(e) => {
             e.preventDefault();
-            viewProjects(e.currentTarget)
+            viewShortlist(e.currentTarget)
             }}>
-          <h4 className="info__nav__button__text">My projects</h4>
           <article className="info__nav__button__icon">
-            <FileCopyOutlinedIcon />
+            <PetsIcon />
           </article>
+          <h4 className="info__nav__button__text">My Favourites</h4>
         </button>
-        <button className="info__nav__button">
-          <h4 className="info__nav__button__text">My calendar</h4>
+        <button 
+          className="info__nav__button"
+          onClick={(e) => {
+            e.preventDefault();
+            viewCalendar(e.currentTarget)
+            }}>
           <article className="info__nav__button__icon">
             <DateRangeIcon />
           </article>
+          <h4 className="info__nav__button__text">My Calendar</h4>
         </button>
-        <button className="info__nav__button">
-          <h4 className="info__nav__button__text">My messages</h4>
+        <button 
+          className="info__nav__button"
+          onClick={(e) => {
+            e.preventDefault();
+            viewMessages(e.currentTarget)
+            }}>
           <article className="info__nav__button__icon">
-            <MailOutlineIcon />
+            <EmailIcon />
           </article>
+          <h4 className="info__nav__button__text">My Messages</h4>
         </button>
         <button className="info__nav__button">
+          <article className="info__nav__button__icon">
+            <SettingsIcon />
+          </article>
           <h4 className="info__nav__button__text">Profile Settings</h4>
-          <article className="info__nav__button__icon">
-            <SettingsOutlinedIcon />
-          </article>
         </button>
       </article>
     </section>

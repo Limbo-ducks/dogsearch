@@ -4,13 +4,13 @@ import './LoggedInNav.scss'
 import EmailIcon from '@material-ui/icons/Email';import DateRangeIcon from '@material-ui/icons/DateRange';
 import NotificationsIcon from '@material-ui/icons/Notifications';import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import SettingsIcon from '@material-ui/icons/Settings';
-import ExampleImageOne from '../../assets/images/1.jpg'
+import ExampleImageOne from '../../assets/images/profile.jpg'
 
 const LoggedInNav = () => {
   return (
     <section className="secondarynav">
         <Link to="/search">
-          <article className="secondarynav__back"><h3><ArrowBackIcon/>Back to search</h3></article>
+          <article className="secondarynav__back"><h4><ArrowBackIcon/>Back to search</h4></article>
         </Link>
       <article className="secondarynav__profile">
         <article className="secondarynav__profile__link"><EmailIcon /><h5>Messages</h5></article>
