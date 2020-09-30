@@ -15,7 +15,6 @@ const DogProfile = (props) => {
   const [openProfile, setOpenProfile] = useState(true);
   const [openCalendar, setOpenCalendar] = useState(false);
   const [openContact, setOpenContact] = useState(false);
-  const [openCv, setOpenCv] = useState(false);
   const [profileData, setProfileData] = useState({});
   const [status, setStatus] = useState('loading');
 
@@ -37,28 +36,18 @@ const DogProfile = (props) => {
     setOpenCalendar(true)
     setOpenProfile(false)
     setOpenContact(false)
-    setOpenCv(false)
   }
 
   const viewContact = () => {
     setOpenContact(true)
     setOpenProfile(false)
     setOpenCalendar(false)
-    setOpenCv(false)
   }
 
   const viewProfile = () => {
     setOpenProfile(true)
     setOpenCalendar(false)
     setOpenContact(false)
-    setOpenCv(false)
-  }
-
-  const viewCv = () => {
-    setOpenCv(true)
-    setOpenCalendar(false)
-    setOpenContact(false)
-    setOpenProfile(false)
   }
 
   React.useEffect(() => {
@@ -72,7 +61,7 @@ const DogProfile = (props) => {
       <LoggedInNav />
       <main className="profile__main">
         <section className="profile__content">
-          <DogInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} viewCv={viewCv} />
+          <DogInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} />
           {openProfile ? <><DogLinks/><DogContent data={profileData}/></> : null }
           {openCalendar ? <><section className="profilenav">
                               <h3 className="profilenav__link">Calendar</h3>

@@ -14,7 +14,7 @@ import { Tooltip } from '@material-ui/core';
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const DogInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => {
+const DogInfo = ({data, viewContact, viewProfile, viewCv}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const popoverOpen = Boolean(anchorEl);
@@ -34,9 +34,9 @@ const DogInfo = ({data, viewCalendar, viewContact, viewProfile, viewCv}) => {
       <article className="info__header">
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
         <img src={data.image ? `${data.image}` : `${Blank}`} alt="" className="info__header__profileimg"/>
-        <button className="talentcard__bookmark" onClick={handleClick}>
+        <button className="dogcard__bookmark" onClick={handleClick}>
           <Tooltip title="Add to shortlist" placement="top">
-            <AddIcon className="talentcard__bookmark--click talentcard__bookmark--profile"/>
+            <AddIcon className="dogcard__bookmark--click dogcard__bookmark--profile"/>
           </Tooltip>
         </button>
         <Popover

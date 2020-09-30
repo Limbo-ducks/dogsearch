@@ -1,5 +1,5 @@
-const router = require('express').Router()
-const passFn = require('../../lib/passport')
+const router = require('express').Router();
+const passFn = require('../../lib/passport');
 
 const { NODE_ENV = 'prod' } = process.env
 const redirect = NODE_ENV === 'dev'
@@ -13,14 +13,9 @@ module.exports = db => {
     scope: ['openid']
   }))
 
-  // router.get('/google/callback', passport.authenticate('google', {
-  //   failureRedirect: redirect,
-  //   successRedirect: redirectOnLogin,
-  // }))
-
   router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: `${redirect}login`}), (req, res) => {
-      console.log(req.user);
+      console.log(req.session);
       res.redirect(`${redirect}profile/${req.user.id}`)
     })
   

@@ -40,7 +40,7 @@ const DogCalendar = ({dates, unavailable}) => {
       setCalendar({ 
         ...calendar,
         date: day, 
-        message: 'The dog is available for booking, contact them below.',
+        message: 'The dog is available this day.',
         available: true,
         buttons: true
       })
@@ -48,7 +48,7 @@ const DogCalendar = ({dates, unavailable}) => {
       setCalendar({ 
         ...calendar,
         date: day, 
-        message: 'The dog has not provided any information about availability for this day.', 
+        message: 'No information', 
         available: true,
         buttons: true
       })
