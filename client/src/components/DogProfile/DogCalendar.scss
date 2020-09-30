@@ -1,0 +1,254 @@
+@import "../../variables.scss";
+
+.react-calendar {
+  width: 100%!important;
+}
+
+.content {
+  &__chat {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+
+    &__button {
+      margin: 10px;
+      padding: 2px 20px;
+      border-radius: 3px;
+      color: white;
+      font-family: "Mulish", sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      transition: ease-in-out 0.2s;
+      box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
+      background-color: $grey;
+      
+      &:hover {
+        background-color: $gold;
+      };
+    }
+  }
+}
+
+.calendar {
+  &__instructions {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5px;
+
+      h3 {
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      &__box {
+        width: 30px;
+        height: 30px;
+        border: 1px solid $lightgrey;
+        border-radius: 3px;
+
+        &--available {
+          background-color: #d9ffb5;
+        }
+  
+        &--booked {
+          background-color: $lightgrey;
+        }
+        
+        &--pending {
+          background-color: $beige;
+        }
+        
+        &--unknown {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &__day {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #e2e8f0;
+    position: fixed;
+    top: 120px;
+    right: 0;
+    width: 29%;
+    min-height: 50vh;
+    max-height: 70vh;
+    background-color: #e2e8f0;
+    z-index: 800000;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &__info {
+      width: 100%;
+
+      &__text {
+        min-height: 120px;
+
+        h3 {
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 14px;
+          font-style: italic;
+          margin: 10px;
+          background-color: lightgoldenrodyellow;
+          padding: 15px;
+          text-align: justify; 
+        }
+      }
+    }
+
+    &__contact {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border: 1px solid $white;
+      margin: 10px auto;
+      background-color: white;
+    }
+  }
+
+  &__unavailable {
+    background-color: $lightgrey!important;
+  }
+
+  &__available {
+    background-color: #d9ffb5!important;
+  }
+
+  &__pending {
+    background-color: $beige!important;
+  }
+}
+
+.contact {
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    
+    &--true {
+      cursor: pointer;
+      &:hover {
+        color: $gold;
+      }
+
+      svg {
+        &:hover {
+          color: $gold;
+        }
+      }
+    }
+
+    &--false {
+      svg {
+        color: grey;
+      }
+    }
+
+    &--message {
+      cursor: pointer;
+
+      svg {
+        color: black;
+
+        &:hover{
+          color: $gold;
+        }
+      }
+    }
+
+    svg {
+      font-size: 1.5rem;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+.request {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    border: 1px solid $lightblue;
+
+    &--small {
+      width: calc(50% - 5px)
+    }
+  }
+
+  &__smallinput {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      width: calc(50% - 10px);
+
+      select {
+        border: 1px solid $lightblue;
+        width: calc(100% - 10px);
+        padding: 5px;
+        border-radius: 3px;
+      }
+
+      input {
+        border: 1px solid $lightblue;
+        width: calc(100% - 10px);
+        padding: 5px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  label {
+    margin: 5px;
+    font-family: $header;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  textarea {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  &__button {
+    text-align: center;
+    margin: 10px;
+    padding: 2px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: ease-in-out 0.5s;
+    box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
+    background-color: #3b3a46;
+  }
+}

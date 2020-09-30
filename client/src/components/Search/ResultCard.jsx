@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { Modal } from '@material-ui/core'
 import './ResultCard.scss'
 import Image from '../../assets/images/background.jpg'
-import ExampleImageOne from '../../assets/images/1.jpg'
-import ExampleImageTwo from '../../assets/images/2.jpg'
-import ExampleImageThree from '../../assets/images/3.jpg'
+import ExampleImageOne from '../../assets/images/corgi.jpg'
+import ExampleImageTwo from '../../assets/images/germanshepard.jpg'
+import ExampleImageThree from '../../assets/images/daschund.jpg'
 import AddIcon from '@material-ui/icons/Add';
 import Popover from '@material-ui/core/Popover';
 import PopoverContent from './PopoverContent';

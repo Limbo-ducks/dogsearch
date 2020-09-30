@@ -1,24 +1,33 @@
-import React, { useState, useEffect } from 'react'
-import ProfileInfo from './ProfileInfo';
-import ProfileContent from './ProfileContent';
-import ProfileLinks from './ProfileLinks';
+import React, {useState, useEffect} from 'react'
+import  { Redirect } from 'react-router-dom'
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
-import ProfileCalendar from './ProfileCalendar';
+import ProfileInfo from './ProfileInfo.jsx';
+import ProfileProjects from './ProfileProjects.jsx';
 
 import './Profile.scss'
-import ProfileContact from './ProfileContact';
+import ProfileContent from './ProfileContent';
+import SingleProject from './SingleProject';
+import SingleProjectNav from './SingleProjectNav';
+import ModalFavourites from './ModalFavourites';
+import Projects from './Projects';
+import Messages from './Messages';
+import SearchProfileCalendar from './ProfileCalendar';
 
-const Profile = (props) => {
-  if (!props.user) props.history.push('/login')
+
+const SearchProfile = (props) => {
   const profileId = props.match.params.id
 
   const [openProfile, setOpenProfile] = useState(true);
-  const [openCalendar, setOpenCalendar] = useState(false);
-  const [openContact, setOpenContact] = useState(false);
-  const [openCv, setOpenCv] = useState(false);
+  const [openSingleProject, setOpenSingleProject,] = useState(false);
+  const [openShortlist, setOpenShortlist,] = useState(false);
+  const [openProjects, setOpenProjects,] = useState(false);
+  const [openMessages, setOpenMessages,] = useState(false);
+  const [openCalendar, setOpenCalendar,] = useState(false);
   const [profileData, setProfileData] = useState({});
   const [status, setStatus] = useState('loading');
 
+
+  //profiles/${profileId}
   useEffect(()=>{
     if(status === 'loading'){
           fetch(`/api/profiles/${profileId}`, 
@@ -33,58 +42,125 @@ const Profile = (props) => {
         }
   }, [status])
 
-  const viewCalendar = () => {
-    setOpenCalendar(true)
+  const viewSingleProject = () => {
+    setOpenSingleProject(true)
     setOpenProfile(false)
-    setOpenContact(false)
-    setOpenCv(false)
-  }
-
-  const viewContact = () => {
-    setOpenContact(true)
-    setOpenProfile(false)
+    setOpenShortlist(false)
+    setOpenProjects(false)
     setOpenCalendar(false)
-    setOpenCv(false)
   }
 
   const viewProfile = () => {
     setOpenProfile(true)
+    setOpenSingleProject(false)
+    setOpenShortlist(false)
+    setOpenProjects(false)
     setOpenCalendar(false)
-    setOpenContact(false)
-    setOpenCv(false)
+    setOpenMessages(false)
   }
 
-  const viewCv = () => {
-    setOpenCv(true)
-    setOpenCalendar(false)
-    setOpenContact(false)
-    setOpenProfile(false)
+  const viewShortlist = () => {
+    if (!openShortlist) { 
+      setOpenShortlist(true)
+      setOpenSingleProject(true)
+      setOpenProfile(false)
+      setOpenProjects(false)
+      setOpenCalendar(false)
+    } else {
+      setOpenShortlist(false)
+      setOpenProfile(true)
+      setOpenProjects(false)
+      setOpenSingleProject(true)
+      setOpenCalendar(false)
+    }
+  }
+
+  const viewProjects = () => {
+    if (!openProjects) { 
+      setOpenProjects(true)
+      setOpenSingleProject(false)
+      setOpenProfile(true)
+      setOpenShortlist(false)
+      setOpenCalendar(false)
+    } else {
+      setOpenProjects(false)
+      setOpenShortlist(false)
+      setOpenSingleProject(false)
+      setOpenCalendar(false)
+      setOpenProfile(true)
+    }
+  }
+
+  const viewMessages = () => {
+    if (!openMessages) { 
+      setOpenMessages(true)
+      setOpenSingleProject(false)
+      setOpenProfile(true)
+      setOpenShortlist(false)
+      setOpenCalendar(false)
+    } else {
+      setOpenMessages(false)
+      setOpenShortlist(false)
+      setOpenSingleProject(false)
+      setOpenCalendar(false)
+      setOpenProfile(true)
+    }
+  }
+
+  const viewCalendar = () => {
+    if (!openCalendar) { 
+      setOpenCalendar(true)
+      setOpenSingleProject(false)
+      setOpenProfile(true)
+      setOpenShortlist(false)
+      setOpenMessages(false)
+    } else {
+      setOpenCalendar(false)
+      setOpenMessages(false)
+      setOpenShortlist(false)
+      setOpenSingleProject(false)
+      setOpenProfile(true)
+    }
   }
 
   React.useEffect(() => {
     window.scrollTo(0, 0)
   })
 
-  return (
-    
-    status === 'loaded'? 
-    <>
-      <LoggedInNav />
-      <main className="profile__main">
-        <section className="profile__content">
-          <ProfileInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} viewCv={viewCv} />
-          {openProfile ? <><ProfileLinks/><ProfileContent data={profileData}/></> : null }
-          {openCalendar ? <><section className="profilenav">
-                              <h3 className="profilenav__link">Calendar</h3>
-                            </section>{profileData.available ? <ProfileCalendar dates={profileData.available} unavailable={profileData.unavailable}/> : null}</> : null}
-          {openContact ? <><section className="profilenav">
-                              <h3 className="profilenav__link">Contact</h3>
-                            </section><ProfileContact /></> : null}
-        </section>
-      </main>
-    </>
-    : null
-  )
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+    });
+  });
+  
+  if(status === 'loaded') {
+    if (profileData.type === 'talent') {
+      return <Redirect to={`/profile/${profileData.id}`}></Redirect>
+    }
+    return (
+      <>
+        <LoggedInNav viewMessages={viewMessages}/>
+        <main className="profile">
+          <section className="profile__content">
+            <ProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages} viewCalendar={viewCalendar} viewShortlist={viewShortlist}/>
+            { openProfile ? <ProfileContent viewProjects={viewProjects} viewShortlist={viewShortlist} viewCalendar={viewCalendar} viewMessages={viewMessages}/> : null }
+            {/* { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null} */}
+            { openShortlist ? <ModalFavourites viewShortlist={viewShortlist}/> : null }
+            { openProjects ? <Projects viewShortlist={viewShortlist} viewProjects={viewProjects}/> : null }
+            { openMessages ? <Messages viewMessages={viewMessages}/> : null }
+            { openCalendar? <SearchProfileCalendar viewCalendar={viewCalendar} available={profileData.available} unavailable={profileData.unavailable}/> : null }
+            {/* <ProfileProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/> */}
+          </section>
+        </main>
+      </> 
+    )
+  } else {
+    return null
+  }
 }
 
-export default Profile
+export default SearchProfile

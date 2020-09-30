@@ -1,63 +1,28 @@
 import React from 'react'
 import './ProfileContent.scss'
-// import ProfileNews from './ProfileNews';
+import Dashboard from './Dashboard';
+import ExampleImageOne from '../../assets/images/profile.jpg'
 
-import ExampleImageOne from '../../assets/images/1.jpg'
-import ExampleImageTwo from '../../assets/images/2.jpg'
-import ExampleImageThree from '../../assets/images/3.jpg'
-import ProfileVideo from './ProfileVideo';
-// import ProfileAttributes from './ProfileAttributes';
-import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
-import ImageGallery from './ImageGallery'
-
-const ProfileContent = ({data}) => {
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-    });
-  });
-});
+const ProfileContent = ({ viewProjects, viewShortlist, viewCalendar, viewMessages }) => {
 
   return (
     <section className="content">
-      <span id="video" className="spanscroll"></span>
-      <h3 className="content__title">Videos</h3>
-      <ProfileVideo data={data.media}/>
-      <button className="jumbotron__buttons__button jumbotron__buttons__button--talent">View Videos</button>
-      <span id="images" className="spanscroll"></span>
-      <h3 className="content__title">Images</h3>
-
-      <article className="gallery gallery--profile">
-
-        {data.gallery ? 
-        <ImageGallery data={data.gallery} />
-          :
-          <>
-          <article className="gallery__column gallery__column--profile">
-            <img src={ExampleImageTwo} alt=""/>
-            <img src={ExampleImageTwo} alt=""/>
-          </article>
-
-          <article className="gallery__column gallery__column--profile">
-            <img src={ExampleImageThree} alt=""/>
-            <img src={ExampleImageOne} alt=""/>
-          </article>
-
-          <article className="gallery__column gallery__column--profile">
-            <img src={ExampleImageTwo} alt=""/>
-            <img src={ExampleImageThree} alt=""/>
-          </article>
-          </>
-          }
+      <article className="content__navigation">
+        <Dashboard viewProjects={viewProjects} viewShortlist={viewShortlist} viewCalendar={viewCalendar} viewMessages={viewMessages} />
       </article>
-      <button className="jumbotron__buttons__button jumbotron__buttons__button--talent">View Gallery</button>
-      <span id="attributes" className="spanscroll"></span>
-      <h3 className="content__title">Information</h3>
-      {/* <ProfileAttributes data={data}/> */}
+      <h3 className="content__title">Posts</h3>
+      <article className="post">
+      <article className="post__header">
+        <article className="post__header__text">
+          <h4 className="post__header__text__title">A post example</h4> 
+          <h5 className="post__header__text__posted">Posted at 14:00 by Jane Doe</h5>
+        </article>
+        <img src={ExampleImageOne} alt="" className="post__header__img"/>
+      </article>
+      <article className="post__content">
+        <p className="post__content__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates eius provident ipsum assumenda enim quaerat culpa recusandae vitae? Similique doloremque provident, excepturi animi a accusantium facere temporibus est id cumque?</p>
+      </article>
+    </article>
     </section>
   )
 }

@@ -5,11 +5,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import About from '../About/About.jsx'
 import Login from '../Login/Login'
 import Main from '../Main/Main'
+import DogProfile from '../DogProfile/DogProfile'
 import Profile from '../Profile/Profile'
-import SearchProfile from '../SearchProfile/SearchProfile'
 import Search from '../Search/Search'
 import Signup from '../Signup/Signup'
-import UserProfile from '../UserProfile/UserProfile'
+import Settings from '../Settings/Settings'
 
 function App () {
   const [hits, setHits] = useState([])
@@ -46,7 +46,7 @@ function App () {
         : <Switch>
           <Route path='/' exact component={Main}/>
           <Route path='/about' exact component={About}/>
-          <Route path='/dog/:id' component={Profile} />
+          <Route path='/dog/:id' render={props => <DogProfile {...props} user={user} />} />
           <Route path='/search/:breed?'
             render={props => <Search
               {...props}
@@ -55,10 +55,10 @@ function App () {
               setHits={setHits}
               />}
               />
-          <Route path='/profile/:id' component={SearchProfile} />
+          <Route path='/profile/:id' component={Profile} />
           <Route path='/login' exact component={Login} />
           <Route path='/signup' exact component={Signup} />
-          <Route path='/my-profile' render={props => <UserProfile {...props} user={user} />} />
+          <Route path='/my-profile' render={props => <Settings {...props} user={user} />} />
         </Switch>}
     </Router>
   )
