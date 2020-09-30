@@ -1,7 +1,7 @@
 import React from 'react'
-import './ProfileContact.scss'
+import './DogContact.scss'
 
-const ProfileContact = () => {
+const DogContact = () => {
   return (
     <section className="content">
       <article className="content__chat">
@@ -16,4 +16,4 @@ const ProfileContact = () => {
   )
 }
 
-export default ProfileContact;
+export default DogContact;

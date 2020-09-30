@@ -1,5 +1,5 @@
 import React from 'react'
-import './ProjectShortlist.scss'
+import './ModalFavourites.scss'
 import BlankImage from '../../assets/images/blank-profile-picture.png'
 import Dog from '../../assets/images/corgi.jpg'
 
@@ -8,7 +8,7 @@ import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 import CheckIcon from '@material-ui/icons/Check';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 
-const ProjectShortlist = ({ viewShortlist }) => {
+const ModalFavourites = ({ viewShortlist }) => {
 
   return (
     <section className="contentmodal">
@@ -151,4 +151,4 @@ const ProjectShortlist = ({ viewShortlist }) => {
   )
 }
 
-export default ProjectShortlist;
+export default ModalFavourites;

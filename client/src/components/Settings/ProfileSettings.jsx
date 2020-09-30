@@ -1,15 +1,13 @@
 import React from 'react'
 import * as R from 'ramda'
-import { Checkbox, FormControlLabel, TextField } from '@material-ui/core'
+import { TextField } from '@material-ui/core'
 import { Autocomplete } from '@material-ui/lab'
-
 import { getAutocompleteValue, map } from '../../lib/helpers'
 
 import contactFields from './contactFields'
-
 import mediaFields from './mediaFields'
 
-import './TalentProfile.scss'
+import './ProfileSettings.scss'
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -77,7 +75,7 @@ const types = (checked, data, onChange ) => ({
 
 const makeField = (checked, data, onChange ) => x => types(checked, data, onChange)[x.type](x)
 
-const TalentProfile = ({ checked, data, handleChange }) => {
+const ProfileSettings = ({ checked, data, handleChange }) => {
   const classes = useStyles();
   const printFields = map(makeField(checked, data, handleChange ))
 
@@ -123,4 +121,4 @@ const TalentProfile = ({ checked, data, handleChange }) => {
   )
 }
 
-export default TalentProfile
+export default ProfileSettings

@@ -1,5 +1,5 @@
 import React from 'react'
-import './SearchProjects.scss'
+import './ProfileProjects.scss'
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
@@ -7,7 +7,7 @@ import BookmarksOutlinedIcon from '@material-ui/icons/BookmarksOutlined';
 import { Tooltip } from '@material-ui/core';
 
 
-const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
+const ProfileProjects = ({ viewSingleProject, viewShortlist }) => {
   return (
     <section className="about about--search">
       <article className="about__header">
@@ -51,4 +51,4 @@ const SearchProjects = ({ viewSingleProject, viewShortlist }) => {
   )
 }
 
-export default SearchProjects;
+export default ProfileProjects;

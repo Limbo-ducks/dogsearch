@@ -1,7 +1,7 @@
 import React from 'react'
-import './ProfileLinks.scss'
+import './DogLinks.scss'
 
-const ProfileLinks = () => {
+const DogLinks = () => {
   return (
     <section className="profilenav">
       <a href="#images"><h3 className="profilenav__link">Images</h3></a>
@@ -13,4 +13,4 @@ const ProfileLinks = () => {
   )
 }
 
-export default ProfileLinks;
+export default DogLinks;

@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import './ProfileVideo.scss'
+import './DogVideo.scss'
 
-const ProfileVideo = ({data}) => {
+const DogVideo = ({data}) => {
   const [playing, setPlaying] = React.useState(false);
   const [videoUrl, setVideoUrl] = React.useState(data.mediaReel);
 
@@ -20,4 +20,4 @@ const ProfileVideo = ({data}) => {
   )
 }
 
-export default ProfileVideo
+export default DogVideo

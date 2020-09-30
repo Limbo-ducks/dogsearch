@@ -18,12 +18,7 @@ const ImageGallery = ({data}) => {
                 <article className="gallery__column gallery__column--profile">
                     <img src={data[4] ? data[4].url: blankProfilePicture} alt=""/>
                     <img src={data[5] ? data[5].url: blankProfilePicture} alt=""/>   
-                </article>
-
-
-
-
-          
+                </article> 
         </>
     )
 }

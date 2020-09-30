@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import * as R from 'ramda'
 import Button from '@material-ui/core/Button'
-import TalentProfile from './TalentProfile'
+import ProfileSettings from './ProfileSettings'
 import { map } from '../../lib/helpers'
-import './UserProfile.scss'
+import './Settings.scss'
 
 const fetchOpts = {
   headers: {
@@ -29,7 +29,7 @@ const getValue = map(R.prop('value'))
 
 const setIfDefined = R.pathOr('')
 
-const UserProfile = ({ history, user }) => {
+const Settings = ({ history, user }) => {
   console.log(user)
   const [data, setData] = useState({})
   const [checked, setChecked] = useState(false)
@@ -87,7 +87,7 @@ const UserProfile = ({ history, user }) => {
   return (
     <section className='add-profile my-32'>
       <h1 className='m-0 ml-4 h-2' >Tell us about yourself!</h1>
-      <TalentProfile
+      <ProfileSettings
         checked={checked}
         data={data}
         handleChange={handleChangeData}
@@ -103,4 +103,4 @@ const UserProfile = ({ history, user }) => {
   )
 }
 
-export default UserProfile
+export default Settings

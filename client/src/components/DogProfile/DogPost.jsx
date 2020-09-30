@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './ProfilePost.scss'
+import './DogPost.scss'
 import Blank from '../../assets/images/blank-profile-picture.png'
 
-const ProfilePost = ({data}) => {
+const DogPost = ({data}) => {
   return (
     <article className="post">
       <article className="post__header">
@@ -20,4 +20,4 @@ const ProfilePost = ({data}) => {
   )
 }
 
-export default ProfilePost
+export default DogPost;

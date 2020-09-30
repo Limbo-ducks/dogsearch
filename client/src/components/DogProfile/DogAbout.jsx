@@ -1,7 +1,7 @@
 import React from 'react'
-import './ProfileAbout.scss'
+import './DogAbout.scss'
 
-const ProfileAbout = props => {
+const DogAbout = props => {
   return (
     <section className="about">
       <article className="about__header">
@@ -14,4 +14,4 @@ const ProfileAbout = props => {
   )
 }
 
-export default ProfileAbout;
+export default DogAbout;

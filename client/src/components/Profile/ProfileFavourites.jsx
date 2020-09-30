@@ -1,11 +1,11 @@
 import React from "react";
-import './ProfileShortList.scss';
+import './ProfileFavourites.scss';
 import 'react-calendar/dist/Calendar.css';
 import ExampleImageOne from '../../assets/images/profile.jpg'
 import Blank from '../../assets/images/blank-profile-picture.png'
 
 
-const ProfileShortList = () => {
+const ProfileFavourites = () => {
   return (
     <section className="profileshortlist">
       <article className="profileshortlist__person">
@@ -38,4 +38,4 @@ const ProfileShortList = () => {
   )
 }
 
-export default ProfileShortList;
+export default ProfileFavourites;
