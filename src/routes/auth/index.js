@@ -13,11 +13,6 @@ module.exports = db => {
     scope: ['openid']
   }))
 
-  // router.get('/google/callback', passport.authenticate('google', {
-  //   failureRedirect: redirect,
-  //   successRedirect: redirectOnLogin,
-  // }))
-
   router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: `${redirect}login`}), (req, res) => {
       console.log(req.user);
