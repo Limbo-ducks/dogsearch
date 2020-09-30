@@ -46,7 +46,7 @@ function App () {
         : <Switch>
           <Route path='/' exact component={Main}/>
           <Route path='/about' exact component={About}/>
-          <Route path='/dog/:id' render={props => <Profile {...props} user={user} />} />
+          <Route path='/dog/:id' component={Profile} />
           <Route path='/search/:breed?'
             render={props => <Search
               {...props}

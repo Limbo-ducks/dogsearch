@@ -12,7 +12,7 @@ import Grid from '@material-ui/core/Grid'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import useStyles from './Styles.js'
-import Copyright from '../Copyright/Copyright.jsx'
+import Copyright from '../Copyright/Copyright.jsx';
 
 const Login = props => {
   const classes = useStyles();
