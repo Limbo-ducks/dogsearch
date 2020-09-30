@@ -1,17 +1,9 @@
 export default [{
-    label: 'Head Shot',
-    name: 'media.headShot',
+    label: 'Profile Image',
+    name: 'image',
     type: 'file',
 }, {
-    label: 'Slate Shot',
-    name: 'media.slateShot',
+    label: 'Banner',
+    name: 'banner',
     type: 'file',
-}, {
-    label: 'Media / Reel (url)',
-    name: 'media.mediaReel',
-    type: 'text',
-}, {
-    label: 'Audio (url)',
-    name: 'media.audio',
-    type: 'text',
 }]

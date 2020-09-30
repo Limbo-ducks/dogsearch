@@ -2,23 +2,13 @@ import React from 'react'
 import * as R from 'ramda'
 import { Checkbox, FormControlLabel, TextField } from '@material-ui/core'
 import { Autocomplete } from '@material-ui/lab'
-import AdditionalSkills from './AdditionalSkills'
-import CreditSection from './CreditSection'
-import Representation from './Representation'
-import SocialMedia from './SocialMedia'
+
 import { getAutocompleteValue, map } from '../../lib/helpers'
-import aboutFields from './aboutFields'
-import accentFields from './accentFields'
-import appearanceFields from './appearanceFields'
-import athleticFields from './athleticFields'
+
 import contactFields from './contactFields'
-import disabilityFields from './disabilityFields'
-import experienceFields from './experienceFields'
-import languageFields from './languageFields'
-import measurementFields from './measurementFields'
+
 import mediaFields from './mediaFields'
-import performanceFields from './performanceFields'
-import unionFields from './unionFields'
+
 import './TalentProfile.scss'
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
@@ -43,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const types = (checked, data, onChange, handleCheck) => ({
+const types = (checked, data, onChange ) => ({
   autocomplete: x => (
     <Autocomplete
       className={`picklist ${x.name}`}
@@ -61,18 +51,6 @@ const types = (checked, data, onChange, handleCheck) => ({
         className='mx-4'
         error={checked && x.required && isError(getAutocompleteValue(x.options, data[x.name]))}
         helperText={checked && x.required && params.inputProps.value === '' ? 'Please fill in the form' : ''}
-      />}
-    />
-  ),
-  check: x => (
-    <FormControlLabel
-      className={`${x.label.toLowerCase()}`}
-      key={x.name}
-      label={x.label}
-      control={<Checkbox
-        name={x.name}
-        onChange={handleCheck(x.prop)}
-        checked={R.includes(x.name, data[x.prop])}
       />}
     />
   ),
@@ -97,11 +75,11 @@ const types = (checked, data, onChange, handleCheck) => ({
   )
 })
 
-const makeField = (checked, data, onChange, handleCheck) => x => types(checked, data, onChange, handleCheck)[x.type](x)
+const makeField = (checked, data, onChange ) => x => types(checked, data, onChange)[x.type](x)
 
-const TalentProfile = ({ checked, data, handleChange, handleCheckBoxes }) => {
+const TalentProfile = ({ checked, data, handleChange }) => {
   const classes = useStyles();
-  const printFields = map(makeField(checked, data, handleChange, handleCheckBoxes))
+  const printFields = map(makeField(checked, data, handleChange ))
 
   return (
     <section className='my-8 talent-registration' >
@@ -126,103 +104,6 @@ const TalentProfile = ({ checked, data, handleChange, handleCheckBoxes }) => {
 
 
       </section>
-      <section className='talent-registration-about info-container'>
-        <Accordion className={classes.border}>
-            <AccordionSummary
-              className={classes.content}
-              expandIcon={<ArrowDropDownIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <h2>About Me</h2>
-            </AccordionSummary>
-            <AccordionDetails className={classes.root}>
-              <div className='talent-subfield'>{printFields(aboutFields)}</div>
-              <p>* Fields are required</p>
-            </AccordionDetails>
-          </Accordion>  
-      </section>
-      <Representation />
-      <section className='talent-registration-appearance info-container'>
-        <Accordion className={classes.border}>
-          <AccordionSummary
-            className={classes.content}
-            expandIcon={<ArrowDropDownIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <h2>Appearance</h2>
-          </AccordionSummary>
-          <AccordionDetails className={classes.root}>
-            <div className='talent-subfield'>{printFields(appearanceFields)}</div>
-            <p>* Fields are required</p>
-          </AccordionDetails>
-        </Accordion>
-      </section>
-      <section className='talent-registration-union info-container'>
-        <Accordion className={classes.border}>
-          <AccordionSummary
-            className={classes.content}
-            expandIcon={<ArrowDropDownIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <h2>Union Information</h2>
-          </AccordionSummary>
-          <AccordionDetails className={classes.root}>
-            <div className='talent-subfield'>{printFields(unionFields)}</div>
-          </AccordionDetails>
-        </Accordion> 
-      </section>
-      <section className='talent-registration-athletic info-container'>
-        <div className='talent-subfield'>{printFields(athleticFields)}</div>
-      </section>
-      <section className='talent-registration-skills info-container'>
-        <div className='talent-subfield'>{printFields(performanceFields)}</div>
-      </section>
-      <section className='talent-registration-accents info-container'>
-        <div className='talent-subfield'>{printFields(accentFields)}</div>
-      </section>
-      <section className='talent-registration-languages info-container'>
-        <div className='talent-subfield'>{printFields(languageFields)}</div>
-      </section>
-      <AdditionalSkills />
-      <section className='talent-registration-disabilities info-container'>
-        <div className='talent-subfield'>{printFields(disabilityFields)}</div>
-      </section>
-      <SocialMedia />
-      <section className='talent-registration-measurements info-container'>
-        <Accordion className={classes.border}>
-          <AccordionSummary
-            className={classes.content}
-            expandIcon={<ArrowDropDownIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <h2>Measurements</h2>
-          </AccordionSummary>
-          <AccordionDetails className={classes.root}>
-            <div className='talent-subfield'>{printFields(measurementFields)}</div>
-            <p>* Fields are required</p>
-          </AccordionDetails>
-        </Accordion>
-      </section>
-      <section className='talent-registration-experience info-container'>
-        <Accordion className={classes.border}>
-          <AccordionSummary
-            className={classes.content}
-            expandIcon={<ArrowDropDownIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <h2>Experience</h2>
-          </AccordionSummary>
-          <AccordionDetails className={classes.root}>
-            <div className='talent-subfield'>{printFields(experienceFields)}</div>
-          </AccordionDetails>
-        </Accordion>
-      </section>
-      <CreditSection />
       <section className='talent-registration-media info-container'>
         <Accordion className={classes.border}>
           <AccordionSummary
