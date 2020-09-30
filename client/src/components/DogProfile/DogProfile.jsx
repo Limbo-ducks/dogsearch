@@ -36,21 +36,18 @@ const DogProfile = (props) => {
     setOpenCalendar(true)
     setOpenProfile(false)
     setOpenContact(false)
-    setOpenCv(false)
   }
 
   const viewContact = () => {
     setOpenContact(true)
     setOpenProfile(false)
     setOpenCalendar(false)
-    setOpenCv(false)
   }
 
   const viewProfile = () => {
     setOpenProfile(true)
     setOpenCalendar(false)
     setOpenContact(false)
-    setOpenCv(false)
   }
 
   React.useEffect(() => {
