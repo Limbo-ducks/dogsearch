@@ -1,14 +1,38 @@
 import React from 'react'
 import './Jumbotron.scss';
-import Banner from '../../assets/images/dogsone.jpg'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search';
+import 'react-slideshow-image/dist/styles.css';
+import { Slide } from 'react-slideshow-image';
 
+import ImageOne from '../../assets/images/dogsone.jpg'
+import ImageTwo from '../../assets/images/mixed.jpg'
+import ImageThree from '../../assets/images/corgi.jpg'
+
+const slideImages = [
+  ImageOne,
+  ImageTwo,
+  ImageThree,
+]
 
 const Jumbotron = () => {
   return (
     <section className="jumbotron">
-      <img src={Banner} alt="" className="jumbotron__image"/>
+      <Slide easing="ease">
+        <article className="each-slide">
+          <article style={{'backgroundImage': `url(${slideImages[0]})`}}>
+          </article>
+        </article>
+        <article className="each-slide">
+          <article style={{'backgroundImage': `url(${slideImages[1]})`}}>
+          </article>
+        </article>
+        <article className="each-slide">
+          <article style={{'backgroundImage': `url(${slideImages[2]})`}}>
+          </article>
+        </article>
+      </Slide>
+      {/* <img src={Banner} alt="" className="jumbotron__image"/> */}
       <h1 className="jumbotron__title">Find your goodest boy here!</h1>
       <article className="jumbotron__buttons">
         <Link to="/search">
