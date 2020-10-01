@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     padding: 25px;
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
     background-color: $beige;
     box-shadow: 2px 3px 5px -2px rgba(0, 0, 0, 0.65);
     font-family: $paragraph;
@@ -13,7 +13,7 @@
 
     &__button {
         text-align: center;
-        margin: 10px;
+        margin: 10px 16px;
         padding: 2px 20px;
         border-radius: 3px;
         color: white;
@@ -23,6 +23,7 @@
         transition: ease-in-out 0.5s;
         box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
         background-color: $grey;
+        width: 90%;
     }
 
     .wrapper__picklists {
@@ -42,22 +43,6 @@
             justify-content: space-between;
         }
 
-        .measurements {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-            .MuiSlider-root {
-                color: darkgrey;
-            }
-
-            .MuiSlider-track {
-                color: $gold;
-            }
-
-        }
         .picklist {
             text-align: left;
 
@@ -73,29 +58,13 @@
     }
 }
 
-
-
-.wrapper__ranges {
-    background-color: green;
-
-    div {
-        width: 50%;
-    }
-}
-
 .searchtitle {
     display: flex;
     flex-wrap: wrap;
-    padding: 50px 25px 0;
-    margin: 0 auto;
+    padding: 0 25px 25px 0;
     width: 100%;
     font-family: $header;
     font-size: 32px;
-
-    @media (min-width: $breakpoint-lg) {
-			width: 70%;
-			padding: 25px;
-    }
 }
 
 .option__picklist {
@@ -128,4 +97,8 @@
 
 .MuiCardContent-root {
     margin-top: 0px!important;
+}
+
+.gender {
+    width: 100%;
 }
