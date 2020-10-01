@@ -80,8 +80,8 @@ const ProfileSettings = ({ checked, data, handleChange }) => {
   const printFields = map(makeField(checked, data, handleChange ))
 
   return (
-    <section className='my-8 talent-registration' >
-      <section className='talent-registration-contact info-container'>
+    <section className='my-8 profile-registration' >
+      <section className='profile-registration-contact info-container'>
 
 
         <Accordion className={classes.border}>
@@ -95,14 +95,14 @@ const ProfileSettings = ({ checked, data, handleChange }) => {
             <h2>Contact Information</h2>
           </AccordionSummary>
           <AccordionDetails className={classes.root}>
-            <div className='talent-subfield'>{printFields(contactFields)}</div>
+            <div className='profile-subfield'>{printFields(contactFields)}</div>
             <p>* Fields are required</p>
           </AccordionDetails>
         </Accordion>  
 
 
       </section>
-      <section className='talent-registration-media info-container'>
+      <section className='profile-registration-media info-container'>
         <Accordion className={classes.border}>
           <AccordionSummary
             className={classes.content}
@@ -113,7 +113,7 @@ const ProfileSettings = ({ checked, data, handleChange }) => {
             <h2>Media Uploads</h2>
           </AccordionSummary>
           <AccordionDetails className={classes.root}>
-            <div className='talent-subfield'>{printFields(mediaFields)}</div>
+            <div className='profile-subfield'>{printFields(mediaFields)}</div>
           </AccordionDetails>
         </Accordion>
       </section>

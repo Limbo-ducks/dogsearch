@@ -83,7 +83,7 @@ export default function FilterComponent(props) {
       </CardContent>
       {!expanded ? <button onClick={handleSubmit} className="searchengine__button">Search</button> : null}
       <Grid container direction="column" alignItems="center">
-      <Typography gutterBottom>{!expanded ? <p>More Filters</p> : <p>Close More Filters</p>}</Typography>
+      {/* <Typography gutterBottom>{!expanded ? <p>More Filters</p> : <p>Close More Filters</p>}</Typography>
       <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -93,10 +93,10 @@ export default function FilterComponent(props) {
           aria-label="show more"
         >
           <ExpandMoreIcon />
-        </IconButton>
+        </IconButton> */}
         
         </Grid>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <h3>Skills</h3>
           <div className={classes.root + ' search-skills'}>
@@ -112,7 +112,7 @@ export default function FilterComponent(props) {
           </div>
         </CardContent>
         {expanded ? <button onClick={handleSubmit} className="searchengine__button">Search</button> : null}
-      </Collapse>
+      </Collapse> */}
     </Card>
   );
 }

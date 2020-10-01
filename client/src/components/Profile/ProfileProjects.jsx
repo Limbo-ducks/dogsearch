@@ -7,7 +7,7 @@ import BookmarksOutlinedIcon from '@material-ui/icons/BookmarksOutlined';
 import { Tooltip } from '@material-ui/core';
 
 
-const ProfileProjects = ({ viewSingleProject, viewShortlist }) => {
+const ProfileProjects = ({ viewSingleProject, viewFavourites }) => {
   return (
     <section className="about about--search">
       <article className="about__header">
@@ -26,7 +26,7 @@ const ProfileProjects = ({ viewSingleProject, viewShortlist }) => {
                 <Tooltip title="View Project Shortlist" placement="top"><BookmarksOutlinedIcon onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  viewShortlist(e.currentTarget)
+                  viewFavourites(e.currentTarget)
                   }}/></Tooltip> 
                 <Tooltip title="View Project Calendar" placement="top"><DateRangeIcon /></Tooltip>
                 <Tooltip title="View Project Messages" placement="top"><MailOutlineIcon /></Tooltip>

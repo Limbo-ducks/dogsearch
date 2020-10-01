@@ -32,7 +32,6 @@ const Jumbotron = () => {
           </article>
         </article>
       </Slide>
-      {/* <img src={Banner} alt="" className="jumbotron__image"/> */}
       <h1 className="jumbotron__title">Find your goodest boy here!</h1>
       <article className="jumbotron__buttons">
         <Link to="/search">

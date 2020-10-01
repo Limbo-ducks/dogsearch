@@ -9,13 +9,12 @@ import ExampleImageThree from '../../assets/images/daschund.jpg'
 import AddIcon from '@material-ui/icons/Add';
 import Popover from '@material-ui/core/Popover';
 import PopoverContent from './PopoverContent';
-import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import BlankImage from '../../assets/images/blank-profile-picture.png';
 import PetsIcon from '@material-ui/icons/Pets';
 
 function ResultCard (props) {
-  const {measurements} = props;
+  const { measurements } = props;
 
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -36,6 +35,8 @@ function ResultCard (props) {
     setOpen(bool)
   }
 
+  const something = 'something'
+
   return (
     <>
       <Modal
@@ -48,9 +49,14 @@ function ResultCard (props) {
           {props.premium ? <h3 className="modal__premium"><PetsIcon/></h3> : null}
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
-            <img src={props.image ? `${props.image}` : `${BlankImage}`} alt='profile-pic' className="modal__profile__image"/>
+            <img 
+              src={props.image ? `${props.image}` : `${BlankImage}`} 
+              alt='profile-pic' 
+              className="modal__profile__image"/>
             <article className="modal__buttons">
-              <button onClick={handleClick} className="modal__buttons__button modal__buttons__button--save">
+              <button 
+                onClick={handleClick} 
+                className="modal__buttons__button modal__buttons__button--save">
                 Favourite
                   <AddIcon/>             
               </button>
@@ -73,11 +79,13 @@ function ResultCard (props) {
               </article>
             </section>
             <article className="modal__profile__button">
-              <Link to={props.user ? `/dog/${props.id}` : '/login'}>
+              <Link 
+                to={props.user ? `/dog/${props.id}` : '/login'}>
                 <button>
                   {props.user ? 'View Profile' : 'Log in to view profile'}
                 </button>
               </Link>
+              {/* <Link to="/login" params={{something: `${something}`}}>Test</Link> */}
             </article>
   
           {props.gallery ?

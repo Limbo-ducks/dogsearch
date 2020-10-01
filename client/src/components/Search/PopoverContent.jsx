@@ -23,7 +23,7 @@ export const CheckboxListSecondary = () => {
         },
         }));
     const classes = useStyles();
-    const [checked, setChecked] = React.useState([1]);
+    // const [checked, setChecked] = React.useState([1]);
 
     const handleListItemClick = i => {
         const newAdded = Array.from(added, (value, idx) => idx === i ? true : value);
