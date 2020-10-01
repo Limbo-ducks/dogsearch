@@ -16,7 +16,7 @@ const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalend
     <section className="info">
       <article className="info__header">
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
-        <img src={ExampleImageOne} alt="" className="info__header__profileimg"/>
+        <img src={data.image} alt="" className="info__header__profileimg"/>
       </article>
       <article className="info__navigation">
         <Tooltip title="Home" placement="top">

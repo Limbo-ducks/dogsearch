@@ -129,15 +129,15 @@ function ResultCard (props) {
           </section>
         </section>
       </Modal>
-      <article className={`talentcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
-        <img className="talentcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
-        <button className="talentcard__bookmark" onClick={handleClick}>
-          <AddIcon fontSize="small" className="talentcard__bookmark--click"/>
+      <article className={`dogcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
+        <img className="dogcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
+        <button className="dogcard__bookmark" onClick={handleClick}>
+          <AddIcon fontSize="small" className="dogcard__bookmark--click"/>
         </button>
           
-        <div className="talentcard__info px-6 py-4">
-          <p className="talentcard__info__text text-gray-700 text-base">
-            <ul className="talentcard__info__text--list">
+        <div className="dogcard__info px-6 py-4">
+          <p className="dogcard__info__text text-gray-700 text-base">
+            <ul className="dogcard__info__text--list">
               <li>{props.breed}</li>
               <li>{props.gender}</li>
               <li>{props.age}</li>

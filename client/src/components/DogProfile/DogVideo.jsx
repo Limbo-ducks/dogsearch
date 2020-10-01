@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactPlayer from 'react-player/lazy'
-import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import './DogVideo.scss'
 
 const DogVideo = ({data}) => {
@@ -15,7 +14,7 @@ const DogVideo = ({data}) => {
   return (
     <section className="content__video">
       {videoUrl ? (<ReactPlayer url={videoUrl} width="100%" height="315px" playing={playing} controls={true}/>) 
-      : <p>No video has been provided by the Talent</p>}
+      : <p>No video has been provided</p>}
     </section>
   )
 }
