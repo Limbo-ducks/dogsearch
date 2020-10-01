@@ -35,7 +35,7 @@ function ResultCard (props) {
     setOpen(bool)
   }
 
-  const something = 'something'
+  const dog = `dog/${props.id}`;
 
   return (
     <>
@@ -80,12 +80,11 @@ function ResultCard (props) {
             </section>
             <article className="modal__profile__button">
               <Link 
-                to={props.user ? `/dog/${props.id}` : '/login'}>
+                to={props.user ? `/dog/${props.id}` : {pathname: '/login', dog: `${dog}`}}>
                 <button>
                   {props.user ? 'View Profile' : 'Log in to view profile'}
                 </button>
               </Link>
-              <Link to="/login" params={{something: `${something}`}}>Test</Link>
             </article>
   
           {props.gallery ?
