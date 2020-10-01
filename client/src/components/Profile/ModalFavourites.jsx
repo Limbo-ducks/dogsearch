@@ -90,7 +90,7 @@ const ModalFavourites = ({ viewFavourites }) => {
           </article>
         </article>
         <article className="favourites__row">
-          <article className="shortlist__column">
+          <article className="favourites__column">
               <img src={BlankImage} alt=""/>
           </article>
           <article className="favourites__column">Example</article>
