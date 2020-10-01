@@ -142,12 +142,6 @@ const DogCalendar = ({dates, unavailable}) => {
           </article>
           <article className={`contact__icon contact__icon--${calendar.available}`}
                     onClick={messageType}
-                    id="videotype">
-            {calendar.available ? <VideocamOutlinedIcon/> : <VideocamOffOutlinedIcon/> }
-            <h5>Request tape</h5>
-          </article>
-          <article className={`contact__icon contact__icon--${calendar.available}`}
-                    onClick={messageType}
                     id="meetingtype">
             {calendar.available ? <AccessTimeIcon/> : <HighlightOffOutlinedIcon/> }
             <h5>Request meeting</h5>
@@ -156,7 +150,7 @@ const DogCalendar = ({dates, unavailable}) => {
                     onClick={messageType}
                     id="book">
             <PlaylistAddCheckIcon/>
-            <h5>Book Dog</h5>
+            <h5>Adopt dog</h5>
           </article>
         </section>         
           : null}
@@ -165,35 +159,8 @@ const DogCalendar = ({dates, unavailable}) => {
             {calendar.chat ? 
             <>
               <h3>Send message:</h3>
-              <textarea name="" id="" className="request__input request__input--message" placeholder="Message the Talent"></textarea> 
+              <textarea name="" id="" className="request__input request__input--message" placeholder="Send a message"></textarea> 
               <input type="button" value="Send" className="request__button" />
-            </>
-            : null }
-
-            {calendar.video ?
-            <>
-              <h3>Request tape:</h3>
-              <p>{calendar.date}</p>
-              <article className="request__smallinput">
-                <label htmlFor="videocheck">Video</label>
-                <input type="checkbox" name="videocheck" id="videocheck"/>
-                <label htmlFor="audiocheck">Audio</label>
-                <input type="checkbox" name="audiocheck" id="audiocheck"/>
-                <label htmlFor="audiocheck">Other</label>
-                <input type="checkbox" name="audiocheck" id="audiocheck"/>
-                <article className="request__smallinput__item">
-                  <label htmlFor="meetingtype">Role:</label>
-                  <select name="meetingtype" id="meetingtype" className="request__input--small">
-                    <option value="">Lead role</option>
-                    <option value="">Role</option>
-                    <option value="">Model</option>
-                    <option value="">Artist</option>
-                    <option value="">Other</option>
-                  </select>
-                </article>
-              </article>
-              <textarea name="" id="" className="request__input request__input--message" placeholder="Provide request details"></textarea> 
-              <input type="button" value="Send" className="request__button"/>
             </>
             : null }
 
@@ -223,25 +190,15 @@ const DogCalendar = ({dates, unavailable}) => {
 
           {calendar.book ?
             <>
-            <h3>Booking Request:</h3>
+            <h3>Adoption request:</h3>
             <p>{calendar.date}</p>
             <article className="request__smallinput">
               <article className="request__smallinput__item">
-                <label htmlFor="meetingtype">Project:</label>
+                <label htmlFor="meetingtype">Adoption:</label>
                 <select name="meetingtype" id="meetingtype" className="request__input--small">
                   <option value="">Example 1</option>
                   <option value="">Example 2</option>
                   <option value="">Example 3</option>
-                </select>
-              </article>
-              <article className="request__smallinput__item">
-                <label htmlFor="meetingtype">Role:</label>
-                <select name="meetingtype" id="meetingtype" className="request__input--small">
-                  <option value="">Lead role</option>
-                  <option value="">Role</option>
-                  <option value="">Model</option>
-                  <option value="">Artist</option>
-                  <option value="">Other</option>
                 </select>
               </article>
               <article className="request__smallinput__item">

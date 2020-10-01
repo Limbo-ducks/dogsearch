@@ -80,11 +80,7 @@
     grid-template-areas: 
     "a a a a"
     "b b b b"
-    "c c c c"
-    "d d e e"
-    "f f g g"
-    "h h i i"
-    "j j - -";
+    "c c c c";
 
     .name {
       grid-area: a;
@@ -92,29 +88,8 @@
     .biography {
       grid-area: b;
     }
-    .education {
-      grid-area: c;
-    }
-    .training {
-      grid-area: d;
-    }
-    .citizenship {
-      grid-area: e;
-    }
-    .passport {
-      grid-area: f;
-    }
-    .workPermit {
-      grid-area: g;
-    }
-    .imdb {
-      grid-area: h;
-    }
     .birth {
-      grid-area: i;
-    }
-    .profession {
-      grid-area: j;
+      grid-area: c;
     }
   }
 }

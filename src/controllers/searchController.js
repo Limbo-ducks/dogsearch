@@ -5,7 +5,7 @@ const util = require('util')
 const makeOperation = operator => ([ key, val ]) => [ key, { [operator]: val } ]
 
 const formatListField = R.cond([
-  [ ([ key ]) => R.equals('professionYears', key), makeOperation('$gte') ],
+  [ ([ key ]) => R.equals('age', key), makeOperation('$gte') ],
   [ ([ _key, val ]) => Array.isArray(val), makeOperation('$all') ],
   [ R.T, R.identity ]
 ])
@@ -15,11 +15,6 @@ const parseLists = R.pipe(
   R.map(formatListField),
   Object.fromEntries
 )
-
-// const parseCredit = R.pipe(
-//   R.map(x => [ `actingCredits.${x}`, { $exists: true, $ne: [] } ]),
-//   Object.fromEntries
-// )
 
 const parseCredit = R.pipe(
   R.map(x => [ `${x}`, { $exists: true, $ne: [] } ]),

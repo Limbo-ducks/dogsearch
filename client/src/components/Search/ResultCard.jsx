@@ -130,7 +130,7 @@ function ResultCard (props) {
         </section>
       </Modal>
       <article className={`dogcard max-w-sm rounded overflow-hidden shadow-lg ${props.premium ? 'premium' : ''}`} onClick={handleToggle(true)}>
-        <img className="dogcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="talent-image" /> 
+        <img className="dogcard__image w-full" src={props.image ? `${props.image}` : `${BlankImage}`} alt="dog-image" /> 
         <button className="dogcard__bookmark" onClick={handleClick}>
           <AddIcon fontSize="small" className="dogcard__bookmark--click"/>
         </button>
