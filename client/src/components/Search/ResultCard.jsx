@@ -85,7 +85,7 @@ function ResultCard (props) {
                   {props.user ? 'View Profile' : 'Log in to view profile'}
                 </button>
               </Link>
-              {/* <Link to="/login" params={{something: `${something}`}}>Test</Link> */}
+              <Link to="/login" params={{something: `${something}`}}>Test</Link>
             </article>
   
           {props.gallery ?

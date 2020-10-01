@@ -72,7 +72,7 @@ const PopoverContent = () => {
     return (
         <>
         <div>
-        <Typography align='left' className="popover__title">Add to My Shortlists</Typography>
+        <Typography align='left' className="popover__title">Add to My Favourites</Typography>
         <div className={classes.root   + ' popover__list'}>
             <Paper elevation={0} className="popover__paper">
                 <CheckboxListSecondary></CheckboxListSecondary>
@@ -81,7 +81,7 @@ const PopoverContent = () => {
         </div>
         <ListItem key="add" button 
         className="new__item__button">
-          <ListItemText id="add__text" inset="true">New List</ListItemText>
+          <ListItemText id="add__text" inset="true">New Collection</ListItemText>
         </ListItem>
         </div>
         </>

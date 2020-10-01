@@ -35,7 +35,7 @@ const DogInfo = ({data, viewContact, viewProfile, viewCv}) => {
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
         <img src={data.image ? `${data.image}` : `${Blank}`} alt="" className="info__header__profileimg"/>
         <button className="dogcard__bookmark" onClick={handleClick}>
-          <Tooltip title="Add to shortlist" placement="top">
+          <Tooltip title="Add to favourites" placement="top">
             <AddIcon className="dogcard__bookmark--click dogcard__bookmark--profile"/>
           </Tooltip>
         </button>
