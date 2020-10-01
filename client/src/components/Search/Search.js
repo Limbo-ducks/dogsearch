@@ -37,7 +37,6 @@ const Search = ({ hits, setHits, user, match: { params: { breed }}}) => {
     <>
       <main className="main">
         <section className='mt-20 mb-8'>
-          <h1 className="searchtitle">Browse Dogs</h1>
           <div className='flex flex-row'>
             <Filter search={search} searchBreed={breed} />
             <ResultList data={hits} status={status} searchPerformed={searchPerformed} user={user} />

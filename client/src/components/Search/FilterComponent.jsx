@@ -43,9 +43,6 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
-  customWidth: {
-    maxWidth: 500,
-  },
   noMaxWidth: {
     maxWidth: 'none',
   },
@@ -59,7 +56,7 @@ export default function FilterComponent(props) {
     setExpanded(!expanded);
   };
 
-  const {primary, appearance, skills, experience, measurements, handleSubmit, searchBreed, handleBreedChange} = props;
+  const {primary, appearance, handleSubmit, searchBreed, handleBreedChange} = props;
   return (
     <Card className={`${classes.root} mx-8 filtercomponent`}>
       <CardHeader
@@ -76,14 +73,10 @@ export default function FilterComponent(props) {
         <div className='search-main'>
           {[...primary]}
         </div>
-        <h3>Appearance</h3>
-        <div className='search-appearance'>
-          {[...appearance]}
-        </div>
       </CardContent>
       {!expanded ? <button onClick={handleSubmit} className="searchengine__button">Search</button> : null}
       <Grid container direction="column" alignItems="center">
-      {/* <Typography gutterBottom>{!expanded ? <p>More Filters</p> : <p>Close More Filters</p>}</Typography>
+      <Typography gutterBottom >{!expanded ? <p>More Filters</p> : <p>Close More Filters</p>}</Typography>
       <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -93,26 +86,18 @@ export default function FilterComponent(props) {
           aria-label="show more"
         >
           <ExpandMoreIcon />
-        </IconButton> */}
+        </IconButton>
         
         </Grid>
-      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <h3>Skills</h3>
-          <div className={classes.root + ' search-skills'}>
-            {[...skills]}
-          </div>
-          <h3>Experience</h3>
-          <div className='search-experience'>
-            {[...experience]}
-          </div>
-          <h3>Measurements</h3>
-          <div className='search-measurements'>
-            {[...measurements]}
-          </div>
+          <h3>Appearance</h3>
+          <div className='search-appearance'>
+          {[...appearance]}
+        </div>
         </CardContent>
         {expanded ? <button onClick={handleSubmit} className="searchengine__button">Search</button> : null}
-      </Collapse> */}
+      </Collapse>
     </Card>
   );
 }
