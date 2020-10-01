@@ -58,7 +58,7 @@ const DogProfile = (props) => {
     
     status === 'loaded'? 
     <>
-      <LoggedInNav />
+      <LoggedInNav/>
       <main className="profile__main">
         <section className="profile__content">
           <DogInfo data={profileData} viewCalendar={viewCalendar} viewContact={viewContact} viewProfile={viewProfile} />
