@@ -2,12 +2,11 @@ import firebase from 'firebase'
 import 'firebase/storage'
 
 export const app = firebase.initializeApp({
-    "projectId": "talentwyre-154ae",
-    "appId": "1:323854692676:web:a6dd78803515c8288ca711",
-    "databaseURL": "https://talentwyre-154ae.firebaseio.com",
-    "storageBucket": "talentwyre-154ae.appspot.com",
-    "locationId": "us-central",
+    "projectId": "dogsearch-a791c",
+    "appId": process.env.FIREBASE_APP_ID,
+    "databaseURL": "https://dogsearch-a791c.firebaseio.com",
+    "storageBucket": "dogsearch-a791c.appspot.com",
     "apiKey": process.env.FIREBASE_SECRET,
-    "authDomain": "talentwyre-154ae.firebaseapp.com",
-    "messagingSenderId": "323854692676"
+    "authDomain": "dogsearch-a791c.firebaseapp.com",
+    "messagingSenderId": "1073307553577"
   });
