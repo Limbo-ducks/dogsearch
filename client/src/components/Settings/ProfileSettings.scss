@@ -1,6 +1,6 @@
 @import "../../variables.scss";
 
-.talent-registration {
+.profile-registration {
   h2 {
     font-size: 21px;
     margin: 5px 0;
@@ -31,8 +31,8 @@
   margin: 0;
 }
 
-.talent-registration-contact {
-  .talent-subfield {
+.profile-registration-contact {
+  .profile-subfield {
     display: grid;
     row-gap: 1em;
     column-gap: 1em;
@@ -70,8 +70,8 @@
 }
 
 
-.talent-registration-about {
-  .talent-subfield {
+.profile-registration-about {
+  .profile-subfield {
     display: grid;
     row-gap: 1em;
     column-gap: 1em;
@@ -119,102 +119,8 @@
   }
 }
 
-.talent-registration-appearance {
-  .talent-subfield {
-    display: grid;
-    row-gap: 1em;
-    column-gap: 1em;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "a a b b"
-    "c c d d"
-    "e e f f"
-    "i i - -"
-    "g g h h";
-
-    .age {
-      grid-area: a;
-    }
-    .hairColor {
-      grid-area: b;
-    }
-    .hairLength {
-      grid-area: c;
-    }
-    .eyeColor {
-      grid-area: d;
-    }
-    .gender {
-      grid-area: e;
-    }
-    .ethnicity {
-      grid-area: f;
-    }
-    .piercings {
-      grid-area: g;
-    }
-    .tattoos {
-      grid-area: h;
-    }
-    .nudity {
-      grid-area: i;
-    }
-  }
-}
-
-.talent-registration-measurements {
-  .talent-subfield {
-    display: grid;
-    row-gap: 1em;
-    column-gap: 1em;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto;
-  }
-}
-
-.talent-registration-experience {
-  .talent-subfield {
-    display: grid;
-    row-gap: 1em;
-    column-gap: 1em;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto;
-  }
-  .resumé {
-    grid-column-start: 1; 
-    grid-column-end: 4; 
-    grid-row-start: 1; 
-    grid-row-end: 2;
-  }
-}
-
-.talent-registration-social {
-  .media-field {
-    display: grid;
-    row-gap: 1em;
-    column-gap: 1em;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto;
-    margin: 0;
-  }
-  h3 {
-    color: rgba(0, 0, 0, 0.85);
-  }
-}
-
-.talent-registration-credits {
-  .talent-subfield {
-    display: grid;
-    row-gap: 1em;
-    column-gap: 1em;
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto;
-  }
-}
-
-.talent-registration-media {
-  .talent-subfield {
+.profile-registration-media {
+  .profile-subfield {
     display: grid;
     row-gap: 1em;
     column-gap: 1em;
@@ -223,27 +129,7 @@
   }
 }
 
-.talent-registration-representation {
-  .talent-subfield {
-    display: grid;
-    row-gap: 1em;
-    column-gap: 1em;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-}
-
-.talent-registration-union {
-  .talent-subfield {
-    display: grid;
-    row-gap: 1em;
-    column-gap: 1em;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-}
-
-.talent-registration-athletic {
+.profile-registration-additional {
   margin: 0 2%;
   .MuiFormLabel-root {
     color: rgba(0, 0, 0, 0.85);
@@ -255,80 +141,3 @@
     }
   }
 }
-
-.talent-registration-skills {
-  margin: 0 2%;
-  .MuiFormLabel-root {
-    color: rgba(0, 0, 0, 0.85);
-    font-size: 18px;
-  }
-  .MuiFormControl-root {
-    .MuiInput-root {
-      padding-bottom: 3%;
-    }
-  }
-}
-
-.talent-registration-accents {
-  margin: 0 2%;
-  .MuiFormLabel-root {
-    color: rgba(0, 0, 0, 0.85);
-    font-size: 18px;
-  }
-  .MuiFormControl-root {
-    .MuiInput-root {
-      padding-bottom: 3%;
-    }
-  }
-}
-
-.talent-registration-languages {
-  margin: 0 2%;
-  .MuiFormLabel-root {
-    color: rgba(0, 0, 0, 0.85);
-    font-size: 18px;
-  }
-  .MuiFormControl-root {
-    .MuiInput-root {
-      padding-bottom: 3%;
-    }
-  }
-}
-
-.talent-registration-additional {
-  margin: 0 2%;
-  .MuiFormLabel-root {
-    color: rgba(0, 0, 0, 0.85);
-    font-size: 18px;
-  }
-  .MuiFormControl-root {
-    .MuiInput-root {
-      padding-bottom: 3%;
-    }
-  }
-}
-
-.talent-registration-disabilities {
-  margin: 0 2%;
-  .MuiFormLabel-root {
-    color: rgba(0, 0, 0, 0.85);
-    font-size: 18px;
-  }
-  .MuiFormControl-root {
-    .MuiInput-root {
-      padding-bottom: 3%;
-    }
-    .MuiInputBase-root {
-      .MuiInput-underline:before {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.20)!important;
-      }
-    }
-  }
-}
-
-.athleticEndeavors {
-  .MuiTextField-root {
-    border: none;
-  }
-}
-

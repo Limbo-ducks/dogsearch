@@ -24,9 +24,9 @@ const useStyles = makeStyles({
 
 const theme = createMuiTheme({
   overrides: {
-      MuiInputLabel: { // Name of the component ⚛️ / style sheet
-          outlined: { // Name of the rule
-              transform: 'translate(14px, 14px) scale(1);', // Some CSS
+      MuiInputLabel: { 
+          outlined: {
+              transform: 'translate(14px, 14px) scale(1);', 
               'text-transform': 'capitalize',
           },
       },

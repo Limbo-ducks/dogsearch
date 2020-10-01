@@ -3,12 +3,16 @@ import './ProfileContent.scss'
 import Dashboard from './Dashboard';
 import ExampleImageOne from '../../assets/images/profile.jpg'
 
-const ProfileContent = ({ viewProjects, viewShortlist, viewCalendar, viewMessages }) => {
+const ProfileContent = ({ viewProjects, viewFavourites, viewCalendar, viewMessages }) => {
 
   return (
     <section className="content">
       <article className="content__navigation">
-        <Dashboard viewProjects={viewProjects} viewShortlist={viewShortlist} viewCalendar={viewCalendar} viewMessages={viewMessages} />
+        <Dashboard 
+          viewProjects={viewProjects} 
+          viewFavourites={viewFavourites} 
+          viewCalendar={viewCalendar} 
+          viewMessages={viewMessages} />
       </article>
       <h3 className="content__title">Posts</h3>
       <article className="post">
