@@ -11,37 +11,14 @@ const isFilledPath = path => R.pipe(
 const allPathsFilled = list => R.allPass(list.map(isFilledPath))
 
 const isComplete = allPathsFilled([
-  [ 'cast' ],
   [ 'name' ],
-  [ 'citizenship' ],
   [ 'age' ],
-  [ 'eyeColor' ],
-  [ 'hairColor' ],
-  [ 'hairLength' ],
-  [ 'gender' ],
-  [ 'ethnicity' ],
-  [ 'accent' ],
-  [ 'languages'],
   [ 'contact', 'address' ],
   [ 'contact', 'city' ],
   [ 'contact', 'postalCode' ],
   [ 'contact', 'country' ],
   [ 'contact', 'email' ],
   [ 'contact', 'phone' ],
-  [ 'measurements', 'height' ],
-  [ 'measurements', 'weight' ],
-  [ 'measurements', 'bodyType' ],
-  [ 'measurements', 'shirtSize' ],
-  [ 'measurements', 'sleeveLength' ],
-  [ 'measurements', 'neck' ],
-  [ 'measurements', 'jacketChest' ],
-  [ 'measurements', 'jacketLength' ],
-  [ 'measurements', 'waist' ],
-  [ 'measurements', 'inseam' ],
-  [ 'measurements', 'shoeWidth' ],
-  [ 'measurements', 'shoeLength' ],
-  [ 'measurements', 'gloves' ],
-  [ 'measurements', 'hat' ],
 ])
 
 const checkFinished = db => profile =>
