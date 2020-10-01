@@ -50,7 +50,6 @@ const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalend
       </article>
       <article className="info__content info__content--info">
         {data.name ? <h2 className="info__content__text">{data.name}</h2> : null}
-        {data.profession ? <h3 className="info__content__text">{upCaseFirst(data.profession)}</h3> : null}
       </article>
       <article className="info__nav">
         <button 
