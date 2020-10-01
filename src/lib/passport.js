@@ -13,7 +13,7 @@ module.exports = db => {
         { clientID, clientSecret, callbackURL },
         (_access, _refresh, profile, done) => {
             const id = profile.id.concat(':', profile.provider)
-            db.findById(id)
+            db.findByUserId(id)
             .then(currentUser => {
                 if(currentUser){
                     done(null, currentUser)
@@ -29,7 +29,7 @@ module.exports = db => {
 
     passport.serializeUser((profile, done) => {
         const id = profile.id.concat(':', profile.provider)
-        db.findById(id).then(user => {
+        db.findByUserId(id).then(user => {
             done(null, id)
         })
         

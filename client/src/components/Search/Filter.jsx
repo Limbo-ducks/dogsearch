@@ -11,7 +11,6 @@ import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/sty
 const useStyles = makeStyles({
   root: {
     padding: 0,
-    width: '48%',
     margin: '1.6% 0',
     3: {
       "max-width": "100%",
@@ -52,10 +51,6 @@ const Filter = ({ search, searchBreed }) => {
   
   const primary = [];
   const appearance = [];
-  const skills = [];
-  const experience = [];
-  const measurements = [];
-
   useEffect(() => {
     if (searchBreed) handleSubmit()
   }, [])
@@ -133,12 +128,6 @@ const Filter = ({ search, searchBreed }) => {
         primary.push(selectRoot(filter));
       } else if(filter.class === 'appearance') {
           appearance.push(selectRoot(filter));
-      } else if(filter.class === 'skills') {
-          skills.push(selectRoot(filter));
-      } else if(filter.class === 'experience') {
-          experience.push(selectRoot(filter));
-      } else {
-        measurements.push(selectRoot(filter));
       }
     })
   }
@@ -152,12 +141,10 @@ const Filter = ({ search, searchBreed }) => {
     {sortClasses()}
     <ThemeProvider theme={theme}>
       <section className="filterwrapper">
+        <h1 className="searchtitle">Browse Dogs</h1>
         <FilterComponent 
           primary={primary} 
           appearance={appearance} 
-          skills={skills} 
-          experience={experience}
-          measurements={measurements}
           handleSubmit={handleSubmit}
           searchBreed={searchBreed} 
           handleBreedChange={handleBreedChange}
