@@ -9,6 +9,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import HeaderBackground from '../../assets/images/background.jpg';
 import PetsIcon from '@material-ui/icons/Pets';
 import { Tooltip } from '@material-ui/core';
+import BlankProfile from '../../assets/images/blank-profile-picture.png'
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
@@ -17,7 +18,7 @@ const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalend
     <section className="info">
       <article className="info__header">
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
-        <img src={data.image} alt="" className="info__header__profileimg"/>
+        <img src={data.image ? data.image : BlankProfile} alt="" className="info__header__profileimg"/>
       </article>
       <article className="info__navigation">
         <Tooltip title="Home" placement="top">

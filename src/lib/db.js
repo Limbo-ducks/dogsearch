@@ -5,7 +5,7 @@ module.exports = client => {
   const db = client.db('dogsearch')
 
   const createUser = id =>
-    db.collection('dogs')
+    db.collection('users')
       .findOneAndUpdate({
         profile: id,
       }, {
@@ -24,19 +24,23 @@ module.exports = client => {
   const findById = id => 
     db.collection('dogs').findOne({ id }, { projection: { _id: 0 }})
 
+  const findByUserId = id => 
+    db.collection('users').findOne({ id }, { projection: { _id: 0 }})
+
   const search = query =>
     db.collection('dogs')
       .find(query, { projection: { _id: 0 }})
       .toArray()
 
   const updateProfile = (profile, data) =>
-    db.collection('dogs')
+    db.collection('users')
       .findOneAndUpdate({ profile }, { $set: data }, { returnOriginal: false })
       .then(R.prop('value'))
 
   return {
     createUser,
     findById,
+    findByUserId,
     search,
     updateProfile,
   }

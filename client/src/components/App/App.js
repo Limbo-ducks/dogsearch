@@ -22,7 +22,7 @@ function App () {
   }
 
   useEffect(() => {
-    fetch('/api/users/whoami')
+    fetch('/api/users/me')
       .then(res => res.json())
       .then(({ id }) => setUser(id))
       .catch(console.error)

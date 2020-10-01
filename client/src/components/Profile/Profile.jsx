@@ -30,7 +30,7 @@ const SearchProfile = (props) => {
   //profiles/${profileId}
   useEffect(()=>{
     if(status === 'loading'){
-          fetch(`/api/profiles/${profileId}`, 
+          fetch(`/api/users/me`, 
             {
               method:'GET',
               headers: {'Content-Type' : 'application/json'}
@@ -138,9 +138,6 @@ const SearchProfile = (props) => {
   });
   
   if(status === 'loaded') {
-    if (profileData.type === 'talent') {
-      return <Redirect to={`/profile/${profileData.id}`}></Redirect>
-    }
     return (
       <>
         <LoggedInNav viewMessages={viewMessages}/>
