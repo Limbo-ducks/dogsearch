@@ -242,24 +242,24 @@ const ProfileCalendar = ({ viewCalendar, available, unavailable }) => {
       {calendar.meetinginfo ?         
         <section className="modal__calendarinfo__details">
           <h3>Information</h3>
-            <article className="calendarinfotalent">
+            <article className="calendarinfodog">
               <h5>Dog:</h5>
-              <img src={Blank} alt="" className="calendarinfotalent__image"/>
-              <article className="calendarinfotalent__links">
-                <article className="calendarinfotalent__links__button"><PersonOutlineIcon/></article>
-                <article className="calendarinfotalent__links__button"><MailOutlineIcon/></article>
+              <img src={Blank} alt="" className="calendarinfodog__image"/>
+              <article className="calendarinfodog__links">
+                <article className="calendarinfodog__links__button"><PersonOutlineIcon/></article>
+                <article className="calendarinfodog__links__button"><MailOutlineIcon/></article>
             </article>
           </article>
-          <article className="calendarinfotalent__item">
+          <article className="calendarinfodog__item">
             <h4>Project:</h4><p> Example</p>
           </article>
-          <article className="calendarinfotalent__item">
+          <article className="calendarinfodog__item">
             <h4>Time:</h4><p> 09.00</p>
           </article>
-          <article className="calendarinfotalent__item">
+          <article className="calendarinfodog__item">
             <h4>Location:</h4><p> Online <a>link</a></p>
           </article>
-          <article className="calendarinfotalent__item calendarinfotalent__item--full">
+          <article className="calendarinfodog__item calendarinfodog__item--full">
             <h4>Description:</h4><p> Example</p>
           </article>
         </section> : null }

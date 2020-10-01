@@ -3,7 +3,6 @@ import './ProfileInfo.scss'
 import ExampleImageOne from '../../assets/images/profile.jpg'
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import EmailIcon from '@material-ui/icons/Email';
-import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import SettingsIcon from '@material-ui/icons/Settings';
 import HomeIcon from '@material-ui/icons/Home';
 import HeaderBackground from '../../assets/images/background.jpg';
@@ -13,7 +12,7 @@ import BlankProfile from '../../assets/images/blank-profile-picture.png'
 
 const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalendar, viewShortlist }) => {
+const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalendar, viewFavourites }) => {
   return (
     <section className="info">
       <article className="info__header">
@@ -38,7 +37,7 @@ const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalend
         <Tooltip title="Favourites" placement="top">
           <article onClick={(e) => {
             e.preventDefault();
-            viewShortlist(e.currentTarget)
+            viewFavourites(e.currentTarget)
             }}><PetsIcon />
           </article>
         </Tooltip>
@@ -52,15 +51,13 @@ const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalend
       </article>
       <article className="info__content info__content--info">
         {data.name ? <h2 className="info__content__text">{data.name}</h2> : null}
-        {data.profession ? <h3 className="info__content__text">{upCaseFirst(data.profession)}</h3> : null}
-        {/* <h3 className="info__content__text"><LocationOnOutlinedIcon/> {data.contact.city}, {data.contact.citizenship}</h3> */}
       </article>
       <article className="info__nav">
         <button 
           className="info__nav__button" 
           onClick={(e) => {
             e.preventDefault();
-            viewShortlist(e.currentTarget)
+            viewFavourites(e.currentTarget)
             }}>
           <article className="info__nav__button__icon">
             <PetsIcon />

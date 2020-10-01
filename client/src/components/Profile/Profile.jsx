@@ -2,24 +2,19 @@ import React, {useState, useEffect} from 'react'
 import  { Redirect } from 'react-router-dom'
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
 import ProfileInfo from './ProfileInfo.jsx';
-import ProfileProjects from './ProfileProjects.jsx';
-
-import './Profile.scss'
 import ProfileContent from './ProfileContent';
-import SingleProject from './SingleProject';
-import SingleProjectNav from './SingleProjectNav';
 import ModalFavourites from './ModalFavourites';
 import Projects from './Projects';
 import Messages from './Messages';
-import SearchProfileCalendar from './ProfileCalendar';
+import ProfileCalendar from './ProfileCalendar';
+import './Profile.scss'
 
 
 const SearchProfile = (props) => {
   const profileId = props.match.params.id
 
   const [openProfile, setOpenProfile] = useState(true);
-  const [openSingleProject, setOpenSingleProject,] = useState(false);
-  const [openShortlist, setOpenShortlist,] = useState(false);
+  const [openFavourites, setOpenFavourites,] = useState(false);
   const [openProjects, setOpenProjects,] = useState(false);
   const [openMessages, setOpenMessages,] = useState(false);
   const [openCalendar, setOpenCalendar,] = useState(false);
@@ -42,35 +37,24 @@ const SearchProfile = (props) => {
         }
   }, [status])
 
-  const viewSingleProject = () => {
-    setOpenSingleProject(true)
-    setOpenProfile(false)
-    setOpenShortlist(false)
-    setOpenProjects(false)
-    setOpenCalendar(false)
-  }
-
   const viewProfile = () => {
     setOpenProfile(true)
-    setOpenSingleProject(false)
-    setOpenShortlist(false)
+    setOpenFavourites(false)
     setOpenProjects(false)
     setOpenCalendar(false)
     setOpenMessages(false)
   }
 
-  const viewShortlist = () => {
-    if (!openShortlist) { 
-      setOpenShortlist(true)
-      setOpenSingleProject(true)
+  const viewFavourites = () => {
+    if (!openFavourites) { 
+      setOpenFavourites(true)
       setOpenProfile(false)
       setOpenProjects(false)
       setOpenCalendar(false)
     } else {
-      setOpenShortlist(false)
+      setOpenFavourites(false)
       setOpenProfile(true)
       setOpenProjects(false)
-      setOpenSingleProject(true)
       setOpenCalendar(false)
     }
   }
@@ -78,14 +62,12 @@ const SearchProfile = (props) => {
   const viewProjects = () => {
     if (!openProjects) { 
       setOpenProjects(true)
-      setOpenSingleProject(false)
       setOpenProfile(true)
-      setOpenShortlist(false)
+      setOpenFavourites(false)
       setOpenCalendar(false)
     } else {
       setOpenProjects(false)
-      setOpenShortlist(false)
-      setOpenSingleProject(false)
+      setOpenFavourites(false)
       setOpenCalendar(false)
       setOpenProfile(true)
     }
@@ -94,14 +76,12 @@ const SearchProfile = (props) => {
   const viewMessages = () => {
     if (!openMessages) { 
       setOpenMessages(true)
-      setOpenSingleProject(false)
       setOpenProfile(true)
-      setOpenShortlist(false)
+      setOpenFavourites(false)
       setOpenCalendar(false)
     } else {
       setOpenMessages(false)
-      setOpenShortlist(false)
-      setOpenSingleProject(false)
+      setOpenFavourites(false)
       setOpenCalendar(false)
       setOpenProfile(true)
     }
@@ -110,15 +90,13 @@ const SearchProfile = (props) => {
   const viewCalendar = () => {
     if (!openCalendar) { 
       setOpenCalendar(true)
-      setOpenSingleProject(false)
       setOpenProfile(true)
-      setOpenShortlist(false)
+      setOpenFavourites(false)
       setOpenMessages(false)
     } else {
       setOpenCalendar(false)
       setOpenMessages(false)
-      setOpenShortlist(false)
-      setOpenSingleProject(false)
+      setOpenFavourites(false)
       setOpenProfile(true)
     }
   }
@@ -143,14 +121,39 @@ const SearchProfile = (props) => {
         <LoggedInNav viewMessages={viewMessages}/>
         <main className="profile">
           <section className="profile__content">
-            <ProfileInfo data={profileData} viewProfile={viewProfile} viewProjects={viewProjects} viewMessages={viewMessages} viewCalendar={viewCalendar} viewShortlist={viewShortlist}/>
-            { openProfile ? <ProfileContent viewProjects={viewProjects} viewShortlist={viewShortlist} viewCalendar={viewCalendar} viewMessages={viewMessages}/> : null }
-            {/* { openSingleProject ? <><SingleProjectNav/><SingleProject viewShortlist={viewShortlist}/></> : null} */}
-            { openShortlist ? <ModalFavourites viewShortlist={viewShortlist}/> : null }
-            { openProjects ? <Projects viewShortlist={viewShortlist} viewProjects={viewProjects}/> : null }
-            { openMessages ? <Messages viewMessages={viewMessages}/> : null }
-            { openCalendar? <SearchProfileCalendar viewCalendar={viewCalendar} available={profileData.available} unavailable={profileData.unavailable}/> : null }
-            {/* <ProfileProjects viewSingleProject={viewSingleProject} viewShortlist={viewShortlist}/> */}
+            <ProfileInfo 
+              data={profileData} 
+              viewProfile={viewProfile} 
+              viewProjects={viewProjects} 
+              viewMessages={viewMessages} 
+              viewCalendar={viewCalendar} 
+              viewFavourites={viewFavourites}/>
+            { openProfile ? 
+            <ProfileContent 
+              viewProjects={viewProjects} 
+              viewFavourites={viewFavourites} 
+              viewCalendar={viewCalendar} 
+              viewMessages={viewMessages}/> 
+            : null }
+            { openFavourites ? 
+            <ModalFavourites 
+              viewFavourites={viewFavourites}/> 
+            : null }
+            { openProjects ? 
+            <Projects 
+              viewFavourites={viewFavourites} 
+              viewProjects={viewProjects}/> 
+            : null }
+            { openMessages ? 
+            <Messages 
+              viewMessages={viewMessages}/> 
+            : null }
+            { openCalendar? 
+            <ProfileCalendar 
+              viewCalendar={viewCalendar} 
+              available={profileData.available} 
+              unavailable={profileData.unavailable}/> 
+            : null }
           </section>
         </main>
       </> 

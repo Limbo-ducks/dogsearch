@@ -17,6 +17,7 @@ import Copyright from '../Copyright/Copyright.jsx';
 const Login = props => {
   const classes = useStyles();
 
+  console.log(props)
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />

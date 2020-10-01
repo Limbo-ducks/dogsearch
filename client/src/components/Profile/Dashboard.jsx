@@ -7,7 +7,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import PeopleIcon from '@material-ui/icons/People';
 
-const Dashboard = ({ viewProjects, viewShortlist, viewCalendar, viewMessages }) => {
+const Dashboard = ({ viewProjects, viewFavourites, viewCalendar, viewMessages }) => {
 
   return (
       <section className="dashboard">
@@ -20,7 +20,7 @@ const Dashboard = ({ viewProjects, viewShortlist, viewCalendar, viewMessages }) 
         <button className="dashboard__button" onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            viewShortlist(e.currentTarget)
+            viewFavourites(e.currentTarget)
             }}>
           <h5 className="dashboard__button__text">My Favorites</h5>
           <article className="dashboard__button__icon">
