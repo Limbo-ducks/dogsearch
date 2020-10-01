@@ -25,7 +25,7 @@ const SearchProfile = (props) => {
   //profiles/${profileId}
   useEffect(()=>{
     if(status === 'loading'){
-          fetch(`/api/profiles/${profileId}`, 
+          fetch(`/api/users/me`, 
             {
               method:'GET',
               headers: {'Content-Type' : 'application/json'}
@@ -116,7 +116,6 @@ const SearchProfile = (props) => {
   });
   
   if(status === 'loaded') {
-
     return (
       <>
         <LoggedInNav viewMessages={viewMessages}/>

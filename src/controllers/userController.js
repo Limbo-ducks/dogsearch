@@ -30,7 +30,7 @@ const checkFinished = db => profile =>
 
 const getProfile = db => (req, res, next) => {
   if (!req.user) return res.json({ id: '' })
-  db.findById(req.user.id)
+  db.findByUserId(req.user.id)
     .then(data => res.json(data))
     .catch(next)
 }
