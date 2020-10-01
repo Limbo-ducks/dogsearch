@@ -19,43 +19,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .professionYears {
-        width: 100%;
-    }
+
     * {
         margin: 1% 0;
     }
-}
-
-.search-appearance {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    .ethnicity {
-        width: 100% !important;
-    }
-    .bodyModifications {
-        width: 100% !important;
-    }
-}
-
-.search-skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.search-experience {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.search-measurements {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: fit-content;
 }
 
 .MuiTypography-gutterBottom {

@@ -116,9 +116,7 @@ const SearchProfile = (props) => {
   });
   
   if(status === 'loaded') {
-    if (profileData.type === 'talent') {
-      return <Redirect to={`/profile/${profileData.id}`}></Redirect>
-    }
+
     return (
       <>
         <LoggedInNav viewMessages={viewMessages}/>
