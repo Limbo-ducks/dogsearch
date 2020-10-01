@@ -9,14 +9,26 @@ const redirect = NODE_ENV === 'dev'
 module.exports = db => {
   const passport = passFn(db);
 
-  router.get('/google', passport.authenticate('google', {
+  // router.get('/google', passport.authenticate('google', {
+  //   scope: ['openid']
+  // }))
+
+  router.get('/google', (req, res, next) => {
+    req.session.lastQuery = req.query;
+    return next();
+  }, passport.authenticate('google', {
     scope: ['openid']
   }))
 
   router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: `${redirect}login`}), (req, res) => {
-      console.log(req.session);
-      res.redirect(`${redirect}profile/${req.user.id}`)
+      const { lastQuery } = req.session;
+      const dogId = lastQuery.dogId
+
+      if(dogId) {
+        res.redirect(`${redirect}${dogId}`)
+      }
+      res.redirect(`${redirect}profile/${req.user.id}`) 
     })
   
   router.get('/logout', (req, res) => {

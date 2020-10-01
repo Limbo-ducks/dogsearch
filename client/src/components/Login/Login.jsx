@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -14,10 +14,21 @@ import Typography from '@material-ui/core/Typography'
 import useStyles from './Styles.js'
 import Copyright from '../Copyright/Copyright.jsx';
 
+
 const Login = props => {
   const classes = useStyles();
+  const [dog, setDog] = useState(false); 
 
-  console.log(props)
+  const dogId = props.location.dog;
+
+  const sendDog = () => {
+    if(dogId === undefined) {
+      setDog(true)
+    } else {
+      setDog(false)
+    }
+  }
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -78,7 +89,11 @@ const Login = props => {
                 </Link>
               </Grid>
             </Grid>
-            <Link href="/api/auth/google" className={classes.google}>
+            <Link 
+              href={!dog ? `/api/auth/google?dogId=${dogId}` : '/api/auth/google' } 
+              className={classes.google}
+              onClick={sendDog}
+              >
               Google login
             </Link>
             <Box mt={5}>

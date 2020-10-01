@@ -16,7 +16,7 @@ function App () {
   const [openMenu, setOpenMenu] = useState(false)
   const [user, setUser] = useState('')
   const [status, setStatus] = useState('loading')
-
+  
   const burgerMenu = () => {
     openMenu ? setOpenMenu(false) : setOpenMenu(true)
   }

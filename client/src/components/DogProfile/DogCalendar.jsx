@@ -68,7 +68,6 @@ const DogCalendar = ({dates, unavailable}) => {
   }
 
   const messageType = (e) => {
-    console.log(e.currentTarget.id)
     if(e.currentTarget.id === 'videotype'){
       setCalendar({
         ...calendar,
