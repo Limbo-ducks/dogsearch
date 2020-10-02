@@ -20,12 +20,16 @@
 			min-height: 70vh;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: center;
 
 			@media (min-width: $breakpoint-md) {
 				min-height: calc(100vh - 50px);
 				width: 50%;
+			}
+
+			@media (min-width: $breakpoint-lg) {
+				justify-content: center;
 			}
 
 			&__background {
@@ -40,6 +44,11 @@
 				margin: 10px;
 
 				@media (min-width: $breakpoint-md) {
+					width: 90%;
+					margin: 0px;
+				}
+
+				@media (min-width: $breakpoint-lg) {
 					width: 60%;
 					margin: 0px;
 				}

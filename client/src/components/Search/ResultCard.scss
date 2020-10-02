@@ -103,6 +103,7 @@
 
 	&__name {
 		display: flex;
+		flex-direction: column;
 	}
 
 	&__premium {
@@ -228,7 +229,7 @@
 				height: calc(30vh - 50px);
 			}
 			
-			h3 {
+			h2 {
 				font-size: 24px;
 				margin-right: 10px;
 			}
@@ -263,30 +264,38 @@
 		&__button {
 			position: absolute;
 			bottom: 20px;
-			left: 50%;
+			left: 48%;
 			transform: translate(-50%, -50%);
-			width: 50%;
-			background-color: $teal;
+			width: 80%;
+			background-color: $teal-dark;
 			text-align: center;
 			margin: 10px;
 			padding: 2px 20px;
 			border-radius: 3px;
-			color: $black;
-			font-family: "Mulish", sans-serif;
-			font-size: 16px;
-			text-transform: uppercase;
+			color: $white;
 			transition: ease-in-out 0.5s;
 			box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);	
 			z-index: 5000;
 
+			@media (min-width: $breakpoint-md) {
+				width: 40%;
+			}
+
+			button {
+				font-family: $header;
+				font-size: 16px;
+				text-transform: uppercase;
+			}
+
 			&:hover {
-				background-color: $teal-light;
+				background-color: $teal;
 			}
 		}
 	}
 
 	&__attributes {
 		display: flex;
+		margin-top: 10px;
 
 		&__items {
 			display: flex;

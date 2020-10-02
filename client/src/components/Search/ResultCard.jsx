@@ -64,7 +64,7 @@ function ResultCard (props) {
             <section className="modal__profile__info">
               <article className="modal__profile__info__attributes">
                 <article className="modal__name">
-                  <h3><b>{props.name}, </b></h3>
+                  <h2>{props.name}</h2>
                   <h3><i>{props.breed}</i></h3>
                 </article>
                 <article className="modal__attributes">
