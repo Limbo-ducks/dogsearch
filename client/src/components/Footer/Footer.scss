@@ -100,6 +100,13 @@
           text-align: center;
         }
       }
+
+      li {
+        margin: 5px;
+        svg {
+          font-size: 0.4rem;
+        }
+      }
     }
   }
 }

@@ -1,22 +1,31 @@
 @import "../../variables.scss";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 p {
   font-family: $paragraph;
+  font-size: 16px;
+  text-align: justify;
 }
 
 h2 {
   font-family: $header;
+  font-size: 24px;
 }
 
 h3 {
-  font-family: $sub-header;
-  font-size: 18px;
-  font-weight: 600;
+  font-family: $header;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 h4 {
   font-family: $sub-header;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 

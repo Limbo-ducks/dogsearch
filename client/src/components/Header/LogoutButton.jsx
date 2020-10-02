@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import './Buttons.scss'
 
-const AuthenticatedButtons = () => {
+const AuthenticatedButtons = ({ onClick }) => {
   const [status, setStatus] = useState('loading')
   const [userData, setUserData] = useState({})
 
@@ -25,6 +25,7 @@ const AuthenticatedButtons = () => {
       {status === 'loaded'?
         <a href={`/profile/${userData.id}`}
           className="header__buttons__button header__buttons__button--login"
+          onClick={onClick}
         >
           My Profile
         </a>
@@ -33,6 +34,7 @@ const AuthenticatedButtons = () => {
 
       <a href='/api/auth/logout'
         className="header__buttons__button header__buttons__button--signup"
+        onClick={onClick}
       >
         Log out
       </a>

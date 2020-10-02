@@ -7,13 +7,12 @@
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
-    width: calc(100%);
-    margin: 10px auto;
+    width: 100%;
 
     &__item {
       position: relative;
       margin: 0px 5px 10px 5px;
-      width: calc(33% - 10px);
+      width: calc(100% / 3 - 10px);
   
       img {
         height: 150px;
@@ -41,7 +40,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: $header;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 600px;
         color: $white;
         text-transform: capitalize;

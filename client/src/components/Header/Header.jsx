@@ -6,7 +6,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
 import PetsIcon from '@material-ui/icons/Pets';
 
-const Header = ({ burgerMenu, openMenu, user }) => {
+const Header = ({ burgerMenu, openMenu, setOpenMenu, user }) => {
   return (
     <header className="header">
       <article className="header__logo">
@@ -15,7 +15,7 @@ const Header = ({ burgerMenu, openMenu, user }) => {
           <h1>Dog Search</h1>
         </Link>
       </article>
-        {!openMenu ? <Nav authenticated={true} user={user}/> : null}
+        {!openMenu ? <Nav authenticated={true} user={user} setOpenMenu={setOpenMenu}/> : null}
 
         <section className="header__burger">
         <a onClick={(e) => {
