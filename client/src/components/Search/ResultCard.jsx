@@ -9,9 +9,11 @@ import ExampleImageThree from '../../assets/images/daschund.jpg'
 import AddIcon from '@material-ui/icons/Add';
 import Popover from '@material-ui/core/Popover';
 import PopoverContent from './PopoverContent';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import InfoIcon from '@material-ui/icons/Info';
 import BlankImage from '../../assets/images/blank-profile-picture.png';
 import PetsIcon from '@material-ui/icons/Pets';
+import StarIcon from '@material-ui/icons/Star';
+import CheckIcon from '@material-ui/icons/Check';
 
 function ResultCard (props) {
   const { measurements } = props;
@@ -46,7 +48,7 @@ function ResultCard (props) {
         aria-describedby="simple-modal-description"
       >
         <section className="modal">
-          {props.premium ? <h3 className="modal__premium"><PetsIcon/></h3> : null}
+          {props.premium ? <h3 className="modal__premium"><StarIcon/></h3> : null}
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
             <img 
@@ -64,16 +66,17 @@ function ResultCard (props) {
             <section className="modal__profile__info">
               <article className="modal__profile__info__attributes">
                 <article className="modal__name">
-                  <h2>{props.name}</h2>
-                  <h3><i>{props.breed}</i></h3>
+                  <h2><PetsIcon />{props.name}</h2>
                 </article>
                 <article className="modal__attributes">
-                  <InfoOutlinedIcon/>
+                  <InfoIcon/>
                   <article className="modal__attributes__items">
-                    <h4><b>Colour:</b> {props.color}</h4>
-                    <h4><b>Size:</b> {props.size}</h4>
-                    <h4><b>Gender:</b> {props.gender}</h4>
-                    <h4></h4>
+                    <article><h4>Colour:</h4><p>{props.color}</p></article>
+                    <article><h4>Size:</h4><p>{props.size}</p></article>
+                    <article><h4>Gender:</h4><p>{props.gender}</p></article>
+                    <article><h4>Age:</h4><p>{props.age} Years</p></article>
+                    <article><h4>Breed:</h4><p>{props.breed}</p></article>
+                    <article><h4>Childfriendly:</h4><p><CheckIcon /></p></article>
                   </article>
                 </article>
               </article>
