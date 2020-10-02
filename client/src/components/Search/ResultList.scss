@@ -4,14 +4,14 @@
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 5% auto 0 auto;
     justify-content: center;
-    width: 100%;
-
-    @media (min-width: $breakpoint-md) {
-    // width: 72%;
-      }
-}
+    width: 70%;
+    
+    @media (min-width: $breakpoint-lg) {
+			justify-content: flex-start;
+    }
+  }
 
 .MuiPagination-root {
   width: 100%;

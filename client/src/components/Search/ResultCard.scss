@@ -19,23 +19,27 @@
 	}
 
 		@media (min-width: $breakpoint-sm) {
-			width: calc(100% - 30px);
+			max-width: calc(100% - 30px);
+		}
+
+		@media (min-width: $breakpoint-sm-md) {
+			max-width: calc(70% - 30px);
 		}
 
 		@media (min-width: $breakpoint-md) {
-			width: calc(50% - 30px);
+			max-width: calc(70% - 30px);
 		}
 
 		@media (min-width: $breakpoint-lg) {
-			width: calc(30% - 30px);
+			max-width: calc(40% - 30px);
 		}
 
 		@media (min-width: $breakpoint-xl) {
-			width: calc(33% - 30px);
+			max-width: calc(30% - 30px);
 		}
 
 		@media (min-width: $breakpoint-xxl) {
-			width: calc(25% - 30px);
+			max-width: calc(25% - 30px);
 		}
 
 	&__bookmark {
