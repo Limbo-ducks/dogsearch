@@ -13,7 +13,7 @@ const Grid = () => {
     <section className="grid">
       <section className="grid__wrapper">
         <article className="grid__wrapper__item">
-        <Link to="/search/golden">
+        <Link to="/search/goldenRetriever">
           <img src={Golden} alt=""/>
           <h2>Golden Retrievers</h2>
         </Link>

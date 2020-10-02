@@ -18,7 +18,9 @@ const parseLists = R.pipe(
 )
 
 const parseBreed = breed => {
-  return {'breed': {$in : breed }};
+  console.log(breed)
+  return breed.length ? {'breed': {$in : breed }} : {'breed': {$exists: true, $ne: [] }}; 
+  
 }
 
 const parseRanges = fields => ({
