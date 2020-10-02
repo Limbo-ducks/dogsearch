@@ -5,23 +5,30 @@ import Buttons from '../Header/Buttons';
 
 import './Nav.scss'
 
-function Nav ({ authenticated, user }) {
+const Nav = ({ authenticated, user, setOpenMenu }) => {
+
+  const onClick = () => {
+    if (document.documentElement.clientWidth < 821) {
+      setOpenMenu(true)
+    }
+  }
+  
   return (
     <nav className="header__nav">
+            {user
+          ? <LogoutButton onClick={onClick}/>
+          : <Buttons onClick={onClick}/>}
       <ul className="header__nav__list">
-        <Link to='/'>
+        <Link to='/' onClick={onClick}>
           <li>Home</li>
         </Link>
-        <Link to='/search'>
+        <Link to='/search' onClick={onClick}>
           <li>Find Dog</li>
         </Link>
-        {authenticated && <Link to='/about'>
+        <Link to='/about' onClick={onClick}>
           <li>About</li>
-        </Link>}
+        </Link>
       </ul>
-      {user
-          ? <LogoutButton />
-          : <Buttons />}
     </nav>
   )
 }

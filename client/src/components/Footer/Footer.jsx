@@ -1,13 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
-import Icon from '../../assets/images/Icon.png'
+import Icon from '../../assets/images/Icon.png';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import PetsIcon from '@material-ui/icons/Pets';
 
 const Footer = () => {
   return (
     <footer className="footer">
       <section className="footer__icon">
-        <img src={Icon} alt=""/>
+        <PetsIcon />
       </section>
       <section className="footer__wrapper">
         <article className="footer__wrapper__list">
@@ -84,14 +86,19 @@ const Footer = () => {
       <span className="footer__divider"></span>
       <section className="footer__info">
         <h4 className="footer__info__text">© 2020 LIMBO DUCKS. All rights reserved</h4>
-        <article className="footer__info__links">
-          <Link to='/'>
-            <h4 className="footer__info__links__link">/ Privacy Policy </h4>
-          </Link>
-          <Link to='/'>
-            <h4 className="footer__info__links__link"> / Terms of use</h4>
-          </Link>
-        </article>
+        <ul className="footer__info__links">
+          <li>
+            <Link to='/'>
+              <h5 className="footer__info__links__link">Privacy Policy</h5>
+            </Link>
+          </li>
+          <li><FiberManualRecordIcon/></li>
+          <li>
+            <Link to='/'>
+              <h5 className="footer__info__links__link">Terms of use</h5>
+            </Link>
+          </li>
+        </ul>
       </section>
     </footer>
   )

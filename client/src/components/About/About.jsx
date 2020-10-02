@@ -14,7 +14,9 @@ const About = () => {
           <section className="about__item">
             <section className="about__item__content">
               <h3>About DogSearch</h3>
-              <p>Note! DogSearch is not a real company and the dogs you see on this page is not up for adoption. DogSearch is a website concept developed by a team from salt to showcase web development abilities.</p>
+              <p><b>Note!</b> DogSearch is not a real company and the dogs you see on this page is not up for adoption. DogSearch is a community concept developed for people that are looking to adopt a dog or have adopted a dog and wish to stay in touch with likeminded people.</p>
+              <h3>How it works</h3>
+              <p>On DogSearch, you can find dogs that are up for adoption, view their profiles to learn more, create your own profile and then be able to send adoption and meeting requests and much more. It is a service and a community all in one.</p>
             </section>
             <section className="about__item__content">
               <img src="" alt=""/>
@@ -22,7 +24,7 @@ const About = () => {
             </section>
             <section className="about__item__content">
               <h3>About Us</h3>
-              <p>This website was created by the efforts of a team of developers from salt's spring 2020 bootcamp (Artur, Christian, Konrad, Marie and Ninni) . The concept of DogSearch was created by Marie Winther Madsen and Ninni Hagström.            </p>
+              <p>This website was created by the efforts of a team of developers from salt's spring 2020 bootcamp (Artur Zapater, Christian Davidov, Konrad Guzior, Marie Madsen Winther and Ninni Hagström) . The concept of DogSearch was created by Marie Winther Madsen and Ninni Hagström.            </p>
               <h3>MERN Stack</h3>
               <ul>
                 <li>MongoDb</li>

@@ -38,9 +38,13 @@ function App () {
     }, true);
   }, [])
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0)
+  })
+
   return (
     <Router>
-      <Header openMenu={openMenu} burgerMenu={burgerMenu} user={user} />
+      <Header openMenu={openMenu} setOpenMenu={setOpenMenu} burgerMenu={burgerMenu} user={user} />
       {status === 'loading'
         ? <div>Loading...</div>
         : <Switch>
