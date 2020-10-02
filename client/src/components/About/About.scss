@@ -36,7 +36,13 @@
 			}
 
 			&__content {
-				width: 60%;
+				width: 75%;
+				margin: 10px;
+
+				@media (min-width: $breakpoint-md) {
+					width: 60%;
+					margin: 0px;
+				}
 
 				h3 {
 					text-align: center;
@@ -55,6 +61,10 @@
 						width: 50%;
 						text-align: center;
 					}
+				}
+
+				img {
+					margin: 10px auto;
 				}
 			}
 		}
