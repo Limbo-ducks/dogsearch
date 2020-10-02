@@ -1,6 +1,7 @@
 const R = require('ramda')
 const { shuffle } = require('../lib/helpers')
 const util = require('util')
+const db = require('../lib/db')
 
 const makeOperation = operator => ([ key, val ]) => [ key, { [operator]: val } ]
 
@@ -16,10 +17,9 @@ const parseLists = R.pipe(
   Object.fromEntries
 )
 
-const parseCredit = R.pipe(
-  R.map(x => [ `${x}`, { $exists: true, $ne: [] } ]),
-  Object.fromEntries
-)
+const parseBreed = breed => {
+  return {'breed': {$in : breed }};
+}
 
 const parseRanges = fields => ({
   $and: Object.entries(fields)
@@ -29,8 +29,8 @@ const parseRanges = fields => ({
     ])
 })
 
-const makeQuery = ({ credit = [], options, ranges }) => ({
-  ...parseCredit(credit),
+const makeQuery = ({ breed = [], options, ranges }) => ({
+  ...parseBreed(breed),
   ...parseLists(options),
   ...parseRanges(ranges),
   finishedProfile: true,
