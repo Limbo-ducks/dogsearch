@@ -6,7 +6,7 @@
 
 .dogcard {
 	width: calc(100% - 30px);
-	max-width: 250px;
+	max-width: 400px;
 	margin: 15px;
 	position: relative;
 	transition: ease-in-out 0.2s;
@@ -27,7 +27,7 @@
 		}
 
 		@media (min-width: $breakpoint-lg) {
-			width: calc(50% - 30px);
+			width: calc(30% - 30px);
 		}
 
 		@media (min-width: $breakpoint-xl) {
