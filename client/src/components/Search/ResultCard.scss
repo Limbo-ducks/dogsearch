@@ -324,7 +324,11 @@
 
 			article {
 				display: flex;
-				width: 50%;
+				width: calc(50% - 10px);
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				margin: 0 5px;
 
 				h4 {
 					font-weight: 600;

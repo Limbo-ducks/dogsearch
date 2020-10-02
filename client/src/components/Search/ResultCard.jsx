@@ -60,7 +60,7 @@ function ResultCard (props) {
                 onClick={handleClick} 
                 className="modal__buttons__button modal__buttons__button--save">
                 Favourite
-                  <AddIcon/>             
+                <AddIcon/>             
               </button>
             </article>
             <section className="modal__profile__info">

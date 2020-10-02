@@ -7,6 +7,7 @@ import PetsIcon from '@material-ui/icons/Pets';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import HomeIcon from '@material-ui/icons/Home';
+import CheckIcon from '@material-ui/icons/Check';
 
 import Blank from '../../assets/images/blank-profile-picture.png';
 import HeaderBackground from '../../assets/images/background.jpg';
@@ -34,7 +35,7 @@ const DogInfo = ({data, viewContact, viewProfile, viewCv}) => {
       <article className="info__header">
         <img src={HeaderBackground} alt="" className="info__header__banner"/>
         <img src={data.image ? `${data.image}` : `${Blank}`} alt="" className="info__header__profileimg"/>
-        <button className="dogcard__bookmark" onClick={handleClick}>
+        {/* <button className="dogcard__bookmark" onClick={handleClick}>
           <Tooltip title="Add to favourites" placement="top">
             <AddIcon className="dogcard__bookmark--click dogcard__bookmark--profile"/>
           </Tooltip>
@@ -55,7 +56,7 @@ const DogInfo = ({data, viewContact, viewProfile, viewCv}) => {
             horizontal: 'center',
           }}>
           <PopoverContent/>
-      </Popover>
+      </Popover> */}
       </article>
       <article className="info__navigation">
         <Tooltip title="View Home" placement="top">
@@ -73,28 +74,27 @@ const DogInfo = ({data, viewContact, viewProfile, viewCv}) => {
           </article>
         </Tooltip>
         <Tooltip title="View Videos" placement="top">
-          <article ><VideoLibraryIcon />
+          <article><VideoLibraryIcon />
           </article>
         </Tooltip>
-        {/* <Tooltip title="View Calendar" placement="top">
-          <article onClick={(e) => {
-            e.preventDefault();
-            viewCalendar(e.currentTarget)
-            }}><DateRangeIcon />
-          </article>
-        </Tooltip> */}
       </article>
       <article className="info__content">
         <h2 className="info__content__text"><PetsIcon/> 
-        <i>{data.name === '' ? 'Unknown' : `${data.name}, ${data.breed}`}</i>
+          {data.name === '' ? 'Unknown' : `${data.name}`}
         </h2>
         <article className="info__content__attributes">
           <InfoIcon/>
           <article className="info__content__attributes__text">
-            <h3 className="info__content__text"><b>Size:</b> {data.size}</h3>
-            <h3 className="info__content__text"><b>Colour:</b> {upCaseFirst(data.color)}</h3>
-            <h3 className="info__content__text"><b>Fur:</b> {data.fur}</h3>
-            <h3 className="info__content__text"><b>Age:</b> {data.age} years</h3>
+            <article><h4>Age:</h4><p>{data.age} Years</p></article>
+            <article><h4>Size:</h4><p>{data.size}</p></article>
+            <article><h4>Colour:</h4><p>{data.color}</p></article>
+            <article><h4>Fur:</h4><p>{data.fur}</p></article>
+            <Tooltip title={data.breed} placement="top">
+              <article><h4>Breed:</h4><p>{data.breed}</p></article>
+            </Tooltip>
+            <article><h4>Child friendly:</h4><p><CheckIcon/></p></article>
+            <article><h4>Cat friendly:</h4><p><CheckIcon/></p></article>
+            <article><h4></h4><p></p></article>
           </article>
         </article>
       </article>
