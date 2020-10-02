@@ -82,17 +82,18 @@
 
 .filterwrapper {
     // max-width: 70%;
-    max-width: 560px;
+    width: -webkit-fill-available;
+    max-width: 100%;
     padding: 15px;
     margin: 0 auto;
 
-    // @media (min-width: $breakpoint-md) {
-    //     max-width: 85%;
-    // }
+    @media (min-width: $breakpoint-sm-md) {
+        width: 70%;
+    }
 
-    // @media (min-width: $breakpoint-lg) {
-    //     max-width: 90%;
-    // }
+    @media (min-width: $breakpoint-md) {
+        width: auto;
+    }
 }
 
 .MuiCardContent-root {

@@ -1,15 +1,15 @@
 @import "../../variables.scss";
 
 .filtercomponent {
-    width: 380px;
+    max-width: 340px;
     background-color: $bright-seaweed!important;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
 
     @media (min-width: $breakpoint-md) {
-        width: 530px;
+        max-width: 530px;
     }
     @media (min-width: $breakpoint-lg) {
-        width: 300px;
+        max-width: 380px;
     }
 }
 
