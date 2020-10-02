@@ -1,6 +1,5 @@
 import React from 'react'
 import './ProfileInfo.scss'
-import ExampleImageOne from '../../assets/images/profile.jpg'
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import EmailIcon from '@material-ui/icons/Email';
 import SettingsIcon from '@material-ui/icons/Settings';

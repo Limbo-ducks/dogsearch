@@ -27,7 +27,7 @@ function ResultList (props) {
         (props.searchPerformed ?
         <p className="errormessage">No Results Were Found. Please Adjust Your Filter And Try Again</p> 
         : 
-        <p className="errormessage">Make a Search to Find Dogs</p>))}
+        <p className="errormessage">Make a Search to Find A Dog to Adopt</p>))}
     
       
       {props.status ==='idle' && props.data.length ? <Pagination count={pages} onChange={(_, p) => setPage(p)} /> : null }
