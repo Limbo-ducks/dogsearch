@@ -6,10 +6,12 @@ const options = [
     { value: 'beagle', text: 'Beagle' },
     { value: 'goldenRetriever', text: 'Golden Retriever' },
     { value: 'labrador', text: 'Labrador' },
+    { value: 'pitbull', text: 'Pitbull' },
     { value: 'pug', text: 'Pug' },
     { value: 'daschhound', text: 'Daschhound' },
     { value: 'germanShepherd', text: 'German Shepherd' },
-    { value: 'corgi', text: 'Corgi' }
+    { value: 'corgi', text: 'Corgi' },
+    { value: 'mixed', text: 'Mixed' }
 ]
 
 const getDefValue = def => {
