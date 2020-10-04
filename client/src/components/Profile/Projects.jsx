@@ -2,7 +2,7 @@ import React from 'react'
 import './Projects.scss'
 
 import DateRangeIcon from '@material-ui/icons/DateRange';
-import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
+import CancelIcon from '@material-ui/icons/Cancel';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import BookmarksOutlinedIcon from '@material-ui/icons/BookmarksOutlined';
@@ -17,7 +17,7 @@ const Projects = ({ viewProjects }) => {
             e.preventDefault();
             e.stopPropagation();
             viewProjects(e.currentTarget)
-            }} className="contentmodal__exit"><CancelOutlinedIcon/>
+            }} className="contentmodal__exit"><CancelIcon/>
       </article>
       <h2 className="contentmodal__title">All projects</h2>
       <article className="projects">

@@ -67,10 +67,7 @@ const DogInfo = ({data, viewContact, viewProfile, viewCv}) => {
           </article>
         </Tooltip>
         <Tooltip title="View Gallery" placement="top">
-          <article onClick={(e) => {
-            e.preventDefault();
-            viewCv(e.currentTarget)
-            }}><PhotoLibraryIcon />
+          <article><PhotoLibraryIcon />
           </article>
         </Tooltip>
         <Tooltip title="View Videos" placement="top">

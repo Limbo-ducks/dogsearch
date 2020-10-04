@@ -86,7 +86,7 @@ const Settings = ({ history, user }) => {
 
   return (
     <section className='add-profile my-32'>
-      <h1 className='m-0 ml-4 h-2' >Tell us about yourself!</h1>
+      <h2 className='m-0 ml-4 h-2' >Update your profile</h2>
       <ProfileSettings
         checked={checked}
         data={data}

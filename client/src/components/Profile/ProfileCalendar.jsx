@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 import { isSameDay, parseISO } from "date-fns";
-import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
+import CancelIcon from '@material-ui/icons/Cancel';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
@@ -79,7 +79,7 @@ const ProfileCalendar = ({ viewCalendar, available, unavailable }) => {
             e.preventDefault();
             e.stopPropagation();
             viewCalendar(e.currentTarget)
-            }} className="contentmodal__exit"><CancelOutlinedIcon/>
+            }} className="contentmodal__exit"><CancelIcon/>
       </article>
       <article className="modal__calendar">
         <Calendar tileClassName={tileClassName} onClickDay={onClickDay}/>

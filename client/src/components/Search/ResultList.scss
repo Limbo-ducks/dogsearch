@@ -4,12 +4,22 @@
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    margin: 5% auto 0 auto;
     justify-content: center;
-    width: 70%;
-    
+    max-width: 1200px;
+    margin: 5% auto;
+
+    @media (min-width: $breakpoint-md) {
+
+    }
+
     @media (min-width: $breakpoint-lg) {
-			justify-content: flex-start;
+      margin: 9% auto;
+    }
+    
+    @media (min-width: $breakpoint-xl) {
+      justify-content: flex-start;
+      width: 70%;
+      margin: 5% auto;
     }
   }
 

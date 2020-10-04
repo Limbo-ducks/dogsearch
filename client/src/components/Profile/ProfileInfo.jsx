@@ -9,9 +9,7 @@ import PetsIcon from '@material-ui/icons/Pets';
 import { Tooltip } from '@material-ui/core';
 import BlankProfile from '../../assets/images/blank-profile-picture.png'
 
-const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
-
-const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalendar, viewFavourites }) => {
+const ProfileInfo = ({ data, viewMessages, viewProfile, viewCalendar, viewFavourites }) => {
   return (
     <section className="info">
       <article className="info__header">
@@ -63,17 +61,15 @@ const ProfileInfo = ({ data, viewMessages, viewProfile, viewProjects, viewCalend
           </article>
           <h4 className="info__nav__button__text">My Favourites</h4>
         </button>
-        <button 
-          className="info__nav__button"
-          onClick={(e) => {
-            e.preventDefault();
-            viewCalendar(e.currentTarget)
-            }}>
-          <article className="info__nav__button__icon">
-            <DateRangeIcon />
-          </article>
-          <h4 className="info__nav__button__text">My Calendar</h4>
-        </button>
+        <Tooltip title="Not implemented" className="tooltip">
+          <button 
+            className="info__nav__button">
+            <article className="info__nav__button__icon">
+              <DateRangeIcon />
+            </article>
+            <h4 className="info__nav__button__text">My Calendar</h4>
+          </button>
+        </Tooltip>
         <button 
           className="info__nav__button"
           onClick={(e) => {

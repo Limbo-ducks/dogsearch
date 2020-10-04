@@ -50,8 +50,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           }
       </article>
       <button className="info__footer__button info__footer__button--content">View Gallery</button>
-      <span id="attributes" className="spanscroll"></span>
-      <h4 className="content__title">Information</h4>
     </section>
   )
 }

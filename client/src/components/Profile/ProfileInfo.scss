@@ -15,10 +15,14 @@
       margin: 0 auto;
       width: calc(100% - 10px);
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: flex-end;
       border-bottom: 1px solid $light-seaweed;
       transition: all ease-in-out 0.2s;
+
+      @media (min-width: $breakpoint-sm-md) {
+        justify-content: space-between;
+      }
 
       &:hover {
         background-color: $light-seaweed;
@@ -29,8 +33,13 @@
       }
 
       svg {
-        font-size: 1em;;
+        font-size: 1em;
+        margin-right: 5px;
       }
     }
   }
+}
+
+.tooltip {
+  z-index: 5000;
 }
