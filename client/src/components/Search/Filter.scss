@@ -81,10 +81,8 @@
 }
 
 .filterwrapper {
-    // max-width: 70%;
     width: -webkit-fill-available;
-    max-width: 100%;
-    padding: 15px;
+    max-width: 385px;
     margin: 0 auto;
 
     @media (min-width: $breakpoint-sm-md) {
@@ -93,6 +91,7 @@
 
     @media (min-width: $breakpoint-md) {
         width: auto;
+        padding: 15px;
     }
 }
 

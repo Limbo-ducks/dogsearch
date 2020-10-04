@@ -26,7 +26,6 @@
           filter: brightness(80%);
           transform: scale(1.01);
           box-shadow: 1px 1px 3px -2px rgba(0, 0, 0, 0.55);
-
         }
 
         @media (min-width: $breakpoint-md) {
@@ -40,7 +39,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-family: $header;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 600px;
         color: $white;
         text-transform: capitalize;

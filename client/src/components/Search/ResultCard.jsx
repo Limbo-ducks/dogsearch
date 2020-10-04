@@ -48,7 +48,7 @@ function ResultCard (props) {
         aria-describedby="simple-modal-description"
       >
         <section className="modal">
-          {props.premium ? <h3 className="modal__premium"><StarIcon/></h3> : null}
+          {/* {props.premium ? <h3 className="modal__premium"><StarIcon/></h3> : null} */}
           <img src={Image} alt="" className="modal__header"/>
           <section className="modal__profile">
             <img 

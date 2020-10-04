@@ -1,8 +1,12 @@
 @import "../../variables.scss";
+.profile {
+  padding-bottom: 50px;
+}
 
 .profile__main {
   width: 100%;
   min-height: 100vh;
+  padding-bottom: 50px;
 
   @media (min-width: $breakpoint-md) {
   }

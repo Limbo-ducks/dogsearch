@@ -25,8 +25,7 @@ const About = () => {
               <a href="https://salt.dev/" target="_blank">
                 <img src={salt} alt=""/>
               </a>
-              <h3>MERN Stack</h3>
-              <p>This Project was built using the MERN stack.</p>
+              <h3>This project was built with the MERN Stack</h3>
               <ul>
                 <li><b>MongoDb</b></li>
                 <li><b>Express js</b></li>

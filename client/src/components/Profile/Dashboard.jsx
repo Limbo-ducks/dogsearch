@@ -43,11 +43,7 @@ const Dashboard = ({ viewProjects, viewFavourites, viewCalendar, viewMessages })
             <EmailIcon />
           </article>
         </button>
-        <button className="dashboard__button" onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            viewCalendar(e.currentTarget)
-            }}>
+        <button className="dashboard__button">
           <h5 className="dashboard__button__text">My calendar</h5>
           <article className="dashboard__button__icon">
             <DateRangeIcon />

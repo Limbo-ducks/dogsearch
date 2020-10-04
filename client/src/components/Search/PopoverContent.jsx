@@ -40,7 +40,7 @@ export const CheckboxListSecondary = () => {
                     <ListItemAvatar>
                     <DescriptionIcon />
                     </ListItemAvatar>
-                    <ListItemText id={labelId} primary={`Project ${value + 1}`} />
+                    <ListItemText id={labelId} primary={`Gallery ${value + 1}`} />
                     {added[value] ? <ListItemSecondaryAction><Tooltip title={`View and Edit Project ${value + 1}`} placement="top-end">
                         <Button size="small" className="button" /* ADD ONCLICK HERE TO STOP PROPAGATION & TAKE USER TO PROFILE*/><LaunchIcon fontSize="small" /></Button>
                         </Tooltip>
