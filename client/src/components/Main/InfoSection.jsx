@@ -1,7 +1,5 @@
 import React from 'react';
 import './InfoSection.scss';
-import { Link } from 'react-router-dom'
-import { Arrows } from '../../Icons'
 
 const InfoSection = () => {
   return (

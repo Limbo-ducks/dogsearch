@@ -1,11 +1,9 @@
 import React from 'react'
 import './ModalFavourites.scss'
-import BlankImage from '../../assets/images/blank-profile-picture.png'
 import Dog from '../../assets/images/corgi.jpg'
 
 import CancelIcon from '@material-ui/icons/Cancel';
-import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
-import CheckIcon from '@material-ui/icons/Check';
+
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import BackspaceIcon from '@material-ui/icons/Backspace';
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import './DogInfo.scss';
-import Popover from '@material-ui/core/Popover';
-import PopoverContent from '../Search/PopoverContent';
-import InfoIcon from '@material-ui/icons/Info';import AddIcon from '@material-ui/icons/Add';
+
+import InfoIcon from '@material-ui/icons/Info';
 import PetsIcon from '@material-ui/icons/Pets';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
@@ -13,22 +12,20 @@ import Blank from '../../assets/images/blank-profile-picture.png';
 import HeaderBackground from '../../assets/images/background.jpg';
 import { Tooltip } from '@material-ui/core';
 
-const upCaseFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
 
-const DogInfo = ({data, viewContact, viewProfile, viewCv}) => {
+const DogInfo = ({ data, viewContact, viewProfile }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const popoverOpen = Boolean(anchorEl);
-  const id = popoverOpen ? 'simple-popover' : undefined;
+  // const popoverOpen = Boolean(anchorEl);
 
-  const handleClick = event => {
-    event.stopPropagation()
-    setAnchorEl(event.currentTarget);
-  };
+  // const handleClick = event => {
+  //   event.stopPropagation()
+  //   setAnchorEl(event.currentTarget);
+  // };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   return (
     <section className="info">

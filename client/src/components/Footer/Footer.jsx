@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
-import Icon from '../../assets/images/Icon.png';
+
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import PetsIcon from '@material-ui/icons/Pets';
 
