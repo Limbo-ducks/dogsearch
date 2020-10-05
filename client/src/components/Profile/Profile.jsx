@@ -11,7 +11,7 @@ import './Profile.scss'
 
 
 const SearchProfile = (props) => {
-  const profileId = props.match.params.id
+  // const profileId = props.match.params.id
 
   const [openProfile, setOpenProfile] = useState(true);
   const [openFavourites, setOpenFavourites,] = useState(false);
@@ -22,7 +22,6 @@ const SearchProfile = (props) => {
   const [status, setStatus] = useState('loading');
 
 
-  //profiles/${profileId}
   useEffect(()=>{
     if(status === 'loading'){
           fetch(`/api/users/me`, 

@@ -1,9 +1,8 @@
 import React from 'react'
 import './Jumbotron.scss';
-import { Link } from 'react-router-dom'
-import SearchIcon from '@material-ui/icons/Search';
 import 'react-slideshow-image/dist/styles.css';
 import { Slide } from 'react-slideshow-image';
+import { Link } from 'react-router-dom'
 
 import ImageOne from '../../assets/images/dogsone.jpg'
 import ImageTwo from '../../assets/images/mixed.jpg'

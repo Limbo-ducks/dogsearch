@@ -39,14 +39,15 @@
     align-items: center;
     width: calc(50% - 20px);
     min-height: 50px;
-    margin: 20px 10px;
+    margin: 10px;
     padding: 5px 15px;
     border: 1px solid $lightblue;
     border-radius: 3px;
     transition: all ease-in-out 0.3s;
     
 		@media (min-width: $breakpoint-md) {
-			width: calc(30% - 20px);
+      width: calc(30% - 20px);
+      margin: 20px 10px;
 		}
 
       &:hover {

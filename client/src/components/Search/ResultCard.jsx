@@ -12,11 +12,9 @@ import PopoverContent from './PopoverContent';
 import InfoIcon from '@material-ui/icons/Info';
 import BlankImage from '../../assets/images/blank-profile-picture.png';
 import PetsIcon from '@material-ui/icons/Pets';
-import StarIcon from '@material-ui/icons/Star';
 import CheckIcon from '@material-ui/icons/Check';
 
 function ResultCard (props) {
-  const { measurements } = props;
 
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);

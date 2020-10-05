@@ -1,13 +1,13 @@
 import React from 'react'
 import './Dashboard.scss'
+
 import SettingsIcon from '@material-ui/icons/Settings';import CreateIcon from '@material-ui/icons/Create';
 import PetsIcon from '@material-ui/icons/Pets';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import EmailIcon from '@material-ui/icons/Email';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import PeopleIcon from '@material-ui/icons/People';
 
-const Dashboard = ({ viewProjects, viewFavourites, viewCalendar, viewMessages }) => {
+const Dashboard = ({ viewFavourites, viewMessages }) => {
 
   return (
       <section className="dashboard">

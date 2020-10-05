@@ -1,11 +1,8 @@
 import React from 'react'
 import './Messages.scss'
 import BlankImage from '../../assets/images/blank-profile-picture.png'
-import { Tooltip } from '@material-ui/core';
 
-import ClearOutlinedIcon from '@material-ui/icons/ClearOutlined';
 import CancelIcon from '@material-ui/icons/Cancel';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const Projects = ({ viewMessages }) => {
 

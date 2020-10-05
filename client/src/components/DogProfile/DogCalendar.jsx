@@ -3,8 +3,6 @@ import './DogCalendar.scss';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-import VideocamOutlinedIcon from '@material-ui/icons/VideocamOutlined';
-import VideocamOffOutlinedIcon from '@material-ui/icons/VideocamOffOutlined';
 import HighlightOffOutlinedIcon from '@material-ui/icons/HighlightOffOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';

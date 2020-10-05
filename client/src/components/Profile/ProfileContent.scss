@@ -6,3 +6,38 @@
     background-color: $white;
   }
 }
+
+.post {
+  padding: 10px;
+
+  &__header {
+    margin: 10px 0;
+
+    &__text {
+      margin: 10px 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+
+    img {
+      @media (min-width: $breakpoint-md) {
+        width: 50%;
+      }
+    }
+
+    p {
+      margin: 0;
+
+      @media (min-width: $breakpoint-md) {
+        margin: 10px;
+      }
+    }
+  }
+}
